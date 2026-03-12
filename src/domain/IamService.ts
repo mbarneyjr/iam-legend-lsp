@@ -1,11 +1,11 @@
-import { IamAction } from "./IamAction";
+import type { IamAction } from "./IamAction.ts";
 
-export interface IamService {
+export type IamService = {
   serviceName: string;
   servicePrefix: string;
   url: string;
   actions: IamAction[];
-}
+};
 
 export type IamServicesByPrefix = Record<ServicePrefix, IamService[]>;
 

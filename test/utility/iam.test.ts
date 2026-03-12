@@ -1,4 +1,6 @@
-import { getServiceFromServiceAction, normalize } from "../../domain/utility";
+import { describe, it } from 'node:test';
+import assert from 'node:assert';
+import { getServiceFromServiceAction, normalize } from '../../src/domain/utility/index.ts';
 
 describe('[iam]', () => {
   describe('[getServiceFromServiceAction]', () => {
@@ -7,7 +9,7 @@ describe('[iam]', () => {
       const expected = 'dynamodb';
       const actual = getServiceFromServiceAction(serviceAction);
 
-      expect(actual).toEqual(expected);
+      assert.strictEqual(actual, expected);
     });
 
     it('should return full input string if no action', () => {
@@ -15,7 +17,7 @@ describe('[iam]', () => {
       const expected = 'dynamodb';
       const actual = getServiceFromServiceAction(serviceAction);
 
-      expect(actual).toEqual(expected);
+      assert.strictEqual(actual, expected);
     });
   });
 
@@ -23,9 +25,9 @@ describe('[iam]', () => {
     it('should normalize service/action', () => {
       const input = '     "dynamodb:GetItem"';
       const expected = 'dynamodb:GetItem';
-      
+
       const actual = normalize(input);
-      expect(actual).toEqual(expected);
+      assert.strictEqual(actual, expected);
     });
   });
 });

@@ -1,3 +1,3 @@
-export * from './groupBy';
-export * from './iam';
-export * from './match';
+export * from './groupBy.ts';
+export * from './iam.ts';
+export * from './match.ts';

@@ -1,0 +1,14 @@
+{
+  "name": "iam-legend-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node --experimental-strip-types scraper.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "p-limit": "^7.3.0",
+    "puppeteer": "^24.39.0"
+  }
+}

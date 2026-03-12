@@ -1,4 +1,6 @@
-import { groupBy } from '../../domain/utility';
+import { describe, it } from 'node:test';
+import assert from 'node:assert';
+import { groupBy } from '../../src/domain/utility/index.ts';
 
 describe('[groupBy]', () => {
   it('should group an array of objects by the given key', () => {
@@ -15,15 +17,15 @@ describe('[groupBy]', () => {
 
     const actual = groupBy(arr, 'a');
 
-    expect(actual['123'].length).toBe(2);
-    expect(actual['456'].length).toBe(1);
+    assert.strictEqual((actual['123'] as unknown[]).length, 2);
+    assert.strictEqual((actual['456'] as unknown[]).length, 1);
   });
 
   it('should return an empty object if the array is empty', () => {
-    const arr = [];
+    const arr: Record<string, any>[] = [];
     const actual = groupBy(arr, 'a');
 
-    expect(Object.keys(actual).length).toBe(0);
+    assert.strictEqual(Object.keys(actual).length, 0);
   });
 
   it('should throw if the given key is not present in all objects', () => {
@@ -36,6 +38,6 @@ describe('[groupBy]', () => {
       b: '789'
     }];
 
-    expect(() => groupBy(arr, 'c')).toThrow();
+    assert.throws(() => groupBy(arr, 'c'));
   });
 });

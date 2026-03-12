@@ -1,13 +1,21 @@
 import puppeteer from "puppeteer";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import pLimit from "p-limit";
+import { writeFile } from "node:fs/promises";
 
-import { writeFile } from "node:fs";
-import { promisify } from "node:util";
+type CheerioAPI = ReturnType<typeof cheerio.load>;
 
-const writeFileAsync = promisify(writeFile);
+interface ScrapedAction {
+  name: string;
+  documentationUrl: string | undefined;
+  description: string;
+  accessLevel: string;
+  resourceTypes: string[];
+  conditionKeys: string[];
+  dependentActions: string[];
+}
 
-const scrapeServices = async (url, browser) => {
+const scrapeServices = async (url: string, browser: puppeteer.Browser) => {
   const page = await browser.newPage();
   await page.goto(url, {
     waitUntil: "networkidle0",
@@ -16,7 +24,7 @@ const scrapeServices = async (url, browser) => {
   const content = await page.content();
   const $ = cheerio.load(content);
 
-  const services = [];
+  const services: { name: string; url: string }[] = [];
   $("#main-col-body .highlights ul a").each((_, el) => {
     const name = $(el).text();
     const serviceDocsUrl = `${url.slice(0, url.lastIndexOf("/"))}/${$(el).attr(
@@ -29,7 +37,7 @@ const scrapeServices = async (url, browser) => {
   return services;
 };
 
-const scrapeService = async (url, browser) => {
+const scrapeService = async (url: string, browser: puppeteer.Browser) => {
   const page = await browser.newPage();
   await page.goto(url, {
     waitUntil: "networkidle0",
@@ -46,23 +54,28 @@ const scrapeService = async (url, browser) => {
     await save({ servicePrefix, serviceName, actions, url });
     console.log(`Successfully scraped: ${url}`);
   } catch (e) {
-    console.error(`Error scraping: ${url}, skipping.\n reason: ${e.message}`);
-    // Not rethrowing the error so we can continue with other services
+    const message = e instanceof Error ? e.message : String(e);
+    console.error(`Error scraping: ${url}, skipping.\n reason: ${message}`);
   } finally {
     await page.close();
   }
 };
 
-const save = async ({ serviceName, servicePrefix, actions, url }) =>
-  writeFileAsync(
+const save = async ({ serviceName, servicePrefix, actions, url }: {
+  serviceName: string;
+  servicePrefix: string;
+  actions: ScrapedAction[];
+  url: string;
+}) =>
+  writeFile(
     `./src/data/iam-services/${formatFileName(serviceName)}.json`,
     JSON.stringify({ serviceName, servicePrefix, url, actions }, null, 2),
   );
 
-export const formatFileName = (serviceName) =>
+export const formatFileName = (serviceName: string) =>
   serviceName.replace(/\s+/g, "-").replace(/:+/g, "-").toLowerCase();
 
-const getServicePrefix = ($) => {
+const getServicePrefix = ($: CheerioAPI) => {
   const elements = $("p > code").toArray();
 
   for (const element of elements) {
@@ -74,16 +87,16 @@ const getServicePrefix = ($) => {
   throw new Error("not service prefix found");
 };
 
-const getServiceName = ($) => {
+const getServiceName = ($: CheerioAPI) => {
   const h1 = $("h1").text();
   return h1.split("keys for ")[1].trim();
 };
 
-const getActions = ($) => {
+const getActions = ($: CheerioAPI) => {
   const actionsTable = $("#main-col-body table").first();
   const actionRows = actionsTable.find("tr");
 
-  const actions = [];
+  const actions: ScrapedAction[] = [];
   actionRows.each((_, el) => {
     const tds = $(el).find("td").toArray();
     if (tds.length === 0) return;
@@ -99,7 +112,7 @@ const getActions = ($) => {
       const documentationUrl = $(tds[0]).find("a[href]").first().attr("href");
 
       actions.push({
-        name: name.split(" ")[0], // action name will always be first word but it may contain junk
+        name: name.split(" ")[0],
         documentationUrl,
         description,
         accessLevel,
@@ -126,7 +139,7 @@ const getActions = ($) => {
   return actions;
 };
 
-const formatToList = (str) =>
+const formatToList = (str: string) =>
   str
     .split("\n")
     .map((x) => x.trim().replace(/\s+/, ""))
@@ -135,7 +148,6 @@ const formatToList = (str) =>
 (async () => {
   const browser = await puppeteer.launch({
     headless: true,
-    ignoreHTTPSErrors: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 

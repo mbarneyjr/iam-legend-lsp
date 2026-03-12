@@ -1,11 +1,9 @@
-import { EOL } from 'os';
-import { MarkdownString } from 'vscode';
-import { IamService, IamAction } from "./domain";
+import type { IamService, IamAction } from "./domain/index.ts";
 
-const mdEOL = EOL + EOL; // use two line breaks because markdown..
+const mdEOL = '\n\n';
 
 export const createServiceDocs = ({ serviceName, url }: IamService) =>
-  new MarkdownString(`${serviceName} [IAM Reference](${url})`);
+  `${serviceName} [IAM Reference](${url})`;
 
 export const createActionDocs = (action: IamAction) => {
   const lines = [];
@@ -19,28 +17,28 @@ export const createActionDocs = (action: IamAction) => {
 
   if (action.resourceTypes && action.resourceTypes.length) {
     lines.push('Resource Types:');
-    lines.push(action.resourceTypes.map(x => '- ' + x).join(EOL));
+    lines.push(action.resourceTypes.map(x => '- ' + x).join('\n'));
   }
 
   if (action.conditionKeys && action.conditionKeys.length) {
     lines.push('Condition Keys:');
-    lines.push(action.conditionKeys.map(x => '- ' + x).join(EOL));
+    lines.push(action.conditionKeys.map(x => '- ' + x).join('\n'));
   }
 
   if (action.dependentActions && action.dependentActions.length) {
     lines.push('Dependent Actions:');
-    lines.push(action.dependentActions.map(x => '- ' + x).join(EOL));
+    lines.push(action.dependentActions.map(x => '- ' + x).join('\n'));
   }
 
-  return new MarkdownString(lines.join(mdEOL));
+  return lines.join(mdEOL);
 };
 
 const createServiceActionDocs = ({ serviceName }: IamService, actions: IamAction[]) => {
   const lines = [];
   lines.push(`**${serviceName}**`);
-  lines.push(actions.map(x => createShortActionDocs(x).value).join(mdEOL));
+  lines.push(actions.map(x => createShortActionDocs(x)).join(mdEOL));
 
-  return new MarkdownString(lines.join(mdEOL));
+  return lines.join(mdEOL);
 };
 
 const createShortActionDocs = ({ name, documentationUrl, description }: IamAction) => {
@@ -53,17 +51,17 @@ const createShortActionDocs = ({ name, documentationUrl, description }: IamActio
 
   lines.push(`${description}`);
 
-  return new MarkdownString(lines.join(mdEOL));
+  return lines.join(mdEOL);
 };
 
-export const createServicesActionDocs = (items: { service: IamService; actions: IamAction[]; }[]): MarkdownString[] => {
+export const createServicesActionDocs = (items: { service: IamService; actions: IamAction[]; }[]) => {
   if (items.length === 0) {
-    return [new MarkdownString('No matching actions')];
-  };
-
-  if (items.length === 1 && items[0].actions.length === 1) {
-    return [...items.map(({ service, actions }) => createServiceActionDocs(service, actions))];
+    return 'No matching actions';
   }
 
-  return [new MarkdownString(`Matches multiple actions:${EOL}`), ...items.map(({ service, actions }) => createServiceActionDocs(service, actions))];
+  if (items.length === 1 && items[0].actions.length === 1) {
+    return items.map(({ service, actions }) => createServiceActionDocs(service, actions)).join(mdEOL);
+  }
+
+  return `Matches multiple actions:\n` + items.map(({ service, actions }) => createServiceActionDocs(service, actions)).join('\n\n---\n\n');
 };

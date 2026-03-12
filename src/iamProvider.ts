@@ -1,17 +1,16 @@
-import { promisify } from 'util';
-import { readdir, readFile } from 'fs';
-import { resolve } from 'path';
-import { groupBy } from './domain/utility';
-import { IamService, IamServicesByPrefix } from './domain';
+import { readdir, readFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { groupBy } from './domain/utility/index.ts';
+import type { IamService, IamServicesByPrefix } from './domain/index.ts';
 
-const readdirAsync = promisify(readdir);
-const readFileAsync = promisify(readFile);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export const getIamServicesByPrefix = async (): Promise<IamServicesByPrefix> => {
+export const getIamServicesByPrefix = async () => {
   const directory = resolve(__dirname, 'data', 'iam-services');
-  const files = await readdirAsync(directory);
+  const files = await readdir(directory);
   const readFiles = files.map(
-    file => readFileAsync(resolve(directory, file), 'utf8')
+    file => readFile(resolve(directory, file), 'utf8')
       .then((data) => JSON.parse(data) as IamService)
   );
 

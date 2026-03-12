@@ -1,31 +1,60 @@
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/sebastianbille.iam-legend.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=sebastianbille.iam-legend)
-[![Visual Studio Marketplace Rating Stars](https://img.shields.io/visual-studio-marketplace/stars/sebastianbille.iam-legend.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=sebastianbille.iam-legend)
-[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/sebastianbille.iam-legend.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=sebastianbille.iam-legend)
+# IAM Legend LSP Server
 
-# IAM Legend
+A standalone, editor-agnostic LSP server for AWS IAM policy actions.
+Supports Serverless Framework, AWS SAM, CloudFormation, and Terraform.
 
-AWS [IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) actions autocomplete, documentation and wildcard resolution for Visual Studio Code.
-
-Supports Serverless Framework, AWS SAM, CloudFormation and Terraform.
+Forked from [IAM Legend](https://github.com/TastefulElk/iam-legend) (VS Code extension).
+Rewritten as a general-purpose LSP server with zero build step, expects NodeJS with native TypeScript support.
 
 ## Features
 
-- Autocomplete for all IAM services & actions
+- **Autocomplete** — service prefixes and IAM actions with inline documentation
+- **Hover** — action descriptions, resource types, condition keys, and dependent actions
+- **Wildcard resolution** — hover over patterns like `s3:Get*` to see all matching actions
+- **490+ AWS services** — data scraped directly from AWS IAM documentation
 
-![service suggestions](https://raw.githubusercontent.com/TastefulElk/iam-legend/master/images/service_suggest.png)
+## Requirements
 
-- Inline documentation for each action, including what *Resources* and *Condition Keys* they support as well as any *Dependent Actions*
+- Node.js >= 24.0.0
 
-![action suggestions and documentation](https://raw.githubusercontent.com/TastefulElk/iam-legend/master/images/action_suggest.png)
+## Installation
 
-- Wildcard support when hovering an action definition to easily see exactly what action(s) will be granted
+```bash
+git clone https://github.com/TastefulElk/iam-legend.git
+cd iam-legend
+npm install
+```
 
-![docs for multiple actions when hovering action with wildcard](https://raw.githubusercontent.com/TastefulElk/iam-legend/master/images/wildcard_hover.png)
+## Usage
 
-## Contributions
+Start the LSP server (communicates over stdio):
 
-Feedback, suggestions, bug reports or any other kind of contributions are very welcome! You can find the source [here](https://github.com/TastefulElk/iam-legend)!
+```bash
+npm start
+# or directly:
+node --experimental-strip-types src/server.ts
+```
 
-## Author
+## Editor Configuration
 
-[Sebastian Bille](https://twitter.com/TastefulElk)
+### Neovim
+
+```lua
+vim.lsp.config("iam-legend", {
+  cmd = { "node", "--experimental-strip-types", "/path/to/iam-legend/src/server.ts" },
+  filetypes = { "yaml", "json", "typescript", "terraform" },
+  root_markers = { ".git" },
+})
+
+vim.lsp.enable("iam-legend")
+```
+
+## Updating IAM Service Data
+
+The `scraper/` directory has a Puppeteer-based scraper that regenerates `src/data/iam-services/` from AWS documentation.
+
+```bash
+cd scraper
+npm install
+npm run scrape
+```
