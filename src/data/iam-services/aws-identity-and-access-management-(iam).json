@@ -4,6 +4,17 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsidentityandaccessmanagementiam.html",
   "actions": [
     {
+      "name": "AcceptDelegationRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcceptDelegationRequest.html",
+      "description": "Accepts a delegation request resource, granting the requested temporary access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "delegation-request*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "AddClientIDToOpenIDConnectProvider",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html",
       "description": "Grants permission to add a new client ID (audience) to the list of registered IDs for the specified IAM OpenID Connect (OIDC) provider resource",
@@ -34,6 +45,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "AssociateDelegationRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssociateDelegationRequest.html",
+      "description": "Associates a delegation request resource with the calling identity",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "delegation-request*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -108,6 +130,21 @@
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDelegationRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateDelegationRequest.html",
+      "description": "Creates an IAM delegation request resource for temporary access delegation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "delegation-request*"
+      ],
+      "conditionKeys": [
+        "iam:DelegationDuration",
+        "iam:NotificationChannel",
+        "iam:TemplateArn"
+      ],
       "dependentActions": []
     },
     {
@@ -235,7 +272,10 @@
       "resourceTypes": [
         "user*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:ServiceSpecificCredentialAgeDays",
+        "iam:ServiceSpecificCredentialServiceName"
+      ],
       "dependentActions": []
     },
     {
@@ -401,7 +441,9 @@
       "resourceTypes": [
         "role*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:PermissionsBoundary"
+      ],
       "dependentActions": []
     },
     {
@@ -482,7 +524,9 @@
       "resourceTypes": [
         "user*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:ServiceSpecificCredentialServiceName"
+      ],
       "dependentActions": []
     },
     {
@@ -605,6 +649,15 @@
       "dependentActions": []
     },
     {
+      "name": "DisableOutboundWebIdentityFederation",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html",
+      "description": "Disables the outbound identity federation feature for the callers account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "EnableMFADevice",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html",
       "description": "Grants permission to enable an MFA device and associate it with the specified IAM user",
@@ -633,6 +686,15 @@
       "name": "EnableOrganizationsRootSessions",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOrganizationsRootSessions.html",
       "description": "Grants permission to enable privileged root actions in member accounts for an organization managed under the current account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "EnableOutboundWebIdentityFederation",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableOutboundWebIdentityFederation.html",
+      "description": "Enables the outbound identity federation feature for the callers account",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -778,6 +840,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetDelegationRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetDelegationRequest.html",
+      "description": "Retrieves information about a specific delegation request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "delegation-request*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetGroup",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html",
       "description": "Grants permission to retrieve a list of IAM users in the specified IAM group",
@@ -795,6 +868,17 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetHumanReadableSummary",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetHumanReadableSummary.html",
+      "description": "Retrieves a human readable summary for a given entity. At this time, only delegation request are supported",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "delegation-request*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -853,6 +937,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetOutboundWebIdentityFederationInfo",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOutboundWebIdentityFederationInfo.html",
+      "description": "Retrieves the configuration information for the outbound identity federation feature for the callers account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html",
       "description": "Grants permission to retrieve information about the specified managed policy, including the policy's default version and the total number of identities to which the policy is attached",
@@ -882,7 +975,9 @@
       "resourceTypes": [
         "role*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:PermissionsBoundary"
+      ],
       "dependentActions": []
     },
     {
@@ -1040,6 +1135,17 @@
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDelegationRequests",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListDelegationRequests.html",
+      "description": "Lists delegation requests based on the specified criteria",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "iam:DelegationRequestOwner"
+      ],
       "dependentActions": []
     },
     {
@@ -1441,6 +1547,17 @@
       "dependentActions": []
     },
     {
+      "name": "RejectDelegationRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RejectDelegationRequest.html",
+      "description": "Rejects a delegation request, denying the requested temporary access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "delegation-request*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "RemoveClientIDFromOpenIDConnectProvider",
       "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html",
       "description": "Grants permission to remove the client ID (audience) from the list of client IDs in the specified IAM OpenID Connect (OIDC) provider resource",
@@ -1481,7 +1598,9 @@
       "resourceTypes": [
         "user*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:ServiceSpecificCredentialServiceName"
+      ],
       "dependentActions": []
     },
     {
@@ -1491,6 +1610,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "user*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SendDelegationToken",
+      "documentationUrl": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_SendDelegationToken.html",
+      "description": "Sends the exchange token for an accepted delegation request",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "delegation-request*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1808,7 +1938,9 @@
       "resourceTypes": [
         "role*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:PermissionsBoundary"
+      ],
       "dependentActions": []
     },
     {
@@ -1861,7 +1993,9 @@
       "resourceTypes": [
         "role*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:PermissionsBoundary"
+      ],
       "dependentActions": []
     },
     {
@@ -1872,7 +2006,9 @@
       "resourceTypes": [
         "role*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:PermissionsBoundary"
+      ],
       "dependentActions": []
     },
     {
@@ -1916,7 +2052,9 @@
       "resourceTypes": [
         "user*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "iam:ServiceSpecificCredentialServiceName"
+      ],
       "dependentActions": []
     },
     {

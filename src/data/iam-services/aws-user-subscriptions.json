@@ -51,6 +51,15 @@
       "dependentActions": []
     },
     {
+      "name": "SetOverageConfig",
+      "documentationUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html",
+      "description": "Grants permission to set a User subscription overage configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateClaim",
       "documentationUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/security_iam_permissions.html",
       "description": "Grants permission to update a User subscription Claim",

@@ -1,0 +1,275 @@
+{
+  "serviceName": "Amazon ARC Region switch",
+  "servicePrefix": "arc-region-switch",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonarcregionswitch.html",
+  "actions": [
+    {
+      "name": "ApprovePlanExecutionStep",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ApprovePlanExecutionStep.html",
+      "description": "Grants permission to approve a plan execution step",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CancelPlanExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_CancelPlanExecution.html",
+      "description": "Grants permission to cancel a plan execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreatePlan",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_CreatePlan.html",
+      "description": "Grants permission to create a plan",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeletePlan",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_DeletePlan.html",
+      "description": "Grants permission to delete a plan",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html",
+      "description": "Grants permission to delete the RAM access control policy for a plan",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetPlan",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_GetPlan.html",
+      "description": "Grants permission to get information about plans in all AWS Regions using a control plane",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetPlanEvaluationStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_GetPlanEvaluationStatus.html",
+      "description": "Grants permission to get a plan's evaluation status",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetPlanExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_GetPlanExecution.html",
+      "description": "Grants permission to get plan execution details and setup information",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetPlanInRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_GetPlanInRegion.html",
+      "description": "Grants permission to get information about a plan in a specific AWS Region using the Region switch Regional data plane",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html",
+      "description": "Grants permission to get the resource policy of a plan",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPlanExecutionEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListPlanExecutionEvents.html",
+      "description": "Grants permission to list plan execution events",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPlanExecutions",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListPlanExecutions.html",
+      "description": "Grants permission to list plan executions",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPlans",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListPlans.html",
+      "description": "Grants permission to list plans in all AWS Regions using a control plane",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPlansInRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListPlansInRegion.html",
+      "description": "Grants permission to list plans in a specific AWS Region using the Region switch Regional data plane",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRoute53HealthChecks",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListRoute53HealthChecks.html",
+      "description": "Grants permission to list Route 53 health checks",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRoute53HealthChecksInRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListRoute53HealthChecksInRegion.html",
+      "description": "Grants permission to list Route 53 health checks in a specific AWS Region using the Region switch Regional data plane",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_ListTagsForResource.html",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "PutResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/r53recovery/latest/dg/arc-region-switch.region-switch-different-accounts.html",
+      "description": "Grants permission to define the RAM access control policy for a plan",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartPlanExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_StartPlanExecution.html",
+      "description": "Grants permission to start a plan execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_TagResource.html",
+      "description": "Grants permission to tag a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_UntagResource.html",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdatePlan",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_UpdatePlan.html",
+      "description": "Grants permission to update a plan",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdatePlanExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_UpdatePlanExecution.html",
+      "description": "Grants permission to update a plan execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdatePlanExecutionStep",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-region-switch/latest/api/API_UpdatePlanExecutionStep.html",
+      "description": "Grants permission to update a plan execution step",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "plan*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

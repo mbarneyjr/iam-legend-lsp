@@ -164,6 +164,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeStreamStorageConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStreamStorageConfiguration.html",
+      "description": "Grants permission to describe the stream storage configuration of your Kinesis Video Stream",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "stream*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetClip",
       "documentationUrl": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_GetClip.html",
       "description": "Grants permission to get a media clip from a video stream",
@@ -493,6 +504,17 @@
       "name": "UpdateStream",
       "documentationUrl": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html",
       "description": "Grants permission to update an existing Kinesis video stream",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "stream*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateStreamStorageConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStreamStorageConfiguration.html",
+      "description": "Grants permission to update the stream storage configuration of your Kinesis Video Stream",
       "accessLevel": "Write",
       "resourceTypes": [
         "stream*"

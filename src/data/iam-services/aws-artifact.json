@@ -26,29 +26,6 @@
       "dependentActions": []
     },
     {
-      "name": "DownloadAgreement",
-      "documentationUrl": "https://docs.aws.amazon.com/artifact/latest/ug/managing-agreements.html",
-      "description": "Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "agreement",
-        "customer-agreement"
-      ],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "Get",
-      "documentationUrl": "https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html",
-      "description": "Grants permission to download an AWS compliance report package",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "report-package*"
-      ],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
       "name": "GetAccountSettings",
       "documentationUrl": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_GetAccountSettings.html",
       "description": "Grants permission to get the account settings for Artifact",
@@ -136,6 +113,15 @@
       "name": "ListCustomerAgreements",
       "documentationUrl": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListCustomerAgreements.html",
       "description": "Grants permission to list customer-agreement resources that have been accepted by the customer account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListReportVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/artifact/latest/APIReference/API_ListReportVersions.html",
+      "description": "Grants permission to list report versions in your account",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],

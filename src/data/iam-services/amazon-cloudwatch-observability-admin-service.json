@@ -4,8 +4,168 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazoncloudwatchobservabilityadminservice.html",
   "actions": [
     {
+      "name": "CreateCentralizationRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateCentralizationRuleForOrganization.html",
+      "description": "Grants permission to create a new organization centralization rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-centralization-rule*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}",
+        "observabilityadmin:CentralizationSourceRegions",
+        "observabilityadmin:CentralizationDestinationRegion",
+        "observabilityadmin:CentralizationBackupRegion"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateS3TableIntegration.html",
+      "description": "Grants permission to create a new s3 table integration with the specified configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "s3tableintegration*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTelemetryPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryPipeline.html",
+      "description": "Grants permission to create a new telemetry pipeline with the specified name and configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-pipeline*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}",
+        "observabilityadmin:SourceType"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTelemetryRule",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRule.html",
+      "description": "Grants permission to create a new telemetry rule with the specified name for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-rule*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTelemetryRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryRuleForOrganization.html",
+      "description": "Grants permission to create a new organization telemetry rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-telemetry-rule*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCentralizationRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteCentralizationRuleForOrganization.html",
+      "description": "Grants permission to delete an organization centralization rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-centralization-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteS3TableIntegration.html",
+      "description": "Grants permission to delete the s3 table integration with the specified arn",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "s3tableintegration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTelemetryPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryPipeline.html",
+      "description": "Grants permission to delete the telemetry pipeline with the specified arn",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTelemetryRule",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryRule.html",
+      "description": "Grants permission to delete a telemetry rule with the specified name for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTelemetryRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_DeleteTelemetryRuleForOrganization.html",
+      "description": "Grants permission to delete an organization telemetry rule with the specified name for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCentralizationRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetCentralizationRuleForOrganization.html",
+      "description": "Grants permission to retrieve the specified organization centralization rule for the organization",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "organization-centralization-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetS3TableIntegration.html",
+      "description": "Grants permission to retrieve the specified s3 table integration for the account",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "s3tableintegration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTelemetryEnrichmentStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEnrichmentStatus.html",
+      "description": "Grants permission to retrieve the status of the Resource tags for telemetry feature for the account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetTelemetryEvaluationStatus",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_GetTelemetryEvaluationStatus.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEvaluationStatus.html",
       "description": "Grants permission to retrieve the Telemetry Config feature status for the account",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -14,7 +174,7 @@
     },
     {
       "name": "GetTelemetryEvaluationStatusForOrganization",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_GetTelemetryEvaluationStatusForOrganization.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryEvaluationStatusForOrganization.html",
       "description": "Grants permission to retrieve the Telemetry Config feature status for the organization",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -22,8 +182,50 @@
       "dependentActions": []
     },
     {
+      "name": "GetTelemetryPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryPipeline.html",
+      "description": "Grants permission to Get the telemetry pipeline with the specified name or arn",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "telemetry-pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTelemetryRule",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRule.html",
+      "description": "Grants permission to retrieve the specified telemetry rule for the account",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTelemetryRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_GetTelemetryRuleForOrganization.html",
+      "description": "Grants permission to retrieve the specified organization telemetry rule for the organization",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "organization-telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCentralizationRulesForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListCentralizationRulesForOrganization.html",
+      "description": "Grants permission to list the centralization rules for the organization",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListResourceTelemetry",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_ListResourceTelemetry.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetry.html",
       "description": "Grants permission to retrieve telemetry configurations for resources associated with the account",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -32,7 +234,7 @@
     },
     {
       "name": "ListResourceTelemetryForOrganization",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_ListResourceTelemetryForOrganization.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListResourceTelemetryForOrganization.html",
       "description": "Grants permission to retrieve telemetry configurations for resources associated with accounts in the organization",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -40,8 +242,68 @@
       "dependentActions": []
     },
     {
+      "name": "ListS3TableIntegrations",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListS3TableIntegrations.html",
+      "description": "Grants permission to list s3 table integrations for the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTagsForResource.html",
+      "description": "Grants permission to list the tags for the specified resource",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "organization-centralization-rule",
+        "organization-telemetry-rule",
+        "s3tableintegration",
+        "telemetry-pipeline",
+        "telemetry-rule"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTelemetryPipelines",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryPipelines.html",
+      "description": "Grants permission to List telemetry pipelines for the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTelemetryRules",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRules.html",
+      "description": "Grants permission to list the telemetry rules for the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTelemetryRulesForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ListTelemetryRulesForOrganization.html",
+      "description": "Grants permission to list the telemetry rules for the organization",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartTelemetryEnrichment",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEnrichment.html",
+      "description": "Grants permission to enable the Resource tags for telemetry feature for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StartTelemetryEvaluation",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_StartTelemetryEvaluation.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluation.html",
       "description": "Grants permission to start the Telemetry Config feature for the account",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -50,7 +312,7 @@
     },
     {
       "name": "StartTelemetryEvaluationForOrganization",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_StartTelemetryEvaluationForOrganization.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StartTelemetryEvaluationForOrganization.html",
       "description": "Grants permission to start the Telemetry Config feature for the organization",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -58,8 +320,17 @@
       "dependentActions": []
     },
     {
+      "name": "StopTelemetryEnrichment",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEnrichment.html",
+      "description": "Grants permission to disable the Resource tags for telemetry feature for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StopTelemetryEvaluation",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_StopTelemetryEvaluation.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEvaluation.html",
       "description": "Grants permission to stop the Telemetry Config feature for the account",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -68,9 +339,110 @@
     },
     {
       "name": "StopTelemetryEvaluationForOrganization",
-      "documentationUrl": "https://docs.aws.amazon.com/ObservabilityAdmin/latest/APIReference/API_StopTelemetryEvaluationForOrganization.html",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_StopTelemetryEvaluationForOrganization.html",
       "description": "Grants permission to stop the Telemetry Config feature for the organization",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TagResource.html",
+      "description": "Grants permission to add or update the specified tags for the specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "organization-centralization-rule",
+        "organization-telemetry-rule",
+        "s3tableintegration",
+        "telemetry-pipeline",
+        "telemetry-rule"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "TestTelemetryPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_TestTelemetryPipeline.html",
+      "description": "Grants permission to Test a telemetry pipeline configuration with sample data",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UntagResource.html",
+      "description": "Grants permission to remove the specified tags from the specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "organization-centralization-rule",
+        "organization-telemetry-rule",
+        "s3tableintegration",
+        "telemetry-pipeline",
+        "telemetry-rule"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCentralizationRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateCentralizationRuleForOrganization.html",
+      "description": "Grants permission to update the specified centralization rule for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-centralization-rule*"
+      ],
+      "conditionKeys": [
+        "observabilityadmin:CentralizationSourceRegions",
+        "observabilityadmin:CentralizationDestinationRegion",
+        "observabilityadmin:CentralizationBackupRegion"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateTelemetryPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryPipeline.html",
+      "description": "Grants permission to Update the telemetry pipeline with the specified arn",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateTelemetryRule",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRule.html",
+      "description": "Grants permission to update the specified telemetry rule for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateTelemetryRuleForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_UpdateTelemetryRuleForOrganization.html",
+      "description": "Grants permission to update the specified telemetry rule for the organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "organization-telemetry-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ValidateTelemetryPipelineConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_ValidateTelemetryPipelineConfiguration.html",
+      "description": "Grants permission to Validate a telemetry pipeline configuration",
+      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

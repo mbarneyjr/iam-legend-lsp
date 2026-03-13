@@ -101,7 +101,9 @@
         "custom-verification-email-template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -173,7 +175,9 @@
         "template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -214,6 +218,39 @@
       "dependentActions": [
         "iam:CreateServiceLinkedRole"
       ]
+    },
+    {
+      "name": "CreateTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateTenant.html",
+      "description": "Grants permission to create a new tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTenantResourceAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateTenantResourceAssociation.html",
+      "description": "Grants permission to associate a SES resource to a tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "configuration-set*",
+        "identity*",
+        "template*",
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
     },
     {
       "name": "DeleteConfigurationSet",
@@ -280,7 +317,8 @@
         "custom-verification-email-template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -335,7 +373,8 @@
         "template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -361,6 +400,37 @@
       "resourceTypes": [],
       "conditionKeys": [
         "ses:ApiVersion"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteTenant.html",
+      "description": "Grants permission to delete a tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTenantResourceAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteTenantResourceAssociation.html",
+      "description": "Grants permission to remove an associated SES resource from a tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "configuration-set*",
+        "identity*",
+        "template*",
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -450,7 +520,8 @@
         "custom-verification-email-template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -544,6 +615,19 @@
       "dependentActions": []
     },
     {
+      "name": "GetEmailAddressInsights",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailAddressInsights.html",
+      "description": "Grants permission to get insights about email address",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ses:ApiVersion"
+      ],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ]
+    },
+    {
       "name": "GetEmailIdentity",
       "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetEmailIdentity.html",
       "description": "Grants permission to get information about a specific identity",
@@ -580,7 +664,8 @@
         "template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -637,6 +722,20 @@
       "dependentActions": []
     },
     {
+      "name": "GetReputationEntity",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetReputationEntity.html",
+      "description": "Grants permission to retrieve information about a reputation entity's status",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetSuppressedDestination",
       "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetSuppressedDestination.html",
       "description": "Grants permission to retrieve information about a specific email address that's on the suppression list for your account",
@@ -644,6 +743,20 @@
       "resourceTypes": [],
       "conditionKeys": [
         "ses:ApiVersion"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_GetTenant.html",
+      "description": "Grants permission to get information about a tenant",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -797,6 +910,36 @@
       "dependentActions": []
     },
     {
+      "name": "ListReputationEntities",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListReputationEntities.html",
+      "description": "Grants permission to retrieve a list of reputation entities",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListResourceTenants",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListResourceTenants",
+      "description": "Grants permission to list all the tenants associated to a SES resource",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "configuration-set*",
+        "identity*",
+        "template*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListSuppressedDestinations",
       "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListSuppressedDestinations.html",
       "description": "Grants permission to list email addresses that are on the suppression list for your account",
@@ -815,10 +958,38 @@
       "resourceTypes": [
         "configuration-set",
         "contact-list",
+        "custom-verification-email-template",
         "dedicated-ip-pool",
         "deliverability-test-report",
-        "identity"
+        "identity",
+        "template",
+        "tenant"
       ],
+      "conditionKeys": [
+        "ses:ApiVersion"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTenantResources",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenantResources",
+      "description": "Grants permission to list all the resources associated to a tenant",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTenants",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListTenants",
+      "description": "Grants permission to list all the tenants for your account",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [
         "ses:ApiVersion"
       ],
@@ -1135,7 +1306,8 @@
       ],
       "conditionKeys": [
         "ses:ApiVersion",
-        "ses:MultiRegionEndpointId"
+        "ses:MultiRegionEndpointId",
+        "ses:TenantName"
       ],
       "dependentActions": []
     },
@@ -1168,7 +1340,8 @@
         "ses:FromAddress",
         "ses:FromDisplayName",
         "ses:Recipients",
-        "ses:MultiRegionEndpointId"
+        "ses:MultiRegionEndpointId",
+        "ses:TenantName"
       ],
       "dependentActions": []
     },
@@ -1180,9 +1353,12 @@
       "resourceTypes": [
         "configuration-set",
         "contact-list",
+        "custom-verification-email-template",
         "dedicated-ip-pool",
         "deliverability-test-report",
-        "identity"
+        "identity",
+        "template",
+        "tenant"
       ],
       "conditionKeys": [
         "ses:ApiVersion",
@@ -1212,9 +1388,12 @@
       "resourceTypes": [
         "configuration-set",
         "contact-list",
+        "custom-verification-email-template",
         "dedicated-ip-pool",
         "deliverability-test-report",
-        "identity"
+        "identity",
+        "template",
+        "tenant"
       ],
       "conditionKeys": [
         "ses:ApiVersion",
@@ -1273,7 +1452,8 @@
         "custom-verification-email-template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -1300,7 +1480,37 @@
         "template*"
       ],
       "conditionKeys": [
-        "ses:ApiVersion"
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateReputationEntityCustomerManagedStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateReputationEntityCustomerManagedStatus.html",
+      "description": "Grants permission to update the customer-managed sending status",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateReputationEntityPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateReputationEntityPolicy.html",
+      "description": "Grants permission to assign a reputation policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "reputation-policy*",
+        "tenant*"
+      ],
+      "conditionKeys": [
+        "ses:ApiVersion",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     }

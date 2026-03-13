@@ -450,6 +450,22 @@
       ]
     },
     {
+      "name": "StartGraph",
+      "documentationUrl": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartGraph.html",
+      "description": "Grants permission to start a graph",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "graph*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:DescribeKey"
+      ]
+    },
+    {
       "name": "StartImportTask",
       "documentationUrl": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StartImportTask.html",
       "description": "Grants permission to import data into an existing graph",
@@ -462,6 +478,19 @@
       "dependentActions": [
         "iam:PassRole"
       ]
+    },
+    {
+      "name": "StopGraph",
+      "documentationUrl": "https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_StopGraph.html",
+      "description": "Grants permission to stop a graph",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "graph*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
     },
     {
       "name": "TagResource",

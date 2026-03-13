@@ -21,7 +21,9 @@
       "description": "Grants permission to delete identities from an identity pool. You can specify a list of 1-60 identities that you want to delete",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity:IdentityPoolArn"
+      ],
       "dependentActions": []
     },
     {
@@ -41,7 +43,9 @@
       "description": "Grants permission to return metadata related to the given identity, including when the identity was created and any associated linked logins",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity:IdentityPoolArn"
+      ],
       "dependentActions": []
     },
     {
@@ -61,7 +65,12 @@
       "description": "Grants permission to return credentials for the provided identity ID",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity-unauth:IdentityPoolArn",
+        "cognito-identity-unauth:AccountId",
+        "cognito-identity-auth:IdentityPoolArn",
+        "cognito-identity-auth:AccountId"
+      ],
       "dependentActions": []
     },
     {
@@ -70,7 +79,12 @@
       "description": "Grants permission to generate (or retrieve) a Cognito ID. Supplying multiple logins will create an implicit linked account",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity-unauth:IdentityPoolArn",
+        "cognito-identity-unauth:AccountId",
+        "cognito-identity-auth:IdentityPoolArn",
+        "cognito-identity-auth:AccountId"
+      ],
       "dependentActions": []
     },
     {
@@ -123,7 +137,12 @@
       "description": "Grants permission to get an OpenID token, using a known Cognito ID",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity-unauth:IdentityPoolArn",
+        "cognito-identity-unauth:AccountId",
+        "cognito-identity-auth:IdentityPoolArn",
+        "cognito-identity-auth:AccountId"
+      ],
       "dependentActions": []
     },
     {
@@ -225,7 +244,7 @@
       "description": "Grants permission to assign a set of tags to an Amazon Cognito identity pool",
       "accessLevel": "Tagging",
       "resourceTypes": [
-        "identitypool"
+        "identitypool*"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -250,7 +269,10 @@
       "description": "Grants permission to unlink a federated identity from an existing account",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cognito-identity-auth:IdentityPoolArn",
+        "cognito-identity-auth:AccountId"
+      ],
       "dependentActions": []
     },
     {
@@ -259,7 +281,7 @@
       "description": "Grants permission to remove the specified tags from an Amazon Cognito identity pool",
       "accessLevel": "Tagging",
       "resourceTypes": [
-        "identitypool"
+        "identitypool*"
       ],
       "conditionKeys": [
         "aws:TagKeys"

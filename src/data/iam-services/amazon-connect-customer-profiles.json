@@ -69,6 +69,21 @@
       ]
     },
     {
+      "name": "CreateDomainLayout",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomainLayout.html",
+      "description": "Grants permission to create a layout in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "layouts*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateEventStream",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateEventStream.html",
       "description": "Grants permission to put an event stream in a domain",
@@ -128,6 +143,21 @@
       "dependentActions": []
     },
     {
+      "name": "CreateRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateRecommender.html",
+      "description": "Grants permission to create a Recommender in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateSegmentDefinition",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateSegmentDefinition.html",
       "description": "Grants permission to create a segment definition in the domain",
@@ -177,6 +207,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateUploadJob",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateUploadJob.html",
+      "description": "Grants permission to create an upload job in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteCalculatedAttributeDefinition",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteCalculatedAttributeDefinition.html",
       "description": "Grants permission to delete a calculated attribute definition in the domain",
@@ -194,6 +235,30 @@
       "description": "Grants permission to delete a Domain",
       "accessLevel": "Write",
       "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDomainLayout",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainLayout.html",
+      "description": "Grants permission to delete a layout in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "layouts*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDomainObjectType",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteDomainObjectType.html",
+      "description": "Grants permission to delete a specific domain object type in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domain-object-types*",
         "domains*"
       ],
       "conditionKeys": [],
@@ -284,6 +349,18 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteRecommender.html",
+      "description": "Grants permission to delete a recommender in a domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteSegmentDefinition",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_DeleteSegmentDefinition.html",
       "description": "Grants permission to delete a segment definition in the domain",
@@ -364,6 +441,30 @@
       "dependentActions": []
     },
     {
+      "name": "GetDomainLayout",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainLayout.html",
+      "description": "Grants permission to get a layout in the domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*",
+        "layouts*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDomainObjectType",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetDomainObjectType.html",
+      "description": "Grants permission to get a specific domain object type in the domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domain-object-types*",
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetEventStream",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetEventStream.html",
       "description": "Grants permission to get a specific event stream in a domain",
@@ -424,6 +525,40 @@
       "dependentActions": []
     },
     {
+      "name": "GetObjectTypeAttributeStatistics",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetObjectTypeAttributeStatistics.html",
+      "description": "Grants permission to get statistics of a specific attribute for object type in the domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*",
+        "object-types*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetProfileHistoryRecord",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileHistoryRecord.html",
+      "description": "Grants permission to get a profile history record for a profile in a domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetProfileInsights",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileInsights.html",
+      "description": "Grants permission to list insights for a profile",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetProfileObjectType",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileObjectType.html",
       "description": "Grants permission to get a specific profile object type in the domain",
@@ -441,6 +576,30 @@
       "description": "Grants permission to get a specific object type template",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetProfileRecommendations",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetProfileRecommendations.html",
+      "description": "Grants permission to list recommendations for a profile",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetRecommender.html",
+      "description": "Grants permission to get Recommender details in a domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -514,6 +673,28 @@
       "dependentActions": []
     },
     {
+      "name": "GetUploadJob",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJob.html",
+      "description": "Grants permission to get details of an upload job in the domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetUploadJobPath",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetUploadJobPath.html",
+      "description": "Grants permission to get a pre-signed URL to upload file for an upload job",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetWorkflow",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetWorkflow.html",
       "description": "Grants permission to get workflow details in a domain",
@@ -561,6 +742,40 @@
       "description": "Grants permission to list all calculated attributes for a specific profile in the domain",
       "accessLevel": "List",
       "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDomainLayouts",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainLayouts.html",
+      "description": "Grants permission to list all the layouts in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDomainObjectTypes",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjectTypes.html",
+      "description": "Grants permission to list all the domain object types in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDomainObjects",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListDomainObjects.html",
+      "description": "Grants permission to list domain objects in a domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domain-object-types*",
         "domains*"
       ],
       "conditionKeys": [],
@@ -620,6 +835,18 @@
       "dependentActions": []
     },
     {
+      "name": "ListObjectTypeAttributeValues",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributeValues.html",
+      "description": "Grants permission to list values of a specific attribute for object type in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*",
+        "object-types*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListObjectTypeAttributes",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListObjectTypeAttributes.html",
       "description": "Grants permission to list all the attributes of a specific object type in the domain",
@@ -635,6 +862,17 @@
       "name": "ListProfileAttributeValues",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileAttributeValues.html",
       "description": "Grants permission to list all the values of a profile attribute in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListProfileHistoryRecords",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListProfileHistoryRecords.html",
+      "description": "Grants permission to list all the profile history records for a profile in a domain",
       "accessLevel": "List",
       "resourceTypes": [
         "domains*"
@@ -675,6 +913,26 @@
       "dependentActions": []
     },
     {
+      "name": "ListRecommenderRecipes",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenderRecipes.html",
+      "description": "Grants permission to list all the Recommenders Recipes in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRecommenders",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRecommenders.html",
+      "description": "Grants permission to list all the Recommenders in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListRuleBasedMatches",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListRuleBasedMatches.html",
       "description": "Grants permission to list all the rule-based matching result in the domain",
@@ -703,10 +961,26 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "calculated-attributes",
+        "domain-object-types",
         "domains",
         "event-streams",
+        "event-triggers",
         "integrations",
-        "object-types"
+        "layouts",
+        "object-types",
+        "recommenders",
+        "segment-definitions"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListUploadJobs",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_ListUploadJobs.html",
+      "description": "Grants permission to list all upload jobs in the domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "domains*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -734,6 +1008,21 @@
       "dependentActions": []
     },
     {
+      "name": "PutDomainObjectType",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutDomainObjectType.html",
+      "description": "Grants permission to put a specific domain object type in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domain-object-types*",
+        "domains*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "PutIntegration",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_PutIntegration.html",
       "description": "Grants permission to put a integration in a domain",
@@ -746,7 +1035,13 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "app-integrations:CreateDataIntegrationAssociation",
+        "app-integrations:DeleteDataIntegrationAssociation",
+        "app-integrations:GetDataIntegration",
+        "app-integrations:ListDataIntegrationAssociations",
+        "kms:CreateGrant"
+      ]
     },
     {
       "name": "PutProfileObject",
@@ -787,16 +1082,67 @@
       "dependentActions": []
     },
     {
+      "name": "StartRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartRecommender.html",
+      "description": "Grants permission to start a recommender in a domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartUploadJob",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StartUploadJob.html",
+      "description": "Grants permission to start an upload job in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopRecommender.html",
+      "description": "Grants permission to stop a recommender in a domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopUploadJob",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_StopUploadJob.html",
+      "description": "Grants permission to stop an upload job in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to adds tags to a resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "calculated-attributes",
+        "domain-object-types",
         "domains",
         "event-streams",
+        "event-triggers",
         "integrations",
-        "object-types"
+        "layouts",
+        "object-types",
+        "recommenders",
+        "segment-definitions"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -811,10 +1157,15 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "calculated-attributes",
+        "domain-object-types",
         "domains",
         "event-streams",
+        "event-triggers",
         "integrations",
-        "object-types"
+        "layouts",
+        "object-types",
+        "recommenders",
+        "segment-definitions"
       ],
       "conditionKeys": [
         "aws:TagKeys"
@@ -847,6 +1198,18 @@
       ]
     },
     {
+      "name": "UpdateDomainLayout",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomainLayout.html",
+      "description": "Grants permission to update a layout in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "layouts*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateEventTrigger",
       "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateEventTrigger.html",
       "description": "Grants permission to update an event trigger in the domain",
@@ -865,6 +1228,18 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "domains*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateRecommender",
+      "documentationUrl": "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateRecommender.html",
+      "description": "Grants permission to update a Recommender in the domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "domains*",
+        "recommenders*"
       ],
       "conditionKeys": [],
       "dependentActions": []

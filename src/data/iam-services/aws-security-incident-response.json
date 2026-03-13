@@ -41,7 +41,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateCase.html",
       "description": "Grants permission to create a case",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "case*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -64,7 +66,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_CreateMembership.html",
       "description": "Grants permission to create a membership",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "membership*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -72,6 +76,7 @@
       "dependentActions": [
         "iam:CreateServiceLinkedRole",
         "organizations:DescribeOrganization",
+        "organizations:ListAWSServiceAccessForOrganization",
         "organizations:ListDelegatedAdministrators"
       ]
     },
@@ -151,6 +156,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListInvestigations",
+      "documentationUrl": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListInvestigations.html",
+      "description": "Grants permission to list investigations for a case",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "case*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListMemberships",
       "documentationUrl": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_ListMemberships.html",
       "description": "Grants permission to list memberships",
@@ -172,6 +188,17 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "SendFeedback",
+      "documentationUrl": "https://docs.aws.amazon.com/security-ir/latest/APIReference/API_SendFeedback.html",
+      "description": "Grants permission to send feedback for investigation results",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "case*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -248,7 +275,8 @@
       ],
       "conditionKeys": [],
       "dependentActions": [
-        "iam:CreateServiceLinkedRole"
+        "iam:CreateServiceLinkedRole",
+        "organizations:DescribeOrganizationalUnit"
       ]
     },
     {

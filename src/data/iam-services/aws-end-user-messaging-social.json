@@ -17,12 +17,56 @@
       "dependentActions": []
     },
     {
+      "name": "CreateWhatsAppMessageTemplate",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplate.html",
+      "description": "Grants permission to create a WhatsApp message template",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateWhatsAppMessageTemplateFromLibrary",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateFromLibrary.html",
+      "description": "Grants permission to create a WhatsApp message template from Meta's template library",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateWhatsAppMessageTemplateMedia",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_CreateWhatsAppMessageTemplateMedia.html",
+      "description": "Grants permission to create media for WhatsApp message templates",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteWhatsAppMessageMedia",
       "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageMedia.html",
       "description": "Grants permission to delete a media object from WhatsApp",
       "accessLevel": "Write",
       "resourceTypes": [
         "phone-number-id*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteWhatsAppMessageTemplate",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_DeleteWhatsAppMessageTemplate.html",
+      "description": "Grants permission to delete a WhatsApp message template",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "waba*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -72,6 +116,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetWhatsAppMessageTemplate",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetWhatsAppMessageTemplate.html",
+      "description": "Grants permission to get details of a WhatsApp message template",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListLinkedWhatsAppBusinessAccounts",
       "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListLinkedWhatsAppBusinessAccounts.html",
       "description": "Grants permission to view all of your WhatsApp Business Accounts",
@@ -88,6 +143,28 @@
       "resourceTypes": [
         "phone-number-id",
         "waba"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListWhatsAppMessageTemplates",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppMessageTemplates.html",
+      "description": "Grants permission to list WhatsApp message templates",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListWhatsAppTemplateLibrary",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListWhatsAppTemplateLibrary.html",
+      "description": "Grants permission to list available templates from Meta's template library",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "waba*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -154,6 +231,17 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateWhatsAppMessageTemplate",
+      "documentationUrl": "https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_UpdateWhatsAppMessageTemplate.html",
+      "description": "Grants permission to update a WhatsApp message template",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "waba*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     }
   ]

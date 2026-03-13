@@ -85,6 +85,17 @@
       ]
     },
     {
+      "name": "CreateDataIntegrationSchedule",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegrationSchedule.html",
+      "description": "Grants permission to create a data integration schedule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateEventIntegration",
       "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateEventIntegration.html",
       "description": "Grants permission to create a new EventIntegration",
@@ -230,6 +241,28 @@
       "dependentActions": []
     },
     {
+      "name": "GetDataIntegrationExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationExecution.html",
+      "description": "Grants permission to get details about a data integration execution",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDataIntegrationSchedule",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetDataIntegrationSchedule.html",
+      "description": "Grants permission to get details about a data integration schedule",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetEventIntegration",
       "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_GetEventIntegration.html",
       "description": "Grants permission to view details about EventIntegrations",
@@ -266,6 +299,28 @@
       "description": "Grants permission to list DataIntegrationAssociations",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDataIntegrationExecutions",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationExecutions.html",
+      "description": "Grants permission to list data integration executions",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDataIntegrationSchedules",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_ListDataIntegrationSchedules.html",
+      "description": "Grants permission to list data integration schedules",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "data-integration*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -312,6 +367,20 @@
         "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
+    },
+    {
+      "name": "StartDataIntegrationExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_StartDataIntegrationExecution.html",
+      "description": "Grants permission to start a data integration execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "profile:CreateSegmentSnapshot",
+        "profile:CreateSnapshot"
+      ]
     },
     {
       "name": "TagResource",
@@ -393,6 +462,17 @@
         "profile:CreateSnapshot",
         "profile:GetSnapshot"
       ]
+    },
+    {
+      "name": "UpdateDataIntegrationSchedule",
+      "documentationUrl": "https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_UpdateDataIntegrationSchedule.html",
+      "description": "Grants permission to update a data integration schedule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "data-integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
     },
     {
       "name": "UpdateEventIntegration",

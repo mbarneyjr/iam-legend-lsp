@@ -5,8 +5,8 @@
   "actions": [
     {
       "name": "InvalidateCache",
-      "documentationUrl": "https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html",
-      "description": "Used to invalidate API cache upon a client request",
+      "documentationUrl": "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html",
+      "description": "Grants permission to invalidate API cache upon a client request",
       "accessLevel": "Write",
       "resourceTypes": [
         "execute-api-general*"
@@ -16,8 +16,8 @@
     },
     {
       "name": "Invoke",
-      "documentationUrl": "https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html",
-      "description": "Used to invoke an API upon a client request",
+      "documentationUrl": "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+      "description": "Grants permission to invoke an API upon a client request",
       "accessLevel": "Write",
       "resourceTypes": [
         "execute-api-domain",
@@ -28,8 +28,8 @@
     },
     {
       "name": "ManageConnections",
-      "documentationUrl": "https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html",
-      "description": "ManageConnections controls access to the @connections API",
+      "documentationUrl": "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-control-access-iam.html",
+      "description": "Grants permission to access the Websocket @connections Route",
       "accessLevel": "Write",
       "resourceTypes": [
         "execute-api-general*"

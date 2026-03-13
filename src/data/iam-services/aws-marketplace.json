@@ -13,6 +13,15 @@
       "dependentActions": []
     },
     {
+      "name": "AcceptAgreementPaymentRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to accept a payment request",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "AcceptAgreementRequest",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "description": "Grants permission to users to accept their agreement requests. Note that this action is not applicable to Marketplace purchases",
@@ -25,6 +34,15 @@
       "name": "CancelAgreement",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "description": "Grants permission to users to cancel their agreements. Note that this action is not applicable to Marketplace purchases",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CancelAgreementPaymentRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to cancel a payment request",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -76,6 +94,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetAgreementPaymentRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to view details for a payment request",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetAgreementRequest",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "description": "Grants permission to users to view the details of their subscription requests for data products that require subscription verification",
@@ -112,6 +139,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListAgreementPaymentRequests",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to list payment requests for an agreement",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListAgreementRequests",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "description": "Grants permission to users to list their subscription requests for products that require subscription verification",
@@ -139,10 +175,28 @@
       "dependentActions": []
     },
     {
+      "name": "RejectAgreementPaymentRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to reject a payment request",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "SearchAgreements",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
       "description": "Grants permission to users to search their agreements",
       "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SendAgreementPaymentRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-iam-users-groups-policies.html",
+      "description": "Grants permission to users to send payment request",
+      "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

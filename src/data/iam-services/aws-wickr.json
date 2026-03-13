@@ -4,6 +4,72 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awswickr.html",
   "actions": [
     {
+      "name": "BatchCreateUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch create users in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchDeleteUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch delete users from a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchLookupUserUname",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch lookup user unames in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchReinviteUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch reinvite users in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchResetDevicesForUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch reset devices for a user in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchToggleUserSuspendStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to batch toggle user suspend status in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateAdminSession",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
       "description": "Grants permission to create and manage Wickr networks",
@@ -15,29 +81,289 @@
       "dependentActions": []
     },
     {
+      "name": "CreateBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to create a bot in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDataRetentionBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to create a data retention bot in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDataRetentionBotChallenge",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to create a data retention bot challenge in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateNetwork",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
-      "description": "Grants permission to create a new wickr network",
+      "description": "Grants permission to create a new Wickr network",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateSecurityGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to create a security group in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to delete a bot from a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDataRetentionBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to delete a data retention bot from a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "DeleteNetwork",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
-      "description": "Grants permission to create a delete Wickr networks",
+      "description": "Grants permission to delete Wickr networks",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSecurityGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to delete a security group from a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get bot information in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetBotsCount",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get bot count for a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDataRetentionBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get data retention bot information in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetGuestUserHistoryCount",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get guest user history count for a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get details of a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetNetworkSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get network settings for a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetOidcInfo",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get OIDC information for a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetSecurityGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get security group information in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get information about a user in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetUsersCount",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to get user count for a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListBlockedGuestUsers",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list blocked guest users in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListBots",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list bots in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDevicesForUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list devices for a user in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListGuestUsers",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list guest users in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "ListNetworks",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
-      "description": "Grants permission to view Wickr networks",
-      "accessLevel": "Write",
+      "description": "Grants permission to list Wickr networks",
+      "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSecurityGroupUsers",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list users in a security group in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSecurityGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list security groups in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -46,14 +372,49 @@
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
       "description": "Grants permission to list the tags applied to a Wickr resource",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListUsers",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to list users in a Wickr network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RegisterOidcConfig",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to register OIDC configuration for a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RegisterOidcConfigTest",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to test OIDC configuration for a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
-      "description": "Grants permission to add tags to a specified wickr resource",
+      "description": "Grants permission to add tags to a specified Wickr resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "network*"
@@ -68,7 +429,7 @@
     {
       "name": "UntagResource",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
-      "description": "Grants permission to untag the specified tags from the specified wickr resource",
+      "description": "Grants permission to untag the specified tags from the specified Wickr resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "network*"
@@ -79,9 +440,75 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateBot",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update a bot in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateDataRetention",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update data retention settings in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateGuestUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update guest user status in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateNetworkDetails",
       "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
       "description": "Grants permission to update Wickr network details",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateNetworkSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update network settings for a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSecurityGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update a security group in a Wickr network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateUser",
+      "documentationUrl": "https://docs.aws.amazon.com/wickr/latest/adminguide/security-iam.html",
+      "description": "Grants permission to update user information in a Wickr network",
       "accessLevel": "Write",
       "resourceTypes": [
         "network*"

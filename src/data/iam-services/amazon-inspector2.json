@@ -13,6 +13,24 @@
       "dependentActions": []
     },
     {
+      "name": "BatchAssociateCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchAssociateCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to associate multiple code repositories with an Amazon Inspector code security scan configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchDisassociateCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchDisassociateCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to disassociate multiple code repositories from an Amazon Inspector code security scan configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "BatchGetAccountStatus",
       "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchGetAccountStatus.html",
       "description": "Grants permission to retrieve information about Amazon Inspector accounts for an account",
@@ -100,6 +118,34 @@
       "dependentActions": []
     },
     {
+      "name": "CreateCodeSecurityIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityIntegration.html",
+      "description": "Grants permission to create a code security integration with a source code repository provider",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Integration*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to create a scan configuration for code security scanning",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Scan Configuration*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateFilter",
       "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_CreateFilter.html",
       "description": "Grants permission to create and define the settings for a findings filter",
@@ -142,6 +188,28 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCodeSecurityIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityIntegration.html",
+      "description": "Grants permission to delete a code security integration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_DeleteCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to delete a code security scan configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Scan Configuration*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -223,6 +291,42 @@
       "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCisScanResultDetails.html",
       "description": "Grants permission to retrieve information about all details pertaining to one CIS scan and one targeted resource",
       "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetClustersForImage",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetClustersForImage.html",
+      "description": "Grants permission to get cluster information for a given a continuously scanned amazon Ecr image",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCodeSecurityIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityIntegration.html",
+      "description": "Grants permission to retrieve information about a code security integration",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCodeSecurityScan",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScan.html",
+      "description": "Grants permission to retrieve information about a specific code security scan",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to retrieve information about a code security scan configuration",
+      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -330,6 +434,33 @@
       "name": "ListCisScans",
       "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCisScans.html",
       "description": "Grants permission to retrieve information about completed CIS scans",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCodeSecurityIntegrations",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityIntegrations.html",
+      "description": "Grants permission to list all code security integrations in your account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCodeSecurityScanConfigurationAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurationAssociations.html",
+      "description": "Grants permission to list the associations between code repositories and Amazon Inspector code security scan configurations",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCodeSecurityScanConfigurations",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListCodeSecurityScanConfigurations.html",
+      "description": "Grants permission to list all code security scan configurations in your account",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -462,6 +593,15 @@
       "dependentActions": []
     },
     {
+      "name": "StartCodeSecurityScan",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StartCodeSecurityScan.html",
+      "description": "Grants permission to initiate a code security scan on a specified repository",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StopCisSession",
       "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_StopCisSession.html",
       "description": "Grants permission to stop a CIS scan session",
@@ -477,11 +617,11 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "CISScan Configuration",
+        "CodeSecurity Integration",
+        "CodeSecurity Scan Configuration",
         "Filter"
       ],
       "conditionKeys": [
-        "inspector2:CisScan Configuration",
-        "inspector2:Filter",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}"
@@ -495,11 +635,11 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "CISScan Configuration",
+        "CodeSecurity Integration",
+        "CodeSecurity Scan Configuration",
         "Filter"
       ],
       "conditionKeys": [
-        "inspector2:CisScan Configuration",
-        "inspector2:Filter",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -512,6 +652,32 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "CISScan Configuration*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCodeSecurityIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityIntegration.html",
+      "description": "Grants permission to update an existing code security integration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Integration*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCodeSecurityScanConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/inspector/v2/APIReference/API_UpdateCodeSecurityScanConfiguration.html",
+      "description": "Grants permission to update an existing code security scan configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CodeSecurity Scan Configuration*"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"

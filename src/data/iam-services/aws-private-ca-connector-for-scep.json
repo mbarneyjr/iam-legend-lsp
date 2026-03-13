@@ -8,7 +8,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html",
       "description": "Grants permission to create a Challenge for a Connector",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Connector*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"

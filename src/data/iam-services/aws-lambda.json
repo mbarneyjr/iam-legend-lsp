@@ -29,6 +29,17 @@
       "dependentActions": []
     },
     {
+      "name": "CheckpointDurableExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_CheckpointDurableExecution.html",
+      "description": "Grants permission to save the progress of an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateAlias",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html",
       "description": "Grants permission to create an alias for a Lambda function version",
@@ -38,6 +49,26 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "CreateCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateCapacityProvider.html",
+      "description": "Grants permission to create an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacityProvider*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "lambda:SecurityGroupIds",
+        "lambda:SubnetIds"
+      ],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole",
+        "kms:DescribeKey"
+      ]
     },
     {
       "name": "CreateCodeSigningConfig",
@@ -82,7 +113,8 @@
         "aws:TagKeys"
       ],
       "dependentActions": [
-        "iam:PassRole"
+        "iam:PassRole",
+        "lambda:PassCapacityProvider"
       ]
     },
     {
@@ -106,6 +138,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCapacityProvider.html",
+      "description": "Grants permission to delete an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacityProvider*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -258,12 +301,56 @@
       "dependentActions": []
     },
     {
+      "name": "GetCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetCapacityProvider.html",
+      "description": "Grants permission to view details about an AWS Lambda capacity provider",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "capacityProvider*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetCodeSigningConfig",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetCodeSigningConfig.html",
       "description": "Grants permission to view details about an AWS Lambda code signing config",
       "accessLevel": "Read",
       "resourceTypes": [
         "codesigning config*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDurableExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecution.html",
+      "description": "Grants permission to view details of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDurableExecutionHistory",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionHistory.html",
+      "description": "Grants permission to view execution history of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDurableExecutionState",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetDurableExecutionState.html",
+      "description": "Grants permission to view current state of an AWS Lambda durable execution",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "durableexecution*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -340,6 +427,17 @@
       "name": "GetFunctionRecursionConfig",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionRecursionConfig.html",
       "description": "Grants permission to view the recursion configuration of an AWS Lambda function",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFunctionScalingConfig",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionScalingConfig.html",
+      "description": "Grants permission to view the scaling configuration of an AWS Lambda function running on a capacity provider",
       "accessLevel": "Read",
       "resourceTypes": [
         "function*"
@@ -437,7 +535,8 @@
         "function*"
       ],
       "conditionKeys": [
-        "lambda:EventSourceToken"
+        "lambda:EventSourceToken",
+        "lambda:InvokedViaFunctionUrl"
       ],
       "dependentActions": []
     },
@@ -468,11 +567,31 @@
       "dependentActions": []
     },
     {
+      "name": "ListCapacityProviders",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListCapacityProviders.html",
+      "description": "Grants permission to retrieve a list of AWS Lambda capacity providers",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListCodeSigningConfigs",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListCodeSigningConfigs.html",
       "description": "Grants permission to retrieve a list of AWS Lambda code signing configs",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDurableExecutionsByFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListDurableExecutionsByFunction.html",
+      "description": "Grants permission to retrieve a list of AWS Lambda durable executions of an AWS Lambda function",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "function*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -507,6 +626,17 @@
       "conditionKeys": [
         "lambda:FunctionUrlAuthType"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFunctionVersionsByCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionVersionsByCapacityProvider.html",
+      "description": "Grants permission to retrieve a list of AWS Lambda function versions by the capacity provider assigned",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "capacityProvider*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -561,9 +691,10 @@
     {
       "name": "ListTags",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html",
-      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping or code signing configuration resource",
+      "description": "Grants permission to retrieve a list of tags for an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
       "accessLevel": "Read",
       "resourceTypes": [
+        "capacityProvider",
         "codesigning config",
         "eventSourceMapping",
         "function"
@@ -578,6 +709,17 @@
       "accessLevel": "List",
       "resourceTypes": [
         "function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PassCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html",
+      "description": "Grants permission to pass an AWS Lambda capacity provider to a service",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacityProvider*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -652,6 +794,17 @@
       "dependentActions": []
     },
     {
+      "name": "PutFunctionScalingConfig",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionScalingConfig.html",
+      "description": "Grants permission to update the scaling configuration of an AWS Lambda function running on a capacity provider",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutProvisionedConcurrencyConfig",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html",
       "description": "Grants permission to configure provisioned concurrency for an AWS Lambda function's alias or version",
@@ -700,11 +853,56 @@
       "dependentActions": []
     },
     {
+      "name": "SendDurableExecutionCallbackFailure",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackFailure.html",
+      "description": "Grants permission to send a failure response for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SendDurableExecutionCallbackHeartbeat",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackHeartbeat.html",
+      "description": "Grants permission to send a heartbeat for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SendDurableExecutionCallbackSuccess",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_SendDurableExecutionCallbackSuccess.html",
+      "description": "Grants permission to send a successful response for a callback operation in an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopDurableExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_StopDurableExecution.html",
+      "description": "Grants permission to stop an AWS Lambda durable execution",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "durableexecution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html",
-      "description": "Grants permission to add tags to an AWS Lambda function, event source mapping or code signing configuration resource",
+      "description": "Grants permission to add tags to an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "capacityProvider",
         "codesigning config",
         "eventSourceMapping",
         "function"
@@ -718,9 +916,10 @@
     {
       "name": "UntagResource",
       "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html",
-      "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping or code signing configuration resource",
+      "description": "Grants permission to remove tags from an AWS Lambda function, event source mapping, capacity provider, or code signing configuration resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "capacityProvider",
         "codesigning config",
         "eventSourceMapping",
         "function"
@@ -737,6 +936,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCapacityProvider",
+      "documentationUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCapacityProvider.html",
+      "description": "Grants permission to update an AWS Lambda capacity provider",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacityProvider*"
       ],
       "conditionKeys": [],
       "dependentActions": []

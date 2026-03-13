@@ -37,6 +37,18 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html",
+      "description": "Grants permission to associate a web ACL and a resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "api",
+        "graphqlapi"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateApi",
       "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApi.html",
       "description": "Grants permission to create an API",
@@ -297,6 +309,18 @@
       "dependentActions": []
     },
     {
+      "name": "DisassociateWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html",
+      "description": "Grants permission to disassociate a web ACL and a resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "api",
+        "graphqlapi"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "EvaluateCode",
       "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_EvaluateCode.html",
       "description": "Grants permission to evaluate code with a runtime and context",
@@ -521,6 +545,18 @@
       "dependentActions": []
     },
     {
+      "name": "GetWebACLForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html",
+      "description": "Grants permission to get associated web ACLs for a resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "api",
+        "graphqlapi"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GraphQL",
       "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-iam-authorization",
       "description": "Grants permission to send a GraphQL query to a GraphQL API",
@@ -622,6 +658,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListResourcesForWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html",
+      "description": "Grants permission to get associated resources for a web ACL",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListSourceApiAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListSourceApiAssociations.html",
       "description": "Grants permission to list source APIs associated to a given merged API",
@@ -686,7 +731,7 @@
       "name": "SetWebACL",
       "documentationUrl": "https://docs.aws.amazon.com/appsync/latest/devguide/WAF-Integration.html",
       "description": "Grants permission to set a web ACL",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

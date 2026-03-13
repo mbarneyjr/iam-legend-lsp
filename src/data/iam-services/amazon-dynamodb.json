@@ -4,6 +4,17 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazondynamodb.html",
   "actions": [
     {
+      "name": "AssociateTableReplica",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html",
+      "description": "Grants permission to create multi account global table replica",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "table*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "BatchGetItem",
       "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
       "description": "Grants permission to return the attributes of one or more items from one or more tables",
@@ -74,6 +85,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateGlobalTableWitness",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html",
+      "description": "Grants permission to add a Witness to a Global Table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "table*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateTable",
       "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html",
       "description": "Grants permission to the CreateTable operation adds a new table to your account",
@@ -105,6 +127,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "backup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteGlobalTableWitness",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html",
+      "description": "Grants permission to remove a Witness from a Global Table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "table*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -434,6 +467,18 @@
       "dependentActions": []
     },
     {
+      "name": "InjectError",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2gt_IAM.html",
+      "description": "Grants permission to start experiments on a Global Table",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "dynamodb:FisActionId",
+        "dynamodb:FisTargetArns"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListBackups",
       "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html",
       "description": "Grants permission to list backups associated with the account and endpoint",
@@ -626,6 +671,28 @@
         "dynamodb:ReturnValues",
         "dynamodb:Select"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "ReadDataForReplication",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html",
+      "description": "Grants permission to read data from a multi account global table replica",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "table*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ReplicateSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html",
+      "description": "Grants permission to configure settings for a multi account global table replica",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "table*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -855,6 +922,17 @@
       "name": "UpdateTimeToLive",
       "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTimeToLive.html",
       "description": "Grants permission to enable or disable TTL for the specified table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "table*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "WriteDataForReplication",
+      "documentationUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_MA_security.html",
+      "description": "Grants permission to write data to a multi account global table replica",
       "accessLevel": "Write",
       "resourceTypes": [
         "table*"

@@ -37,6 +37,17 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateOrganizationalUnit",
+      "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_AssociateOrganizationalUnit.html",
+      "description": "Grants permission to associate an Organizational Unit to a particular Notification Configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "NotificationConfiguration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateEventRule",
       "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_CreateEventRule.html",
       "description": "Grants permission to create a new EventRule, associating it with a NotificationConfiguration",
@@ -92,7 +103,7 @@
       "name": "DisableNotificationsAccessForOrganization",
       "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisableNotificationsAccessForOrganization.html",
       "description": "Grants permission to disable Service Trust for AWS User Notifications",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": [
@@ -133,10 +144,21 @@
       "dependentActions": []
     },
     {
+      "name": "DisassociateOrganizationalUnit",
+      "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_DisassociateOrganizationalUnit.html",
+      "description": "Grants permission to disassociate an Organizational Unit to a particular Notification Configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "NotificationConfiguration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "EnableNotificationsAccessForOrganization",
       "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_EnableNotificationsAccessForOrganization.html",
       "description": "Grants permission to enable Service Trust for AWS User Notifications",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": [
@@ -287,6 +309,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListMemberAccounts",
+      "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListMemberAccounts.html",
+      "description": "Grants permission to list Member Accounts for a Notification Configuration",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "NotificationConfiguration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListNotificationConfigurations",
       "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListNotificationConfigurations.html",
       "description": "Grants permission to list NotificationConfigurations",
@@ -310,6 +343,17 @@
       "description": "Grants permission to list NotificationHubs",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListOrganizationalUnits",
+      "documentationUrl": "https://docs.aws.amazon.com/notifications/latest/APIReference/API_ListOrganizationalUnits.html",
+      "description": "Grants permission to list Organizational Units for a Notification Configuration",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "NotificationConfiguration*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },

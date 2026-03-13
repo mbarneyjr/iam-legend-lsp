@@ -140,6 +140,17 @@
       ]
     },
     {
+      "name": "CreateCoreNetworkPrefixListAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateCoreNetworkPrefixListAssociation.html",
+      "description": "Grants permission to create a prefix list core network association",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateDevice",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html",
       "description": "Grants permission to create a new device",
@@ -358,6 +369,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteCoreNetworkPrefixListAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteCoreNetworkPrefixListAssociation.html",
+      "description": "Grants permission to delete a prefix list core network association",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteDevice",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html",
       "description": "Grants permission to delete a device",
@@ -409,7 +431,7 @@
       "name": "DeleteResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteResourcePolicy.html",
       "description": "Grants permission to delete a resource",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "core-network*"
       ],
@@ -819,6 +841,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListAttachmentRoutingPolicyAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachmentRoutingPolicyAssociations.html",
+      "description": "Grants permission to list all routing policies associated to core network attachments",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListAttachments",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html",
       "description": "Grants permission to describe attachments",
@@ -844,6 +877,28 @@
       "name": "ListCoreNetworkPolicyVersions",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPolicyVersions.html",
       "description": "Grants permission to list core network policy versions",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCoreNetworkPrefixListAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkPrefixListAssociations.html",
+      "description": "Grants permission to list core network prefix list associaitons",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCoreNetworkRoutingInformation",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListCoreNetworkRoutingInformation.html",
+      "description": "Grants permission to list core network routing information",
       "accessLevel": "List",
       "resourceTypes": [
         "core-network*"
@@ -900,6 +955,18 @@
       "dependentActions": []
     },
     {
+      "name": "PutAttachmentRoutingPolicyLabel",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutAttachmentRoutingPolicyLabel.html",
+      "description": "Grants permission to put an attachment routing policy label",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "attachment*",
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutCoreNetworkPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutCoreNetworkPolicy.html",
       "description": "Grants permission to create a core network policy",
@@ -916,7 +983,7 @@
       "name": "PutResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_PutResourcePolicy.html",
       "description": "Grants permission to create or update a resource policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "core-network*"
       ],
@@ -948,6 +1015,18 @@
       "dependentActions": []
     },
     {
+      "name": "RemoveAttachmentRoutingPolicyLabel",
+      "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RemoveAttachmentRoutingPolicyLabel.html",
+      "description": "Grants permission to remove an attachment routing policy label",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "attachment*",
+        "core-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "RestoreCoreNetworkPolicyVersion",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RestoreCoreNetworkPolicyVersion.html",
       "description": "Grants permission to restore the core network policy to a previous version",
@@ -964,7 +1043,7 @@
       "name": "StartOrganizationServiceAccessUpdate",
       "documentationUrl": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_StartOrganizationServiceAccessUpdate.html",
       "description": "Grants permission to start organization service access update",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

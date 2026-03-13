@@ -45,6 +45,24 @@
       "dependentActions": []
     },
     {
+      "name": "CreateResourceExplorerSetup",
+      "documentationUrl": "API_CreateResourceExplorerSetup.html",
+      "description": "Grants permission to create resource explorer setup",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateStreamingAccessForService",
+      "documentationUrl": "API_CreateStreamingAccessForService.html",
+      "description": "Grants permission to create resource explorer streaming access",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateView",
       "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_CreateView.html",
       "description": "Grants permission to create a view that users can query",
@@ -68,13 +86,30 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteResourceExplorerSetup",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_DeleteResourceExplorerSetup.html",
+      "description": "Grants permission to delete resource explorer setup",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html",
       "description": "Grants permission to delete the specified view's resource policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "view*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteStreamingAccessForService",
+      "description": "Grants permission to delete resource explorer streaming access",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -137,6 +172,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetResourceExplorerSetup",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetResourceExplorerSetup.html",
+      "description": "Grants permission to get resource explorer setup",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html",
       "description": "Grants permission to retrieve information about the specified view's resource policy",
@@ -144,6 +188,24 @@
       "resourceTypes": [
         "view*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetServiceIndex",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceIndex.html",
+      "description": "Grants permission to get service index",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetServiceView",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_GetServiceView.html",
+      "description": "Grants permission to get service view",
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -186,6 +248,33 @@
       "dependentActions": []
     },
     {
+      "name": "ListServiceIndexes",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceIndexes.html",
+      "description": "Grants permission to list service indexes in all AWS Regions",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListServiceViews",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListServiceViews.html",
+      "description": "Grants permission to list service views in all AWS Regions",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListStreamingAccessForServices",
+      "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListStreamingAccessForServices.html",
+      "description": "Grants permission to list streaming access for services",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListSupportedResourceTypes",
       "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/apireference/API_ListSupportedResourceTypes.html",
       "description": "Grants permission to retrieve a list of all resource types currently supported by Resource Explorer",
@@ -219,7 +308,7 @@
       "name": "PutResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views-share.html",
       "description": "Grants permission to update the specified view's resource policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "view*"
       ],

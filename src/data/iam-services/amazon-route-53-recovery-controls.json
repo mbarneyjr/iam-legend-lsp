@@ -8,9 +8,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html",
       "description": "Grants permission to create a cluster",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "cluster*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -23,7 +21,7 @@
       "description": "Grants permission to create a control panel",
       "accessLevel": "Write",
       "resourceTypes": [
-        "controlpanel*"
+        "cluster*"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -37,7 +35,7 @@
       "description": "Grants permission to create a routing control",
       "accessLevel": "Write",
       "resourceTypes": [
-        "routingcontrol*"
+        "cluster*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -48,7 +46,7 @@
       "description": "Grants permission to create a safety rule",
       "accessLevel": "Write",
       "resourceTypes": [
-        "safetyrule*"
+        "cluster*"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -82,7 +80,7 @@
       "name": "DeleteResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.failover-different-accounts.html",
       "description": "Grants permission to delete the RAM access control policy for a cluster",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "cluster*"
       ],
@@ -145,17 +143,6 @@
       "dependentActions": []
     },
     {
-      "name": "DescribeRoutingControlByName",
-      "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn.html",
-      "description": "Grants permission to describe a routing control",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "routingcontrol*"
-      ],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
       "name": "DescribeSafetyRule",
       "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/safetyrule-safetyrulearn.html",
       "description": "Grants permission to describe a safety rule",
@@ -182,7 +169,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/routingcontrol-routingcontrolarn-associatedroute53healthchecks.html",
       "description": "Grants permission to list associated Route 53 health checks",
       "accessLevel": "List",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "routingcontrol*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -209,7 +198,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/controlpanel-controlpanelarn-routingcontrols.html",
       "description": "Grants permission to list routing controls",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "controlpanel*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -229,7 +220,11 @@
       "documentationUrl": "https://docs.aws.amazon.com/recovery-cluster/latest/api/tags-resource-arn.html",
       "description": "Grants permission to list tags for a resource",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "cluster",
+        "controlpanel",
+        "safetyrule"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -237,7 +232,7 @@
       "name": "PutResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.failover-different-accounts.html",
       "description": "Grants permission to define the RAM access control policy for a cluster",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "cluster*"
       ],

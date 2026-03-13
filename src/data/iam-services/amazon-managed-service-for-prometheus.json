@@ -5,7 +5,7 @@
   "actions": [
     {
       "name": "CreateAlertManagerAlerts",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-CreateAlertManagerAlerts.html",
       "description": "Grants permission to create alerts",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -18,7 +18,7 @@
     },
     {
       "name": "CreateAlertManagerDefinition",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateAlertManagerDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAlertManagerDefinition.html",
       "description": "Grants permission to create an alert manager definition",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -30,8 +30,22 @@
       "dependentActions": []
     },
     {
+      "name": "CreateAnomalyDetector",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateAnomalyDetector.html",
+      "description": "Grants permission to create an anomaly detector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateLoggingConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateLoggingConfiguration.html",
       "description": "Grants permission to create a logging configuration",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -43,8 +57,21 @@
       "dependentActions": []
     },
     {
+      "name": "CreateQueryLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateQueryLoggingConfiguration.html",
+      "description": "Grants permission to create a query logging configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateRuleGroupsNamespace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateRuleGroupsNamespace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateRuleGroupsNamespace.html",
       "description": "Grants permission to create a rule groups namespace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -58,7 +85,7 @@
     },
     {
       "name": "CreateScraper",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateScraper",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateScraper.html",
       "description": "Grants permission to create a scraper",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -80,7 +107,7 @@
     },
     {
       "name": "CreateWorkspace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-CreateWorkspace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_CreateWorkspace.html",
       "description": "Grants permission to create a workspace",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -92,7 +119,7 @@
     },
     {
       "name": "DeleteAlertManagerDefinition",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAlertManagerDefinition.html",
       "description": "Grants permission to delete an alert manager definition",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -105,7 +132,7 @@
     },
     {
       "name": "DeleteAlertManagerSilence",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteAlertManagerSilence",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-DeleteAlertManagerSilence.html",
       "description": "Grants permission to delete a silence",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -117,8 +144,22 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteAnomalyDetector",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteAnomalyDetector.html",
+      "description": "Grants permission to delete an anomaly detector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "anomalydetector*",
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteLoggingConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteLoggingConfiguration.html",
       "description": "Grants permission to delete a logging configuration",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -130,8 +171,34 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteQueryLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteQueryLoggingConfiguration.html",
+      "description": "Grants permission to delete a query logging configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteResourcePolicy.html",
+      "description": "Grants permission to delete workspace resource policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteRuleGroupsNamespace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteRuleGroupsNamespace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteRuleGroupsNamespace.html",
       "description": "Grants permission to delete a rule groups namespace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -144,7 +211,7 @@
     },
     {
       "name": "DeleteScraper",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteScraper",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraper.html",
       "description": "Grants permission to delete a scraper",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -156,8 +223,21 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteScraperLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteScraperLoggingConfiguration.html",
+      "description": "Grants permission to delete a scraper logging configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "scraper*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteWorkspace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DeleteWorkspace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DeleteWorkspace.html",
       "description": "Grants permission to delete a workspace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -170,7 +250,7 @@
     },
     {
       "name": "DescribeAlertManagerDefinition",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeAlertManagerDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAlertManagerDefinition.html",
       "description": "Grants permission to describe an alert manager definition",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -182,8 +262,22 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeAnomalyDetector",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeAnomalyDetector.html",
+      "description": "Grants permission to describe an anomaly detector",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "anomalydetector*",
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeLoggingConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeLoggingConfiguration.html",
       "description": "Grants permission to describe a logging configuration",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -195,8 +289,34 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeQueryLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeQueryLoggingConfiguration.html",
+      "description": "Grants permission to describe a query logging configuration",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeResourcePolicy.html",
+      "description": "Grants permission to describe workspace resource policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeRuleGroupsNamespace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeRuleGroupsNamespace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeRuleGroupsNamespace.html",
       "description": "Grants permission to describe a rule groups namespace",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -209,7 +329,7 @@
     },
     {
       "name": "DescribeScraper",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeScraper",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraper.html",
       "description": "Grants permission to describe a scraper",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -221,8 +341,21 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeScraperLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeScraperLoggingConfiguration.html",
+      "description": "Grants permission to describe a scraper logging configuration",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "scraper*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeWorkspace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspace.html",
       "description": "Grants permission to describe a workspace",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -235,7 +368,7 @@
     },
     {
       "name": "DescribeWorkspaceConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-DescribeWorkspaceConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_DescribeWorkspaceConfiguration.html",
       "description": "Grants permission to describe workspace configuration",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -248,7 +381,7 @@
     },
     {
       "name": "GetAlertManagerSilence",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerSilence",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerSilence.html",
       "description": "Grants permission to get a silence",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -261,7 +394,7 @@
     },
     {
       "name": "GetAlertManagerStatus",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetAlertManagerStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetAlertManagerStatus.html",
       "description": "Grants permission to get current status of an alertmanager",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -274,7 +407,7 @@
     },
     {
       "name": "GetDefaultScraperConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetDefaultScraperConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_GetDefaultScraperConfiguration.html",
       "description": "Grants permission to get default scraper configuration",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -283,7 +416,7 @@
     },
     {
       "name": "GetLabels",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetLabels",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetLabels.html",
       "description": "Grants permission to retrieve AMP workspace labels",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -296,7 +429,7 @@
     },
     {
       "name": "GetMetricMetadata",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetMetricMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetMetricMetadata.html",
       "description": "Grants permission to retrieve the metadata for AMP workspace metrics",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -309,7 +442,7 @@
     },
     {
       "name": "GetSeries",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-GetSeries",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-GetSeries.html",
       "description": "Grants permission to retrieve AMP workspace time series data",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -322,7 +455,7 @@
     },
     {
       "name": "ListAlertManagerAlertGroups",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlertGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlertGroups.html",
       "description": "Grants permission to list groups",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -335,7 +468,7 @@
     },
     {
       "name": "ListAlertManagerAlerts",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerAlerts.html",
       "description": "Grants permission to list alerts",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -348,7 +481,7 @@
     },
     {
       "name": "ListAlertManagerReceivers",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerReceivers",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerReceivers.html",
       "description": "Grants permission to list receivers",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -361,7 +494,7 @@
     },
     {
       "name": "ListAlertManagerSilences",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlertManagerSilences",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlertManagerSilences.html",
       "description": "Grants permission to list silences",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -374,7 +507,7 @@
     },
     {
       "name": "ListAlerts",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListAlerts.html",
       "description": "Grants permission to list active alerts",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -386,8 +519,21 @@
       "dependentActions": []
     },
     {
+      "name": "ListAnomalyDetectors",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListAnomalyDetectors.html",
+      "description": "Grants permission to list anomaly detectors",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListRuleGroupsNamespaces",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRuleGroupsNamespaces",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListRuleGroupsNamespaces.html",
       "description": "Grants permission to list rule groups namespaces",
       "accessLevel": "List",
       "resourceTypes": [
@@ -400,7 +546,7 @@
     },
     {
       "name": "ListRules",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListRules",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-ListRules.html",
       "description": "Grants permission to list alerting and recording rules",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -413,7 +559,7 @@
     },
     {
       "name": "ListScrapers",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListScrapers",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListScrapers.html",
       "description": "Grants permission to list scrapers",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -422,10 +568,11 @@
     },
     {
       "name": "ListTagsForResource",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list tags on an AMP resource",
       "accessLevel": "Read",
       "resourceTypes": [
+        "anomalydetector",
         "rulegroupsnamespace",
         "scraper",
         "workspace"
@@ -438,7 +585,7 @@
     },
     {
       "name": "ListWorkspaces",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-ListWorkspaces",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_ListWorkspaces.html",
       "description": "Grants permission to list workspaces",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -446,8 +593,21 @@
       "dependentActions": []
     },
     {
+      "name": "PreviewAnomalyDetector",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PreviewAnomalyDetector.html",
+      "description": "Grants permission to preview anomaly detection on AMP workspace metrics",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "PutAlertManagerDefinition",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAlertManagerDefinition.html",
       "description": "Grants permission to update an alert manager definition",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -460,7 +620,7 @@
     },
     {
       "name": "PutAlertManagerSilences",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutAlertManagerSilences",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-PutAlertManagerSilences.html",
       "description": "Grants permission to create or update a silence",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -472,8 +632,35 @@
       "dependentActions": []
     },
     {
+      "name": "PutAnomalyDetector",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutAnomalyDetector.html",
+      "description": "Grants permission to update an anomaly detector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "anomalydetector*",
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "PutResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutResourcePolicy.html",
+      "description": "Grants permission to create and update workspace resource policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "PutRuleGroupsNamespace",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-PutRuleGroupsNamespace",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_PutRuleGroupsNamespace.html",
       "description": "Grants permission to update a rule groups namespace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -486,7 +673,7 @@
     },
     {
       "name": "QueryMetrics",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-QueryMetrics",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-QueryMetrics.html",
       "description": "Grants permission to run a query on AMP workspace metrics",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -499,7 +686,7 @@
     },
     {
       "name": "RemoteWrite",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-RemoteWrite",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-RemoteWrite.html",
       "description": "Grants permission to perform a remote write operation to initiate the streaming of metrics to AMP workspace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -512,10 +699,11 @@
     },
     {
       "name": "TagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to tag an AMP resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "anomalydetector",
         "rulegroupsnamespace",
         "scraper",
         "workspace"
@@ -528,10 +716,11 @@
     },
     {
       "name": "UntagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UntagResource.html",
       "description": "Grants permission to untag an AMP resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "anomalydetector",
         "rulegroupsnamespace",
         "scraper",
         "workspace"
@@ -543,7 +732,7 @@
     },
     {
       "name": "UpdateLoggingConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateLoggingConfiguration.html",
       "description": "Grants permission to update a logging configuration",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -555,8 +744,21 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateQueryLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateQueryLoggingConfiguration.html",
+      "description": "Grants permission to update a query logging configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workspace*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateScraper",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateScraper",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraper.html",
       "description": "Grants permission to update a scraper",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -572,8 +774,21 @@
       ]
     },
     {
+      "name": "UpdateScraperLoggingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateScraperLoggingConfiguration.html",
+      "description": "Grants permission to put a scraper logging configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "scraper*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateWorkspaceAlias",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceAlias",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceAlias.html",
       "description": "Grants permission to modify the alias of existing AMP workspace",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -586,7 +801,7 @@
     },
     {
       "name": "UpdateWorkspaceConfiguration",
-      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-UpdateWorkspaceConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/prometheus/latest/APIReference/API_UpdateWorkspaceConfiguration.html",
       "description": "Grants permission to update workspace configuration",
       "accessLevel": "Write",
       "resourceTypes": [

@@ -22,6 +22,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListEfficiencyMetrics",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListEfficiencyMetrics.html",
+      "description": "Grants permission to list efficiency metric scores by group",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListEnrollmentStatuses",
       "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostOptimizationHub_ListEnrollmentStatuses.html",
       "description": "Grants permission to list enrollment statuses for the specified account or all members under a management account",

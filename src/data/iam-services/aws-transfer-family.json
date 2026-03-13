@@ -26,7 +26,8 @@
       ],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -37,10 +38,14 @@
       "documentationUrl": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateConnector.html",
       "description": "Grants permission to create a connector",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "profile"
+      ],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "transfer:RequestConnectorProtocol"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -54,7 +59,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -66,7 +72,11 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "transfer:RequestServerEndpointType",
+        "transfer:RequestServerDomain",
+        "transfer:RequestServerProtocols"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -82,7 +92,8 @@
       ],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -96,7 +107,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -110,7 +122,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -395,7 +408,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -409,7 +423,8 @@
       ],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -754,7 +769,8 @@
       "description": "Grants permission to update a connector",
       "accessLevel": "Write",
       "resourceTypes": [
-        "connector*"
+        "connector*",
+        "profile"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -791,7 +807,10 @@
       "resourceTypes": [
         "server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "transfer:RequestServerEndpointType",
+        "transfer:RequestServerProtocols"
+      ],
       "dependentActions": [
         "iam:PassRole"
       ]

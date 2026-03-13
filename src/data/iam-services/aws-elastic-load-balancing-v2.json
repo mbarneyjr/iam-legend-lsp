@@ -59,6 +59,15 @@
       "dependentActions": []
     },
     {
+      "name": "AllowVendedLogDeliveryForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AllowVendedLogDeliveryForResource.html",
+      "description": "Grants permission to configure vended log delivery for load balancers",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateListener",
       "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html",
       "description": "Grants permission to create a listener for the specified Application Load Balancer",
@@ -159,6 +168,20 @@
       ]
     },
     {
+      "name": "CreateWebACLAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL",
+      "description": "Grants permission to associate WAF WebACL to the specified load balancer",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "loadbalancer/app/*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteListener",
       "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteListener.html",
       "description": "Grants permission to delete the specified listener",
@@ -248,6 +271,20 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteWebACLAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL",
+      "description": "Grants permission to disassociate WAF WebACL from the specified load balancer",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "loadbalancer/app/*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeregisterTargets",
       "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeregisterTargets.html",
       "description": "Grants permission to deregister the specified targets from the specified target group",
@@ -319,7 +356,7 @@
       "name": "DescribeLoadBalancers",
       "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html",
       "description": "Grants permission to describe the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -403,6 +440,29 @@
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeWebACLAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL",
+      "description": "Grants permission to describe all load balancers associated to a WAF WebACL in your account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetLoadBalancerWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL",
+      "description": "Grants permission to retrieve the WAF WebACL associated to the specified load balancer",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "loadbalancer/app/*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -715,7 +775,7 @@
     },
     {
       "name": "SetWebAcl",
-      "documentationUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetWebAcl.html",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL",
       "description": "Grants permission to give WebAcl permission to WAF",
       "accessLevel": "Write",
       "resourceTypes": [],

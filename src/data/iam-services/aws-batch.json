@@ -48,9 +48,10 @@
       "description": "Grants permission to create an AWS Batch job queue in your account",
       "accessLevel": "Write",
       "resourceTypes": [
-        "compute-environment*",
         "job-queue*",
-        "scheduling-policy"
+        "compute-environment",
+        "scheduling-policy",
+        "service-environment"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -71,6 +72,22 @@
         "aws:TagKeys"
       ],
       "dependentActions": []
+    },
+    {
+      "name": "CreateServiceEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateServiceEnvironment.html",
+      "description": "Grants permission to create an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service-environment*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ]
     },
     {
       "name": "DeleteComputeEnvironment",
@@ -112,6 +129,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "scheduling-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteServiceEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteServiceEnvironment.html",
+      "description": "Grants permission to delete an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service-environment*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -184,6 +212,24 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeServiceEnvironments",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceEnvironments.html",
+      "description": "Grants permission to describe one or more AWS Batch service environments in your account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeServiceJob",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeServiceJob.html",
+      "description": "Grants permission to describe a AWS Batch service job in your account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetJobQueueSnapshot",
       "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_GetJobQueueSnapshot.html",
       "description": "Grants permission to get a snapshot of an AWS Batch job queue in your account",
@@ -233,6 +279,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListServiceJobs",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListServiceJobs.html",
+      "description": "Grants permission to list service jobs for a specified AWS Batch job queue in your account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list tags for an AWS Batch resource in your account",
@@ -243,7 +298,9 @@
         "job",
         "job-definition-revision",
         "job-queue",
-        "scheduling-policy"
+        "scheduling-policy",
+        "service-environment",
+        "service-job"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -258,6 +315,7 @@
         "consumable-resource"
       ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "batch:User",
         "batch:Privileged",
         "batch:Image",
@@ -284,14 +342,31 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "job*",
-        "job-definition*",
         "job-queue*",
-        "consumable-resource"
+        "consumable-resource",
+        "job-definition",
+        "job-definition-revision"
       ],
       "conditionKeys": [
         "batch:ShareIdentifier",
         "batch:EKSImage",
         "batch:EKSNamespace",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "SubmitServiceJob",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitServiceJob.html",
+      "description": "Grants permission to submit an AWS Batch service job",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "job-queue*",
+        "service-job*"
+      ],
+      "conditionKeys": [
+        "batch:ShareIdentifier",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -308,7 +383,9 @@
         "job",
         "job-definition-revision",
         "job-queue",
-        "scheduling-policy"
+        "scheduling-policy",
+        "service-environment",
+        "service-job"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -328,6 +405,17 @@
       "dependentActions": []
     },
     {
+      "name": "TerminateServiceJob",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateServiceJob.html",
+      "description": "Grants permission to terminate a service job in an AWS Batch job queue in your account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service-job*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UntagResource",
       "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html",
       "description": "Grants permission to untag an AWS Batch resource in your account",
@@ -338,7 +426,9 @@
         "job",
         "job-definition-revision",
         "job-queue",
-        "scheduling-policy"
+        "scheduling-policy",
+        "service-environment",
+        "service-job"
       ],
       "conditionKeys": [
         "aws:TagKeys"
@@ -387,6 +477,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "scheduling-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateServiceEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateServiceEnvironment.html",
+      "description": "Grants permission to update an AWS Batch service environment in your account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service-environment*"
       ],
       "conditionKeys": [],
       "dependentActions": []

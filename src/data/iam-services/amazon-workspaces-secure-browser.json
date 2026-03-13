@@ -59,6 +59,18 @@
       ]
     },
     {
+      "name": "AssociateSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateSessionLogger.html",
+      "description": "Grants permission to associate session logger with web portals",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "portal*",
+        "sessionLogger*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "AssociateTrustStore",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_AssociateTrustStore.html",
       "description": "Grants permission to associate trust stores with web portals",
@@ -111,7 +123,8 @@
         "kms:CreateGrant",
         "kms:Decrypt",
         "kms:DescribeKey",
-        "kms:GenerateDataKey"
+        "kms:GenerateDataKey",
+        "workspaces-web:TagResource"
       ]
     },
     {
@@ -124,7 +137,9 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "workspaces-web:TagResource"
+      ]
     },
     {
       "name": "CreateIdentityProvider",
@@ -151,7 +166,9 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "workspaces-web:TagResource"
+      ]
     },
     {
       "name": "CreateNetworkSettings",
@@ -164,7 +181,8 @@
         "aws:RequestTag/${TagKey}"
       ],
       "dependentActions": [
-        "iam:CreateServiceLinkedRole"
+        "iam:CreateServiceLinkedRole",
+        "workspaces-web:TagResource"
       ]
     },
     {
@@ -182,7 +200,23 @@
         "kms:CreateGrant",
         "kms:Decrypt",
         "kms:DescribeKey",
-        "kms:GenerateDataKey"
+        "kms:GenerateDataKey",
+        "workspaces-web:TagResource"
+      ]
+    },
+    {
+      "name": "CreateSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_CreateSessionLogger.html",
+      "description": "Grants permission to create session logger",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": [
+        "s3:PutObject",
+        "workspaces-web:TagResource"
       ]
     },
     {
@@ -195,7 +229,9 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "workspaces-web:TagResource"
+      ]
     },
     {
       "name": "CreateUserAccessLoggingSettings",
@@ -207,7 +243,9 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "workspaces-web:TagResource"
+      ]
     },
     {
       "name": "CreateUserSettings",
@@ -219,7 +257,9 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "workspaces-web:TagResource"
+      ]
     },
     {
       "name": "DeleteBrowserSettings",
@@ -284,6 +324,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "portal*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DeleteSessionLogger.html",
+      "description": "Grants permission to delete session logger",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "sessionLogger*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -358,6 +409,17 @@
       "name": "DisassociateNetworkSettings",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateNetworkSettings.html",
       "description": "Grants permission to disassociate network settings from web portals",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "portal*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_DisassociateSessionLogger.html",
+      "description": "Grants permission to disassociate session logger from web portals",
       "accessLevel": "Write",
       "resourceTypes": [
         "portal*"
@@ -498,6 +560,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetSessionLogger.html",
+      "description": "Grants permission to get details on session logger",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "sessionLogger*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetTrustStore",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_GetTrustStore.html",
       "description": "Grants permission to get details on trust stores",
@@ -598,6 +671,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListSessionLoggers",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessionLoggers.html",
+      "description": "Grants permission to list session loggers",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListSessions",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_ListSessions.html",
       "description": "Grants permission to list sessions for a Portal using optional filters",
@@ -665,6 +747,7 @@
         "ipAccessSettings",
         "networkSettings",
         "portal",
+        "sessionLogger",
         "trustStore",
         "userAccessLoggingSettings",
         "userSettings"
@@ -687,6 +770,7 @@
         "ipAccessSettings",
         "networkSettings",
         "portal",
+        "sessionLogger",
         "trustStore",
         "userAccessLoggingSettings",
         "userSettings"
@@ -766,6 +850,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "portal*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSessionLogger",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/API_UpdateSessionLogger.html",
+      "description": "Grants permission to update session logger",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "sessionLogger*"
       ],
       "conditionKeys": [],
       "dependentActions": []

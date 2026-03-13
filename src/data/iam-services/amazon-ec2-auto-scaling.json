@@ -129,6 +129,7 @@
       "conditionKeys": [
         "autoscaling:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
+        "autoscaling:ImageId",
         "autoscaling:CapacityReservationIds",
         "autoscaling:CapacityReservationResourceGroupArns",
         "autoscaling:InstanceTypes",
@@ -191,6 +192,7 @@
         "autoScalingGroup*"
       ],
       "conditionKeys": [
+        "autoscaling:ForceDelete",
         "autoscaling:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}"
       ],
@@ -297,6 +299,15 @@
       "name": "DescribeAccountLimits",
       "documentationUrl": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountLimits.html",
       "description": "Grants permission to describe the current Auto Scaling resource limits for your AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeAccountSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountSettings.html",
+      "description": "Grants permission to describe the current Amazon EC2 Auto Scaling account settings for your account",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -621,6 +632,29 @@
       "dependentActions": []
     },
     {
+      "name": "LaunchInstances",
+      "documentationUrl": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_LaunchInstances.html",
+      "description": "Grants permission to launch one or more EC2 instances in the specified Auto Scaling group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "autoScalingGroup*"
+      ],
+      "conditionKeys": [
+        "autoscaling:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "PutAccountSetting",
+      "documentationUrl": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutAccountSetting.html",
+      "description": "Grants permission to modify an account setting for your account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutLifecycleHook",
       "documentationUrl": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutLifecycleHook.html",
       "description": "Grants permission to create or update a lifecycle hook for the specified Auto Scaling Group",
@@ -786,7 +820,8 @@
       ],
       "conditionKeys": [
         "autoscaling:ResourceTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:ResourceTag/${TagKey}",
+        "autoscaling:ImageId"
       ],
       "dependentActions": []
     },
@@ -829,6 +864,7 @@
       "conditionKeys": [
         "autoscaling:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
+        "autoscaling:ImageId",
         "autoscaling:CapacityReservationIds",
         "autoscaling:CapacityReservationResourceGroupArns",
         "autoscaling:InstanceTypes",

@@ -58,8 +58,16 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html",
       "description": "Grants permission to accept a Convertible Reserved Instance exchange quote",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "reserved-instances*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:InstanceType",
+        "ec2:ReservedInstancesOfferingType",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -127,8 +135,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -331,6 +339,7 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -409,6 +418,7 @@
         "ec2:SamlProviderArn",
         "ec2:ServerCertificateArn",
         "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Region"
@@ -461,6 +471,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -557,6 +568,28 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateRouteServer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteServer.html",
+      "description": "Grants permission to associate a route server with a VPC",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*",
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Ipv4IpamPoolId",
+        "ec2:Ipv6IpamPoolId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "AssociateRouteTable",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html",
       "description": "Grants permission to associate a subnet or gateway with a route table",
@@ -564,6 +597,7 @@
       "resourceTypes": [
         "route-table*",
         "internet-gateway",
+        "ipv4pool-ec2",
         "subnet",
         "vpn-gateway"
       ],
@@ -576,7 +610,10 @@
         "ec2:InternetGatewayID",
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -622,6 +659,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:Ipv6IpamPoolId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -644,6 +683,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -749,6 +789,21 @@
       "dependentActions": []
     },
     {
+      "name": "AttachApplianceToNatGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachApplianceToNatGateway.html",
+      "description": "Grants permission to attach an appliance with a public/private Natgateway",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "natgateway*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "AttachClassicLinkVpc",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachClassicLinkVpc.html",
       "description": "Grants permission to link an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups",
@@ -761,6 +816,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -823,6 +879,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -848,6 +905,23 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:Subnet",
         "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "AttachResourcesToPlacementGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/UserGuide/placement-groups.html",
+      "description": "Grants permission to attach resources to a placement group",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "placement-group*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:PlacementGroupName",
+        "ec2:PlacementGroupStrategy",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -882,6 +956,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -902,11 +977,14 @@
         "ec2:Tenancy",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -1102,7 +1180,7 @@
       "name": "CancelImageLaunchPermission",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImageLaunchPermission.html",
       "description": "Grants permission to remove your AWS account from the launch permissions for the specified AMI",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "image*"
       ],
@@ -1227,7 +1305,7 @@
     {
       "name": "CopySnapshot",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html",
-      "description": "Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3. Resource-level permissions specified for this action apply to the new snapshot only. They do not apply to the source snapshot",
+      "description": "Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3. Resource-level permissions specified for this action apply to both the snapshot copy and the source snapshot",
       "accessLevel": "Write",
       "resourceTypes": [
         "snapshot*"
@@ -1235,8 +1313,60 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:Encrypted",
         "ec2:OutpostArn",
+        "ec2:Owner",
+        "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
+        "ec2:ProductCode",
         "ec2:SnapshotID",
+        "ec2:SnapshotTime",
+        "ec2:VolumeSize",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CopyVolumes",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyVolumes.html",
+      "description": "Grants permission to create a copy of an EBS volume. Resource-level permissions specified for this action apply to the source and copied volume. Condition keys for the copied volume correspond to parameters specified in the CopyVolumes API request",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "volume*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:Encrypted",
+        "ec2:ManagedResourceOperator",
+        "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
+        "ec2:VolumeInitializationRate",
+        "ec2:VolumeIops",
+        "ec2:VolumeSize",
+        "ec2:VolumeThroughput",
+        "ec2:VolumeType",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateCapacityManagerDataExport",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityManagerDataExport.html",
+      "description": "Grants permission to create a new S3 Data Export for Capacity Manager",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacity-manager-data-export*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -1254,7 +1384,20 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CapacityReservationFleet",
+        "ec2:EbsOptimized",
+        "ec2:EndDate",
+        "ec2:EndDateType",
+        "ec2:EphemeralStorage",
+        "ec2:InstanceCount",
+        "ec2:InstanceMatchCriteria",
+        "ec2:InstancePlatform",
+        "ec2:InstanceType",
+        "ec2:OutpostArn",
+        "ec2:PlacementGroup",
+        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -1385,6 +1528,7 @@
         "ec2:SamlProviderArn",
         "ec2:ServerCertificateArn",
         "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Region"
@@ -1430,7 +1574,7 @@
       "name": "CreateCoipPoolPermission",
       "documentationUrl": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
       "description": "Grants permission to allow a service to access a customer-owned IP (CoIP) pool",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "coip-pool*"
       ],
@@ -1479,6 +1623,40 @@
         "ec2:Region"
       ],
       "dependentActions": []
+    },
+    {
+      "name": "CreateDelegateMacVolumeOwnershipTask",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDelegateMacVolumeOwnershipTask.html",
+      "description": "Grants permission to create a volume ownership delegation task for an Apple silicon Mac instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "instance*",
+        "mac-modification-task*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:EbsOptimized",
+        "ec2:InstanceAutoRecovery",
+        "ec2:InstanceBandwidthWeighting",
+        "ec2:InstanceMarketType",
+        "ec2:InstanceMetadataTags",
+        "ec2:InstanceProfile",
+        "ec2:InstanceType",
+        "ec2:MetadataHttpEndpoint",
+        "ec2:MetadataHttpPutResponseHopLimit",
+        "ec2:MetadataHttpTokens",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "ec2:Tenancy",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
     },
     {
       "name": "CreateDhcpOptions",
@@ -1540,6 +1718,7 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceBandwidthWeighting",
@@ -1564,12 +1743,14 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:KmsKeyId",
         "ec2:ParentSnapshot",
@@ -1591,6 +1772,7 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "vpc-flow-log*",
+        "natgateway",
         "network-interface",
         "subnet",
         "transit-gateway",
@@ -1600,6 +1782,9 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
         "ec2:NetworkInterfaceID",
@@ -1655,7 +1840,7 @@
     {
       "name": "CreateImage",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html",
-      "description": "Grants permission to create an Amazon EBS-backed AMI from a stopped or running Amazon EBS-backed instance",
+      "description": "Grants permission to create an Amazon EBS-backed AMI from a stopped or running Amazon EBS-backed instance. This action can reboot instances as part of the image creation process, even without RebootInstances permissions. To prevent instance reboots during image creation, use the NoReboot parameter",
       "accessLevel": "Write",
       "resourceTypes": [
         "image*",
@@ -1669,6 +1854,7 @@
         "ec2:Owner",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -1678,6 +1864,7 @@
         "ec2:InstanceMetadataTags",
         "ec2:InstanceProfile",
         "ec2:InstanceType",
+        "ec2:ManagedResourceOperator",
         "ec2:MetadataHttpEndpoint",
         "ec2:MetadataHttpPutResponseHopLimit",
         "ec2:MetadataHttpTokens",
@@ -1701,6 +1888,31 @@
       ]
     },
     {
+      "name": "CreateImageUsageReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImageUsageReport.html",
+      "description": "Grants permission to create an AMI usage report",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "image*",
+        "image-usage-report*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ImageID",
+        "ec2:ImageType",
+        "ec2:Owner",
+        "ec2:Public",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
       "name": "CreateInstanceConnectEndpoint",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceConnectEndpoint.html",
       "description": "Grants permission to create an EC2 Instance Connect Endpoint that allows you to connect to an instance without a public IPv4 address",
@@ -1716,6 +1928,7 @@
         "ec2:SubnetID",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -1760,6 +1973,7 @@
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -1769,6 +1983,7 @@
         "ec2:InstanceMetadataTags",
         "ec2:InstanceProfile",
         "ec2:InstanceType",
+        "ec2:ManagedResourceOperator",
         "ec2:MetadataHttpEndpoint",
         "ec2:MetadataHttpPutResponseHopLimit",
         "ec2:MetadataHttpTokens",
@@ -1794,6 +2009,39 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:InternetGatewayID",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateInterruptibleCapacityReservationAllocation",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInterruptibleCapacityReservationAllocation.html",
+      "description": "Grants permission to create an interruptible Capacity Reservation by specifying the number of unused instances you want to allocate from your source reservation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacity-reservation*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:CreateDate",
+        "ec2:EbsOptimized",
+        "ec2:EndDate",
+        "ec2:EndDateType",
+        "ec2:InstanceCount",
+        "ec2:InstanceMatchCriteria",
+        "ec2:InstancePlatform",
+        "ec2:InstanceType",
+        "ec2:InterruptibleCapacityReservationId",
+        "ec2:InterruptionType",
+        "ec2:IsInterruptible",
+        "ec2:SourceCapacityReservationId",
+        "ec2:TargetInstanceCount",
+        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -1839,6 +2087,26 @@
       ]
     },
     {
+      "name": "CreateIpamPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPolicy.html",
+      "description": "Grants permission to create a policy in Amazon VPC IP Address Manager (IPAM) that defines rules for allocating public IPv4 addresses from IPAM pools to AWS resources",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam*",
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
       "name": "CreateIpamPool",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPool.html",
       "description": "Grants permission to create an IP address pool for Amazon VPC IP Address Manager (IPAM), which is a collection of contiguous IP address CIDRs",
@@ -1852,6 +2120,49 @@
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateIpamPrefixListResolver",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolver.html",
+      "description": "Grants permission to create an IPAM prefix list resolver that defines rules for selecting CIDRs to include in prefix lists",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam*",
+        "ipam-prefix-list-resolver*",
+        "ipam-scope"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateIpamPrefixListResolverTarget",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateIpamPrefixListResolverTarget.html",
+      "description": "Grants permission to create an IPAM prefix list resolver target that links a resolver to a managed prefix list",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*",
+        "ipam-prefix-list-resolver-target*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -1942,6 +2253,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:ManagedResourceOperator",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -2001,7 +2313,7 @@
       "name": "CreateLocalGatewayRouteTablePermission",
       "documentationUrl": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
       "description": "Grants permission to allow a service to access a local gateway route table",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "local-gateway-route-table*"
       ],
@@ -2061,6 +2373,83 @@
       ]
     },
     {
+      "name": "CreateLocalGatewayVirtualInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayVirtualInterface.html",
+      "description": "Grants permission to create a local gateway virtual interface",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "local-gateway-virtual-interface*",
+        "local-gateway-virtual-interface-group*",
+        "outpost-lag*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateLocalGatewayVirtualInterfaceGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayVirtualInterfaceGroup.html",
+      "description": "Grants permission to create a local gateway virtual interface group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "local-gateway*",
+        "local-gateway-virtual-interface-group*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateMacSystemIntegrityProtectionModificationTask",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateMacSystemIntegrityProtectionModificationTask.html",
+      "description": "Grants permission to create a System Integrity Protection (SIP) modification task for an Amazon EC2 Mac instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "instance*",
+        "mac-modification-task*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:EbsOptimized",
+        "ec2:InstanceAutoRecovery",
+        "ec2:InstanceBandwidthWeighting",
+        "ec2:InstanceMarketType",
+        "ec2:InstanceMetadataTags",
+        "ec2:InstanceProfile",
+        "ec2:InstanceType",
+        "ec2:MetadataHttpEndpoint",
+        "ec2:MetadataHttpPutResponseHopLimit",
+        "ec2:MetadataHttpTokens",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "ec2:Tenancy",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
       "name": "CreateManagedPrefixList",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateManagedPrefixList.html",
       "description": "Grants permission to create a managed prefix list",
@@ -2084,22 +2473,30 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "natgateway*",
-        "subnet*",
-        "elastic-ip"
+        "elastic-ip",
+        "subnet",
+        "vpc"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}",
-        "ec2:AvailabilityZone",
-        "ec2:ResourceTag/${TagKey}",
-        "ec2:SubnetID",
-        "ec2:Vpc",
-        "aws:ResourceTag/${TagKey}",
         "ec2:AllocationId",
         "ec2:Domain",
         "ec2:PublicIpAddress",
         "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:SubnetID",
+        "ec2:Vpc",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Ipv4IpamPoolId",
+        "ec2:Ipv6IpamPoolId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -2184,6 +2581,7 @@
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -2246,6 +2644,7 @@
         "ec2:NetworkInterfaceID",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -2272,11 +2671,29 @@
         "ec2:AuthorizedService",
         "ec2:AuthorizedUser",
         "ec2:AvailabilityZone",
+        "ec2:ManagedResourceOperator",
         "ec2:NetworkInterfaceID",
         "ec2:Permission",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Subnet",
         "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOdbNetworkPeering",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateOdbNetworkPeering.html",
+      "description": "Grants permission to allow Oracle Database@AWS to create a peering connection between an ODB network and a VPC",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -2332,6 +2749,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -2341,6 +2759,7 @@
         "ec2:InstanceMetadataTags",
         "ec2:InstanceProfile",
         "ec2:InstanceType",
+        "ec2:ManagedResourceOperator",
         "ec2:MetadataHttpEndpoint",
         "ec2:MetadataHttpPutResponseHopLimit",
         "ec2:MetadataHttpTokens",
@@ -2354,6 +2773,7 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "aws:ResourceTag/${TagKey}",
         "ec2:ImageID",
         "ec2:ImageType",
@@ -2422,6 +2842,80 @@
       "dependentActions": []
     },
     {
+      "name": "CreateRouteServer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServer.html",
+      "description": "Grants permission to create a route server",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags",
+        "sns:CreateTopic"
+      ]
+    },
+    {
+      "name": "CreateRouteServerEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServerEndpoint.html",
+      "description": "Grants permission to create a route server endpoint",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*",
+        "route-server-endpoint*",
+        "subnet*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:SubnetID",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeSecurityGroups"
+      ]
+    },
+    {
+      "name": "CreateRouteServerPeer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteServerPeer.html",
+      "description": "Grants permission to create a route server peer",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server-endpoint*",
+        "route-server-peer*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateTags"
+      ]
+    },
+    {
       "name": "CreateRouteTable",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteTable.html",
       "description": "Grants permission to create a route table for a VPC",
@@ -2438,6 +2932,43 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:Tenancy",
         "ec2:VpcID",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateSecondaryNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecondaryNetwork.html",
+      "description": "Grants permission to create a secondary network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "secondary-network*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateSecondarySubnet",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecondarySubnet.html",
+      "description": "Grants permission to create a secondary subnet",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "secondary-network*",
+        "secondary-subnet*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -2487,9 +3018,13 @@
         "ec2:SourceOutpostArn",
         "ec2:VolumeSize",
         "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
+        "ec2:ManagedResourceOperator",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -2536,6 +3071,7 @@
         "ec2:Encrypted",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -2590,6 +3126,8 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:Ipv4IpamPoolId",
+        "ec2:Ipv6IpamPoolId",
         "ec2:SubnetID",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
@@ -2608,11 +3146,21 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnetCidrReservation.html",
       "description": "Grants permission to create a subnet CIDR reservation",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "subnet*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:SubnetID",
+        "ec2:Vpc",
         "ec2:Region"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
     },
     {
       "name": "CreateTags",
@@ -2620,6 +3168,8 @@
       "description": "Grants permission to add or overwrite one or more tags for Amazon EC2 resources",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "capacity-block",
+        "capacity-manager-data-export",
         "capacity-reservation",
         "capacity-reservation-fleet",
         "carrier-gateway",
@@ -2638,6 +3188,7 @@
         "fpga-image",
         "host-reservation",
         "image",
+        "image-usage-report",
         "import-image-task",
         "import-snapshot-task",
         "instance",
@@ -2646,7 +3197,10 @@
         "internet-gateway",
         "ipam",
         "ipam-external-resource-verification-token",
+        "ipam-policy",
         "ipam-pool",
+        "ipam-prefix-list-resolver",
+        "ipam-prefix-list-resolver-target",
         "ipam-resource-discovery",
         "ipam-resource-discovery-association",
         "ipam-scope",
@@ -2671,7 +3225,13 @@
         "prefix-list",
         "replace-root-volume-task",
         "reserved-instances",
+        "route-server",
+        "route-server-endpoint",
+        "route-server-peer",
         "route-table",
+        "secondary-interface",
+        "secondary-network",
+        "secondary-subnet",
         "security-group",
         "security-group-rule",
         "snapshot",
@@ -2686,6 +3246,7 @@
         "transit-gateway",
         "transit-gateway-attachment",
         "transit-gateway-connect-peer",
+        "transit-gateway-metering-policy",
         "transit-gateway-multicast-domain",
         "transit-gateway-policy-table",
         "transit-gateway-route-table",
@@ -2699,16 +3260,26 @@
         "volume",
         "vpc",
         "vpc-block-public-access-exclusion",
+        "vpc-encryption-control",
         "vpc-endpoint",
         "vpc-endpoint-connection",
         "vpc-endpoint-service",
         "vpc-endpoint-service-permission",
         "vpc-flow-log",
         "vpc-peering-connection",
+        "vpn-concentrator",
         "vpn-connection",
         "vpn-gateway"
       ],
       "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -2816,7 +3387,12 @@
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -2826,6 +3402,7 @@
         "ec2:InstanceMetadataTags",
         "ec2:InstanceProfile",
         "ec2:InstanceType",
+        "ec2:ManagedResourceOperator",
         "ec2:MetadataHttpEndpoint",
         "ec2:MetadataHttpPutResponseHopLimit",
         "ec2:MetadataHttpTokens",
@@ -2883,12 +3460,25 @@
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:KeyPairName",
         "ec2:KeyPairType",
         "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:ManagedResourceOperator",
         "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
@@ -2945,6 +3535,7 @@
         "aws:TagKeys",
         "ec2:AuthorizedUser",
         "ec2:AvailabilityZone",
+        "ec2:ManagedResourceOperator",
         "ec2:NetworkInterfaceID",
         "ec2:Permission",
         "ec2:ResourceTag/${TagKey}",
@@ -2959,6 +3550,7 @@
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:IpamPrefixListResolverTargetId",
         "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
@@ -2976,8 +3568,34 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:RouteTableID",
         "ec2:Vpc",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -3010,6 +3628,7 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -3048,6 +3667,11 @@
         "aws:TagKeys",
         "ec2:ResourceTag/${TagKey}",
         "ec2:transitGatewayConnectPeerId",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -3096,10 +3720,14 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
+        "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -3126,9 +3754,13 @@
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceServiceRegion",
-        "ec2:vpceSupportedRegion",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceServiceRegion",
+        "ec2:VpceSupportedRegion",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -3144,6 +3776,10 @@
         "ec2:RequesterVpc",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VpcPeeringConnectionID",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -3226,6 +3862,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:ManagedResourceOperator",
         "ec2:NetworkInterfaceID",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Subnet",
@@ -3325,6 +3962,52 @@
       "dependentActions": [
         "ec2:CreateTags"
       ]
+    },
+    {
+      "name": "CreateTransitGatewayMeteringPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicy.html",
+      "description": "Grants permission to create a metering policy for a transit gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "transit-gateway*",
+        "transit-gateway-metering-policy*",
+        "transit-gateway-attachment"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayId",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:transitGatewayMeteringPolicyId",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayAttachmentId",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateTransitGatewayMeteringPolicyEntry",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMeteringPolicyEntry.html",
+      "description": "Grants permission to create an entry for a transit gateway metering policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "transit-gateway-metering-policy*",
+        "transit-gateway-attachment"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayAttachmentId",
+        "ec2:Region"
+      ],
+      "dependentActions": []
     },
     {
       "name": "CreateTransitGatewayMulticastDomain",
@@ -3547,6 +4230,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -3623,10 +4307,12 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:KmsKeyId",
         "ec2:ParentSnapshot",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -3685,6 +4371,7 @@
         "aws:TagKeys",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -3694,6 +4381,28 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:Tenancy",
         "ec2:VpcID",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
+      "name": "CreateVpcEncryptionControl",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEncryptionControl.html",
+      "description": "Grants permission to create a VPC Encryption Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpc*",
+        "vpc-encryption-control*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -3718,8 +4427,12 @@
         "ec2:VpcID",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:VpceMultiRegion",
+        "ec2:VpcePrivateDnsPreference",
+        "ec2:VpcePrivateDnsSpecifiedDomains",
         "ec2:VpceServiceName",
         "ec2:VpceServiceOwner",
+        "ec2:VpceServiceRegion",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:RouteTableID",
@@ -3733,6 +4446,9 @@
       ],
       "dependentActions": [
         "ec2:CreateTags",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
         "route53:AssociateVPCWithHostedZone"
       ]
     },
@@ -3750,8 +4466,8 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceServiceRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceServiceRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -3767,9 +4483,9 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "ec2:VpceMultiRegion",
         "ec2:VpceServicePrivateDnsName",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceServiceRegion",
+        "ec2:VpceServiceRegion",
         "ec2:Region"
       ],
       "dependentActions": [
@@ -3802,6 +4518,27 @@
       ]
     },
     {
+      "name": "CreateVpnConcentrator",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConcentrator.html",
+      "description": "Grants permission to create a VPN concentrator that aggregates multiple VPN connections to a transit gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpn-concentrator*",
+        "transit-gateway"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayId",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
+    },
+    {
       "name": "CreateVpnConnection",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html",
       "description": "Grants permission to create a VPN connection between a virtual private gateway or transit gateway and a customer gateway",
@@ -3811,6 +4548,7 @@
         "vpn-connection*",
         "transit-gateway",
         "transit-gateway-attachment",
+        "vpn-concentrator",
         "vpn-gateway"
       ],
       "conditionKeys": [
@@ -3842,6 +4580,8 @@
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:transitGatewayAttachmentId",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
@@ -3881,6 +4621,21 @@
       "dependentActions": [
         "ec2:CreateTags"
       ]
+    },
+    {
+      "name": "DeleteCapacityManagerDataExport",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCapacityManagerDataExport.html",
+      "description": "Grants permission to delete an existing Capacity Manager data export configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacity-manager-data-export*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
     },
     {
       "name": "DeleteCarrierGateway",
@@ -3938,6 +4693,7 @@
         "ec2:ServerCertificateArn",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -3979,7 +4735,7 @@
       "name": "DeleteCoipPoolPermission",
       "documentationUrl": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
       "description": "Grants permission to deny a service from accessing a customer-owned IP (CoIP) pool",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "coip-pool*"
       ],
@@ -4084,6 +4840,21 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteImageUsageReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteImageUsageReport.html",
+      "description": "Grants permission to delete an AMI usage report",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "image-usage-report*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteInstanceConnectEndpoint",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteInstanceConnectEndpoint.html",
       "description": "Grants permission to delete an EC2 Instance Connect Endpoint",
@@ -4161,12 +4932,57 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteIpamPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPolicy.html",
+      "description": "Grants permission to delete an Amazon VPC IP Address Manager (IPAM) policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteIpamPool",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPool.html",
       "description": "Grants permission to delete an Amazon VPC IP Address Manager (IPAM) pool",
       "accessLevel": "Write",
       "resourceTypes": [
         "ipam-pool*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteIpamPrefixListResolver",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolver.html",
+      "description": "Grants permission to delete an IPAM prefix list resolver",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteIpamPrefixListResolverTarget",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteIpamPrefixListResolverTarget.html",
+      "description": "Grants permission to delete an IPAM prefix list resolver target",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver-target*"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -4291,7 +5107,7 @@
       "name": "DeleteLocalGatewayRouteTablePermission",
       "documentationUrl": "https://docs.aws.amazon.com/outposts/latest/userguide/identity-access-management.html",
       "description": "Grants permission to deny a service from accessing a local gateway route table",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "local-gateway-route-table*"
       ],
@@ -4333,6 +5149,36 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteLocalGatewayVirtualInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayVirtualInterface.html",
+      "description": "Grants permission to delete a local gateway virtual interface",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "local-gateway-virtual-interface*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLocalGatewayVirtualInterfaceGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayVirtualInterfaceGroup.html",
+      "description": "Grants permission to delete a local gateway virtual interface group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "local-gateway-virtual-interface-group*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteManagedPrefixList",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteManagedPrefixList.html",
       "description": "Grants permission to delete a managed prefix list",
@@ -4342,6 +5188,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:IpamPrefixListResolverTargetId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -4497,12 +5344,29 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteOdbNetworkPeering",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteOdbNetworkPeering.html",
+      "description": "Grants permission to allow Oracle Database@AWS to delete a peering connection between an ODB network and a VPC",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeletePlacementGroup",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeletePlacementGroup.html",
       "description": "Grants permission to delete a placement group",
       "accessLevel": "Write",
       "resourceTypes": [
-        "placement-group"
+        "placement-group*"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -4533,8 +5397,15 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteQueuedReservedInstances.html",
       "description": "Grants permission to delete the queued purchases for the specified Reserved Instances",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "reserved-instances*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:InstanceType",
+        "ec2:ReservedInstancesOfferingType",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -4543,7 +5414,7 @@
       "name": "DeleteResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html",
       "description": "Grants permission to remove an IAM policy that enables cross-account sharing from a resource",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "ipam-pool",
         "placement-group",
@@ -4580,6 +5451,61 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteRouteServer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServer.html",
+      "description": "Grants permission to delete a route server",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "sns:DeleteTopic"
+      ]
+    },
+    {
+      "name": "DeleteRouteServerEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServerEndpoint.html",
+      "description": "Grants permission to delete a route server endpoint",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server-endpoint*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSecurityGroup",
+        "ec2:RevokeSecurityGroupIngress"
+      ]
+    },
+    {
+      "name": "DeleteRouteServerPeer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteServerPeer.html",
+      "description": "Grants permission to delete a route server peer",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server-peer*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": [
+        "ec2:RevokeSecurityGroupIngress"
+      ]
+    },
+    {
       "name": "DeleteRouteTable",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteTable.html",
       "description": "Grants permission to delete a route table",
@@ -4592,6 +5518,36 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:RouteTableID",
         "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSecondaryNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecondaryNetwork.html",
+      "description": "Grants permission to delete a secondary network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "secondary-network*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSecondarySubnet",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecondarySubnet.html",
+      "description": "Grants permission to delete a secondary subnet",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "secondary-subnet*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -4657,6 +5613,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -4681,6 +5638,8 @@
       "description": "Grants permission to delete one or more tags from Amazon EC2 resources",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "capacity-block",
+        "capacity-manager-data-export",
         "capacity-reservation",
         "capacity-reservation-fleet",
         "carrier-gateway",
@@ -4699,6 +5658,7 @@
         "fpga-image",
         "host-reservation",
         "image",
+        "image-usage-report",
         "import-image-task",
         "import-snapshot-task",
         "instance",
@@ -4707,7 +5667,10 @@
         "internet-gateway",
         "ipam",
         "ipam-external-resource-verification-token",
+        "ipam-policy",
         "ipam-pool",
+        "ipam-prefix-list-resolver",
+        "ipam-prefix-list-resolver-target",
         "ipam-resource-discovery",
         "ipam-resource-discovery-association",
         "ipam-scope",
@@ -4732,7 +5695,13 @@
         "prefix-list",
         "replace-root-volume-task",
         "reserved-instances",
+        "route-server",
+        "route-server-endpoint",
+        "route-server-peer",
         "route-table",
+        "secondary-interface",
+        "secondary-network",
+        "secondary-subnet",
         "security-group",
         "security-group-rule",
         "snapshot",
@@ -4747,6 +5716,7 @@
         "transit-gateway",
         "transit-gateway-attachment",
         "transit-gateway-connect-peer",
+        "transit-gateway-metering-policy",
         "transit-gateway-multicast-domain",
         "transit-gateway-policy-table",
         "transit-gateway-route-table",
@@ -4760,16 +5730,78 @@
         "volume",
         "vpc",
         "vpc-block-public-access-exclusion",
+        "vpc-encryption-control",
         "vpc-endpoint",
         "vpc-endpoint-connection",
         "vpc-endpoint-service",
         "vpc-endpoint-service-permission",
         "vpc-flow-log",
         "vpc-peering-connection",
+        "vpn-concentrator",
         "vpn-connection",
         "vpn-gateway"
       ],
       "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
@@ -5235,6 +6267,38 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteTransitGatewayMeteringPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicy.html",
+      "description": "Grants permission to delete a transit gateway metering policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "transit-gateway-metering-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTransitGatewayMeteringPolicyEntry",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMeteringPolicyEntry.html",
+      "description": "Grants permission to delete an entry from a transit gateway metering policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "transit-gateway-metering-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteTransitGatewayMulticastDomain",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMulticastDomain.html",
       "description": "Grants permission to delete a transit gateway multicast domain",
@@ -5436,11 +6500,14 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -5482,6 +6549,21 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteVpcEncryptionControl",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEncryptionControl.html",
+      "description": "Grants permission to delete a VPC Encryption Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpc-encryption-control*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteVpcEndpointConnectionNotifications",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointConnectionNotifications.html",
       "description": "Grants permission to delete one or more VPC endpoint connection notifications",
@@ -5495,8 +6577,8 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -5512,8 +6594,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -5529,7 +6611,9 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
+        "ec2:VpceMultiRegion",
         "ec2:VpceServiceName",
+        "ec2:VpceServiceRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -5548,6 +6632,21 @@
         "ec2:RequesterVpc",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VpcPeeringConnectionID",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteVpnConcentrator",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConcentrator.html",
+      "description": "Grants permission to delete a VPN concentrator",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpn-concentrator*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -5836,27 +6935,8 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlockExtensionHistory.html",
       "description": "Grants permission to describe Capacity Block extensions history",
       "accessLevel": "List",
-      "resourceTypes": [
-        "capacity-reservation"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
-        "aws:ResourceTag/${TagKey}",
-        "ec2:AvailabilityZone",
-        "ec2:CapacityReservationFleet",
-        "ec2:CreateDate",
-        "ec2:DestinationCapacityReservationId",
-        "ec2:EbsOptimized",
-        "ec2:EndDate",
-        "ec2:EndDateType",
-        "ec2:InstanceCount",
-        "ec2:InstanceMatchCriteria",
-        "ec2:InstancePlatform",
-        "ec2:InstanceType",
-        "ec2:OutpostArn",
-        "ec2:PlacementGroup",
-        "ec2:ResourceTag/${TagKey}",
-        "ec2:SourceCapacityReservationId",
-        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -5903,6 +6983,39 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeCapacityBlockStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlockStatus.html",
+      "description": "Grants permission to describe the availability of capacity for the specified Capacity blocks, or all of your Capacity Blocks",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeCapacityBlocks",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityBlocks.html",
+      "description": "Grants permission to describe details about Capacity Blocks in the AWS Region that you're currently using",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeCapacityManagerDataExports",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityManagerDataExports.html",
+      "description": "Grants permission to describe one or more Capacity Manager data export configurations",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeCapacityReservationBillingRequests",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationBillingRequests.html",
       "description": "Grants permission to describe one or more requests to assign the billing of the unused capacity of a Capacity Reservation",
@@ -5917,6 +7030,17 @@
       "name": "DescribeCapacityReservationFleets",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationFleets.html",
       "description": "Grants permission to describe one or more Capacity Reservation Fleets",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeCapacityReservationTopology",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservationTopology.html",
+      "description": "Grants permission to describe the topology of one or more Capacity Reservations",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -5998,18 +7122,8 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnEndpoints.html",
       "description": "Grants permission to describe one or more Client VPN endpoints",
       "accessLevel": "List",
-      "resourceTypes": [
-        "client-vpn-endpoint"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
-        "aws:ResourceTag/${TagKey}",
-        "ec2:ClientRootCertificateChainArn",
-        "ec2:CloudwatchLogGroupArn",
-        "ec2:CloudwatchLogStreamArn",
-        "ec2:DirectoryArn",
-        "ec2:ResourceTag/${TagKey}",
-        "ec2:SamlProviderArn",
-        "ec2:ServerCertificateArn",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -6343,6 +7457,39 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeImageReferences",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageReferences.html",
+      "description": "Grants permission to describe your AWS resources that are referencing specified images",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeImageUsageReportEntries",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageUsageReportEntries.html",
+      "description": "Grants permission to describe the entries of an AMI usage report",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeImageUsageReports",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageUsageReports.html",
+      "description": "Grants permission to describe the configuration and status of an AMI usage report",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeImages",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html",
       "description": "Grants permission to describe one or more images (AMIs, AKIs, and ARIs)",
@@ -6386,6 +7533,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -6456,6 +7604,28 @@
       "name": "DescribeInstanceImageMetadata",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceImageMetadata.html",
       "description": "Grants permission to describe the AMI that was used to launch an instance",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeInstanceSqlHaHistoryStates",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaHistoryStates.html",
+      "description": "Grants permission to describe EC2 instance SQL HA history states",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeInstanceSqlHaStates",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceSqlHaStates.html",
+      "description": "Grants permission to describe EC2 instance SQL HA states",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -6552,9 +7722,42 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeIpamPolicies",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPolicies.html",
+      "description": "Grants permission to describe Amazon VPC IP Address Manager (IPAM) policies",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeIpamPools",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPools.html",
       "description": "Grants permission to describe Amazon VPC IP Address Manager (IPAM) pools",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeIpamPrefixListResolverTargets",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolverTargets.html",
+      "description": "Grants permission to describe IPAM prefix list resolver targets",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeIpamPrefixListResolvers",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIpamPrefixListResolvers.html",
+      "description": "Grants permission to describe IPAM prefix list resolvers",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -6752,6 +7955,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeMacModificationTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMacModificationTasks.html",
+      "description": "Grants permission to describe a System Integrity Protection (SIP) modification task or volume ownership delegation task for an Amazon EC2 Mac instance",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeManagedPrefixLists",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeManagedPrefixLists.html",
       "description": "Grants permission to describe your managed prefix lists and any AWS-managed prefix lists",
@@ -6873,6 +8087,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeOutpostLags",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeOutpostLags.html",
+      "description": "Grants permission to describe Outpost LAGs",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribePlacementGroups",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePlacementGroups.html",
       "description": "Grants permission to describe one or more placement groups",
@@ -6983,6 +8208,39 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeRouteServerEndpoints",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServerEndpoints.html",
+      "description": "Grants permission to describe one or more route server endpoints",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeRouteServerPeers",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServerPeers.html",
+      "description": "Grants permission to describe one or more route server peers",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeRouteServers",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteServers.html",
+      "description": "Grants permission to describe one or more route servers",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeRouteTables",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html",
       "description": "Grants permission to describe one or more route tables",
@@ -7008,6 +8266,39 @@
       "name": "DescribeScheduledInstances",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstances.html",
       "description": "Grants permission to describe one or more Scheduled Instances in your account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeSecondaryInterfaces",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondaryInterfaces.html",
+      "description": "Grants permission to describe one or more secondary interfaces",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeSecondaryNetworks",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondaryNetworks.html",
+      "description": "Grants permission to describe one or more secondary networks",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeSecondarySubnets",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecondarySubnets.html",
+      "description": "Grants permission to describe one or more secondary subnets",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -7058,6 +8349,17 @@
       "name": "DescribeSecurityGroups",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html",
       "description": "Grants permission to describe one or more security groups",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeServiceLinkVirtualInterfaces",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html",
+      "description": "Grants permission to describe service link virtual interfaces",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -7306,6 +8608,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeTransitGatewayMeteringPolicies",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMeteringPolicies.html",
+      "description": "Grants permission to describe one or more transit gateway metering policies",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeTransitGatewayMulticastDomains",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMulticastDomains.html",
       "description": "Grants permission to describe one or more transit gateway multicast domains",
@@ -7470,11 +8783,14 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -7578,18 +8894,23 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeVpcEncryptionControls",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEncryptionControls.html",
+      "description": "Grants permission to describe one or more VPC Encryption Controls",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeVpcEndpointAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointAssociations.html",
       "description": "Grants permission to describe the VPC endpoint associations",
       "accessLevel": "List",
-      "resourceTypes": [
-        "vpc-endpoint"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
-        "aws:ResourceTag/${TagKey}",
-        "ec2:ResourceTag/${TagKey}",
-        "ec2:VpceServiceName",
-        "ec2:VpceServiceOwner",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -7638,8 +8959,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -7689,6 +9010,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeVpnConcentrators",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConcentrators.html",
+      "description": "Grants permission to describe one or more VPN concentrators",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeVpnConnections",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html",
       "description": "Grants permission to describe one or more VPN connections",
@@ -7706,6 +9038,21 @@
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DetachApplianceFromNatGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachApplianceFromNatGateway.html",
+      "description": "Grants permission to detach an appliance from a public/private Natgateway",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "natgateway*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -7778,6 +9125,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -7803,6 +9151,23 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:Subnet",
         "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DetachResourcesFromPlacementGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/UserGuide/placement-groups.html",
+      "description": "Grants permission to detach resources from a placement group",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "placement-group*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:PlacementGroupName",
+        "ec2:PlacementGroupStrategy",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -7837,17 +9202,21 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
         "ec2:VolumeType",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -7923,6 +9292,17 @@
       "name": "DisableAwsNetworkPerformanceMetricSubscription",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableAwsNetworkPerformanceMetricSubscription.html",
       "description": "Grants permission to disable infrastructure performance metric subscriptions",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DisableCapacityManager",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableCapacityManager.html",
+      "description": "Grants permission to disable EC2 Capacity Manager for your account",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
@@ -8007,7 +9387,7 @@
       "name": "DisableImageBlockPublicAccess",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableImageBlockPublicAccess.html",
       "description": "Grants permission to disable block public access for AMIs at the account level in the specified AWS Region",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [
         "ec2:Region"
@@ -8055,6 +9435,36 @@
       "dependentActions": []
     },
     {
+      "name": "DisableInstanceSqlHaStandbyDetections",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableInstanceSqlHaStandbyDetections.html",
+      "description": "Grants permission to disable EC2 instance SQL HA standby detections",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "instance*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:EbsOptimized",
+        "ec2:InstanceAutoRecovery",
+        "ec2:InstanceBandwidthWeighting",
+        "ec2:InstanceID",
+        "ec2:InstanceMarketType",
+        "ec2:InstanceMetadataTags",
+        "ec2:InstanceProfile",
+        "ec2:InstanceType",
+        "ec2:MetadataHttpEndpoint",
+        "ec2:MetadataHttpPutResponseHopLimit",
+        "ec2:MetadataHttpTokens",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "ec2:Tenancy",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "DisableIpamOrganizationAdminAccount",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamOrganizationAdminAccount.html",
       "description": "Grants permission to disable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account",
@@ -8066,6 +9476,41 @@
       "dependentActions": [
         "organizations:DeregisterDelegatedAdministrator"
       ]
+    },
+    {
+      "name": "DisableIpamPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableIpamPolicy.html",
+      "description": "Grants permission to disable a policy in Amazon VPC IP Address Manager (IPAM) that controls public IPv4 address allocation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DisableRouteServerPropagation",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableRouteServerPropagation.html",
+      "description": "Grants permission to disable route server propagation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*",
+        "route-table*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RouteTableID",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
     },
     {
       "name": "DisableSerialConsoleAccess",
@@ -8082,7 +9527,7 @@
       "name": "DisableSnapshotBlockPublicAccess",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableSnapshotBlockPublicAccess.html",
       "description": "Grants permission to disable the block public access for snapshots setting for a Region",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [
         "ec2:Region"
@@ -8269,6 +9714,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -8340,7 +9786,7 @@
       "resourceTypes": [
         "elastic-ip*",
         "natgateway*",
-        "network-interface*"
+        "network-interface"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -8359,6 +9805,28 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:Subnet",
         "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateRouteServer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteServer.html",
+      "description": "Grants permission to disassociate a route server from a VPC",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*",
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Ipv4IpamPoolId",
+        "ec2:Ipv6IpamPoolId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -8390,6 +9858,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -8434,6 +9903,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -8454,6 +9924,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -8591,6 +10062,17 @@
       "dependentActions": []
     },
     {
+      "name": "EnableCapacityManager",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableCapacityManager.html",
+      "description": "Grants permission to enable EC2 Capacity Manager for your account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "EnableEbsEncryptionByDefault",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableEbsEncryptionByDefault.html",
       "description": "Grants permission to enable EBS encryption by default for your account",
@@ -8689,7 +10171,7 @@
       "name": "EnableImageBlockPublicAccess",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableImageBlockPublicAccess.html",
       "description": "Grants permission to enable block public access for AMIs at the account level in the specified AWS Region",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [
         "ec2:Region"
@@ -8737,6 +10219,36 @@
       "dependentActions": []
     },
     {
+      "name": "EnableInstanceSqlHaStandbyDetections",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableInstanceSqlHaStandbyDetections.html",
+      "description": "Grants permission to enable EC2 instance SQL HA standby detections",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "instance*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:EbsOptimized",
+        "ec2:InstanceAutoRecovery",
+        "ec2:InstanceBandwidthWeighting",
+        "ec2:InstanceID",
+        "ec2:InstanceMarketType",
+        "ec2:InstanceMetadataTags",
+        "ec2:InstanceProfile",
+        "ec2:InstanceType",
+        "ec2:MetadataHttpEndpoint",
+        "ec2:MetadataHttpPutResponseHopLimit",
+        "ec2:MetadataHttpTokens",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "ec2:Tenancy",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "EnableIpamOrganizationAdminAccount",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamOrganizationAdminAccount.html",
       "description": "Grants permission to enable an AWS Organizations member account as an Amazon VPC IP Address Manager (IPAM) admin account",
@@ -8750,6 +10262,21 @@
         "organizations:EnableAWSServiceAccess",
         "organizations:RegisterDelegatedAdministrator"
       ]
+    },
+    {
+      "name": "EnableIpamPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableIpamPolicy.html",
+      "description": "Grants permission to enable an Amazon VPC IP Address Manager (IPAM) policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
     },
     {
       "name": "EnableReachabilityAnalyzerOrganizationSharing",
@@ -8766,6 +10293,26 @@
       ]
     },
     {
+      "name": "EnableRouteServerPropagation",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableRouteServerPropagation.html",
+      "description": "Grants permission to enable route server propagation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*",
+        "route-table*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RouteTableID",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "EnableSerialConsoleAccess",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html",
       "description": "Grants permission to enable access to the EC2 serial console of all instances for your account",
@@ -8780,7 +10327,7 @@
       "name": "EnableSnapshotBlockPublicAccess",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSnapshotBlockPublicAccess.html",
       "description": "Grants permission to enable or modify the block public access for snapshots setting for a Region",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [
         "ec2:Region"
@@ -8842,6 +10389,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
@@ -8983,6 +10531,20 @@
       "dependentActions": []
     },
     {
+      "name": "GetActiveVpnTunnelStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetActiveVpnTunnelStatus.html",
+      "description": "Grants permission to retrieve the current security parameters for an active VPN tunnel",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "vpn-connection*"
+      ],
+      "conditionKeys": [
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetAllowedImagesSettings",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetAllowedImagesSettings.html",
       "description": "Grants permission to get the allowed settings for images",
@@ -9011,8 +10573,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetAssociatedIpv6PoolCidrs.html",
       "description": "Grants permission to get information about the IPv6 CIDR block associations for a specified IPv6 address pool",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "ipv6pool-ec2*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -9021,6 +10587,39 @@
       "name": "GetAwsNetworkPerformanceData",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetAwsNetworkPerformanceData.html",
       "description": "Grants permission to get network performance data",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCapacityManagerAttributes",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerAttributes.html",
+      "description": "Grants permission to retrieve the current configuration and status of EC2 Capacity Manager",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCapacityManagerMetricData",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerMetricData.html",
+      "description": "Grants permission to retrieve capacity usage metrics for your EC2 resources",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCapacityManagerMetricDimensions",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityManagerMetricDimensions.html",
+      "description": "Grants permission to retrieve the available dimension values for capacity metrics within a specified time range",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [
@@ -9069,6 +10668,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9102,6 +10702,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9174,6 +10775,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetEnabledIpamPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEnabledIpamPolicy.html",
+      "description": "Grants permission to describe the currently enabled policy in Amazon VPC IP Address Manager (IPAM)",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetFlowLogsIntegrationTemplate",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetFlowLogsIntegrationTemplate.html",
       "description": "Grants permission to generate a CloudFormation template to streamline the integration of VPC flow logs with Amazon Athena",
@@ -9215,6 +10827,26 @@
       "dependentActions": []
     },
     {
+      "name": "GetImageAncestry",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageAncestry.html",
+      "description": "Grants permission to retrieve the ancestry chain of an AMI back to its root AMI",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "image*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ImageID",
+        "ec2:ImageType",
+        "ec2:Owner",
+        "ec2:Public",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RootDeviceType",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetImageBlockPublicAccessState",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html",
       "description": "Grants permission to get the current state of block public access for AMIs at the account level in the specified AWS Region",
@@ -9247,6 +10879,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9289,6 +10922,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9373,6 +11007,36 @@
       "dependentActions": []
     },
     {
+      "name": "GetIpamPolicyAllocationRules",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyAllocationRules.html",
+      "description": "Grants permission to describe the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetIpamPolicyOrganizationTargets",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPolicyOrganizationTargets.html",
+      "description": "Grants permission to retrieve the AWS Organizations targets associated with an Amazon VPC IP Address Manager (IPAM) policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "ipam-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetIpamPoolAllocations",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html",
       "description": "Grants permission to get a list of all the CIDR allocations in an Amazon VPC IP Address Manager (IPAM) pool",
@@ -9394,6 +11058,51 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "ipam-pool*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetIpamPrefixListResolverRules",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverRules.html",
+      "description": "Grants permission to get rules for an IPAM prefix list resolver",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetIpamPrefixListResolverVersionEntries",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersionEntries.html",
+      "description": "Grants permission to get CIDR entries for a specific version of an IPAM prefix list resolver",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetIpamPrefixListResolverVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPrefixListResolverVersions.html",
+      "description": "Grants permission to get versions of an IPAM prefix list resolver",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -9431,6 +11140,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9463,6 +11173,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:IpamPrefixListResolverTargetId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -9478,6 +11189,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:IpamPrefixListResolverTargetId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -9524,6 +11236,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -9551,8 +11264,16 @@
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetReservedInstancesExchangeQuote.html",
       "description": "Grants permission to return a quote and exchange information for exchanging one or more Convertible Reserved Instances for a new Convertible Reserved Instance",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "reserved-instances*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:InstanceType",
+        "ec2:ReservedInstancesOfferingType",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -9574,6 +11295,56 @@
         "ec2:PlacementGroupName",
         "ec2:PlacementGroupStrategy",
         "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouteServerAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerAssociations.html",
+      "description": "Grants permission to get associations for a route server",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "route-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouteServerPropagations",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerPropagations.html",
+      "description": "Grants permission to get propagations for a route server",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "route-server*",
+        "route-table"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:RouteTableID",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouteServerRoutingDatabase",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetRouteServerRoutingDatabase.html",
+      "description": "Grants permission to get the routing database for a route server",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "route-server*"
+      ],
+      "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
@@ -9648,6 +11419,22 @@
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTransitGatewayMeteringPolicyEntries",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMeteringPolicyEntries.html",
+      "description": "Grants permission to list the entries for a transit gateway metering policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "transit-gateway-metering-policy*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -9789,6 +11576,23 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetVpcResourcesBlockingEncryptionEnforcement",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetVpcResourcesBlockingEncryptionEnforcement.html",
+      "description": "Grants permission to describe resources that would block VPC Encryption Control enforcement",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -10000,6 +11804,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
@@ -10027,6 +11832,30 @@
       "dependentActions": []
     },
     {
+      "name": "InjectVolumeIOLatency",
+      "documentationUrl": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#ebs-actions-reference",
+      "description": "Grants permission to temporarily inject latency to I/O operations for a target Amazon EBS volume",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "volume*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:Encrypted",
+        "ec2:ParentSnapshot",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:VolumeID",
+        "ec2:VolumeIops",
+        "ec2:VolumeSize",
+        "ec2:VolumeThroughput",
+        "ec2:VolumeType",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListImagesInRecycleBin",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListImagesInRecycleBin.html",
       "description": "Grants permission to list Amazon Machine Images (AMIs) that are currently in the Recycle Bin",
@@ -10041,6 +11870,17 @@
       "name": "ListSnapshotsInRecycleBin",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListSnapshotsInRecycleBin.html",
       "description": "Grants permission to list the Amazon EBS snapshots that are currently in the Recycle Bin",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListVolumesInRecycleBin",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ListVolumesInRecycleBin.html",
+      "description": "Grants permission to list EBS volumes in Recycle Bin",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [
@@ -10221,6 +12061,7 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -10323,6 +12164,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10347,11 +12189,13 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -10374,6 +12218,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10398,6 +12243,28 @@
       "dependentActions": []
     },
     {
+      "name": "ModifyInstanceConnectEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceConnectEndpoint.html",
+      "description": "Grants permission to modify an existing EC2 Instance Connect Endpoint",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "instance-connect-endpoint*",
+        "security-group"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:SecurityGroupID",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ModifyInstanceCpuOptions",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCpuOptions.html",
       "description": "Grants permission to modify the CPU options on an instance",
@@ -10410,6 +12277,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10445,6 +12313,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10479,6 +12348,7 @@
         "aws:ResourceTag/${TagKey}",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10511,6 +12381,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -10529,6 +12401,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10576,6 +12449,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10611,6 +12485,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10648,6 +12523,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10694,6 +12570,24 @@
       "dependentActions": []
     },
     {
+      "name": "ModifyIpamPolicyAllocationRules",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPolicyAllocationRules.html",
+      "description": "Grants permission to modify the rules that define how Amazon VPC IP Address Manager (IPAM) pools allocate IP addresses to AWS resource types within an IPAM policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-policy*",
+        "ipam-pool"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ModifyIpamPool",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPool.html",
       "description": "Grants permission to modify the configurations of an Amazon VPC IP Address Manager (IPAM) pool",
@@ -10705,6 +12599,41 @@
         "aws:ResourceTag/${TagKey}",
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ModifyIpamPrefixListResolver",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolver.html",
+      "description": "Grants permission to modify an IPAM prefix list resolver",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver*",
+        "ipam-scope"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ModifyIpamPrefixListResolverTarget",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamPrefixListResolverTarget.html",
+      "description": "Grants permission to modify an IPAM prefix list resolver target",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ipam-prefix-list-resolver-target*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -10737,6 +12666,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -10790,6 +12721,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
@@ -10820,6 +12752,7 @@
         "aws:ResourceTag/${TagKey}",
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
+        "ec2:IpamPrefixListResolverTargetId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -10833,7 +12766,8 @@
       "resourceTypes": [
         "network-interface*",
         "instance",
-        "security-group"
+        "security-group",
+        "subnet"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -10847,6 +12781,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10869,6 +12804,29 @@
         "ec2:ResourceTag/${TagKey}",
         "ec2:SecurityGroupID",
         "ec2:Vpc",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ModifyOdbNetworkPeering",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyOdbNetworkPeering.html",
+      "description": "Grants permission to allow Oracle Database@AWS to modify the settings of a peering connection between an ODB network and a VPC",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "vpc*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Tenancy",
+        "ec2:VpcID",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -10886,6 +12844,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -10910,6 +12869,26 @@
       "dependentActions": []
     },
     {
+      "name": "ModifyPublicIpDnsNameOptions",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyPublicIpDnsNameOptions.html",
+      "description": "Grants permission to modify public hostname options for a network interface",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "network-interface*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:AvailabilityZone",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:Subnet",
+        "ec2:Vpc",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ModifyReservedInstances",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyReservedInstances.html",
       "description": "Grants permission to modify attributes of one or more Reserved Instances",
@@ -10926,6 +12905,21 @@
         "ec2:ReservedInstancesOfferingType",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Tenancy",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ModifyRouteServer",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyRouteServer.html",
+      "description": "Grants permission to modify a route server",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "route-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11023,6 +13017,7 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -11043,6 +13038,7 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -11135,6 +13131,27 @@
       "dependentActions": []
     },
     {
+      "name": "ModifyTransitGatewayMeteringPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayMeteringPolicy.html",
+      "description": "Grants permission to modify a transit gateway metering policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "transit-gateway-metering-policy*",
+        "transit-gateway-attachment"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayMeteringPolicyId",
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:transitGatewayAttachmentId",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ModifyTransitGatewayPrefixListReference",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayPrefixListReference.html",
       "description": "Grants permission to modify a transit gateway prefix list reference",
@@ -11178,6 +13195,7 @@
         "ec2:transitGatewayAttachmentId",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -11197,9 +13215,11 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -11219,6 +13239,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11235,6 +13256,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
@@ -11252,6 +13275,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11267,6 +13291,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11282,6 +13308,7 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11297,6 +13324,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11315,11 +13344,14 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -11341,11 +13373,14 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
         "ec2:ResourceTag/${TagKey}",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -11383,6 +13418,8 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute",
+        "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
@@ -11395,6 +13432,22 @@
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ModifyVpcEncryptionControl",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEncryptionControl.html",
+      "description": "Grants permission to modify an existing VPC Encryption Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpc-encryption-control*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:Attribute/${AttributeName}",
+        "ec2:ResourceTag/${TagKey}",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11415,6 +13468,8 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceServiceRegion",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
         "ec2:RouteTableID",
@@ -11424,6 +13479,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -11445,8 +13501,8 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11464,9 +13520,9 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
+        "ec2:VpceMultiRegion",
         "ec2:VpceServicePrivateDnsName",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11484,8 +13540,8 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11503,8 +13559,8 @@
         "ec2:Attribute",
         "ec2:Attribute/${AttributeName}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -11663,6 +13719,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -11753,6 +13810,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
@@ -11922,7 +13980,7 @@
       "name": "PutResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/vpc/latest/ipam/share-pool-ipam.html",
       "description": "Grants permission to attach an IAM policy that enables cross-account sharing to a resource",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "ipam-pool",
         "placement-group",
@@ -11952,6 +14010,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -12155,8 +14214,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -12238,6 +14297,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -12290,6 +14350,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -12358,6 +14419,7 @@
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -12411,6 +14473,7 @@
         "instance*"
       ],
       "conditionKeys": [
+        "ec2:AvailabilityZoneId",
         "ec2:InstanceBandwidthWeighting",
         "ec2:InstanceID",
         "ec2:Region"
@@ -12468,6 +14531,7 @@
         "ec2:VolumeSize",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -12534,6 +14598,7 @@
         "ec2:VolumeSize",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:ResourceTag/${TagKey}",
         "ec2:SubnetID",
         "ec2:Vpc",
@@ -12627,6 +14692,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -12779,6 +14845,32 @@
       "dependentActions": []
     },
     {
+      "name": "RestoreVolumeFromRecycleBin",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreVolumeFromRecycleBin.html",
+      "description": "Grants permission to restore an EBS volume from Recycle Bin",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "volume*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:Encrypted",
+        "ec2:ParentSnapshot",
+        "ec2:ParentVolume",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
+        "ec2:VolumeIops",
+        "ec2:VolumeSize",
+        "ec2:VolumeThroughput",
+        "ec2:VolumeType",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "RevokeClientVpnIngress",
       "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html",
       "description": "Grants permission to remove an inbound authorization rule from a Client VPN endpoint",
@@ -12852,6 +14944,7 @@
         "launch-template",
         "license-configuration",
         "placement-group",
+        "secondary-subnet",
         "snapshot",
         "volume",
         "SCENARIO:",
@@ -12880,6 +14973,7 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -12918,6 +15012,7 @@
         "ec2:Vpc",
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:IsLaunchTemplateResource",
         "ec2:LaunchTemplate",
         "ec2:ResourceTag/${TagKey}",
@@ -12949,6 +15044,8 @@
         "ec2:PlacementGroupStrategy",
         "ec2:ResourceTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "ec2:IsLaunchTemplateResource",
         "ec2:LaunchTemplate",
         "ec2:Owner",
@@ -12960,12 +15057,14 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:Encrypted",
         "ec2:IsLaunchTemplateResource",
         "ec2:LaunchTemplate",
         "ec2:ManagedResourceOperator",
         "ec2:ParentSnapshot",
         "ec2:VolumeID",
+        "ec2:VolumeInitializationRate",
         "ec2:VolumeIops",
         "ec2:VolumeSize",
         "ec2:VolumeThroughput",
@@ -13092,6 +15191,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -13123,6 +15223,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -13166,6 +15267,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceBandwidthWeighting",
@@ -13236,8 +15338,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:ResourceTag/${TagKey}",
-        "ec2:vpceMultiRegion",
-        "ec2:vpceSupportedRegion",
+        "ec2:VpceMultiRegion",
+        "ec2:VpceSupportedRegion",
         "ec2:Region"
       ],
       "dependentActions": []
@@ -13253,6 +15355,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -13306,6 +15409,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -13417,6 +15521,7 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
         "ec2:CpuOptionsAmdSevSnp",
         "ec2:EbsOptimized",
         "ec2:InstanceAutoRecovery",
@@ -13434,6 +15539,48 @@
         "ec2:ProductCode",
         "ec2:ResourceTag/${TagKey}",
         "ec2:RootDeviceType",
+        "ec2:Tenancy",
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCapacityManagerOrganizationsAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateCapacityManagerOrganizationsAccess.html",
+      "description": "Grants permission to update the Organizations access setting for EC2 Capacity Manager",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "ec2:Region"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateInterruptibleCapacityReservationAllocation",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateInterruptibleCapacityReservationAllocation.html",
+      "description": "Grants permission to update the number of instances allocated to an interruptible reservation, allowing you to add more capacity or reclaim capacity to your source Capacity Reservation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capacity-reservation*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:AvailabilityZone",
+        "ec2:AvailabilityZoneId",
+        "ec2:CreateDate",
+        "ec2:EbsOptimized",
+        "ec2:EndDate",
+        "ec2:EndDateType",
+        "ec2:InstanceCount",
+        "ec2:InstanceMatchCriteria",
+        "ec2:InstancePlatform",
+        "ec2:InstanceType",
+        "ec2:InterruptibleCapacityReservationId",
+        "ec2:InterruptionType",
+        "ec2:IsInterruptible",
+        "ec2:ResourceTag/${TagKey}",
+        "ec2:SourceCapacityReservationId",
+        "ec2:TargetInstanceCount",
         "ec2:Tenancy",
         "ec2:Region"
       ],

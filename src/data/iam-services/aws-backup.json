@@ -4,6 +4,19 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsbackup.html",
   "actions": [
     {
+      "name": "AssociateBackupVaultMpaApprovalTeam",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_AssociateBackupVaultMpaApprovalTeam.html",
+      "description": "Grants permission to associate an MPA approval team with a backup vault",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "backupVault*"
+      ],
+      "conditionKeys": [
+        "backup:MpaApprovalTeamArn"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CancelLegalHold",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CancelLegalHold.html",
       "description": "Grants permission to cancel a legal hold",
@@ -42,6 +55,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateBackupAccessPoint",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html",
+      "description": "Grants permission to create a new access point for backup instant access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "recoveryPoint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateBackupPlan",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupPlan.html",
       "description": "Grants permission to create a new backup plan",
@@ -53,7 +77,9 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     {
       "name": "CreateBackupSelection",
@@ -142,6 +168,20 @@
       "dependentActions": []
     },
     {
+      "name": "CreateRestoreAccessBackupVault",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreAccessBackupVault.html",
+      "description": "Grants permission to create a restore access backup vault",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "backupVault*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateRestoreTestingPlan",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateRestoreTestingPlan.html",
       "description": "Grants permission to create a new restore testing plan",
@@ -167,6 +207,29 @@
       "dependentActions": [
         "iam:PassRole"
       ]
+    },
+    {
+      "name": "CreateTieringConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateTieringConfiguration.html",
+      "description": "Grants permission to create a new tiering configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tieringConfiguration*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteBackupAccessPoint",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html",
+      "description": "Grants permission to delete the access point",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
     },
     {
       "name": "DeleteBackupPlan",
@@ -301,6 +364,26 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteTieringConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteTieringConfiguration.html",
+      "description": "Grants permission to delete a tiering configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tieringConfiguration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeBackupAccessPoint",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-instant-access.html",
+      "description": "Grants permission to return information about the specified access point",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeBackupJob",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupJob.html",
       "description": "Grants permission to describe a backup job",
@@ -404,6 +487,26 @@
       "description": "Grants permission to describe a restore job",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeScanJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeScanJob.html",
+      "description": "Grants permission to describe a scan job",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateBackupVaultMpaApprovalTeam",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DisassociateBackupVaultMpaApprovalTeam.html",
+      "description": "Grants permission to disassociate an MPA approval team from a backup vault",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "backupVault*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -590,6 +693,17 @@
       "description": "Grants permission to get supported resource types",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTieringConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetTieringConfiguration.html",
+      "description": "Grants permission to describe a tiering configuration",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "tieringConfiguration*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -784,6 +898,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListRestoreAccessBackupVaults",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreAccessBackupVaults.html",
+      "description": "Grants permission to list a restore access backup vaults associated with a backup vault",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "backupVault*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListRestoreJobSummaries",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreJobSummaries.html",
       "description": "Grants permission to list restore job summaries",
@@ -831,6 +956,24 @@
       "dependentActions": []
     },
     {
+      "name": "ListScanJobSummaries",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobSummaries.html",
+      "description": "Grants permission to list scan job summaries",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListScanJobs",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListScanJobs.html",
+      "description": "Grants permission to list scan jobs",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTags",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTags.html",
       "description": "Grants permission to list tags for a resource",
@@ -842,8 +985,18 @@
         "legalHold",
         "recoveryPoint",
         "reportPlan",
-        "restoreTestingPlan"
+        "restoreTestingPlan",
+        "tieringConfiguration"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTieringConfigurations",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTieringConfigurations.html",
+      "description": "Grants permission to list tiering configurations",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -901,6 +1054,17 @@
       "description": "Grants permission to put a restore validation result",
       "accessLevel": "Write",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RevokeRestoreAccessBackupVault",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_RevokeRestoreAccessBackupVault.html",
+      "description": "Grants permission to revoke a restore access backup vault",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "backupVault*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -966,6 +1130,19 @@
       ]
     },
     {
+      "name": "StartScanJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartScanJob.html",
+      "description": "Grants permission to start a new scan job",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "recoveryPoint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "iam:PassRole"
+      ]
+    },
+    {
       "name": "StopBackupJob",
       "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StopBackupJob.html",
       "description": "Grants permission to stop a backup job",
@@ -986,7 +1163,8 @@
         "legalHold",
         "recoveryPoint",
         "reportPlan",
-        "restoreTestingPlan"
+        "restoreTestingPlan",
+        "tieringConfiguration"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -1006,7 +1184,8 @@
         "legalHold",
         "recoveryPoint",
         "reportPlan",
-        "restoreTestingPlan"
+        "restoreTestingPlan",
+        "tieringConfiguration"
       ],
       "conditionKeys": [
         "aws:TagKeys"
@@ -1022,7 +1201,9 @@
         "backupPlan*"
       ],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     {
       "name": "UpdateFramework",
@@ -1113,6 +1294,17 @@
       "dependentActions": [
         "iam:PassRole"
       ]
+    },
+    {
+      "name": "UpdateTieringConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateTieringConfiguration.html",
+      "description": "Grants permission to update a tiering configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "tieringConfiguration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
     }
   ]
 }

@@ -22,6 +22,22 @@
       ]
     },
     {
+      "name": "CreatePipelineEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_CreatePipelineEndpoint.html",
+      "description": "Grants permission to create an OpenSearch Ingestion pipeline endpoint",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "pipeline*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ]
+    },
+    {
       "name": "DeletePipeline",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeletePipeline.html",
       "description": "Grants permission to delete an OpenSearch Ingestion pipeline",
@@ -35,6 +51,28 @@
         "logs:GetLogDelivery",
         "logs:ListLogDeliveries"
       ]
+    },
+    {
+      "name": "DeletePipelineEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeletePipelineEndpoint.html",
+      "description": "Grants permission to delete an OpenSearch Ingestion pipeline endpoint in the current account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "pipeline-endpoint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_DeleteResourcePolicy.html",
+      "description": "Grants permission to delete a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
     },
     {
       "name": "GetPipeline",
@@ -70,6 +108,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_GetResourcePolicy.html",
+      "description": "Grants permission to get a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "Ingest",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configure-client.html",
       "description": "Grants permission to ingest data through an OpenSearch Ingestion pipeline",
@@ -90,6 +139,24 @@
       "dependentActions": []
     },
     {
+      "name": "ListPipelineEndpointConnections",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpointConnections.html",
+      "description": "Grants permission to list OpenSearch Ingestion pipeline endpoint connections to pipelines in the current account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPipelineEndpoints",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelineEndpoints.html",
+      "description": "Grants permission to list OpenSearch Ingestion pipeline endpoints in the current account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListPipelines",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListPipelines.html",
       "description": "Grants permission to list basic configuration for each OpenSearch Ingestion pipeline in the current account and Region",
@@ -103,6 +170,28 @@
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_ListTagsForResource.html",
       "description": "Grants permission to list all resource tags associated with an OpenSearch Ingestion pipeline",
       "accessLevel": "Read",
+      "resourceTypes": [
+        "pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_PutResourcePolicy.html",
+      "description": "Grants permission to put a resource policy for an OpenSearch Ingestion resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "pipeline*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RevokePipelineEndpointConnections",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_osis_RevokePipelineEndpointConnections.html",
+      "description": "Grants permission to revoke an OpenSearch Ingestion pipeline endpoint connection from a pipeline in the current account",
+      "accessLevel": "Write",
       "resourceTypes": [
         "pipeline*"
       ],

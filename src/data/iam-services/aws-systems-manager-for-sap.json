@@ -16,7 +16,7 @@
       "name": "DeleteResourcePermission",
       "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
       "description": "Grants permission to delete the SSM for SAP level resource permissions associated with a SSM for SAP database resource",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -53,6 +53,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetConfigurationCheckOperation",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to get the details of a configuration check operation by specifying the operation ID",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetDatabase",
       "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
       "description": "Grants permission to access information about a database registered with SSM for SAP by providing the application ID, component ID, and database ID",
@@ -74,7 +83,7 @@
       "name": "GetResourcePermission",
       "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
       "description": "Grants permission to get the SSM for SAP level resource permissions associated with a SSM for SAP database resource",
-      "accessLevel": "Read",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -96,6 +105,24 @@
       "resourceTypes": [
         "application"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListConfigurationCheckDefinitions",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to list all configuration check types supported by AWS Systems Manager for SAP",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListConfigurationCheckOperations",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to list past configuration check operations",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -127,6 +154,24 @@
       "dependentActions": []
     },
     {
+      "name": "ListSubCheckResults",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to list the sub-check results of a specified configuration check operation",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSubCheckRuleResults",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to list the rules of a specified sub-check belonging to a configuration check operation",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
       "description": "Grants permission to list the tags on a specified resource ARN",
@@ -139,7 +184,7 @@
       "name": "PutResourcePermission",
       "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
       "description": "Grants permission to add the SSM for SAP level resource permissions associated with a SSM for SAP database resource",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -184,6 +229,15 @@
       "resourceTypes": [
         "application"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartConfigurationChecks",
+      "documentationUrl": "https://docs.aws.amazon.com/systems-manager/index.html",
+      "description": "Grants permission to iniitiate configuration check operations against a specified application",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },

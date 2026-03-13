@@ -105,7 +105,9 @@
         "budget*"
       ],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ]
     },
     {
       "name": "TagResource",
@@ -158,7 +160,9 @@
         "budget*"
       ],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "billing:GetBillingViewData"
+      ]
     }
   ]
 }

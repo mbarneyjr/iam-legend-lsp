@@ -639,6 +639,18 @@
       "dependentActions": []
     },
     {
+      "name": "ListTrainedModelVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModelVersions.html",
+      "description": "Grants permission to return a list of trained model versions",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListTrainedModels",
       "documentationUrl": "https://docs.aws.amazon.com/cleanrooms-ml/latest/APIReference/API_ListTrainedModels.html",
       "description": "Grants permission to return a list of trained models",

@@ -1,0 +1,34 @@
+{
+  "serviceName": "AWS MCP Server",
+  "servicePrefix": "aws-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsmcpserver.html",
+  "actions": [
+    {
+      "name": "CallReadOnlyTool",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-mcp/latest/userguide/security-iam.html",
+      "description": "Grants permission to call read-only tools in MCP service",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CallReadWriteTool",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-mcp/latest/userguide/security-iam.html",
+      "description": "Grants permission to call AWS Read and Write apis in MCP Service",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InvokeMcp",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-mcp/latest/userguide/security-iam.html",
+      "description": "Grants permission to use MCP service",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

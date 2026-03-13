@@ -76,6 +76,21 @@
       "dependentActions": []
     },
     {
+      "name": "CreateAndAttachS3AccessPoint",
+      "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateAndAttachS3AccessPoint.html",
+      "description": "Grants permission to create and attach a S3 Access Point to a FSx File System",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "volume"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "s3:CreateAccessPoint",
+        "s3:GetAccessPoint",
+        "s3:PutAccessPointPolicy"
+      ]
+    },
+    {
       "name": "CreateBackup",
       "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html",
       "description": "Grants permission to create a new backup of an Amazon FSx file system or an Amazon FSx volume",
@@ -103,6 +118,8 @@
         "file-system*"
       ],
       "conditionKeys": [
+        "fsx:NfsDataRepositoryAuthenticationEnabled",
+        "fsx:NfsDataRepositoryEncryptionInTransitEnabled",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -322,7 +339,7 @@
     {
       "name": "DeleteResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html",
-      "description": "Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required",
+      "description": "Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and GetResourcePolicy are also required",
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "volume*"
@@ -439,6 +456,15 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeS3AccessPointAttachments",
+      "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeS3AccessPointAttachments.html",
+      "description": "Grants permission to return the descriptions of S3 Access Point Attachments",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeSharedVpcConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSharedVpcConfiguration.html",
       "description": "Grants permission to return the descriptions of whether FSx route table updates from participant accounts are allowed in your account",
@@ -475,6 +501,19 @@
       "dependentActions": []
     },
     {
+      "name": "DetachAndDeleteS3AccessPoint",
+      "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_DetachAndDeleteS3AccessPoint.html",
+      "description": "Grants permission to detach an S3 Access Point from an Amazon FSx File System and delete the S3 Access Point",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "volume"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "s3:DeleteAccessPoint"
+      ]
+    },
+    {
       "name": "DisassociateFileGateway",
       "documentationUrl": "https://docs.aws.amazon.com/filegateway/latest/filefsxw/what-is-file-fsxw.html",
       "description": "Grants permission to disassociate a File Gateway instance from an Amazon FSx for Windows File Server file system",
@@ -499,7 +538,7 @@
     {
       "name": "GetResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html",
-      "description": "Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required",
+      "description": "Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). PutResourcePolicy and DeleteResourcePolicy are also required",
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "volume*"
@@ -539,7 +578,7 @@
     {
       "name": "PutResourcePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html",
-      "description": "Required to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required",
+      "description": "Grants permission to manage cross-account sharing of FSx volumes through AWS Resource Access Manager (RAM). DeleteResourcePolicy and GetResourcePolicy are also required",
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "volume*"
@@ -597,6 +636,10 @@
         "volume"
       ],
       "conditionKeys": [
+        "fsx:NfsDataRepositoryAuthenticationEnabled",
+        "fsx:NfsDataRepositoryEncryptionInTransitEnabled",
+        "fsx:ParentVolumeId",
+        "fsx:StorageVirtualMachineId",
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],

@@ -1,0 +1,187 @@
+{
+  "serviceName": "Amazon Nova Act",
+  "servicePrefix": "nova-act",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonnovaact.html",
+  "actions": [
+    {
+      "name": "CreateAct",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateAct.html",
+      "description": "Grants permission to create a new AI task (act) within a session that can interact with tools and perform specific actions",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateSession",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateSession.html",
+      "description": "Grants permission to create a new session context within a workflow run to manage conversation state and acts",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateWorkflowDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowDefinition.html",
+      "description": "Grants permission to create a new workflow definition template that can be used to execute multiple workflow runs",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateWorkflowRun",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_CreateWorkflowRun.html",
+      "description": "Grants permission to create a new execution instance of a workflow definition with specified parameters",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteWorkflowDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowDefinition.html",
+      "description": "Grants permission to delete a workflow definition and all associated resources",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteWorkflowRun",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_DeleteWorkflowRun.html",
+      "description": "Grants permission to terminate and clean up a workflow run, stopping all associated acts and sessions",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetWorkflowDefinition",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowDefinition.html",
+      "description": "Grants permission to retrieve details and configuration of a specific workflow definition",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetWorkflowRun",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_GetWorkflowRun.html",
+      "description": "Grants permission to retrieve the current state, configuration, and execution details of a workflow run",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InvokeActStep",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_InvokeActStep.html",
+      "description": "Grants permission to execute the next step of an act, processing tool call results and returning new tool calls if needed",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListActs",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListActs.html",
+      "description": "Grants permission to list all acts within a specific session with their current status and execution details",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListModels",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListModels.html",
+      "description": "Grants permission to list all available AI models that can be used for workflow execution, including their status and compatibility information",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSessions",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListSessions.html",
+      "description": "Grants permission to list all sessions within a specific workflow run",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListWorkflowDefinitions",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowDefinitions.html",
+      "description": "Grants permission to list all workflow definitions in your account with optional filtering and pagination",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListWorkflowRuns",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_ListWorkflowRuns.html",
+      "description": "Grants permission to list all workflow runs for a specific workflow definition with optional filtering and pagination",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "workflow-definition*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAct",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateAct.html",
+      "description": "Grants permission to update an existing act's configuration, status, or error information",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateWorkflowRun",
+      "documentationUrl": "https://docs.aws.amazon.com/nova-act/latest/APIReference/API_UpdateWorkflowRun.html",
+      "description": "Grants permission to update the configuration or state of an active workflow run",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workflow-definition*",
+        "workflow-run*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

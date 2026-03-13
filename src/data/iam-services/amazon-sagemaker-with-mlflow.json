@@ -20,7 +20,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -31,7 +33,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -42,7 +46,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -53,7 +59,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -64,7 +72,35 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLoggedModel",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to delete a logged model in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLoggedModelTag",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to delete a tag for a logged model in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -75,7 +111,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -86,7 +124,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -97,7 +137,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -108,7 +150,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -119,7 +163,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -130,7 +176,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -141,7 +189,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -152,7 +202,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -163,7 +215,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -174,7 +228,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "FinalizeLoggedModel",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to set status for a logged model in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -185,7 +254,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -196,7 +267,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -207,7 +280,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -218,7 +293,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetLoggedModel",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to get a logged model in MLflow",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -229,7 +319,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -240,7 +332,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -251,7 +345,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -262,7 +358,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -273,7 +371,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -284,7 +384,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -295,7 +397,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListLoggedModelArtifacts",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to list artifacts for a logged model in MLflow",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -306,7 +423,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -317,7 +436,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "LogLoggedModelParams",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to log params for a logged model in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -328,7 +462,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -339,7 +475,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "LogOutputs",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to log outputs, such as models, for a run in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -350,7 +501,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -361,7 +514,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -372,7 +527,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -383,7 +540,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -394,7 +553,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "SearchLoggedModels",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to search for logged models in MLflow",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -405,7 +579,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -416,7 +592,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -427,7 +605,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -438,7 +618,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -449,7 +631,22 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "SetLoggedModelTags",
+      "documentationUrl": "${APIReferenceDocPage}",
+      "description": "Grants permission to set tags for a logged model in MLflow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "mlflow-tracking-server*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -460,7 +657,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -471,7 +670,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -482,7 +683,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -493,7 +696,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -504,7 +709,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -515,7 +722,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -526,7 +735,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -537,7 +748,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -548,7 +761,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -559,7 +774,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -570,7 +787,9 @@
       "resourceTypes": [
         "mlflow-tracking-server*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     }
   ]

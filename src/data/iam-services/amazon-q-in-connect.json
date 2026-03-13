@@ -31,9 +31,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIAgent.html",
       "description": "Grants permission to create an ai agent",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -46,8 +44,7 @@
       "description": "Grants permission to create an ai agent version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [
         "aws:TagKeys",
@@ -60,9 +57,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIGuardrail.html",
       "description": "Grants permission to create an ai guardrail",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -75,8 +70,7 @@
       "description": "Grants permission to create an ai guardrail version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [
         "aws:TagKeys",
@@ -89,9 +83,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAIPrompt.html",
       "description": "Grants permission to create an ai prompt",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -104,8 +96,7 @@
       "description": "Grants permission to create an ai prompt version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [
         "aws:TagKeys",
@@ -130,9 +121,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateAssistantAssociation.html",
       "description": "Grants permission to create an association between an assistant and another resource",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -260,8 +249,7 @@
       "description": "Grants permission to delete an ai agent",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -272,8 +260,7 @@
       "description": "Grants permission to delete an ai agent version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -284,8 +271,7 @@
       "description": "Grants permission to delete an ai guardrail",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -296,8 +282,7 @@
       "description": "Grants permission to delete an ai guardrail version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -308,8 +293,7 @@
       "description": "Grants permission to delete an ai prompt",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -320,8 +304,7 @@
       "description": "Grants permission to delete an ai prompt version",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -343,7 +326,6 @@
       "description": "Grants permission to delete an assistant association",
       "accessLevel": "Write",
       "resourceTypes": [
-        "Assistant*",
         "AssistantAssociation*"
       ],
       "conditionKeys": [],
@@ -438,8 +420,7 @@
       "description": "Grants permission to retrieve information about an ai agent",
       "accessLevel": "Read",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -450,8 +431,7 @@
       "description": "Grants permission to retrieve information about an ai guardrail",
       "accessLevel": "Read",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -462,8 +442,7 @@
       "description": "Grants permission to retrieve information about an ai prompt",
       "accessLevel": "Read",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -485,7 +464,6 @@
       "description": "Grants permission to retrieve information about an assistant association",
       "accessLevel": "Read",
       "resourceTypes": [
-        "Assistant*",
         "AssistantAssociation*"
       ],
       "conditionKeys": [],
@@ -570,7 +548,6 @@
       "description": "Grants permission to retrieve for next message in a session",
       "accessLevel": "Read",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],
@@ -594,7 +571,7 @@
       "description": "Grants permission to retrieve recommendations for the specified session",
       "accessLevel": "Read",
       "resourceTypes": [
-        "Assistant*"
+        "Session*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -605,7 +582,6 @@
       "description": "Grants permission to retrieve information for a specified session",
       "accessLevel": "Read",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],
@@ -617,8 +593,7 @@
       "description": "Grants permission to list information about ai agent versions",
       "accessLevel": "List",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -628,9 +603,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIAgents.html",
       "description": "Grants permission to list information about ai agents",
       "accessLevel": "List",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -640,8 +613,7 @@
       "description": "Grants permission to list information about ai guardrail versions",
       "accessLevel": "List",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -651,9 +623,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIGuardrails.html",
       "description": "Grants permission to list information about ai guardrails",
       "accessLevel": "List",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -663,8 +633,7 @@
       "description": "Grants permission to list information about ai prompt versions",
       "accessLevel": "List",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -674,9 +643,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_ListAIPrompts.html",
       "description": "Grants permission to list information about ai prompts",
       "accessLevel": "List",
-      "resourceTypes": [
-        "Assistant*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -770,7 +737,6 @@
       "description": "Grants permission to list messages in a session",
       "accessLevel": "List",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],
@@ -801,7 +767,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html",
       "description": "Grants permission to remove the specified recommendations from the specified assistant's queue of newly available recommendations",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Session*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -866,6 +834,17 @@
       ]
     },
     {
+      "name": "Retrieve",
+      "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_Retrieve.html",
+      "description": "Grants permission to retrieve knowledge content from specified assistant associations",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Assistant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "SearchContent",
       "documentationUrl": "https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html",
       "description": "Grants permission to search for content referencing a specified knowledge base. Can be used to get a specific content resource by its name",
@@ -920,7 +899,6 @@
       "description": "Grants permission to send a message",
       "accessLevel": "Write",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],
@@ -1000,8 +978,7 @@
       "description": "Grants permission to update information about an ai agent",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIAgent*",
-        "Assistant*"
+        "AIAgent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1012,8 +989,7 @@
       "description": "Grants permission to update information about an ai guardrail",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIGuardrail*",
-        "Assistant*"
+        "AIGuardrail*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1024,8 +1000,7 @@
       "description": "Grants permission to update information about an ai prompt",
       "accessLevel": "Write",
       "resourceTypes": [
-        "AIPrompt*",
-        "Assistant*"
+        "AIPrompt*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1106,7 +1081,6 @@
       "description": "Grants permission to update a session",
       "accessLevel": "Write",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],
@@ -1118,7 +1092,6 @@
       "description": "Grants permission to update data stored in a session",
       "accessLevel": "Write",
       "resourceTypes": [
-        "Assistant*",
         "Session*"
       ],
       "conditionKeys": [],

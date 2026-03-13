@@ -4,6 +4,22 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonapplicationrecoverycontroller-zonalshift.html",
   "actions": [
     {
+      "name": "CancelPracticeRun",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelPracticeRun.html",
+      "description": "Grants permission to cancel an active practice run",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ALB*",
+        "NLB*"
+      ],
+      "conditionKeys": [
+        "arc-zonal-shift:ResourceIdentifier",
+        "aws:ResourceTag/${TagKey}",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CancelZonalShift",
       "documentationUrl": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_CancelZonalShift.html",
       "description": "Grants permission to cancel an active zonal shift",
@@ -107,6 +123,22 @@
       "dependentActions": []
     },
     {
+      "name": "StartPracticeRun",
+      "documentationUrl": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartPracticeRun.html",
+      "description": "Grants permission to start a practice run",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ALB*",
+        "NLB*"
+      ],
+      "conditionKeys": [
+        "arc-zonal-shift:ResourceIdentifier",
+        "aws:ResourceTag/${TagKey}",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "StartZonalShift",
       "documentationUrl": "https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_StartZonalShift.html",
       "description": "Grants permission to start a zonal shift",
@@ -164,7 +196,9 @@
         "aws:ResourceTag/${TagKey}",
         "elasticloadbalancing:ResourceTag/${TagKey}"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ]
     },
     {
       "name": "UpdateZonalShift",

@@ -20,7 +20,8 @@
       "description": "Grants permission to apply a guardrail",
       "accessLevel": "Read",
       "resourceTypes": [
-        "guardrail*"
+        "guardrail*",
+        "guardrail-profile"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -71,6 +72,50 @@
       "dependentActions": []
     },
     {
+      "name": "CallWithBearerToken",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to use bearer token",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "bedrock:BearerTokenType"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CancelAutomatedReasoningPolicyBuildWorkflow",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to cancel a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CopyBlueprintStage",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html",
+      "description": "Grants permission to copy a blueprint from one stage to another",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "blueprint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CountTokens",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_CountTokens.html",
+      "description": "Grants permission to count the number of tokens in an input prompt",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "foundation-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateAgent",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgent.html",
       "description": "Grants permission to create a new agent and a test agent alias pointing to the DRAFT agent version",
@@ -111,12 +156,52 @@
       "dependentActions": []
     },
     {
+      "name": "CreateAutomatedReasoningPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to create a new automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAutomatedReasoningPolicyTestCase",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to create a test case for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAutomatedReasoningPolicyVersion",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to create a new automated reasoning policy version",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateBlueprint",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateBlueprint.html",
       "description": "Grants permission to create a blueprint for custom output from data automation",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -131,6 +216,32 @@
       "dependentActions": []
     },
     {
+      "name": "CreateCustomModel",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModel.html",
+      "description": "Grants permission to create a custom model into Bedrock",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCustomModelDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateCustomModelDeployment.html",
+      "description": "Grants permission to create a custom model deployment for custom model",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "custom-model*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateDataAutomationProject",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_CreateDataAutomationProject.html",
       "description": "Grants permission to create a data automation project",
@@ -138,7 +249,10 @@
       "resourceTypes": [
         "blueprint"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -220,7 +334,11 @@
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
       "description": "Grants permission to create a new guardrail",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "automated-reasoning-policy",
+        "automated-reasoning-policy-version",
+        "guardrail-profile"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -483,6 +601,40 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteAutomatedReasoningPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to delete an automated reasoning policy or its version",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*",
+        "automated-reasoning-policy-version*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAutomatedReasoningPolicyBuildWorkflow",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to delete a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAutomatedReasoningPolicyTestCase",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to delete a test case for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteBlueprint",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_DeleteBlueprint.html",
       "description": "Grants permission to delete a blueprint for data automation",
@@ -500,6 +652,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "custom-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCustomModelDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteCustomModelDeployment.html",
+      "description": "Grants permission to delete a custom model deployment that you created earlier",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "custom-model-deployment*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -523,6 +686,15 @@
       "resourceTypes": [
         "knowledge-base*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteEnforcedGuardrailConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteEnforcedGuardrailConfiguration.html",
+      "description": "Grants permission to delete account-level enforced guardrail configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -692,7 +864,9 @@
       "description": "Deletes a previously created Bedrock resource policy",
       "accessLevel": "Write",
       "resourceTypes": [
-        "custom-model*"
+        "custom-model",
+        "guardrail",
+        "guardrail-profile"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -760,6 +934,18 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "session*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ExportAutomatedReasoningPolicyVersion",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve an automated reasoning policy version artifact",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*",
+        "automated-reasoning-policy-version*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -863,12 +1049,101 @@
       "dependentActions": []
     },
     {
+      "name": "GetAutomatedReasoningPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve an automated reasoning policy or its version",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*",
+        "automated-reasoning-policy-version*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyAnnotations",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve annotations for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyBuildWorkflow",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyBuildWorkflowResultAssets",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve assets for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyNextScenario",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve the next unreviewed generated scenario for a build workflow for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyTestCase",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve a test case for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomatedReasoningPolicyTestResult",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to retrieve result for a test case for an automated reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetBlueprint",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_GetBlueprint.html",
       "description": "Grants permission to retrieve an existing blueprint for data automation",
       "accessLevel": "Read",
       "resourceTypes": [
         "blueprint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetBlueprintOptimizationStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html",
+      "description": "Grants permission to get the status of a blueprint optimization job",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "blueprint-optimization-invocation*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -889,6 +1164,17 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "custom-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCustomModelDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetCustomModelDeployment.html",
+      "description": "Grants permission to get the properties associated with a custom model deployment. Use this operation to get the status of a custom model deployment",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "custom-model-deployment*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -938,6 +1224,19 @@
       "dependentActions": []
     },
     {
+      "name": "GetExecutionFlowSnapshot",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetExecutionFlowSnapshot.html",
+      "description": "Grants permission to retrieve the flow definition for a flow execution",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias*",
+        "flow-execution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetFlow",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetFlow.html",
       "description": "Grants permission to retrieve an existing prompt flow",
@@ -955,6 +1254,19 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "flow-alias*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFlowExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetFlowExecution.html",
+      "description": "Grants permission to retrieve an existing execution of a flow alias",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias*",
+        "flow-execution*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1184,7 +1496,9 @@
       "description": "Gets the resource policy document for a Bedrock resource",
       "accessLevel": "Read",
       "resourceTypes": [
-        "custom-model*"
+        "custom-model",
+        "guardrail",
+        "guardrail-profile"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1232,6 +1546,33 @@
       "dependentActions": []
     },
     {
+      "name": "InvokeAutomatedReasoningPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to invoke an Automated Reasoning policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "automated-reasoning-policy*",
+        "automated-reasoning-policy-version*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InvokeBlueprintOptimizationAsync",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Data_Automation_for_Amazon_Bedrock.html",
+      "description": "Grants permission to invoke an async job to perform blueprint optimization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "blueprint*",
+        "data-automation-profile*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "InvokeBlueprintRecommendationAsync",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
       "description": "Grants permission to invoke blueprint recommendations asynchronously",
@@ -1252,6 +1593,19 @@
       "dependentActions": []
     },
     {
+      "name": "InvokeDataAutomation",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomation.html",
+      "description": "Grants permission to invoke a call to Sync API of Bedrock data automation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "blueprint*",
+        "data-automation-profile*",
+        "data-automation-project*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "InvokeDataAutomationAsync",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation-runtime_InvokeDataAutomationAsync.html",
       "description": "Grants permission to invoke a Bedrock data automation job",
@@ -1261,7 +1615,10 @@
         "data-automation-profile*",
         "data-automation-project*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -1281,7 +1638,9 @@
       "description": "Grants permission to send user input (text-only) to the inline agent for Bedrock",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "bedrock:InlineAgentName"
+      ],
       "dependentActions": []
     },
     {
@@ -1293,6 +1652,7 @@
         "application-inference-profile*",
         "async-invoke*",
         "bedrock-marketplace-model-endpoint*",
+        "custom-model-deployment*",
         "default-prompt-router*",
         "foundation-model*",
         "imported-model*",
@@ -1305,7 +1665,8 @@
         "bedrock:PromptRouterArn",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
-        "bedrock:GuardrailIdentifier"
+        "bedrock:GuardrailIdentifier",
+        "bedrock:ServiceTier"
       ],
       "dependentActions": []
     },
@@ -1317,6 +1678,7 @@
       "resourceTypes": [
         "application-inference-profile*",
         "bedrock-marketplace-model-endpoint*",
+        "custom-model-deployment*",
         "default-prompt-router*",
         "foundation-model*",
         "imported-model*",
@@ -1327,8 +1689,20 @@
       "conditionKeys": [
         "bedrock:InferenceProfileArn",
         "bedrock:PromptRouterArn",
-        "bedrock:GuardrailIdentifier"
+        "bedrock:GuardrailIdentifier",
+        "bedrock:ServiceTier"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "InvokeTool",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeTool.html",
+      "description": "Grants permission to invoke the specified Bedrock tool to run inference",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "system-tool*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -1405,6 +1779,50 @@
       "dependentActions": []
     },
     {
+      "name": "ListAutomatedReasoningPolicies",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to list automated reasoning policies or its versions",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "automated-reasoning-policy"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyBuildWorkflows",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to list build workflows for an automated reasoning policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyTestCases",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to list test cases for an automated reasoning policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomatedReasoningPolicyTestResults",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to list test result for an automated reasoning policy",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListBlueprints",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_ListBlueprints.html",
       "description": "Grants permission to list existing blueprints for data automation",
@@ -1412,6 +1830,15 @@
       "resourceTypes": [
         "data-automation-project"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCustomModelDeployments",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListCustomModelDeployments.html",
+      "description": "Grants permission to get the list of custom model deployments that you have submitted",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -1447,6 +1874,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListEnforcedGuardrailsConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListEnforcedGuardrailsConfiguration.html",
+      "description": "Grants permission to list account-level enforced guardrail configurations",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListEvaluationJobs",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListEvaluationJobs.html",
       "description": "Grants permission to get the list of evaluation jobs that you have submitted",
@@ -1462,6 +1898,31 @@
       "accessLevel": "List",
       "resourceTypes": [
         "flow*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFlowExecutionEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutionEvents.html",
+      "description": "Grants permission to retrieve events for a flow execution",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias*",
+        "flow-execution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFlowExecutions",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListFlowExecutions.html",
+      "description": "Grants permission to list executions of a flow or a flow alias",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1688,8 +2149,12 @@
         "agent-alias*",
         "application-inference-profile*",
         "async-invoke*",
+        "automated-reasoning-policy*",
+        "automated-reasoning-policy-version*",
         "blueprint*",
+        "blueprint-optimization-invocation*",
         "custom-model*",
+        "custom-model-deployment*",
         "data-automation-invocation-job*",
         "data-automation-project*",
         "evaluation-job*",
@@ -1744,9 +2209,18 @@
       "dependentActions": []
     },
     {
+      "name": "PutEnforcedGuardrailConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_PutEnforcedGuardrailConfiguration.html",
+      "description": "Grants permission to set account-level enforced guardrail configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutFoundationModelEntitlement",
       "documentationUrl": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html",
-      "description": "Grants permission to put entitlement to access a foundation model",
+      "description": "Grants permission to put entitlement to access a serverless foundation model. Do not use to restrict model access",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1778,7 +2252,9 @@
       "description": "Adds a resource policy for a Bedrock resource",
       "accessLevel": "Write",
       "resourceTypes": [
-        "custom-model*"
+        "custom-model",
+        "guardrail",
+        "guardrail-profile"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -1848,6 +2324,40 @@
       "dependentActions": []
     },
     {
+      "name": "StartAutomatedReasoningPolicyBuildWorkflow",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to start a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartAutomatedReasoningPolicyTestWorkflow",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to start a test workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartFlowExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StartFlowExecution.html",
+      "description": "Grants permission to start an execution of a flow alias",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StartIngestionJob",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html",
       "description": "Grants permission to start an ingestion job",
@@ -1865,6 +2375,19 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "evaluation-job*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopFlowExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_StopFlowExecution.html",
+      "description": "Grants permission to stop an execution of a flow alias",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "flow*",
+        "flow-alias*",
+        "flow-execution*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1912,8 +2435,12 @@
         "agent-alias",
         "application-inference-profile",
         "async-invoke",
+        "automated-reasoning-policy",
+        "automated-reasoning-policy-version",
         "blueprint",
+        "blueprint-optimization-invocation",
         "custom-model",
+        "custom-model-deployment",
         "data-automation-invocation-job",
         "data-automation-project",
         "evaluation-job",
@@ -1949,8 +2476,12 @@
         "agent-alias",
         "application-inference-profile",
         "async-invoke",
+        "automated-reasoning-policy",
+        "automated-reasoning-policy-version",
         "blueprint",
+        "blueprint-optimization-invocation",
         "custom-model",
+        "custom-model-deployment",
         "data-automation-invocation-job",
         "data-automation-project",
         "evaluation-job",
@@ -2032,12 +2563,57 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateAutomatedReasoningPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to update an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAutomatedReasoningPolicyAnnotations",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to update annotations for a build workflow for an automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAutomatedReasoningPolicyTestCase",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+      "description": "Grants permission to update a test case for automated reasoning policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "automated-reasoning-policy*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateBlueprint",
       "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_data-automation_UpdateBlueprint.html",
       "description": "Grants permission to update a blueprint for data automation",
       "accessLevel": "Write",
       "resourceTypes": [
         "blueprint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCustomModelDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateCustomModelDeployment.html",
+      "description": "Grants permission to update an existing custom model deployment with a new custom model",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "custom-model*",
+        "custom-model-deployment*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -2093,7 +2669,10 @@
       "description": "Grants permission to update a guardrail",
       "accessLevel": "Write",
       "resourceTypes": [
-        "guardrail*"
+        "guardrail*",
+        "automated-reasoning-policy",
+        "automated-reasoning-policy-version",
+        "guardrail-profile"
       ],
       "conditionKeys": [],
       "dependentActions": []

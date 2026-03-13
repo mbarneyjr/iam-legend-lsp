@@ -167,6 +167,18 @@
       "dependentActions": []
     },
     {
+      "name": "CreateResourcePolicyStatement",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateResourcePolicyStatement.html",
+      "description": "Grants permission to create a new resource policy statement for a Lex resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "bot",
+        "botalias"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateSlot",
       "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateSlot.html",
       "description": "Grants permission to create a new slot in an intent",
@@ -244,6 +256,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "botalias*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteBotAnalyzerRecommendation",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBotAnalyzerRecommendation.html",
+      "description": "Grants permission to delete a bot analyzer recommendation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "bot*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -355,6 +378,18 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteResourcePolicyStatement",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteResourcePolicyStatement.html",
+      "description": "Grants permission to delete an existing resource policy statement for a Lex resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "bot",
+        "botalias"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteSession",
       "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DeleteSession.html",
       "description": "Grants permission to delete session information for a bot alias and user ID",
@@ -427,6 +462,17 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "botalias*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeBotAnalyzerRecommendation",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAnalyzerRecommendation.html",
+      "description": "Grants permission to describe a bot analyzer recommendation",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "bot*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -701,6 +747,17 @@
       "name": "ListBotAliases",
       "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliases.html",
       "description": "Grants permission to list bot aliases in an bot",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "bot*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListBotAnalyzerRecommendations",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAnalyzerRecommendations.html",
+      "description": "Grants permission to list bot analyzer recommendations",
       "accessLevel": "List",
       "resourceTypes": [
         "bot*"
@@ -1040,6 +1097,17 @@
       "dependentActions": []
     },
     {
+      "name": "StartBotAnalyzer",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotAnalyzer.html",
+      "description": "Grants permission to start a bot analyzer for an existing bot locale",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "bot*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StartBotRecommendation",
       "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartBotRecommendation.html",
       "description": "Grants permission to start a bot recommendation for an existing bot locale",
@@ -1126,6 +1194,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "testset"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopBotAnalyzer",
+      "documentationUrl": "https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StopBotAnalyzer.html",
+      "description": "Grants permission to stop a bot analyzer for an existing bot locale",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "bot*"
       ],
       "conditionKeys": [],
       "dependentActions": []

@@ -124,6 +124,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateRootClientCertificate",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to create a root client certificate",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "certificateid*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateStandbyWorkspaces",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateStandbyWorkspaces.html",
       "description": "Grants permission to create one or more Standby WorkSpaces",
@@ -206,6 +217,10 @@
         "workspaceid*"
       ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -276,6 +291,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "workspaceipgroup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteRootClientCertificate",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to delete root client certificate",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "certificateid*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -445,6 +471,24 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeConsent",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to retrieve information about consent agreement to BYOL minimum requirements",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeCustomWorkspaceImageImport",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeCustomWorkspaceImageImport.html",
+      "description": "Grants permission to retrieve information about WorkSpace BYOL image import task",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeImageAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeImageAssociations.html",
       "description": "Grants permission to retrieve information about resources associated with a WorkSpace image",
@@ -578,6 +622,17 @@
       "dependentActions": []
     },
     {
+      "name": "DirectoryAccessManagement",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to directory management actions while managing and provisioning workspaces",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "directoryid*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DisassociateConnectionAlias",
       "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateConnectionAlias.html",
       "description": "Grants permission to disassociate connection aliases from directories",
@@ -631,6 +686,15 @@
       "resourceTypes": [
         "directoryid*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ImportCustomWorkspaceImage",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportCustomWorkspaceImage.html",
+      "description": "Grants permission to import Bring Your Own License (BYOL) images into Amazon WorkSpaces",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -970,6 +1034,26 @@
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "connectionalias*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateConsent",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to update the consent agreement to BYOL minimum requirements",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateRootClientCertificate",
+      "documentationUrl": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-console-permissions-ref.html",
+      "description": "Grants permission to update a root client certificate",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "certificateid*"
       ],
       "conditionKeys": [],
       "dependentActions": []

@@ -476,7 +476,7 @@
       "name": "CreatePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html",
       "description": "Grants permission to create an AWS IoT policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "policy*"
       ],
@@ -490,7 +490,7 @@
       "name": "CreatePolicyVersion",
       "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html",
       "description": "Grants permission to create a new version of the specified AWS IoT policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "policy*"
       ],
@@ -755,6 +755,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteConnection",
+      "documentationUrl": "https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html",
+      "description": "Grants permission to disconnect the specified connection",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "client*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteCustomMetric",
       "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCustomMetric.html",
       "description": "Grants permission to deletes the specified custom metric from your AWS account",
@@ -892,7 +903,7 @@
       "name": "DeletePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html",
       "description": "Grants permission to delete the specified policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "policy*"
       ],
@@ -903,7 +914,7 @@
       "name": "DeletePolicyVersion",
       "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html",
       "description": "Grants permission to Delete the specified version of the specified policy",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "policy*"
       ],
@@ -1221,6 +1232,15 @@
       "resourceTypes": [
         "domainconfiguration*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeEncryptionConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEncryptionConfiguration.html",
+      "description": "Grants permission to describe the encryption configuration for the account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -2516,7 +2536,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": [
         "iam:PassRole"
@@ -2991,6 +3012,15 @@
       "resourceTypes": [
         "dynamicthinggroup*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateEncryptionConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateEncryptionConfiguration.html",
+      "description": "Grants permission to update the encryption configuration for the account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },

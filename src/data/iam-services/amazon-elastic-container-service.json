@@ -8,8 +8,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html",
       "description": "Grants permission to create a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "capacity-provider*"
+      ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:propagate-tags",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -24,12 +28,38 @@
         "cluster*"
       ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "ecs:capacity-provider",
         "ecs:fargate-ephemeral-storage-kms-key"
       ],
       "dependentActions": []
+    },
+    {
+      "name": "CreateExpressGatewayService",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateExpressGatewayService.html",
+      "description": "Grants permission to create a new Amazon ECS Express Gateway service with cluster and task definition",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service*"
+      ],
+      "conditionKeys": [
+        "ecs:cluster",
+        "aws:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "ecs:task-definition",
+        "ecs:subnet",
+        "ecs:enable-ecs-managed-tags",
+        "ecs:propagate-tags",
+        "ecs:task-cpu",
+        "ecs:task-memory"
+      ],
+      "dependentActions": [
+        "ecs:RegisterTaskDefinition",
+        "iam:PassRole"
+      ]
     },
     {
       "name": "CreateService",
@@ -65,7 +95,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html",
       "description": "Grants permission to create a new Amazon ECS task set",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "task-set*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -123,6 +155,20 @@
         "cluster*"
       ],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteExpressGatewayService",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteExpressGatewayService.html",
+      "description": "Grants permission to delete a specified Express Gateway service",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service*"
+      ],
+      "conditionKeys": [
+        "ecs:cluster",
         "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
@@ -228,6 +274,20 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ecs:cluster"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeExpressGatewayService",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeExpressGatewayService.html",
+      "description": "Grants permission to describe the specified Express Gateway service",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "service*"
+      ],
+      "conditionKeys": [
+        "ecs:cluster",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -554,6 +614,23 @@
       "dependentActions": []
     },
     {
+      "name": "PutSystemLogEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#cloudtrail-data-events",
+      "description": "Grants permission to collect system logs from the container instances",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cluster*",
+        "container-instance*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "ecs:cluster",
+        "ecs:capacity-provider"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "RegisterContainerInstance",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html",
       "description": "Grants permission to register an EC2 instance into the specified cluster",
@@ -562,8 +639,8 @@
         "cluster*"
       ],
       "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
         "aws:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
       "dependentActions": []
@@ -639,6 +716,24 @@
       ],
       "conditionKeys": [
         "ecs:cluster"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "StopServiceDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopServiceDeployment.html",
+      "description": "Grants permission to stop an ongoing service deployment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service*",
+        "service-deployment*"
+      ],
+      "conditionKeys": [
+        "ecs:cluster",
+        "aws:ResourceTag/${TagKey}",
+        "ecs:cluster",
+        "ecs:service",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -746,6 +841,7 @@
         "capacity-provider*"
       ],
       "conditionKeys": [
+        "ecs:propagate-tags",
         "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
@@ -802,6 +898,25 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ecs:cluster"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateExpressGatewayService",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateExpressGatewayService.html",
+      "description": "Grants permission to modify the parameters of an Express Gateway service",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "service*"
+      ],
+      "conditionKeys": [
+        "ecs:cluster",
+        "aws:ResourceTag/${TagKey}",
+        "ecs:subnet",
+        "ecs:enable-ecs-managed-tags",
+        "ecs:propagate-tags",
+        "ecs:task-cpu",
+        "ecs:task-memory"
       ],
       "dependentActions": []
     },

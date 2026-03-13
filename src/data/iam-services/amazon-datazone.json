@@ -34,7 +34,7 @@
       "name": "AddPolicyGrant",
       "documentationUrl": "${APIReferenceDocPage}API_AddPolicyGrant.html",
       "description": "Grants permission to add a policy grant",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -49,6 +49,15 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateGovernedTerms",
+      "documentationUrl": "${APIReferenceDocPage}API_AssociateGovernedTerms.html",
+      "description": "Grants permission to associate governed terms to an asset",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "BatchDeleteLinkedTypes",
       "documentationUrl": "${APIReferenceDocPage}API_BatchDeleteLinkedTypes.html",
       "description": "Grants permission to remove linked type items from an Amazon DataZone Domain",
@@ -56,6 +65,42 @@
       "resourceTypes": [
         "domain*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetAttributesMetadata",
+      "documentationUrl": "${APIReferenceDocPage}API_BatchGetAttributesMetadata.html",
+      "description": "Grants permission to retrieve attributes metadata",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetCell",
+      "documentationUrl": "${APIReferenceDocPage}API_BatchGetCell.html",
+      "description": "Grants permission to batch get cells",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetCellRun",
+      "documentationUrl": "${APIReferenceDocPage}API_BatchGetCellRun.html",
+      "description": "Grants permission to batch get cell runs",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchPutAttributesMetadata",
+      "documentationUrl": "${APIReferenceDocPage}API_BatchPutAttributesMetadata.html",
+      "description": "Grants permission to create and update attributes metadata",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -83,6 +128,15 @@
       "name": "CancelSubscription",
       "documentationUrl": "${APIReferenceDocPage}API_CancelSubscription.html",
       "description": "Grants permission to revoke or unsubscribe an approved subscription to Data Asset",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAccountPool",
+      "documentationUrl": "${APIReferenceDocPage}API_CreateAccountPool.html",
+      "description": "Grants permission to create an account pool",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -119,6 +173,24 @@
       "name": "CreateAssetType",
       "documentationUrl": "${APIReferenceDocPage}API_CreateAssetType.html",
       "description": "Grants permission to create an asset type",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCell",
+      "documentationUrl": "${APIReferenceDocPage}API_CreateCell.html",
+      "description": "Grants permission to create cells",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCellRun",
+      "documentationUrl": "${APIReferenceDocPage}API_CreateCellRun.html",
+      "description": "Grants permission to create cell runs",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -263,6 +335,15 @@
       "dependentActions": []
     },
     {
+      "name": "CreateNotebook",
+      "documentationUrl": "${APIReferenceDocPage}API_CreateNotebook.html",
+      "description": "Grants permission to create notebooks",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateProject",
       "documentationUrl": "${APIReferenceDocPage}API_CreateProject.html",
       "description": "Grants permission to create a Project to enable your team to publish and subscribe to data",
@@ -335,6 +416,15 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteAccountPool",
+      "documentationUrl": "${APIReferenceDocPage}API_DeleteAccountPool.html",
+      "description": "Grants permission to delete an account pool",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteAsset",
       "documentationUrl": "${APIReferenceDocPage}API_DeleteAsset.html",
       "description": "Grants permission to delete an asset",
@@ -362,9 +452,36 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteCell",
+      "documentationUrl": "${APIReferenceDocPage}API_DeleteCell.html",
+      "description": "Grants permission to delete cells",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCellRun",
+      "documentationUrl": "${APIReferenceDocPage}API_DeleteCellRun.html",
+      "description": "Grants permission to delete cell runs",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteConnection",
       "documentationUrl": "${APIReferenceDocPage}API_DeleteConnection.html",
       "description": "Grants permission to delete connections",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDataExportConfiguration",
+      "documentationUrl": "${APIReferenceDocPage}API_DeleteDataExportConfiguration.html",
+      "description": "Grants permission to delete DataZone catalog data export configuration",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -499,6 +616,15 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteNotebook",
+      "documentationUrl": "${APIReferenceDocPage}API_DeleteNotebook.html",
+      "description": "Grants permission to delete notebooks",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteProject",
       "documentationUrl": "${APIReferenceDocPage}API_DeleteProject.html",
       "description": "Grants permission to delete a Project that enables your team to publish and subscribe to data",
@@ -580,6 +706,33 @@
       "dependentActions": []
     },
     {
+      "name": "DisassociateGovernedTerms",
+      "documentationUrl": "${APIReferenceDocPage}API_DisassociateGovernedTerms.html",
+      "description": "Grants permission to disassociate governed terms to an asset",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GenerateCode",
+      "documentationUrl": "${APIReferenceDocPage}API_GenerateCode.html",
+      "description": "Grants permission to generate code",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAccountPool",
+      "documentationUrl": "${APIReferenceDocPage}API_GetAccountPool.html",
+      "description": "Grants permission to get account pool details",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetAsset",
       "documentationUrl": "${APIReferenceDocPage}API_GetAsset.html",
       "description": "Grants permission to retrieve an asset",
@@ -607,9 +760,54 @@
       "dependentActions": []
     },
     {
+      "name": "GetCell",
+      "documentationUrl": "${APIReferenceDocPage}API_GetCell.html",
+      "description": "Grants permission to get cells",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCellRun",
+      "documentationUrl": "${APIReferenceDocPage}API_GetCellRun.html",
+      "description": "Grants permission to get cell runs",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCellRunResult",
+      "documentationUrl": "${APIReferenceDocPage}API_GetCellRunResult.html",
+      "description": "Grants permission to get cell run result",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetConnection",
       "documentationUrl": "${APIReferenceDocPage}API_GetConnection.html",
       "description": "Grants permission to get connections",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetConversation",
+      "documentationUrl": "${APIReferenceDocPage}API_GetConversation.html",
+      "description": "Grants permission to get conversations",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDataExportConfiguration",
+      "documentationUrl": "${APIReferenceDocPage}API_GetDataExportConfiguration.html",
+      "description": "Grants permission to retrieve DataZone catalog data export configuration",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -834,6 +1032,33 @@
       "dependentActions": []
     },
     {
+      "name": "GetNotebook",
+      "documentationUrl": "${APIReferenceDocPage}API_GetNotebook.html",
+      "description": "Grants permission to get notebooks",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetNotebookCompute",
+      "documentationUrl": "${APIReferenceDocPage}API_GetNotebookCompute.html",
+      "description": "Grants permission to get notebook compute",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetNotebookExport",
+      "documentationUrl": "${APIReferenceDocPage}API_GetNotebookExport.html",
+      "description": "Grants permission to get notebook exports",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetProject",
       "documentationUrl": "${APIReferenceDocPage}API_GetProject.html",
       "description": "Grants permission to get Project details",
@@ -942,6 +1167,24 @@
       "dependentActions": []
     },
     {
+      "name": "ListAccountPools",
+      "documentationUrl": "{APIReferenceDocPage}API_ListAccountPools.html",
+      "description": "Grants permission to list account pools",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAccountsInAccountPool",
+      "documentationUrl": "{APIReferenceDocPage}API_ListAccountsInAccountPool.html",
+      "description": "Grants permission to list accounts in an account pool",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListAssetFilters",
       "documentationUrl": "${APIReferenceDocPage}API_ListAssetFilters.html",
       "description": "Grants permission to list asset filters",
@@ -960,9 +1203,27 @@
       "dependentActions": []
     },
     {
+      "name": "ListCellRuns",
+      "documentationUrl": "${APIReferenceDocPage}API_ListCellRuns.html",
+      "description": "Grants permission to list cell runs",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListConnections",
       "documentationUrl": "${APIReferenceDocPage}API_ListConnections.html",
       "description": "Grants permission to list connections",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListConversations",
+      "documentationUrl": "${APIReferenceDocPage}API_ListConversations.html",
+      "description": "Grants permission to list conversations",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1142,6 +1403,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListNotebooks",
+      "documentationUrl": "${APIReferenceDocPage}API_ListNotebooks.html",
+      "description": "Grants permission to list notebooks",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListNotifications",
       "documentationUrl": "${APIReferenceDocPage}API_ListNotifications.html",
       "description": "Grants permission to list notifications and events for a datazone user",
@@ -1288,6 +1558,24 @@
       "dependentActions": []
     },
     {
+      "name": "PutCellRunResult",
+      "documentationUrl": "${APIReferenceDocPage}API_PutCellRunResult.html",
+      "description": "Grants permission to put cell run results",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutDataExportConfiguration",
+      "documentationUrl": "${APIReferenceDocPage}API_PutDataExportConfiguration.html",
+      "description": "Grants permission to create and update DataZone catalog data export configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutDomainSharingPolicy",
       "documentationUrl": "${APIReferenceDocPage}API_PutDomainSharingPolicy.html",
       "description": "Grants permission to add a resource policy for a DataZone Domain",
@@ -1301,6 +1589,15 @@
       "documentationUrl": "${APIReferenceDocPage}API_PutEnvironmentBlueprintConfiguration.html",
       "description": "Grants permission to put environment blueprint configuration",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "QueryGraph",
+      "documentationUrl": "${APIReferenceDocPage}API_QueryGraph.html",
+      "description": "Grants permission to query graph",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -1345,7 +1642,7 @@
       "name": "RemovePolicyGrant",
       "documentationUrl": "${APIReferenceDocPage}API_RemovePolicyGrant.html",
       "description": "Grants permission to remove a policy grant",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -1354,7 +1651,7 @@
       "name": "RevokeSubscription",
       "documentationUrl": "${APIReferenceDocPage}API_RevokeSubscription.html",
       "description": "Grants permission to revoke a subscription",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -1414,6 +1711,15 @@
       "dependentActions": []
     },
     {
+      "name": "SendMessage",
+      "documentationUrl": "${APIReferenceDocPage}API_SendMessage.html",
+      "description": "Grants permission to send messages",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "SsoLogin",
       "documentationUrl": "${APIReferenceDocPage}API_SsoLogin.html",
       "description": "Grants permission to login using SSO",
@@ -1426,6 +1732,24 @@
       "name": "SsoLogout",
       "documentationUrl": "${APIReferenceDocPage}API_SsoLogout.html",
       "description": "Grants permission to logout as SSO user",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartAccountBootstrapAction",
+      "documentationUrl": "${APIReferenceDocPage}API_StartAccountBootstrapAction.html",
+      "description": "Grants permission to start account bootstrap action for a domain",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartConversation",
+      "documentationUrl": "${APIReferenceDocPage}API_StartConversation.html",
+      "description": "Grants permission to start conversations",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1450,9 +1774,45 @@
       "dependentActions": []
     },
     {
+      "name": "StartNotebookCompute",
+      "documentationUrl": "${APIReferenceDocPage}API_StartNotebookCompute.html",
+      "description": "Grants permission to start notebook compute",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartNotebookExport",
+      "documentationUrl": "${APIReferenceDocPage}API_StartNotebookExport.html",
+      "description": "Grants permission to export notebooks",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartNotebookImport",
+      "documentationUrl": "${APIReferenceDocPage}API_StartNotebookImport.html",
+      "description": "Grants permission to import notebooks",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StopMetadataGenerationRun",
       "documentationUrl": "${APIReferenceDocPage}API_StopMetadataGenerationRun.html",
       "description": "Grants permission to stop metadata generation run",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopNotebookCompute",
+      "documentationUrl": "${APIReferenceDocPage}API_StopNotebookCompute.html",
+      "description": "Grants permission to stop notebook compute",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1486,9 +1846,36 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateAccountPool",
+      "documentationUrl": "${APIReferenceDocPage}API_UpdateAccountPool.html",
+      "description": "Grants permission to update an account pool",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateAssetFilter",
       "documentationUrl": "${APIReferenceDocPage}API_UpdateAssetFilter.html",
       "description": "Grants permission to update asset filter",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCell",
+      "documentationUrl": "${APIReferenceDocPage}API_UpdateCell.html",
+      "description": "Grants permission to update cells",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCellRun",
+      "documentationUrl": "${APIReferenceDocPage}API_UpdateCellRun.html",
+      "description": "Grants permission to update cell runs",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1617,6 +2004,15 @@
       "name": "UpdateGroupProfile",
       "documentationUrl": "${APIReferenceDocPage}API_UpdateGroupProfile.html",
       "description": "Grants permission to update a DataZone group profile",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateNotebook",
+      "documentationUrl": "${APIReferenceDocPage}API_UpdateNotebook.html",
+      "description": "Grants permission to update notebooks",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],

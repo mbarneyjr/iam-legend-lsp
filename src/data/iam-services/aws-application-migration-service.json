@@ -122,7 +122,10 @@
       "description": "Grants permission to create a network migration definition",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -381,6 +384,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetAccountSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_GetAccountSettings.html",
+      "description": "Grants permission to get account settings",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetAgentCommandForMgn",
       "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/ug/mgn-apis.html",
       "description": "Grants permission to get agent command",
@@ -583,6 +595,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListImportFileEnrichments",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImportFileEnrichments.html",
+      "description": "Grants permission to list the import file enrichment tasks",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListImports",
       "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListImports.html",
       "description": "Grants permission to list the import tasks",
@@ -712,6 +733,17 @@
       "name": "ListNetworkMigrationMapperSegments",
       "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMapperSegments.html",
       "description": "Grants permission to list network migration mapper segments",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "NetworkMigrationDefinitionResource*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListNetworkMigrationMappingUpdates",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_ListNetworkMigrationMappingUpdates.html",
+      "description": "Grants permission to list network migration mapping updates",
       "accessLevel": "List",
       "resourceTypes": [
         "NetworkMigrationDefinitionResource*"
@@ -1064,7 +1096,10 @@
       "description": "Grants permission to start an export task",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": [
         "ec2:DescribeLaunchTemplateVersions",
         "mgn:DescribeSourceServers",
@@ -1080,7 +1115,10 @@
       "description": "Grants permission to create an import task",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": [
         "ec2:CreateLaunchTemplateVersion",
         "ec2:DescribeLaunchTemplateVersions",
@@ -1092,6 +1130,19 @@
         "mgn:TagResource",
         "mgn:UpdateLaunchConfiguration",
         "s3:PutObject"
+      ]
+    },
+    {
+      "name": "StartImportFileEnrichment",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartImportFileEnrichment.html",
+      "description": "Grants permission to start import file enrichment",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
       ]
     },
     {
@@ -1392,6 +1443,17 @@
       "dependentActions": []
     },
     {
+      "name": "StartNetworkMigrationMappingUpdate",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartNetworkMigrationMappingUpdate.html",
+      "description": "Grants permission to start a network migration mapping update",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "NetworkMigrationDefinitionResource*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StartReplication",
       "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_StartReplication.html",
       "description": "Grants permission to start replication",
@@ -1472,6 +1534,8 @@
       "resourceTypes": [
         "ApplicationResource",
         "ConnectorResource",
+        "ExportResource",
+        "ImportResource",
         "JobResource",
         "LaunchConfigurationTemplateResource",
         "ReplicationConfigurationTemplateResource",
@@ -1545,6 +1609,15 @@
       "conditionKeys": [
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/mgn/latest/APIReference/API_UpdateAccountSettings.html",
+      "description": "Grants permission to update account settings",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {

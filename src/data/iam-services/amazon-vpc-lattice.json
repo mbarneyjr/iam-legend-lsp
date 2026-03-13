@@ -4,6 +4,15 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonvpclattice.html",
   "actions": [
     {
+      "name": "AssociateViaAWSService",
+      "documentationUrl": "service-network-associations.html#service-network-resource-configuration",
+      "description": "Grants permission to associate a resource configuration through any AWS service managed networks",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "AssociateViaAWSService-EventsAndStates",
       "documentationUrl": "service-network-associations.html#service-network-resource-configuration",
       "description": "Grants permission to associate a resource configuration through Amazon EventBridge and AWS Step Functions service networks",
@@ -54,6 +63,7 @@
       "description": "Grants permission to create a resource configuration",
       "accessLevel": "Write",
       "resourceTypes": [
+        "DomainVerification",
         "ResourceConfiguration",
         "ResourceGateway"
       ],
@@ -179,6 +189,8 @@
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
+        "vpc-lattice:PrivateDnsPreference",
+        "vpc-lattice:PrivateDnsSpecifiedDomains",
         "vpc-lattice:SecurityGroupIds",
         "vpc-lattice:ServiceNetworkArn",
         "vpc-lattice:VpcId"
@@ -239,6 +251,19 @@
         "ServiceNetwork"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDomainVerification",
+      "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_DeleteDomainVerification.html",
+      "description": "Grants permission to delete a domain verification",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "DomainVerification*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -440,6 +465,19 @@
       "dependentActions": []
     },
     {
+      "name": "GetDomainVerification",
+      "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetDomainVerification.html",
+      "description": "Grants permission to get information about a domain verification",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "DomainVerification*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetListener",
       "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetListener.html",
       "description": "Grants permission to get information about a listener",
@@ -590,6 +628,15 @@
       "name": "ListAccessLogSubscriptions",
       "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListAccessLogSubscriptions.html",
       "description": "Grants permission to list some or all access log subscriptions about a service network or a service",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDomainVerifications",
+      "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_ListDomainVerifications.html",
+      "description": "Grants permission to list some or all domain verifications",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -769,12 +816,28 @@
       "dependentActions": []
     },
     {
+      "name": "StartDomainVerification",
+      "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_StartDomainVerification.html",
+      "description": "Grants permission to start a domain verification",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "DomainVerification*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "vpc-lattice:DomainName"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to tag a vpc-lattice resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "AccessLogSubscription",
+        "DomainVerification",
         "Listener",
         "ResourceConfiguration",
         "ResourceEndpointAssociation",
@@ -801,6 +864,7 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "AccessLogSubscription",
+        "DomainVerification",
         "Listener",
         "ResourceConfiguration",
         "ResourceEndpointAssociation",

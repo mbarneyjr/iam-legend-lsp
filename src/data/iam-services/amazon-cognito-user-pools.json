@@ -15,6 +15,17 @@
       "dependentActions": []
     },
     {
+      "name": "AddUserPoolClientSecret",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddUserPoolClientSecret.html",
+      "description": "Grants permission to add a new secret to a confidential client",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "AdminAddUserToGroup",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html",
       "description": "Grants permission to add any user to any group",
@@ -402,6 +413,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateTerms",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateTerms.html",
+      "description": "Grants permission to create terms and associate it with an app client",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateUserImportJob",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html",
       "description": "Grants permission to create user CSV import jobs",
@@ -492,6 +514,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteTerms",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteTerms.html",
+      "description": "Grants permission to delete terms for an app client",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteUser",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html",
       "description": "Grants permission to allow a user to delete one's self",
@@ -524,6 +557,17 @@
       "name": "DeleteUserPoolClient",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html",
       "description": "Grants permission to delete any user pool app client",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteUserPoolClientSecret",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClientSecret.html",
+      "description": "Grants permission to delete a secret from a list of secrets associated with a client",
       "accessLevel": "Write",
       "resourceTypes": [
         "userpool*"
@@ -590,6 +634,17 @@
       "name": "DescribeRiskConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html",
       "description": "Grants permission to describe the risk configuration settings of user pools and app clients",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeTerms",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeTerms.html",
+      "description": "Grants permission to get the detailed information about terms for an app client",
       "accessLevel": "Read",
       "resourceTypes": [
         "userpool*"
@@ -733,6 +788,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetTokensFromRefreshToken",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetTokensFromRefreshToken.html",
+      "description": "Grants permission to update user tokens with refresh tokens",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetUICustomization",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUICustomization.html",
       "description": "Grants permission to get UI customization information for the hosted UI of any app client",
@@ -866,9 +930,31 @@
       "dependentActions": []
     },
     {
+      "name": "ListTerms",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTerms.html",
+      "description": "Grants permission to list all terms for a user pool",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListUserImportJobs",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html",
       "description": "Grants permission to list all user import jobs",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListUserPoolClientSecrets",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClientSecrets.html",
+      "description": "Grants permission to list all secrets associated with a client",
       "accessLevel": "List",
       "resourceTypes": [
         "userpool*"
@@ -1122,6 +1208,17 @@
       "name": "UpdateResourceServer",
       "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateResourceServer.html",
       "description": "Grants permission to update the configuration of any OAuth 2.0 resource server",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "userpool*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateTerms",
+      "documentationUrl": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateTerms.html",
+      "description": "Grants permission to update terms for an app client",
       "accessLevel": "Write",
       "resourceTypes": [
         "userpool*"

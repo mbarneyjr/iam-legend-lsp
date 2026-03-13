@@ -6,13 +6,41 @@
     {
       "name": "CreateTokenWithIAM",
       "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html",
-      "description": "Grants permission to create OAuth/OIDC tokens to access IAM Identity Center integrated applications",
+      "description": "Grants permission to create and return OAuth 2.0 access tokens and refresh tokens for authorized client applications. These tokens might contain defined scopes that specify permissions such as `read:profile` or `write:data`",
       "accessLevel": "Write",
       "resourceTypes": [
         "Application*"
       ],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "IntrospectTokenWithIAM",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html",
+      "description": "Grants permission to validate and retrieve information about active OAuth 2.0 access tokens and refresh tokens, including their associated scopes and permissions. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "RevokeTokenWithIAM",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-resource-based-policies.html",
+      "description": "Grants permission to revoke OAuth 2.0 access tokens and refresh tokens, invalidating them before their normal expiration. This permission is used only by AWS managed applications and is not documented in the IAM Identity Center OIDC API Reference",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     }
   ]
 }

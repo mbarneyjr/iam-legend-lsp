@@ -132,6 +132,18 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeAttackContributors",
+      "documentationUrl": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html",
+      "description": "Grants permission to get detailed information about the contributors to a specific DDoS attack",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "attack*",
+        "protection-group"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeAttackStatistics",
       "documentationUrl": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttackStatistics.html",
       "description": "Grants permission to describe information about the number and type of attacks AWS Shield has detected in the last year",
@@ -274,6 +286,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetGlobalThreatData",
+      "documentationUrl": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html",
+      "description": "Grants permission to retrieve global threat intelligence data and trends from AWS Shield's threat monitoring systems",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetSubscriptionState",
       "documentationUrl": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_GetSubscriptionState.html",
       "description": "Grants permission to get subscription state",
@@ -288,6 +309,17 @@
       "description": "Grants permission to list all existing attacks",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListMitigations",
+      "documentationUrl": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html",
+      "description": "Grants permission to retrieve a list of mitigation actions that have been applied during DDoS attacks",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "attack*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },

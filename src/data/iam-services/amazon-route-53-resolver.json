@@ -141,7 +141,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html",
       "description": "Grants permission to create a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "resolver-query-log-config*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -432,7 +434,8 @@
       "description": "Grants permission to get information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to",
       "accessLevel": "Read",
       "resourceTypes": [
-        "resolver-rule*"
+        "autodefined-rule",
+        "resolver-rule"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -443,7 +446,8 @@
       "description": "Grants permission to get information about an association between a specified Resolver rule and a VPC",
       "accessLevel": "Read",
       "resourceTypes": [
-        "resolver-rule*"
+        "autodefined-rule",
+        "resolver-rule"
       ],
       "conditionKeys": [],
       "dependentActions": []

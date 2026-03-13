@@ -1,0 +1,34 @@
+{
+  "serviceName": "Amazon SageMaker Unified Studio MCP",
+  "servicePrefix": "sagemaker-unified-studio-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonsagemakerunifiedstudiomcp.html",
+  "actions": [
+    {
+      "name": "CallPrivilegedTool",
+      "documentationUrl": "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/",
+      "description": "Grants permission to call privileged tools in MCP service",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CallReadOnlyTool",
+      "documentationUrl": "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/",
+      "description": "Grants permission to call read-only tools in MCP service",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InvokeMcp",
+      "documentationUrl": "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/",
+      "description": "Grants permission to use MCP service",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

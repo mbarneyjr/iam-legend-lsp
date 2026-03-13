@@ -22,6 +22,24 @@
       "dependentActions": []
     },
     {
+      "name": "CancelDocument",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to cancel documents such as withholding slips",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDocument",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to upload new documents such as withholding slips",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteSupplementalTaxRegistration",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html",
       "description": "Grants permission to delete supplemental tax registration data",
@@ -35,6 +53,24 @@
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
       "description": "Grants permission to delete tax registration data",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDocument",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to retrieve documents such as withholding slips",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDocumentUploadUrl",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to retrieve a generated URL to upload documents",
+      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -94,6 +130,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListDocuments",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to view documents such as withholding slips",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListSupplementalTaxRegistrations",
       "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html",
       "description": "Grants permission to view supplemental tax registrations",
@@ -106,6 +151,15 @@
       "name": "ListTaxRegistrations",
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
       "description": "Grants permission to view tax registrations",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListWithholdingEligibleInvoices",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html",
+      "description": "Grants permission to view eligible withholding invoices",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],

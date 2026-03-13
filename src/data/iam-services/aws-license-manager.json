@@ -51,7 +51,10 @@
       "resourceTypes": [
         "license*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -71,7 +74,36 @@
       "description": "Grants permission to create a new license",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateLicenseAssetGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetGroup.html",
+      "description": "Grants permission to create a license asset group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "license-asset-ruleset*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateLicenseAssetRuleset",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseAssetRuleset.html",
+      "description": "Grants permission to create a license asset ruleset",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -98,7 +130,7 @@
     {
       "name": "CreateLicenseManagerReportGenerator",
       "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseManagerReportGenerator.html",
-      "description": "Grants permission to create a report generator for a license configuration",
+      "description": "Grants permission to create a report generator for supported license manager resources",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
@@ -147,6 +179,28 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "license*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLicenseAssetGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetGroup.html",
+      "description": "Grants permission to delete a license asset group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "license-asset-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLicenseAssetRuleset",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseAssetRuleset.html",
+      "description": "Grants permission to delete a license asset ruleset",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "license-asset-ruleset*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -223,6 +277,28 @@
       "dependentActions": []
     },
     {
+      "name": "GetLicenseAssetGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetGroup.html",
+      "description": "Grants permission to get a license asset group",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "license-asset-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetLicenseAssetRuleset",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseAssetRuleset.html",
+      "description": "Grants permission to get a license asset ruleset",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "license-asset-ruleset*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetLicenseConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html",
       "description": "Grants permission to get a license configuration",
@@ -274,6 +350,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListAssetsForLicenseAssetGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssetsForLicenseAssetGroup.html",
+      "description": "Grants permission to list assets for a license asset group",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "license-asset-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListAssociationsForLicenseConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html",
       "description": "Grants permission to list associations for a selected license configuration",
@@ -305,10 +392,41 @@
       "dependentActions": []
     },
     {
+      "name": "ListLicenseAssetGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetGroups.html",
+      "description": "Grants permission to list license asset groups",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "license-asset-group"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListLicenseAssetRulesets",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseAssetRulesets.html",
+      "description": "Grants permission to list license asset rulesets",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "license-asset-ruleset"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListLicenseConfigurations",
       "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html",
       "description": "Grants permission to list license configurations",
-      "accessLevel": "Read",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListLicenseConfigurationsForOrganization",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurationsForOrganization.html",
+      "description": "Grants permission to list license configurations for organization",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -413,7 +531,12 @@
       "description": "Grants permission to list tags for a selected resource",
       "accessLevel": "Read",
       "resourceTypes": [
-        "license-configuration*"
+        "grant",
+        "license",
+        "license-asset-group",
+        "license-asset-ruleset",
+        "license-configuration",
+        "report-generator"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -455,11 +578,16 @@
       "description": "Grants permission to tag a selected resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
-        "license-configuration*"
+        "grant",
+        "license",
+        "license-asset-group",
+        "license-asset-ruleset",
+        "license-configuration",
+        "report-generator"
       ],
       "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -469,7 +597,37 @@
       "description": "Grants permission to untag a selected resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
-        "license-configuration*"
+        "grant",
+        "license",
+        "license-asset-group",
+        "license-asset-ruleset",
+        "license-configuration",
+        "report-generator"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateLicenseAssetGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetGroup.html",
+      "description": "Grants permission to update a license asset group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "license-asset-group*",
+        "license-asset-ruleset*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateLicenseAssetRuleset",
+      "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseAssetRuleset.html",
+      "description": "Grants permission to update a license asset ruleset",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "license-asset-ruleset*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -488,7 +646,7 @@
     {
       "name": "UpdateLicenseManagerReportGenerator",
       "documentationUrl": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseManagerReportGenerator.html",
-      "description": "Grants permission to update a report generator for a license configuration",
+      "description": "Grants permission to update a report generator for supported license manager resources",
       "accessLevel": "Write",
       "resourceTypes": [
         "report-generator*"

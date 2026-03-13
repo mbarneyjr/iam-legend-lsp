@@ -5,7 +5,7 @@
   "actions": [
     {
       "name": "BatchMeterUsage",
-      "documentationUrl": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-metering_BatchMeterUsage.html",
       "description": "Grants permission to post metering records for a set of customers for SaaS applications",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -14,7 +14,7 @@
     },
     {
       "name": "MeterUsage",
-      "documentationUrl": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-metering_MeterUsage.html",
       "description": "Grants permission to emit metering records",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -23,7 +23,7 @@
     },
     {
       "name": "RegisterUsage",
-      "documentationUrl": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-metering_RegisterUsage.html",
       "description": "Grants permission to to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use. Meters software use per ECS task, per hour, with usage prorated to the second",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -32,7 +32,7 @@
     },
     {
       "name": "ResolveCustomer",
-      "documentationUrl": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html",
+      "documentationUrl": "https://docs.aws.amazon.com/marketplace/latest/APIReference/API_marketplace-metering_ResolveCustomer.html",
       "description": "Grants permission to resolve a registration token to obtain a CustomerIdentifier and product code",
       "accessLevel": "Write",
       "resourceTypes": [],

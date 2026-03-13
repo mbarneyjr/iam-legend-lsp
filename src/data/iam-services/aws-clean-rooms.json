@@ -82,6 +82,21 @@
       "dependentActions": []
     },
     {
+      "name": "CreateCollaborationChangeRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateCollaborationChangeRequest.html",
+      "description": "Grants permission to create a change request in a collaboration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "collaboration*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateConfiguredAudienceModelAssociation",
       "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_CreateConfiguredAudienceModelAssociation.html",
       "description": "Grants permission to link a Cleanrooms ML configured audience model with a collaboration by creating a new association",
@@ -459,6 +474,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetCollaborationChangeRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationChangeRequest.html",
+      "description": "Grants permission to get a change request in a collaboration",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "collaboration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetCollaborationConfiguredAudienceModelAssociation",
       "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_GetCollaborationConfiguredAudienceModelAssociation.html",
       "description": "Grants permission to view details for a configured audience model association within a collaboration",
@@ -661,6 +687,17 @@
       "name": "ListCollaborationAnalysisTemplates",
       "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationAnalysisTemplates.html",
       "description": "Grants permission to list available analysis templates within a collaboration",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "collaboration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCollaborationChangeRequests",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_ListCollaborationChangeRequests.html",
+      "description": "Grants permission to list change requests in a collaboration",
       "accessLevel": "List",
       "resourceTypes": [
         "collaboration*"
@@ -1020,6 +1057,17 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateCollaborationChangeRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateCollaborationChangeRequest.html",
+      "description": "Grants permission to update a change request in a collaboration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "collaboration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateConfiguredAudienceModelAssociation",
       "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredAudienceModelAssociation.html",
       "description": "Grants permission to update a configured audience model association",
@@ -1034,6 +1082,29 @@
       "name": "UpdateConfiguredTable",
       "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html",
       "description": "Grants permission to update an existing configured table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "configuredtable*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "athena:GetTableMetadata",
+        "cleanrooms:UpdateConfiguredTableAllowedColumns",
+        "cleanrooms:UpdateConfiguredTableReference",
+        "glue:BatchGetPartition",
+        "glue:GetDatabase",
+        "glue:GetDatabases",
+        "glue:GetPartition",
+        "glue:GetPartitions",
+        "glue:GetSchemaVersion",
+        "glue:GetTable",
+        "glue:GetTables"
+      ]
+    },
+    {
+      "name": "UpdateConfiguredTableAllowedColumns",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html",
+      "description": "Grants permission to update the allowed columns of an existing configured table",
       "accessLevel": "Write",
       "resourceTypes": [
         "configuredtable*"
@@ -1072,6 +1143,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "configuredtableassociation*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateConfiguredTableReference",
+      "documentationUrl": "https://docs.aws.amazon.com/clean-rooms/latest/apireference/API_UpdateConfiguredTable.html",
+      "description": "Grants permission to update the table reference of an existing configured table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "configuredtable*"
       ],
       "conditionKeys": [],
       "dependentActions": []

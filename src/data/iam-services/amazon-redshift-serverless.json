@@ -70,6 +70,15 @@
       ]
     },
     {
+      "name": "CreateReservation",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateReservation.html",
+      "description": "Grants permission to purchase a capacity reservation according to a specific reservation offering, for a specified number of RPUs",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateScheduledAction",
       "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateScheduledAction.html",
       "description": "Grants permission to create a scheduled action for a specified Amazon Redshift Serverless namespace",
@@ -86,6 +95,7 @@
       "description": "Grants permission to create a snapshot of all databases in a namespace",
       "accessLevel": "Write",
       "resourceTypes": [
+        "namespace*",
         "snapshot*"
       ],
       "conditionKeys": [
@@ -267,6 +277,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetIdentityCenterAuthToken",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift/latest/mgmt/identity-center-authentication.html",
+      "description": "Grants permission to get an authorized token for Identity Center users to access Redshift Serverless workgroups",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workgroup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetManagedWorkgroup",
       "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetManagedWorkgroup.html",
       "description": "Grants permission to create a Amazon Redshift Managed Serverless workgroup with the specified configuration settings",
@@ -296,6 +317,24 @@
       "resourceTypes": [
         "recoveryPoint*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetReservation",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetReservation.html",
+      "description": "Grants permission to get a particular reservation object",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetReservationOffering",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_GetReservationOffering.html",
+      "description": "Grants permission to get a particular reservation offering",
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -367,6 +406,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListAutonomicsDenylist",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html",
+      "description": "Grants permission to list the resources that are denylisted from global autonomics decisions for a specified workgroup",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workgroup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListCustomDomainAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListCustomDomainAssociations.html",
       "description": "Grants permission to list custom domain associations in Amazon Redshift Serverless",
@@ -410,8 +460,26 @@
       "description": "Grants permission to list an array of recovery points",
       "accessLevel": "List",
       "resourceTypes": [
-        "namespace"
+        "recoveryPoint*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListReservationOfferings",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListReservationOfferings.html",
+      "description": "Grants permission to list all available capacity reservation offerings",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListReservations",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ListReservations.html",
+      "description": "Grants permission to list all reservations",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -596,6 +664,17 @@
       "conditionKeys": [
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAutonomicsDenylist",
+      "documentationUrl": "https://docs.aws.amazon.com/redshift/latest/dg/t_Manage_workload_exclusion.html",
+      "description": "Grants permission to add or remove resources from the global autonomics denylist for a specified workgroup",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workgroup*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {

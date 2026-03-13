@@ -13,6 +13,15 @@
       "dependentActions": []
     },
     {
+      "name": "AllowVendedLogDeliveryForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to configure log delivery for QuickSuite instance",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "BatchCreateTopicReviewedAnswer",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_BatchCreateTopicReviewedAnswer.html",
       "description": "Grants permission to create reviewed answers for a topic",
@@ -38,6 +47,24 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetPreferences",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to get user preferences",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchUpdatePreferences",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to update user preferences",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -75,6 +102,20 @@
       "conditionKeys": [
         "quicksight:Edition",
         "quicksight:DirectoryType"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateActionConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateActionConnector.html",
+      "description": "Grants permission to create an action connector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
       "dependentActions": []
     },
@@ -182,6 +223,20 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "emailCustomizationTemplate*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateExtensionAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to create an extension access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "extensionaccess*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -307,8 +362,7 @@
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
-        "quicksight:Group",
-        "identitystore:GroupId"
+        "quicksight:Group"
       ],
       "dependentActions": []
     },
@@ -421,6 +475,15 @@
       ]
     },
     {
+      "name": "DeleteAccountCustomPermission",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomPermission.html",
+      "description": "Grants permission to remove the custom permission associated with an account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteAccountCustomization",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteAccountCustomization.html",
       "description": "Grants permission to delete an account customization for QuickSight account or namespace",
@@ -438,6 +501,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "account*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteActionConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteActionConnector.html",
+      "description": "Grants permission to delete an action connector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "actionconnector*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -553,6 +627,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteExtensionAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to delete an extension access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "extensionaccess*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteFolder",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteFolder.html",
       "description": "Grants permission to delete a QuickSight Folder",
@@ -661,8 +746,7 @@
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
-        "quicksight:Group",
-        "identitystore:GroupId"
+        "quicksight:Group"
       ],
       "dependentActions": []
     },
@@ -749,7 +833,7 @@
     {
       "name": "DeleteUserByPrincipalId",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteUserByPrincipalId.html",
-      "description": "Grants permission to deletes a user identified by its principal ID",
+      "description": "Grants permission to delete a user identified by its principal ID",
       "accessLevel": "Write",
       "resourceTypes": [
         "user*"
@@ -783,6 +867,15 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeAccountCustomPermission",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomPermission.html",
+      "description": "Grants permission to describe the custom permission associated with an account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeAccountCustomization",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountCustomization.html",
       "description": "Grants permission to describe an account customization for QuickSight account or namespace",
@@ -809,6 +902,50 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "account*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeActionConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeActionConnector.html",
+      "description": "Grants permission to describe an action connector",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeActionConnectorPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeActionConnectorPermissions.html",
+      "description": "Grants permission to describe permissions for an action connector",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeAgent",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to describe an agent",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "agent*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeAgentPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to describe agent's permissions",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "agent*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -885,6 +1022,15 @@
       "resourceTypes": [
         "brand*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeChatConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to describe chat configuration",
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -1040,6 +1186,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeExtensionAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to describe an extension access",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "extensionaccess*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeFolder",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeFolder.html",
       "description": "Grants permission to describe a QuickSight Folder",
@@ -1160,6 +1317,15 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeQuickIndexCapacity",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to describe index capacity",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeQuickSightQSearchConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeQuickSightQSearchConfiguration.html",
       "description": "Grants permission to describe QuickSight Q Search configuration",
@@ -1183,6 +1349,15 @@
       "name": "DescribeRoleCustomPermission",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeRoleCustomPermission.html",
       "description": "Grants permission to describe the custom permission associated with a role",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeSelfUpgradeConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeSelfUpgradeConfiguration.html",
+      "description": "Grants permission to describe the administrative self upgrade configuration associated with an account",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -1344,8 +1519,6 @@
         "topic"
       ],
       "conditionKeys": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
         "quicksight:AllowedEmbeddingDomains"
       ],
       "dependentActions": []
@@ -1395,12 +1568,43 @@
       "dependentActions": []
     },
     {
+      "name": "GetCustomPermissionsSummary",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to get information about the custom permissions in an account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetDashboardEmbedUrl",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html",
       "description": "Grants permission to get a URL used to embed a QuickSight Dashboard",
       "accessLevel": "Read",
       "resourceTypes": [
         "dashboard*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFlowMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetFlowMetadata.html",
+      "description": "Grants permission to get metadata for a flow",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "flow*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFlowPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetFlowPermissions.html",
+      "description": "Grants permission to get permissions for a flow",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "flow*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1415,11 +1619,42 @@
       "dependentActions": []
     },
     {
+      "name": "GetIdentityContext",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html",
+      "description": "Grants permission to get identity context for a user",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "user*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetSessionEmbedUrl",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetSessionEmbedUrl.html",
       "description": "Grants permission to get a URL to embed QuickSight console experience",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListActionConnectors",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListActionConnectors.html",
+      "description": "Grants permission to list action connectors",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAgents",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to list agents",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "agent*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -1527,6 +1762,24 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListExtensionAccesses",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to list extension accesses",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFlows",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListFlows.html",
+      "description": "Grants permission to list all flows in an Amazon QuickSight account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -1668,11 +1921,23 @@
       "dependentActions": []
     },
     {
+      "name": "ListSelfUpgrades",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListSelfUpgrades.html",
+      "description": "Grants permission to list all of the pending self upgrade requests associated with an account",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "user*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list tags of a QuickSight resource",
       "accessLevel": "Read",
       "resourceTypes": [
+        "actionconnector",
         "analysis",
         "brand",
         "customization",
@@ -1680,6 +1945,8 @@
         "dashboard",
         "dataset",
         "datasource",
+        "emailCustomizationTemplate",
+        "flow",
         "folder",
         "template",
         "theme",
@@ -1874,6 +2141,15 @@
       "dependentActions": []
     },
     {
+      "name": "QuickSuiteUsageMetrics",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to get QuickSuite usage metrics",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "RegisterCustomerManagedKey",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/key-management.html",
       "description": "Grants permission to register a customer managed key",
@@ -1926,6 +2202,28 @@
       "dependentActions": []
     },
     {
+      "name": "SearchActionConnectors",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchActionConnectors.html",
+      "description": "Grants permission to search action connectors",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SearchAgents",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to search agents",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "agent*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "SearchAnalyses",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchAnalyses.html",
       "description": "Grants permission to search for a sub-set of analyses",
@@ -1973,6 +2271,15 @@
       "name": "SearchDirectoryGroups",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
       "description": "Grants permission to use Amazon QuickSight, in Enterprise edition, to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SearchFlows",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_SearchFlows.html",
+      "description": "Grants permission to search flows in an Amazon QuickSight account",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -2091,6 +2398,7 @@
       "description": "Grants permission to add tags to a QuickSight resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "actionconnector",
         "analysis",
         "brand",
         "customization",
@@ -2098,6 +2406,8 @@
         "dashboard",
         "dataset",
         "datasource",
+        "emailCustomizationTemplate",
+        "flow",
         "folder",
         "ingestion",
         "template",
@@ -2109,6 +2419,17 @@
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UnpublishFlow",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to unpublish a flow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "flow*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -2126,6 +2447,7 @@
       "description": "Grants permission to remove tags from a QuickSight resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "actionconnector",
         "analysis",
         "brand",
         "customization",
@@ -2133,6 +2455,8 @@
         "dashboard",
         "dataset",
         "datasource",
+        "emailCustomizationTemplate",
+        "flow",
         "folder",
         "ingestion",
         "template",
@@ -2143,6 +2467,15 @@
       "conditionKeys": [
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAccountCustomPermission",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateAccountCustomPermission.html",
+      "description": "Grants permission to update the custom permission associated with an account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -2162,6 +2495,39 @@
       "description": "Grants permission to update the administrative account settings for QuickSight account",
       "accessLevel": "Write",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateActionConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateActionConnector.html",
+      "description": "Grants permission to update an action connector",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateActionConnectorPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateActionConnectorPermissions.html",
+      "description": "Grants permission to update permissions for an action connector",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "actionconnector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAgentPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to update agent permissions",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "agent*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -2224,6 +2590,15 @@
       "resourceTypes": [
         "brand*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateChatConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to update chat configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -2373,6 +2748,28 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateExtensionAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to update an extension access",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "extensionaccess*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateFlowPermissions",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFlowPermissions.html",
+      "description": "Grants permission to update permissions for a flow",
+      "accessLevel": "Permissions management",
+      "resourceTypes": [
+        "flow*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateFolder",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateFolder.html",
       "description": "Grants permission to update a QuickSight Folder",
@@ -2462,6 +2859,15 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateQuickIndexCapacity",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
+      "description": "Grants permission to update index capacity",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateQuickSightQSearchConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQuickSightQSearchConfiguration.html",
       "description": "Grants permission to update QuickSight Q Search configuration",
@@ -2503,6 +2909,26 @@
       "name": "UpdateSPICECapacityConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSPICECapacityConfiguration.html",
       "description": "Grants permission to update QuickSight SPICE capacity configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSelfUpgrade",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgrade.html",
+      "description": "Grants permission to take action on pending self upgrade requests associated with an account",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "user*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSelfUpgradeConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateSelfUpgradeConfiguration.html",
+      "description": "Grants permission to update the administrative self upgrade configuration associated with an account",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],

@@ -84,7 +84,9 @@
         "ebs:ParentSnapshot",
         "ebs:VolumeSize"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "ec2:CreateTags"
+      ]
     }
   ]
 }

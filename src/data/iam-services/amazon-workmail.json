@@ -44,7 +44,9 @@
       "resourceTypes": [
         "organization*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "workmail:ImpersonationRoleId"
+      ],
       "dependentActions": []
     },
     {

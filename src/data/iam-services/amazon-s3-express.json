@@ -20,7 +20,9 @@
         "s3express:ResourceAccount",
         "s3express:signatureversion",
         "s3express:TlsVersion",
-        "s3express:x-amz-content-sha256"
+        "s3express:x-amz-content-sha256",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
       "dependentActions": []
     },
@@ -38,19 +40,23 @@
         "s3express:ResourceAccount",
         "s3express:signatureversion",
         "s3express:TlsVersion",
-        "s3express:x-amz-content-sha256"
+        "s3express:x-amz-content-sha256",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
       "dependentActions": []
     },
     {
       "name": "CreateSession",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html",
-      "description": "Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, ect",
-      "accessLevel": "Read",
+      "description": "Grants permission to Create Session token which is used for object APIs such as PutObject, GetObject, etc",
+      "accessLevel": "Write",
       "resourceTypes": [
-        "bucket*"
+        "bucket*",
+        "accesspoint"
       ],
       "conditionKeys": [
+        "s3express:Permissions",
         "s3express:authType",
         "s3express:ResourceAccount",
         "s3express:SessionMode",
@@ -60,7 +66,8 @@
         "s3express:x-amz-content-sha256",
         "s3express:x-amz-server-side-encryption",
         "s3express:x-amz-server-side-encryption-aws-kms-key-id",
-        "s3express:AllAccessRestrictedToLocalZoneGroup"
+        "s3express:AllAccessRestrictedToLocalZoneGroup",
+        "s3express:Permissions"
       ],
       "dependentActions": []
     },
@@ -163,7 +170,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html",
       "description": "Grants permission to return configuration information about the specified access point",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "accesspoint*"
+      ],
       "conditionKeys": [
         "s3express:DataAccessPointAccount",
         "s3express:DataAccessPointArn",
@@ -298,6 +307,24 @@
       "dependentActions": []
     },
     {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html",
+      "description": "Grants permission to lists all of the tags for a specified resource",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "accesspoint",
+        "bucket"
+      ],
+      "conditionKeys": [
+        "s3express:authType",
+        "s3express:ResourceAccount",
+        "s3express:signatureversion",
+        "s3express:TlsVersion",
+        "s3express:x-amz-content-sha256"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "PutAccessPointPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html",
       "description": "Grants permission to associate an access policy with a specified access point",
@@ -385,6 +412,45 @@
         "s3express:signatureversion",
         "s3express:TlsVersion",
         "s3express:x-amz-content-sha256"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html",
+      "description": "Grants permission to create a new user-defined tag or update an existing tag",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "accesspoint",
+        "bucket"
+      ],
+      "conditionKeys": [
+        "s3express:authType",
+        "s3express:ResourceAccount",
+        "s3express:signatureversion",
+        "s3express:TlsVersion",
+        "s3express:x-amz-content-sha256",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html",
+      "description": "Grants permission to remove the specified user-defined tags from an S3 resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "accesspoint",
+        "bucket"
+      ],
+      "conditionKeys": [
+        "s3express:authType",
+        "s3express:ResourceAccount",
+        "s3express:signatureversion",
+        "s3express:TlsVersion",
+        "s3express:x-amz-content-sha256",
+        "aws:TagKeys"
       ],
       "dependentActions": []
     }

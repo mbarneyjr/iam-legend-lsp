@@ -39,6 +39,18 @@
       "dependentActions": []
     },
     {
+      "name": "CreateDataflowEndpointGroupV2",
+      "documentationUrl": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroupV2.html",
+      "description": "Grants permission to create a data flow endpoint group using the V2 operation",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateEphemeris",
       "documentationUrl": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateEphemeris.html",
       "description": "Grants permission to create an ephemeris item",
@@ -132,6 +144,17 @@
       "name": "GetAgentConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentConfiguration.html",
       "description": "Grants permission to get the configuration of an agent",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Agent*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAgentTaskResponseUrl",
+      "documentationUrl": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetAgentTaskResponseUrl.html",
+      "description": "Grants permission to retrieve presigned S3 logging URLs",
       "accessLevel": "Read",
       "resourceTypes": [
         "Agent*"

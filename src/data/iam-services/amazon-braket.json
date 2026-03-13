@@ -13,15 +13,6 @@
       "dependentActions": []
     },
     {
-      "name": "AccessBraketFeature",
-      "documentationUrl": "${UserGuideDocPage}",
-      "description": "Grants permission to check if an Amazon Braket feature is enabled for an account. Customers need this permission to use all features available in the console",
-      "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
       "name": "CancelJob",
       "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelJob.html",
       "description": "Grants permission to cancel a job",
@@ -51,6 +42,7 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
       "dependentActions": []
@@ -63,6 +55,33 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateSpendingLimit",
+      "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateSpendingLimit.html",
+      "description": "Grants permission to create a spending limit",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSpendingLimit",
+      "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_DeleteSpendingLimit.html",
+      "description": "Grants permission to delete a spending limit",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
       "dependentActions": []
@@ -123,7 +142,8 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "job",
-        "quantum-task"
+        "quantum-task",
+        "spending-limit"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -156,13 +176,23 @@
       "dependentActions": []
     },
     {
+      "name": "SearchSpendingLimits",
+      "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchSpendingLimits.html",
+      "description": "Grants permission to search for spending limit",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to add one or more tags to a quantum task or a hybrid job",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "job",
-        "quantum-task"
+        "quantum-task",
+        "spending-limit"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -177,9 +207,23 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "job",
-        "quantum-task"
+        "quantum-task",
+        "spending-limit"
       ],
       "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSpendingLimit",
+      "documentationUrl": "https://docs.aws.amazon.com/braket/latest/APIReference/API_UpdateSpendingLimit.html",
+      "description": "Grants permission to update a spending limit",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
       "dependentActions": []

@@ -4,6 +4,19 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonauroradsql.html",
   "actions": [
     {
+      "name": "AddPeerCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html",
+      "description": "Grants permission to add a peer cluster to a multi-Region cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "dsql:PutMultiRegionProperties"
+      ]
+    },
+    {
       "name": "CreateCluster",
       "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html",
       "description": "Grants permission to create new clusters",
@@ -13,25 +26,11 @@
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ],
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ]
-    },
-    {
-      "name": "CreateMultiRegionClusters",
-      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateMultiRegionClusters.html",
-      "description": "Grants permission to create multi-Region clusters. Creating multi-Region clusters also requires CreateCluster permission in each specified Region",
-      "accessLevel": "Write",
-      "resourceTypes": [
-        "Cluster*"
-      ],
-      "conditionKeys": [
+        "aws:TagKeys",
         "dsql:WitnessRegion"
       ],
       "dependentActions": [
-        "dsql:CreateCluster"
+        "iam:CreateServiceLinkedRole"
       ]
     },
     {
@@ -68,17 +67,26 @@
       "dependentActions": []
     },
     {
-      "name": "DeleteMultiRegionClusters",
-      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_DeleteMultiRegionClusters.html",
-      "description": "Grants permission to delete multi-Region clusters. Deleting multi-Region clusters also requires DeleteCluster permission in each specified Region",
+      "name": "DeleteClusterPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html",
+      "description": "Grants permission to remove the inline resource-based policy attached to a cluster",
       "accessLevel": "Write",
       "resourceTypes": [
         "Cluster*"
       ],
       "conditionKeys": [],
-      "dependentActions": [
-        "dsql:DeleteCluster"
-      ]
+      "dependentActions": []
+    },
+    {
+      "name": "GetBackupJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to get the status of an Aurora DSQL cluster backup job",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
     },
     {
       "name": "GetCluster",
@@ -89,6 +97,51 @@
         "Cluster*"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetClusterPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html",
+      "description": "Grants permission to retrieve the inline resource-based policy attached to a cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRestoreJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to get the status of an Aurora DSQL cluster restore job",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetVpcEndpointServiceName",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_GetVpcEndpointServiceName.html",
+      "description": "Grants permission to retrieve the VPC endpoint service name for a cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InjectError",
+      "documentationUrl": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html",
+      "description": "Grants permission to inject errors in targeted clusters",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "dsql:FisActionId",
+        "dsql:FisTargetArns"
+      ],
       "dependentActions": []
     },
     {
@@ -105,6 +158,103 @@
       "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list all tags on an Aurora DSQL resource",
       "accessLevel": "Read",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutClusterPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/rbp-api-operations.html",
+      "description": "Grants permission to attach or update the inline resource-based policy attached to a cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutMultiRegionProperties",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html",
+      "description": "Grants permission to update multi-Region properties of a cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutWitnessRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_CreateCluster.html",
+      "description": "Grants permission to configure and update the witness Region of a multi-Region cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [
+        "dsql:WitnessRegion"
+      ],
+      "dependentActions": [
+        "dsql:PutMultiRegionProperties"
+      ]
+    },
+    {
+      "name": "RemovePeerCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/APIReference/API_UpdateCluster.html",
+      "description": "Grants permission to remove a peer cluster from a multi-Region cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "dsql:PutMultiRegionProperties"
+      ]
+    },
+    {
+      "name": "StartBackupJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to start a backup job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartRestoreJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to start a restore job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "dsql:CreateCluster",
+        "iam:CreateServiceLinkedRole"
+      ]
+    },
+    {
+      "name": "StopBackupJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to stop a backup job for an Aurora DSQL cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopRestoreJob",
+      "documentationUrl": "https://docs.aws.amazon.com/aurora-dsql/latest/userguide/backup-aurora-dsql.html",
+      "description": "Grants permission to stop a restore job for an Aurora DSQL Cluster",
+      "accessLevel": "Write",
       "resourceTypes": [
         "Cluster*"
       ],
@@ -146,7 +296,9 @@
       "resourceTypes": [
         "Cluster*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "dsql:WitnessRegion"
+      ],
       "dependentActions": []
     }
   ]

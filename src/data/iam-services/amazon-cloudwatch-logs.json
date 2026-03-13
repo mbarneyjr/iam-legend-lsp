@@ -15,9 +15,36 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateSourceToS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateSourceToS3TableIntegration.html",
+      "description": "Grants permission to associate a log source to an S3 Tables integration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CallWithBearerToken",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html",
+      "description": "Grants permission to authenticate requests using bearer token",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CancelExportTask",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html",
       "description": "Grants permission to cancel an export task if it is in PENDING or RUNNING state",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CancelImportTask",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelImportTask.html",
+      "description": "Grants permission to cancel an import from CloudTrail Lake to CloudWatch",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -47,6 +74,15 @@
       "resourceTypes": [
         "log-group*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateImportTask",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateImportTask.html",
+      "description": "Grants permission to start an asynchronous process to import data from a CloudTrail Lake event data store into a managed log group in CloudWatch",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -96,6 +132,20 @@
         "log-stream*"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateScheduledQuery",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateScheduledQuery.html",
+      "description": "Grants permission to create a scheduled query",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "scheduled-query*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -245,6 +295,15 @@
       "dependentActions": []
     },
     {
+      "name": "DeletePipelineRule",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html",
+      "description": "Grants permission to delete telemetry pipeline",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteQueryDefinition",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteQueryDefinition.html",
       "description": "Grants permission to delete a saved CloudWatch Logs Insights query definition",
@@ -269,6 +328,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "log-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteScheduledQuery",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteScheduledQuery.html",
+      "description": "Grants permission to delete a scheduled query",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "scheduled-query*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -368,6 +438,24 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeImportTaskBatches",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTaskBatches.html",
+      "description": "Grants permission to return detailed information about the individual batches within an import task, including status and any error",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeImportTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeImportTasks.html",
+      "description": "Grants permission to return all the import tasks associated with the AWS account making the request",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeIndexPolicies",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeIndexPolicies.html",
       "description": "Grants permission to return all the index policies that are attached with the log groups",
@@ -453,6 +541,15 @@
       "resourceTypes": [
         "log-group*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateSourceFromS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateSourceFromS3TableIntegration.html",
+      "description": "Grants permission to disassociate a log source from an S3 Tables integration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -563,6 +660,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetLogFields",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html",
+      "description": "Grants permission to retrieve a list of log fields for a data source",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetLogGroupFields",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html",
       "description": "Grants permission to return a list of the fields that are included in log events in the specified log group, along with the percentage of log events that contain each field",
@@ -596,6 +702,28 @@
       "dependentActions": []
     },
     {
+      "name": "GetScheduledQuery",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQuery.html",
+      "description": "Grants permission to retrieve information about a specified scheduled query",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "scheduled-query*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetScheduledQueryHistory",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetScheduledQueryHistory.html",
+      "description": "Grants permission to return the execution history for a specified scheduled query",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "scheduled-query*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetTransformer",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetTransformer.html",
       "description": "Grants permission to return transformer associated with the specified log group",
@@ -607,10 +735,30 @@
       "dependentActions": []
     },
     {
+      "name": "IntegrateWithS3Table",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html",
+      "description": "Grants permission to deliver log events to S3 Tables",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "log-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "Link",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions",
       "description": "Grants permission to share CloudWatch resources with a monitoring account",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAggregateLogGroupSummaries",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListAggregateLogGroupSummaries.html",
+      "description": "Grants permission to return an aggregate summary of all log groups in the region grouped by specified data-source characteristics",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -665,6 +813,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListLogGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroups.html",
+      "description": "Grants permission to return all the log groups that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListLogGroupsForEntity",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html",
       "description": "Grants permission to retrieve all the log groups that are associated with entity",
@@ -677,6 +834,24 @@
       "name": "ListLogGroupsForQuery",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListLogGroupsForQuery.html",
       "description": "Grants permission to return all the log groups that are associated with the specified query",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListScheduledQueries",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListScheduledQueries.html",
+      "description": "Grants permission to return all scheduled queries that are associated with the AWS account making the request",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSourcesForS3TableIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListSourcesForS3TableIntegration.html",
+      "description": "Grants permission to return all log sources associated with an S3 Tables integration",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -710,11 +885,33 @@
       "dependentActions": []
     },
     {
+      "name": "ProcessWithPipeline",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html",
+      "description": "Grants permission to process and transform log events through pipeline transformers before storage",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "log-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutAccountPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html",
       "description": "Grants permission to attach an account policy",
       "accessLevel": "Write",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutBearerTokenAuthentication",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutBearerTokenAuthentication.html",
+      "description": "Grants permission to enable or disable bearer token based authentication for the specified log group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "log-group*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -827,6 +1024,17 @@
       "dependentActions": []
     },
     {
+      "name": "PutLogGroupDeletionProtection",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogGroupDeletionProtection.html",
+      "description": "Grants permission to enable or disable deletion protection for the specified log group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "log-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutMetricFilter",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html",
       "description": "Grants permission to create or update a metric filter and associates it with the specified log group",
@@ -834,6 +1042,15 @@
       "resourceTypes": [
         "log-group*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutPipelineRule",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/permissions-reference-cwl.html",
+      "description": "Grants permission to create telemetry pipeline",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -956,7 +1173,8 @@
         "delivery-destination",
         "delivery-source",
         "destination",
-        "log-group"
+        "log-group",
+        "scheduled-query"
       ],
       "conditionKeys": [
         "aws:TagKeys",
@@ -1017,7 +1235,8 @@
         "delivery-destination",
         "delivery-source",
         "destination",
-        "log-group"
+        "log-group",
+        "scheduled-query"
       ],
       "conditionKeys": [
         "aws:TagKeys"
@@ -1068,6 +1287,17 @@
       "description": "Grants permission to update the log delivery information for specified log delivery",
       "accessLevel": "Write",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateScheduledQuery",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateScheduledQuery.html",
+      "description": "Grants permission to update a scheduled query",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "scheduled-query*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     }

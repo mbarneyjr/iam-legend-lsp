@@ -1,0 +1,212 @@
+{
+  "serviceName": "AWS Transform",
+  "servicePrefix": "transform",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awstransform.html",
+  "actions": [
+    {
+      "name": "AssociateConnectorResource",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke AssociateConnectorResource on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateProfile",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke CreateProfile on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "profile*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAgentRuntimeConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke DeleteAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke DeleteConnector on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteProfile",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke DeleteProfile on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "profile*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAccountSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke GetAccountSettings on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAgent",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke GetAgent on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAgentRuntimeConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke GetAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke GetConnector on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAgents",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke ListAgents on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListConnectors",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke ListConnectors on AWS Transform",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListProfiles",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke ListProfiles on AWS Transform",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke ListTagsForResource on AWS Transform",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutAgentRuntimeConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke PutAgentRuntimeConfiguration on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RejectConnector",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke RejectConnector on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke TagResource on AWS Transform",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke UntagResource on AWS Transform",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "connector*"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAccountSettings",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke UpdateAccountSettings on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAgentAccess",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke UpdateAgentAccess on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateProfile",
+      "documentationUrl": "https://docs.aws.amazon.com/transform/latest/userguide/security_iam_permissions.html",
+      "description": "Grants permission to invoke UpdateProfile on AWS Transform",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "profile*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

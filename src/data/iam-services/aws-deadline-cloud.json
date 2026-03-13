@@ -170,8 +170,12 @@
       "resourceTypes": [
         "budget*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": [
+        "deadline:TagResource",
         "identitystore:ListGroupMembershipsForMember"
       ]
     },
@@ -205,9 +209,12 @@
       ],
       "dependentActions": [
         "deadline:TagResource",
+        "ec2:CreateVpcEndpoint",
         "iam:PassRole",
         "identitystore:ListGroupMembershipsForMember",
-        "logs:CreateLogGroup"
+        "logs:CreateLogGroup",
+        "vpc-lattice:GetResourceConfiguration",
+        "vpc-lattice:GetResourceGateway"
       ]
     },
     {
@@ -218,7 +225,10 @@
       "resourceTypes": [
         "job*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": [
         "deadline:GetJobTemplate",
         "identitystore:ListGroupMembershipsForMember"
@@ -264,8 +274,12 @@
       "resourceTypes": [
         "monitor*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": [
+        "deadline:TagResource",
         "iam:PassRole",
         "sso:CreateApplication",
         "sso:DeleteApplication",
@@ -356,8 +370,14 @@
       "resourceTypes": [
         "worker*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "deadline:ListTagsForResource",
+        "deadline:TagResource"
+      ]
     },
     {
       "name": "DeleteBudget",
@@ -431,7 +451,7 @@
       "description": "Grants permission to delete a metered product",
       "accessLevel": "Write",
       "resourceTypes": [
-        "metered-product*"
+        "license-endpoint*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -589,7 +609,7 @@
     },
     {
       "name": "GetApplicationVersion",
-      "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_GetApplicationVersion.html",
+      "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html",
       "description": "Grants permission to get the latest version of an application",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -652,6 +672,7 @@
     },
     {
       "name": "GetJobTemplate",
+      "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/userguide/working-with-deadline-monitor.html",
       "description": "Grants permission to read job template",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -781,7 +802,7 @@
       "description": "Grants permission to get all collected statistics for sessions",
       "accessLevel": "Read",
       "resourceTypes": [
-        "farm",
+        "farm*",
         "fleet",
         "queue"
       ],
@@ -870,7 +891,7 @@
       "description": "Grants permission to list all budgets for a farm",
       "accessLevel": "List",
       "resourceTypes": [
-        "budget*"
+        "budget"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1013,7 +1034,7 @@
       "description": "Grants permission to list all metered products in a license endpoint",
       "accessLevel": "List",
       "resourceTypes": [
-        "metered-product*"
+        "license-endpoint*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1049,8 +1070,8 @@
       "accessLevel": "List",
       "resourceTypes": [
         "farm*",
-        "fleet*",
-        "queue*"
+        "fleet",
+        "queue"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1064,7 +1085,7 @@
       "accessLevel": "List",
       "resourceTypes": [
         "farm*",
-        "queue*"
+        "queue"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1077,7 +1098,7 @@
       "description": "Grants permission to list all members in a queue",
       "accessLevel": "List",
       "resourceTypes": [
-        "queue*"
+        "queue"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1134,7 +1155,7 @@
       "description": "Grants permission to list all sessions for a worker",
       "accessLevel": "List",
       "resourceTypes": [
-        "worker*"
+        "worker"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1160,7 +1181,7 @@
       "description": "Grants permission to list dependencies for a job step",
       "accessLevel": "List",
       "resourceTypes": [
-        "job*"
+        "job"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1199,7 +1220,7 @@
       "description": "Grants permission to list all storage profiles in a queue",
       "accessLevel": "List",
       "resourceTypes": [
-        "queue*"
+        "queue"
       ],
       "conditionKeys": [],
       "dependentActions": [
@@ -1210,14 +1231,20 @@
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list all tags on specified Deadline Cloud resources",
-      "accessLevel": "List",
+      "accessLevel": "Read",
       "resourceTypes": [
+        "budget",
         "farm",
         "fleet",
+        "job",
         "license-endpoint",
-        "queue"
+        "monitor",
+        "queue",
+        "worker"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "deadline:CalledAction"
+      ],
       "dependentActions": []
     },
     {
@@ -1252,7 +1279,7 @@
       "description": "Grants permission to add a metered product to a license endpoint",
       "accessLevel": "Write",
       "resourceTypes": [
-        "metered-product*"
+        "license-endpoint*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1261,7 +1288,7 @@
       "name": "SearchJobs",
       "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchJobs.html",
       "description": "Grants permission to search for jobs in multiple queues",
-      "accessLevel": "List",
+      "accessLevel": "Read",
       "resourceTypes": [
         "queue*"
       ],
@@ -1274,7 +1301,7 @@
       "name": "SearchSteps",
       "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchSteps.html",
       "description": "Grants permission to search the steps within a single job or to search the steps for multiple queues",
-      "accessLevel": "List",
+      "accessLevel": "Read",
       "resourceTypes": [
         "job",
         "queue"
@@ -1288,7 +1315,7 @@
       "name": "SearchTasks",
       "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchTasks.html",
       "description": "Grants permission to search the tasks within a single job or to search the tasks for multiple queues",
-      "accessLevel": "List",
+      "accessLevel": "Read",
       "resourceTypes": [
         "job",
         "queue"
@@ -1302,10 +1329,8 @@
       "name": "SearchWorkers",
       "documentationUrl": "https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_SearchWorkers.html",
       "description": "Grants permission to search for workers in multiple fleets",
-      "accessLevel": "List",
-      "resourceTypes": [
-        "fleet*"
-      ],
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": [
         "identitystore:ListGroupMembershipsForMember"
@@ -1331,14 +1356,19 @@
       "description": "Grants permission to add or overwrite one or more tags for the specified Deadline Cloud resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "budget",
         "farm",
         "fleet",
+        "job",
         "license-endpoint",
-        "queue"
+        "monitor",
+        "queue",
+        "worker"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "deadline:CalledAction"
       ],
       "dependentActions": []
     },
@@ -1348,10 +1378,14 @@
       "description": "Grants permission to disassociate one or more tags from the specified Deadline Cloud resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
+        "budget",
         "farm",
         "fleet",
+        "job",
         "license-endpoint",
-        "queue"
+        "monitor",
+        "queue",
+        "worker"
       ],
       "conditionKeys": [
         "aws:TagKeys"
@@ -1394,8 +1428,11 @@
       ],
       "conditionKeys": [],
       "dependentActions": [
+        "ec2:CreateVpcEndpoint",
         "iam:PassRole",
-        "identitystore:ListGroupMembershipsForMember"
+        "identitystore:ListGroupMembershipsForMember",
+        "vpc-lattice:GetResourceConfiguration",
+        "vpc-lattice:GetResourceGateway"
       ]
     },
     {

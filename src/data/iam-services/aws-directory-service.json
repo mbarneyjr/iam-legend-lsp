@@ -183,6 +183,36 @@
       ]
     },
     {
+      "name": "CreateHybridAD",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateHybridAD.html",
+      "description": "Grants permission to create a Hybrid Managed AD directory",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "iam:CreateServiceLinkedRole",
+        "iam:GetRole",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
+        "ssm:SendCommand"
+      ]
+    },
+    {
       "name": "CreateIdentityPoolDirectory",
       "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html",
       "description": "Grants permission to create an IdentityPool Directory in the AWS cloud",
@@ -245,6 +275,15 @@
       "resourceTypes": [
         "directory*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteADAssessment",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteADAssessment.html",
+      "description": "Grants permission to delete a directory assessment",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -332,6 +371,26 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeADAssessment",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeADAssessment.html",
+      "description": "Grants permission to describe a directory assessment",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeCAEnrollmentPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCAEnrollmentPolicy.html",
+      "description": "Grants permission to describe the ca enrollment status of a specified directory",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "directory*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeCertificate",
       "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeCertificate.html",
       "description": "Grants permission to display information about the certificate registered for a secured LDAP connection",
@@ -399,6 +458,17 @@
       "name": "DescribeEventTopics",
       "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html",
       "description": "Grants permission to obtain information about which SNS topics receive status messages from the specified directory",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "directory*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeHybridADUpdate",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeHybridADUpdate.html",
+      "description": "Grants permission to describe the updates of a specified hybrid directory",
       "accessLevel": "Read",
       "resourceTypes": [
         "directory*"
@@ -480,6 +550,17 @@
       "dependentActions": []
     },
     {
+      "name": "DisableCAEnrollmentPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableCAEnrollmentPolicy.html",
+      "description": "Grants permission to disable the ca enrollment of a specified directory",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "directory*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DisableClientAuthentication",
       "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableClientAuthentication.html",
       "description": "Grants permission to disable alternative client authentication methods for the specified directory",
@@ -544,6 +625,20 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "EnableCAEnrollmentPolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableCAEnrollmentPolicy.html",
+      "description": "Grants permission to enable the ca enrollment of a specified directory",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "directory*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "acm-pca:DescribeCertificateAuthority",
+        "pca-connector-ad:GetConnector"
+      ]
     },
     {
       "name": "EnableClientAuthentication",
@@ -641,6 +736,15 @@
       "resourceTypes": [
         "directory*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListADAssessments",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListADAssessments.html",
+      "description": "Grants permission to list directory assessments",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -815,6 +919,30 @@
       "dependentActions": []
     },
     {
+      "name": "StartADAssessment",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartADAssessment.html",
+      "description": "Grants permission to start a directory assessment",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:CreateSecurityGroup",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
+        "ssm:SendCommand"
+      ]
+    },
+    {
       "name": "StartSchemaExtension",
       "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html",
       "description": "Grants permission to apply a schema extension to a Microsoft AD directory",
@@ -890,6 +1018,33 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "UpdateHybridAD",
+      "documentationUrl": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateHybridAD.html",
+      "description": "Grants permission to update configurations for a specified hybrid directory",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "directory*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateNetworkInterfacePermission",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
+        "ssm:SendCommand"
+      ]
     },
     {
       "name": "UpdateNumberOfDomainControllers",

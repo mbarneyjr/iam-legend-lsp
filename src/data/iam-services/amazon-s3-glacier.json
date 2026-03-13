@@ -33,10 +33,7 @@
       "resourceTypes": [
         "vault*"
       ],
-      "conditionKeys": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {

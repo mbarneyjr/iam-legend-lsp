@@ -1,0 +1,260 @@
+{
+  "serviceName": "Amazon Elastic VMware Service",
+  "servicePrefix": "evs",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonelasticvmwareservice.html",
+  "actions": [
+    {
+      "name": "AssociateEipToVlan",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_AssociateEipToVlan.html",
+      "description": "Grants permission to associate an Elastic IP address (EIP) with a public VLAN in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:AssociateAddress",
+        "ec2:DescribeAddresses"
+      ]
+    },
+    {
+      "name": "CreateEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironment.html",
+      "description": "Grants permission to create an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSubnet",
+        "ec2:CreateTags",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSubnet",
+        "ec2:DeleteVolume",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeHosts",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribePlacementGroups",
+        "ec2:DescribeRouteServerEndpoints",
+        "ec2:DescribeRouteServerPeers",
+        "ec2:DescribeRouteServers",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
+        "ec2:DetachNetworkInterface",
+        "ec2:DetachVolume",
+        "ec2:GetAllowedImagesSettings",
+        "ec2:GetRouteServerAssociations",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:RunInstances",
+        "ec2:TerminateInstances",
+        "iam:CreateServiceLinkedRole",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetRandomPassword",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:TagResource",
+        "secretsmanager:UpdateSecret",
+        "servicequotas:GetServiceQuota",
+        "servicequotas:ListServiceQuotas",
+        "support:DescribeServices",
+        "support:DescribeSupportLevel"
+      ]
+    },
+    {
+      "name": "CreateEnvironmentHost",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_CreateEnvironmentHost.html",
+      "description": "Grants permission to add host to an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateTags",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeDhcpOptions",
+        "ec2:DescribeHosts",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribePlacementGroups",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:RunInstances",
+        "evs:CreateEnvironmentHost",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetRandomPassword",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:TagResource",
+        "secretsmanager:UpdateSecret",
+        "servicequotas:GetServiceQuota",
+        "servicequotas:ListServiceQuotas"
+      ]
+    },
+    {
+      "name": "DeleteEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironment.html",
+      "description": "Grants permission to delete an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSubnet",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:TerminateInstances",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetSecretValue"
+      ]
+    },
+    {
+      "name": "DeleteEnvironmentHost",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DeleteEnvironmentHost.html",
+      "description": "Grants permission to delete a host from an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:TerminateInstances",
+        "secretsmanager:DeleteSecret",
+        "secretsmanager:GetSecretValue"
+      ]
+    },
+    {
+      "name": "DisassociateEipFromVlan",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_DisassociateEipFromVlan.html",
+      "description": "Grants permission to disassociate an Elastic IP address (EIP) from a public VLAN in an Amazon EVS environment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DisassociateAddress"
+      ]
+    },
+    {
+      "name": "GetEnvironment",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetEnvironment.html",
+      "description": "Grants permission to get an Amazon EVS environment",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_GetVersions.html",
+      "description": "Grants permission to get versions provided for launch by Amazon EVS",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListEnvironmentHosts",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentHosts.html",
+      "description": "Grants permission to retrieve a list of hosts associated with an Amazon EVS environment",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListEnvironmentVlans",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironmentVlans.html",
+      "description": "Grants permission to retrieve a list of Amazon EVS environment VLANs",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListEnvironments",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListEnvironments.html",
+      "description": "Grants permission to retrieve a list of Amazon EVS environments in an account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_ListTagsForResource.html",
+      "description": "Grants permission to list the tags on a specified resource ARN",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "environment"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_TagResource.html",
+      "description": "Grants permission to tag a specified resource ARN",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/evs/latest/APIReference/API_UntagResource.html",
+      "description": "Grants permission to remove tags from a specified resource ARN",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "environment*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    }
+  ]
+}

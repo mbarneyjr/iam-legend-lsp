@@ -1,0 +1,591 @@
+{
+  "serviceName": "AWS Service - Oracle Database@AWS",
+  "servicePrefix": "odb",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsservice-oracledatabase_aws.html",
+  "actions": [
+    {
+      "name": "AcceptMarketplaceRegistration",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_AcceptMarketplaceRegistration.html",
+      "description": "Grants permission to register the Amazon Web Services Marketplace token for your Amazon Web Services account to activate your Oracle Database@Amazon Web Services subscription",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCloudAutonomousVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudAutonomousVmCluster.html",
+      "description": "Grants permission to create a new Autonomous VM cluster in the specified Exadata infrastructure",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*",
+        "odb-network*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCloudExadataInfrastructure",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudExadataInfrastructure.html",
+      "description": "Grants permission to create an Exadata infrastructure",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCloudVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateCloudVmCluster.html",
+      "description": "Grants permission to create a VM cluster on the specified Exadata infrastructure",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*",
+        "odb-network*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDbNode",
+      "documentationUrl": "API_CreateDbNode.html",
+      "description": "Grants permission to create a DB Node",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "db-node*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateGrantShare",
+      "documentationUrl": "API_CreateGrantShare.html",
+      "description": "Grants permission to create an ODB Grant Share",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOdbNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbNetwork.html",
+      "description": "Grants permission to create an ODB network",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOdbPeeringConnection",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_CreateOdbPeeringConnection.html",
+      "description": "Grants permission to create an ODB Peering Connection",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "odb-network*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOutboundIntegration",
+      "documentationUrl": "API_CreateOutboundIntegration.html",
+      "description": "Grants permission to create an Outbound Integration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster*",
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCloudAutonomousVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudAutonomousVmCluster.html",
+      "description": "Grants permission to Deletes an Autonomous VM cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCloudExadataInfrastructure",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudExadataInfrastructure.html",
+      "description": "Grants permission to delete a specified Exadata infrastructure. Before you use this operation, make sure to delete all of the VM clusters that are hosted on this Exadata infrastructure",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCloudVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteCloudVmCluster.html",
+      "description": "Grants permission to delete a specified VM cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDbNode",
+      "documentationUrl": "API_DeleteDbNode.html",
+      "description": "Grants permission to delete a DB Node",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "db-node*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteGrantShare",
+      "documentationUrl": "API_DeleteGrantShare.html",
+      "description": "Grants permission to delete an ODB Grant Share",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteOdbNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbNetwork.html",
+      "description": "Grants permission to delete the specified ODB network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteOdbPeeringConnection",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_DeleteOdbPeeringConnection.html",
+      "description": "Grants permission to delete the specified ODB Peering Connection. When you delete an ODB peering connection, the underlying VPC peering connection is also deleted",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "odb-peering-connection*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteResourcePolicy",
+      "documentationUrl": "API_DeleteResourcePolicy.html",
+      "description": "Grants permission to delete a resource policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*",
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCloudAutonomousVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudAutonomousVmCluster.html",
+      "description": "Grants permission to get information about a specific Autonomous VM cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCloudExadataInfrastructure",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructure.html",
+      "description": "Grants permission to get information about the specified Exadata infrastructure",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCloudExadataInfrastructureUnallocatedResources",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudExadataInfrastructureUnallocatedResources.html",
+      "description": "Grants permission to retrieve information about unallocated resources in a specified Cloud Exadata Infrastructure",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCloudVmCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetCloudVmCluster.html",
+      "description": "Grants permission to get information about the specified VM cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDbNode",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbNode.html",
+      "description": "Grants permission to get information about the specified DB node",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-vm-cluster*",
+        "db-node*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDbServer",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetDbServer.html",
+      "description": "Grants permission to get information about the specified database server",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetOciOnboardingStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOciOnboardingStatus.html",
+      "description": "Grants permission to get the tenancy activation link and onboarding status for your Amazon Web Services account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetOdbNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbNetwork.html",
+      "description": "Grants permission to get information about the specified ODB network",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetOdbPeeringConnection",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_GetOdbPeeringConnection.html",
+      "description": "Grants permission to get information about the specified ODB Peering connection",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "odb-peering-connection*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetResourcePolicy",
+      "documentationUrl": "API_GetResourcePolicy.html",
+      "description": "Grants permission to get a resource policy",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*",
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InitializeService",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_InitializeService.html",
+      "description": "Grants permission to initialize the ODB service for the first time in an account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutonomousVirtualMachines",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListAutonomousVirtualMachines.html",
+      "description": "Grants permission to list all Autonomous VMs in an Autonomous VM cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCloudAutonomousVmClusters",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudAutonomousVmClusters.html",
+      "description": "Grants permission to list all Autonomous VM clusters in a specified Cloud Exadata infrastructure",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCloudExadataInfrastructures",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudExadataInfrastructures.html",
+      "description": "Grants permission to list information about the Exadata infrastructures owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCloudVmClusters",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListCloudVmClusters.html",
+      "description": "Grants permission to list information about the VM clusters owned by your Amazon Web Services account or only the ones on the specified Exadata infrastructure",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDbNodes",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbNodes.html",
+      "description": "Grants permission to list information about the DB nodes for the specified VM cluster",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDbServers",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbServers.html",
+      "description": "Grants permission to list information about the database servers that belong to the specified Exadata infrastructure",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDbSystemShapes",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListDbSystemShapes.html",
+      "description": "Grants permission to list information about the shapes that are available for an Exadata infrastructure",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListGiVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListGiVersions.html",
+      "description": "Grants permission to list information about Oracle Grid Infrastructure (GI) software versions that are available for a VM cluster for the specified shape",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListOdbNetworks",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbNetworks.html",
+      "description": "Grants permission to list information about the ODB networks owned by your Amazon Web Services account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListOdbPeeringConnections",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListOdbPeeringConnections.html",
+      "description": "Grants permission to list all ODB peering connections or those associated with a specific ODB network",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "odb-network"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSystemVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListSystemVersions.html",
+      "description": "Grants permission to list information about the system versions that are available for a VM cluster for the specified giVersion and shape",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_ListTagsForResource.html",
+      "description": "Grants permission to list information about the tags applied to this resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster",
+        "cloud-exadata-infrastructure",
+        "cloud-vm-cluster",
+        "db-node",
+        "odb-network",
+        "odb-peering-connection"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "PutResourcePolicy",
+      "documentationUrl": "API_PutResourcePolicy.html",
+      "description": "Grants permission to update a resource policy",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*",
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RebootDbNode",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_RebootDbNode.html",
+      "description": "Grants permission to reboot the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-vm-cluster*",
+        "db-node*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartDbNode",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StartDbNode.html",
+      "description": "Grants permission to start the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-vm-cluster*",
+        "db-node*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopDbNode",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_StopDbNode.html",
+      "description": "Grants permission to stop the specified DB node in a VM cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_TagResource.html",
+      "description": "Grants permission to apply tags to the specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster",
+        "cloud-exadata-infrastructure",
+        "cloud-vm-cluster",
+        "db-node",
+        "odb-network",
+        "odb-peering-connection"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UntagResource.html",
+      "description": "Grants permission to remove tags from the specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster",
+        "cloud-exadata-infrastructure",
+        "cloud-vm-cluster",
+        "db-node",
+        "odb-network",
+        "odb-peering-connection"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateCloudExadataInfrastructure",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateCloudExadataInfrastructure.html",
+      "description": "Grants permission to update the properties of an Exadata infrastructure resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-exadata-infrastructure*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateGrantShare",
+      "documentationUrl": "API_UpdateGrantShare.html",
+      "description": "Grants permission to update an ODB Grant Share",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateOdbNetwork",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbNetwork.html",
+      "description": "Grants permission to update properties of a specified ODB network",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "odb-network*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateOdbPeeringConnection",
+      "documentationUrl": "https://docs.aws.amazon.com/odb/latest/APIReference/API_UpdateOdbPeeringConnection.html",
+      "description": "Grants permission to update properties of a specified ODB Peering Connection",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "odb-peering-connection*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateOutboundIntegration",
+      "documentationUrl": "API_UpdateOutboundIntegration.html",
+      "description": "Grants permission to update an Outbound Integration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cloud-autonomous-vm-cluster*",
+        "cloud-vm-cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

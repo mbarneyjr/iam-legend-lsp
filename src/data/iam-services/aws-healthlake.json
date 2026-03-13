@@ -15,12 +15,24 @@
       "dependentActions": []
     },
     {
+      "name": "ConfirmAttributionList",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-confirm-attribution-list.html",
+      "description": "Grants permission to allow customers to indicate to a Producer that the Consumer does not have any more changes to be made to the Attribution List",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CreateFHIRDatastore",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_CreateFHIRDatastore.html",
       "description": "Grants permission to create a datastore that can ingest and export FHIR data",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
@@ -53,6 +65,17 @@
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to delete resource",
       "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeFHIRBulkDeleteJob",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html",
+      "description": "Grants permission to describe a FHIR Bulk Delete Job",
+      "accessLevel": "Read",
       "resourceTypes": [
         "datastore*"
       ],
@@ -104,6 +127,50 @@
       "dependentActions": []
     },
     {
+      "name": "ExpandValueSetWithGet",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html",
+      "description": "Grants permission to search and expand ValueSet resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ExpandValueSetWithPost",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-expand.html",
+      "description": "Grants permission to search and expand ValueSet resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GenerateDocumentWithGet",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html",
+      "description": "Grants permission to generate a clinical document resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GenerateDocumentWithPost",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-document.html",
+      "description": "Grants permission to generate a clinical document resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetCapabilities",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to get the capabilities of a FHIR datastore",
@@ -129,6 +196,17 @@
       "name": "GetHistoryByResourceId",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to read resource history",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InquirePreAuthClaim",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-inquire.html",
+      "description": "Grants permission to inquire about the status of a prior authorization Claim",
       "accessLevel": "Read",
       "resourceTypes": [
         "datastore*"
@@ -179,6 +257,72 @@
       "dependentActions": []
     },
     {
+      "name": "LookupCodeSystemWithGet",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html",
+      "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "LookupCodeSystemWithPost",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-lookup.html",
+      "description": "Grants permission to retrieve Codes for a CodeSystem resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "MemberAdd",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-add.html",
+      "description": "Grants permission to attribute a member with a specific provider group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "MemberMatch",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-match.html",
+      "description": "Grants permission to enable cross-system patient matching",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "MemberRemove",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-member-remove.html",
+      "description": "Grants permission to remove a member from a group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PatchResource",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/managing-fhir-resources-patch.html",
+      "description": "Grants permission to patch a resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ProcessBundle",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to bundle multiple resource operations",
@@ -190,10 +334,32 @@
       "dependentActions": []
     },
     {
+      "name": "QuestionnairePackage",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-questionnaire-package.html",
+      "description": "Grants permission to retrieve Questionnaire packages with dependency Library and ValueSet resources",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ReadResource",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to read resource",
       "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RetrieveAttributionStatus",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-attribution-status.html",
+      "description": "Grants permission to retrieve member attribution status",
+      "accessLevel": "Write",
       "resourceTypes": [
         "datastore*"
       ],
@@ -227,6 +393,17 @@
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/search-healthlake.html",
       "description": "Grants permission to search resources with POST method",
       "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartFHIRBulkDeleteJob",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-bulk-delete.html",
+      "description": "Grants permission to begin a FHIR Bulk Delete Job",
+      "accessLevel": "Write",
       "resourceTypes": [
         "datastore*"
       ],
@@ -278,6 +455,17 @@
       "dependentActions": []
     },
     {
+      "name": "SubmitPreAuthClaim",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-submit.html",
+      "description": "Grants permission to submit a prior authorization Claim request",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to add tags to a datastore",
@@ -310,6 +498,17 @@
       "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/crud-healthlake.html",
       "description": "Grants permission to update resource",
       "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ValidateResource",
+      "documentationUrl": "https://docs.aws.amazon.com/healthlake/latest/devguide/reference-fhir-operations-validate.html",
+      "description": "Grants permission to validate a resource",
+      "accessLevel": "Read",
       "resourceTypes": [
         "datastore*"
       ],

@@ -1,0 +1,328 @@
+{
+  "serviceName": "AWS RTB Fabric",
+  "servicePrefix": "rtbfabric",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsrtbfabric.html",
+  "actions": [
+    {
+      "name": "AcceptLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_AcceptLink.html",
+      "description": "Grants permission to accept a link invitation from another Gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateInboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateInboundExternalLink.html",
+      "description": "Grants permission to create an inbound external link for a responder gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateLink.html",
+      "description": "Grants permission to create a new link between RTB applications",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOutboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateOutboundExternalLink.html",
+      "description": "Grants permission to create an outbound external link for a requester gateway to connect to external public responder endpoints",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateRequesterGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateRequesterGateway.html",
+      "description": "Grants permission to create a requester gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateResponderGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_CreateResponderGateway.html",
+      "description": "Grants permission to create a responder gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteInboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteInboundExternalLink.html",
+      "description": "Grants permission to delete an inbound external link",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "InboundExternalLink*",
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteLink.html",
+      "description": "Grants permission to delete a link between RTB applications",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteOutboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteOutboundExternalLink.html",
+      "description": "Grants permission to delete an outbound external link",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "OutboundExternalLink*",
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteRequesterGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteRequesterGateway.html",
+      "description": "Grants permission to delete a requester gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteResponderGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_DeleteResponderGateway.html",
+      "description": "Grants permission to delete a responder gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetInboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetInboundExternalLink.html",
+      "description": "Grants permission to retrieve information about an inbound external link",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "InboundExternalLink*",
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetLink.html",
+      "description": "Grants permission to retrieve information about a link between RTB applications",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetOutboundExternalLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetOutboundExternalLink.html",
+      "description": "Grants permission to retrieve information about an outbound external link",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "OutboundExternalLink*",
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRequesterGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetRequesterGateway.html",
+      "description": "Grants permission to retrieve information about a requester gateway",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetResponderGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_GetResponderGateway.html",
+      "description": "Grants permission to retrieve information about a responder gateway",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListLinks",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListLinks.html",
+      "description": "Grants permission to list links associated with an RTB application",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRequesterGateways",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListRequesterGateways.html",
+      "description": "Grants permission to list requester gateways with optional filtering and pagination",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListResponderGateways",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListResponderGateways.html",
+      "description": "Grants permission to list responder gateways with optional filtering and pagination",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_ListTagsForResource.html",
+      "description": "Grants permission to list tags for a resource",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "InboundExternalLink",
+        "Link",
+        "OutboundExternalLink",
+        "RequesterGateway",
+        "ResponderGateway"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RejectLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_RejectLink.html",
+      "description": "Grants permission to reject a link request between RTB applications",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_TagResource.html",
+      "description": "Grants permission to assign one or more tags (key-value pairs) to the specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "InboundExternalLink",
+        "Link",
+        "OutboundExternalLink",
+        "RequesterGateway",
+        "ResponderGateway"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UntagResource.html",
+      "description": "Grants permission to remove a tag or tags from a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "InboundExternalLink",
+        "Link",
+        "OutboundExternalLink",
+        "RequesterGateway",
+        "ResponderGateway"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateLink",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLink.html",
+      "description": "Grants permission to update configuration settings for an existing link",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateLinkModuleFlow",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateLinkModuleFlow.html",
+      "description": "Grants permission to update a link module flow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Link*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateRequesterGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateRequesterGateway.html",
+      "description": "Grants permission to update a requester gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RequesterGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateResponderGateway",
+      "documentationUrl": "https://docs.aws.amazon.com/rtb-fabric/latest/api/API_UpdateResponderGateway.html",
+      "description": "Grants permission to update a responder gateway",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "ResponderGateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

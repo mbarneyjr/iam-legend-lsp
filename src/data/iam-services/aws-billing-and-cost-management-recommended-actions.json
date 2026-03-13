@@ -1,0 +1,16 @@
+{
+  "serviceName": "AWS Billing And Cost Management Recommended Actions",
+  "servicePrefix": "bcm-recommended-actions",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsbillingandcostmanagementrecommendedactions.html",
+  "actions": [
+    {
+      "name": "ListRecommendedActions",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_BillingAndCostManagementRecommendedActions_ListRecommendedActions.html",
+      "description": "Grants permission to list all recommended actions",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

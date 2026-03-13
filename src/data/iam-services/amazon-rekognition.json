@@ -522,9 +522,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListStreamProcessors.html",
       "description": "Grants permission to get a list of your stream processors",
       "accessLevel": "List",
-      "resourceTypes": [
-        "streamprocessor*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },

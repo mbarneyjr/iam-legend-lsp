@@ -1,0 +1,16 @@
+{
+  "serviceName": "AWS Action Recommendations",
+  "servicePrefix": "action-recommendations",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsactionrecommendations.html",
+  "actions": [
+    {
+      "name": "ListRecommendedActions",
+      "documentationUrl": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/recommended-actions.html",
+      "description": "Grants permission to list recommended actions in the AWS Management Console",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

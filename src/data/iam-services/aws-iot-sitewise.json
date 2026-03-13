@@ -158,6 +158,21 @@
       "dependentActions": []
     },
     {
+      "name": "CreateComputationModel",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateComputationModel.html",
+      "description": "Grants permission to create a computation model",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "asset",
+        "asset-model"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateDashboard",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html",
       "description": "Grants permission to create a dashboard in a project",
@@ -269,6 +284,28 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteAssetModelInterfaceRelationship",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModelInterfaceRelationship.html",
+      "description": "Grants permission to delete a relationship between asset model and interface",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "asset-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteComputationModel",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteComputationModel.html",
+      "description": "Grants permission to delete a computation model",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "computation-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteDashboard",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDashboard.html",
       "description": "Grants permission to delete a dashboard",
@@ -354,7 +391,8 @@
       "description": "Grants permission to describe actions",
       "accessLevel": "Read",
       "resourceTypes": [
-        "asset"
+        "asset",
+        "computation-model"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -404,6 +442,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeAssetModelInterfaceRelationship",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelInterfaceRelationship.html",
+      "description": "Grants permission to describe a relationship between asset model and interface",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "asset-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeAssetProperty",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html",
       "description": "Grants permission to describe an asset property",
@@ -420,6 +469,29 @@
       "description": "Grants permission to describe bulk import job",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeComputationModel",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModel.html",
+      "description": "Grants permission to describe a computation model",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "computation-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeComputationModelExecutionSummary",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeComputationModelExecutionSummary.html",
+      "description": "Grants permission to describe computation model execution summary",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "computation-model*",
+        "asset"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -449,6 +521,15 @@
       "name": "DescribeDefaultEncryptionConfiguration",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDefaultEncryptionConfiguration.html",
       "description": "Grants permission to describe the default encryption configuration for the AWS account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeExecution.html",
+      "description": "Grants permission to describe an execution",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -569,7 +650,8 @@
       "description": "Grants permission to execute actions",
       "accessLevel": "Write",
       "resourceTypes": [
-        "asset"
+        "asset",
+        "computation-model"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -658,7 +740,8 @@
       "description": "Grants permission to list all actions",
       "accessLevel": "List",
       "resourceTypes": [
-        "asset"
+        "asset",
+        "computation-model"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -759,6 +842,38 @@
       "dependentActions": []
     },
     {
+      "name": "ListComputationModelDataBindingUsages",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelDataBindingUsages.html",
+      "description": "Grants permission to list computation model data binding usages",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "asset",
+        "asset-model"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListComputationModelResolveToResources",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModelResolveToResources.html",
+      "description": "Grants permission to list computation model resolve to resources",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "computation-model*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListComputationModels",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListComputationModels.html",
+      "description": "Grants permission to list all computation models",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListDashboards",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDashboards.html",
       "description": "Grants permission to list all dashboards in a project",
@@ -779,11 +894,34 @@
       "dependentActions": []
     },
     {
+      "name": "ListExecutions",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListExecutions.html",
+      "description": "Grants permission to list executions",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "asset",
+        "computation-model"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListGateways",
       "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListGateways.html",
       "description": "Grants permission to list all gateways",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListInterfaceRelationships",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListInterfaceRelationships.html",
+      "description": "Grants permission to list all asset models that are enforced by an interface",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "asset-model*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -827,6 +965,7 @@
         "access-policy",
         "asset",
         "asset-model",
+        "computation-model",
         "dashboard",
         "dataset",
         "gateway",
@@ -846,6 +985,17 @@
       "accessLevel": "List",
       "resourceTypes": [
         "asset"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutAssetModelInterfaceRelationship",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutAssetModelInterfaceRelationship.html",
+      "description": "Grants permission to create a relationship between asset model and interface",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "asset-model*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -886,6 +1036,7 @@
         "access-policy",
         "asset",
         "asset-model",
+        "computation-model",
         "dashboard",
         "dataset",
         "gateway",
@@ -908,6 +1059,7 @@
         "access-policy",
         "asset",
         "asset-model",
+        "computation-model",
         "dashboard",
         "dataset",
         "gateway",
@@ -982,6 +1134,19 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "asset*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateComputationModel",
+      "documentationUrl": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateComputationModel.html",
+      "description": "Grants permission to update a computation model",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "computation-model*",
+        "asset",
+        "asset-model"
       ],
       "conditionKeys": [],
       "dependentActions": []

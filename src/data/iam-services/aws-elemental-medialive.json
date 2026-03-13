@@ -795,6 +795,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html",
+      "description": "Grants permission to list channel alerts",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListChannelPlacementGroups",
       "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
       "description": "Grants permission to list channel placement groups",
@@ -825,6 +834,15 @@
       "name": "ListCloudWatchAlarmTemplates",
       "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-with-workflow-monitor-configure-alarms.html",
       "description": "Grants permission to list cloudwatch alarm templates",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListClusterAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-cluster.html",
+      "description": "Grants permission to list cluster alerts",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -894,6 +912,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListMultiplexAlerts",
+      "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/monitor-activity-types-alerts-channels.html",
+      "description": "Grants permission to list multiplex alerts",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListMultiplexPrograms",
       "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/monitoring-multiplex-console.html",
       "description": "Grants permission to list multiplex programs",
@@ -948,7 +975,7 @@
       "dependentActions": []
     },
     {
-      "name": "ListSdiSource",
+      "name": "ListSdiSources",
       "documentationUrl": "https://docs.aws.amazon.com/medialive/latest/ug/setup-emla.html",
       "description": "Grants permission to list SDI sources",
       "accessLevel": "List",

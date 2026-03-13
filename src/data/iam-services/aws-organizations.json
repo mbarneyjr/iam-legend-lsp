@@ -62,7 +62,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -74,7 +75,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -113,7 +115,8 @@
       "conditionKeys": [
         "organizations:PolicyType",
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },
@@ -230,7 +233,7 @@
     {
       "name": "DescribeOrganization",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeOrganization.html",
-      "description": "Grants permission to retrieves details about the organization that the calling credentials belong to",
+      "description": "Grants permission to retrieve details about the organization that the calling credentials belong to",
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -250,7 +253,7 @@
     {
       "name": "DescribePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html",
-      "description": "Grants permission to retrieves details about a policy",
+      "description": "Grants permission to retrieve details about a policy",
       "accessLevel": "Read",
       "resourceTypes": [
         "policy*"
@@ -267,6 +270,20 @@
       "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeResponsibilityTransfer",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeResponsibilityTransfer.html",
+      "description": "Grants permission to retrieve details about a previously responsibility transfer",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "responsibilitytransfer*"
+      ],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
+      ],
       "dependentActions": []
     },
     {
@@ -357,6 +374,20 @@
       "dependentActions": []
     },
     {
+      "name": "InviteOrganizationToTransferResponsibility",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteOrganizationToTransferResponsibility.html",
+      "description": "Grants permission to send an invitation to another AWS account, asking it to transfer a particular responsibility to your organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "account"
+      ],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "LeaveOrganization",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_LeaveOrganization.html",
       "description": "Grants permission to remove a member account from its parent organization",
@@ -377,7 +408,7 @@
     {
       "name": "ListAccounts",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccounts.html",
-      "description": "Grants permission to list all of the the accounts in the organization",
+      "description": "Grants permission to list all of the accounts in the organization",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -393,6 +424,17 @@
         "root"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAccountsWithInvalidEffectivePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListAccountsWithInvalidEffectivePolicy.html",
+      "description": "Grants permission to list accounts that have invalid effective policies for a specified policy type",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "organizations:PolicyType"
+      ],
       "dependentActions": []
     },
     {
@@ -439,6 +481,19 @@
       "dependentActions": []
     },
     {
+      "name": "ListEffectivePolicyValidationErrors",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListEffectivePolicyValidationErrors.html",
+      "description": "Grants permission to list validation errors found in the effective policy for a specific account and policy type",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "account*"
+      ],
+      "conditionKeys": [
+        "organizations:PolicyType"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListHandshakesForAccount",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForAccount.html",
       "description": "Grants permission to list all of the handshakes that are associated with an account",
@@ -457,15 +512,39 @@
       "dependentActions": []
     },
     {
+      "name": "ListInboundResponsibilityTransfers",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListInboundResponsibilityTransfers.html",
+      "description": "Grants permission to list all responsibilities of a particular type transfered to your organization",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "ListOrganizationalUnitsForParent",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOrganizationalUnitsForParent.html",
-      "description": "Grants permission to lists all of the organizational units (OUs) in a parent organizational unit or root",
+      "description": "Grants permission to list all of the organizational units (OUs) in a parent organizational unit or root",
       "accessLevel": "List",
       "resourceTypes": [
         "organizationalunit",
         "root"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListOutboundResponsibilityTransfers",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListOutboundResponsibilityTransfers.html",
+      "description": "Grants permission to list all responsibilities of a particular type transfered to another organization",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
+      ],
       "dependentActions": []
     },
     {
@@ -525,9 +604,14 @@
         "organizationalunit",
         "policy",
         "resourcepolicy",
+        "responsibilitytransfer",
         "root"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection",
+        "organizations:PolicyType"
+      ],
       "dependentActions": []
     },
     {
@@ -586,7 +670,7 @@
     {
       "name": "RemoveAccountFromOrganization",
       "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_RemoveAccountFromOrganization.html",
-      "description": "Grants permission to removes the specified account from the organization",
+      "description": "Grants permission to remove the specified account from the organization",
       "accessLevel": "Write",
       "resourceTypes": [
         "account*"
@@ -604,11 +688,30 @@
         "organizationalunit",
         "policy",
         "resourcepolicy",
+        "responsibilitytransfer",
         "root"
       ],
       "conditionKeys": [
+        "organizations:PolicyType",
+        "organizations:TransferType",
+        "organizations:TransferDirection",
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "organizations:PolicyType"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "TerminateResponsibilityTransfer",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_TerminateResponsibilityTransfer.html",
+      "description": "Grants permission to end the transfer for a responsibility to or from your organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "responsibilitytransfer*"
+      ],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
       ],
       "dependentActions": []
     },
@@ -622,10 +725,14 @@
         "organizationalunit",
         "policy",
         "resourcepolicy",
+        "responsibilitytransfer",
         "root"
       ],
       "conditionKeys": [
-        "aws:TagKeys"
+        "organizations:TransferType",
+        "organizations:TransferDirection",
+        "aws:TagKeys",
+        "organizations:PolicyType"
       ],
       "dependentActions": []
     },
@@ -650,6 +757,20 @@
       ],
       "conditionKeys": [
         "organizations:PolicyType"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateResponsibilityTransfer",
+      "documentationUrl": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateResponsibilityTransfer.html",
+      "description": "Grants permission to rename a responsibility transfer to or from your organization",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "responsibilitytransfer*"
+      ],
+      "conditionKeys": [
+        "organizations:TransferType",
+        "organizations:TransferDirection"
       ],
       "dependentActions": []
     }

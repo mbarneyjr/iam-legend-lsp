@@ -41,7 +41,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataGrant.html",
       "description": "Grants permission to create a data grant",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "data-grants*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -55,7 +57,9 @@
       "documentationUrl": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateDataSet.html",
       "description": "Grants permission to create a data set",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "data-sets*"
+      ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -67,8 +71,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateEventAction.html",
       "description": "Grants permission to create an event action",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "event-actions*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -76,8 +85,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/data-exchange/latest/apireference/API_CreateJob.html",
       "description": "Grants permission to create a job to import or export assets",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "jobs*"
+      ],
+      "conditionKeys": [
+        "dataexchange:JobType"
+      ],
       "dependentActions": []
     },
     {
@@ -307,6 +320,7 @@
       "resourceTypes": [
         "data-grants",
         "data-sets",
+        "event-actions",
         "revisions"
       ],
       "conditionKeys": [],
@@ -331,7 +345,10 @@
       "resourceTypes": [
         "data-sets*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -395,6 +412,7 @@
       "resourceTypes": [
         "data-grants",
         "data-sets",
+        "event-actions",
         "revisions"
       ],
       "conditionKeys": [
@@ -411,6 +429,7 @@
       "resourceTypes": [
         "data-grants",
         "data-sets",
+        "event-actions",
         "revisions"
       ],
       "conditionKeys": [

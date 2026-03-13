@@ -125,6 +125,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetDeploymentPatternVersion",
+      "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetDeploymentPatternVersion.html",
+      "description": "Grants permission to get a version of a deployment pattern",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetInfrastructureSuggestion",
       "documentationUrl": "https://docs.aws.amazon.com/launchwizard/",
       "description": "Grants permission to get infrastructure suggestion",
@@ -233,6 +242,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListDeploymentPatternVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeploymentPatternVersions.html",
+      "description": "Grants permission to list the versions of a deployment pattern",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListDeployments",
       "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListDeployments.html",
       "description": "Grants permission to list deployments",
@@ -271,7 +289,7 @@
     {
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to list tags for a LaunchWizard resource.",
+      "description": "Grants permission to list tags for a LaunchWizard resource",
       "accessLevel": "Read",
       "resourceTypes": [
         "deployment"
@@ -329,7 +347,7 @@
     {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag a LaunchWizard resource.",
+      "description": "Grants permission to tag a LaunchWizard resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "deployment"
@@ -344,13 +362,26 @@
     {
       "name": "UntagResource",
       "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag a LaunchWizard resource.",
+      "description": "Grants permission to untag a LaunchWizard resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "deployment"
       ],
       "conditionKeys": [
         "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateDeployment",
+      "documentationUrl": "https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_UpdateDeployment.html",
+      "description": "Grants permission to update a deployment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "deployment*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": []
     },

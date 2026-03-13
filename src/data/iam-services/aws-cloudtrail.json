@@ -301,6 +301,18 @@
       "dependentActions": []
     },
     {
+      "name": "GetEventConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventConfiguration.html",
+      "description": "Grants permission to list event configurations that are configured for a trail or an event data store",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "eventdatastore",
+        "trail"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetEventDataStore",
       "documentationUrl": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventDataStore.html",
       "description": "Grants permission to list settings for the event data store",
@@ -463,6 +475,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListInsightsData",
+      "documentationUrl": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListInsightsData.html",
+      "description": "Grants permission to retrieve data captured by CloudTrail Insights",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "trail*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListPublicKeys",
       "documentationUrl": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html",
       "description": "Grants permission to list the public keys whose private keys were used to sign trail digest files within a specified time range",
@@ -522,6 +545,21 @@
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "PutEventConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventConfiguration.html",
+      "description": "Grants permission to create and update event configurations for a trail or an event data store",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "eventdatastore",
+        "trail"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "iam:GetRole"
+      ]
     },
     {
       "name": "PutEventSelectors",

@@ -12,7 +12,9 @@
         "ChatbotConfiguration*",
         "custom-action*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -21,7 +23,10 @@
       "description": "Grants permission to create an AWS Chatbot Chime Webhook Configuration",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -30,7 +35,10 @@
       "description": "Grants permission to create a custom action",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -39,7 +47,10 @@
       "description": "Grants permission to create an AWS Chatbot Microsoft Teams Channel Configuration",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -48,7 +59,10 @@
       "description": "Grants permission to create an AWS Chatbot Slack Channel Configuration",
       "accessLevel": "Write",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -59,7 +73,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -70,7 +86,9 @@
       "resourceTypes": [
         "custom-action*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -81,7 +99,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -110,7 +130,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -185,7 +207,9 @@
         "ChatbotConfiguration*",
         "custom-action*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -205,7 +229,9 @@
       "resourceTypes": [
         "custom-action*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -214,7 +240,9 @@
       "description": "Grants permission to get a single AWS Chatbot Microsoft Teams Channel Configurations in an AWS account",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -314,8 +342,14 @@
       "documentationUrl": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to create tags on AWS Chatbot Channel Configuration",
       "accessLevel": "Tagging",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "ChatbotConfiguration",
+        "custom-action"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -323,8 +357,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/chatbot/latest/APIReference/API_UntagResource.html",
       "description": "Grants permission to remove tags on AWS Chatbot Channel Configuration",
       "accessLevel": "Tagging",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "ChatbotConfiguration",
+        "custom-action"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -344,7 +383,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -355,7 +396,9 @@
       "resourceTypes": [
         "custom-action*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -366,7 +409,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -377,7 +422,9 @@
       "resourceTypes": [
         "ChatbotConfiguration*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     }
   ]

@@ -90,6 +90,20 @@
       "dependentActions": []
     },
     {
+      "name": "CreateCapability",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCapability.html",
+      "description": "Grants permission to create a capability for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateCluster",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html",
       "description": "Grants permission to create an Amazon EKS cluster",
@@ -104,7 +118,8 @@
         "eks:supportType",
         "eks:computeConfigEnabled",
         "eks:elasticLoadBalancingEnabled",
-        "eks:blockStorageEnabled"
+        "eks:blockStorageEnabled",
+        "eks:loggingType/${type}"
       ],
       "dependentActions": []
     },
@@ -181,6 +196,17 @@
       "resourceTypes": [
         "addon*",
         "podidentityassociation"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteCapability",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCapability.html",
+      "description": "Grants permission to delete a capability from an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capability*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -292,6 +318,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeCapability",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCapability.html",
+      "description": "Grants permission to describe a capability for an Amazon EKS cluster",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "capability*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeCluster",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html",
       "description": "Grants permission to retrieve descriptive information about an Amazon EKS cluster",
@@ -356,6 +393,17 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeInsightsRefresh",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeInsightsRefresh.html",
+      "description": "Grants permission to retrieve the status of the latest on-demand cluster insights refresh operation",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeNodegroup",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeNodegroup.html",
       "description": "Grants permission to retrieve descriptive information about an Amazon EKS nodegroup",
@@ -385,6 +433,7 @@
       "resourceTypes": [
         "cluster*",
         "addon",
+        "capability",
         "nodegroup"
       ],
       "conditionKeys": [],
@@ -459,11 +508,44 @@
       "dependentActions": []
     },
     {
+      "name": "ListCapabilities",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListCapabilities.html",
+      "description": "Grants permission to list capabilities for an Amazon EKS cluster",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListClusters",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html",
       "description": "Grants permission to list the Amazon EKS clusters in your AWS account (in the specified or default region)",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDashboardData",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardData.html",
+      "description": "Grants permission to list dashboard data. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "dashboard*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDashboardResources",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_ListDashboardResources.html",
+      "description": "Grants permission to list dashboard resources. The Amazon EKS Dashboard aggregates information about cluster resources across multiple accounts and regions. The dashboard includes information about EC2 Instances and EKS Cluster versions",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "dashboard*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -538,7 +620,9 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "addon",
+        "capability",
         "cluster",
+        "dashboard",
         "eks-anywhere-subscription",
         "fargateprofile",
         "identityproviderconfig",
@@ -555,10 +639,24 @@
       "resourceTypes": [
         "cluster*",
         "addon",
+        "capability",
         "nodegroup"
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "MutateViaKubernetesApi",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/userguide/mutate-workloads.html",
+      "description": "Grants permission to modify Kubernetes objects via AWS console",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "eks:AccessKubernetesApi"
+      ]
     },
     {
       "name": "RegisterCluster",
@@ -573,6 +671,17 @@
       "dependentActions": []
     },
     {
+      "name": "StartInsightsRefresh",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_StartInsightsRefresh.html",
+      "description": "Grants permission to initiate an on-demand refresh operation for cluster insights, getting the latest analysis outside of the standard refresh schedule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to tag the specified resource",
@@ -580,7 +689,9 @@
       "resourceTypes": [
         "access-entry",
         "addon",
+        "capability",
         "cluster",
+        "dashboard",
         "eks-anywhere-subscription",
         "fargateprofile",
         "identityproviderconfig",
@@ -601,7 +712,9 @@
       "resourceTypes": [
         "access-entry",
         "addon",
+        "capability",
         "cluster",
+        "dashboard",
         "eks-anywhere-subscription",
         "fargateprofile",
         "identityproviderconfig",
@@ -637,6 +750,17 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateCapability",
+      "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateCapability.html",
+      "description": "Grants permission to update a capability for an Amazon EKS cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "capability*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateClusterConfig",
       "documentationUrl": "https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html",
       "description": "Grants permission to update Amazon EKS cluster configurations (eg: API server endpoint access)",
@@ -649,7 +773,8 @@
         "eks:supportType",
         "eks:computeConfigEnabled",
         "eks:elasticLoadBalancingEnabled",
-        "eks:blockStorageEnabled"
+        "eks:blockStorageEnabled",
+        "eks:loggingType/${type}"
       ],
       "dependentActions": []
     },

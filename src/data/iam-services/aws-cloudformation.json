@@ -275,6 +275,18 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeEvents.html",
+      "description": "Grants permission to return all related events for a specified operation",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "changeset",
+        "stack"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeGeneratedTemplate",
       "documentationUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeGeneratedTemplate.html",
       "description": "Grants permission to describe a generated template. The output includes details about the progress of the creation of a generated template",
@@ -516,6 +528,19 @@
       "dependentActions": []
     },
     {
+      "name": "GetHookResult",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetHookResult.html",
+      "description": "Grants permission to return detailed information about a specific hook invocation result",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "cloudformation:TypeArn"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
       "name": "GetStackPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html",
       "description": "Grants permission to return the stack policy for a specified stack",
@@ -560,6 +585,17 @@
         "stackset*"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAllHookResults",
+      "documentationUrl": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListHookResults.html",
+      "description": "Grants permission to return Hook invocations result information for a specified Hook, a combination of Hook and status, or all Hooks",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "cloudformation:TypeArn"
+      ],
       "dependentActions": []
     },
     {

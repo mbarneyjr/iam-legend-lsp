@@ -1,0 +1,248 @@
+{
+  "serviceName": "AWS Compute Optimizer Automation",
+  "servicePrefix": "aco-automation",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awscomputeoptimizerautomation.html",
+  "actions": [
+    {
+      "name": "AssociateAccounts",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_AssociateAccounts.html",
+      "description": "Grants permission to associate member accounts with the management account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAutomationRule",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_CreateAutomationRule.html",
+      "description": "Grants permission to create automation rule",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAutomationRule",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_DeleteAutomationRule.html",
+      "description": "Grants permission to delete automation rule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateAccounts",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_DisassociateAccounts.html",
+      "description": "Grants permission to disassociate member accounts from the management account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomationEvent",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_GetAutomationEvent.html",
+      "description": "Grants permission to get automation event details",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutomationRule",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_GetAutomationRule.html",
+      "description": "Grants permission to get automation rule",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetEnrollmentConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_GetEnrollmentConfiguration.html",
+      "description": "Grants permission to get enrollment configuration",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAccounts",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAccounts.html",
+      "description": "Grants permission to list the accounts in your organization that are enrolled in Compute Optimizer and whether they have enabled the Automation feature",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomationEventSteps",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationEventSteps.html",
+      "description": "Grants permission to list automation event steps",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomationEventSummaries",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationEventSummaries.html",
+      "description": "Grants permission to list automation event summaries",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomationEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationEvents.html",
+      "description": "Grants permission to list automation events",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomationRulePreview",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationRulePreview.html",
+      "description": "Grants permission to list automation rule preview results",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DescribeVolumes"
+      ]
+    },
+    {
+      "name": "ListAutomationRulePreviewSummaries",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationRulePreviewSummaries.html",
+      "description": "Grants permission to list automation rule preview summaries",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAutomationRules",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListAutomationRules.html",
+      "description": "Grants permission to list automation rules",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRecommendedActionSummaries",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListRecommendedActionSummaries.html",
+      "description": "Grants permission to list recommended action summaries",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRecommendedActions",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListRecommendedActions.html",
+      "description": "Grants permission to list recommended actions",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:DescribeVolumes"
+      ]
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_ListTagsForResource.html",
+      "description": "Grants permission to list tags for automation rule",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "RollbackAutomationEvent",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_RollbackAutomationEvent.html",
+      "description": "Grants permission to initiate a rollback for an automation event",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartAutomationEvent",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_StartAutomationEvent.html",
+      "description": "Grants permission to initiate an on-demand automation for a recommended action",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_TagResource.html",
+      "description": "Grants permission to add tags to automation rule",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_UntagResource.html",
+      "description": "Grants permission to remove tags from automation rule",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAutomationRule",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_UpdateAutomationRule.html",
+      "description": "Grants permission to update automation rule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AutomationRule*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateEnrollmentConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_automation_UpdateEnrollmentConfiguration.html",
+      "description": "Grants permission to update enrollment configuration for the Compute Optimizer automation feature",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

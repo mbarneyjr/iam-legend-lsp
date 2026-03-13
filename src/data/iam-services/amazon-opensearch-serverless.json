@@ -18,12 +18,38 @@
       "dependentActions": []
     },
     {
+      "name": "AddCollectionToCollectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollection.html",
+      "description": "Grants permission to add a serverless collection to a specified collection group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CollectionGroup*"
+      ],
+      "conditionKeys": [
+        "aoss:collection-group"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "BatchGetCollection",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollection.html",
       "description": "Grants permission to get attributes for one or more collections",
       "accessLevel": "Read",
       "resourceTypes": [],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aoss:collection"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetCollectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_BatchGetCollectionGroup.html",
+      "description": "Grants permission to get attributes for one or more collection groups",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aoss:collection-group"
+      ],
       "dependentActions": []
     },
     {
@@ -73,8 +99,30 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateCollectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateCollectionGroup.html",
+      "description": "Grants permission to create a serverless collection group",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateIndex",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_CreateIndex.html",
+      "description": "Grants permission to create an opensearch index",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -84,7 +132,6 @@
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
-        "aoss:collection",
         "aoss:index"
       ],
       "dependentActions": []
@@ -156,13 +203,32 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteCollectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteCollectionGroup.html",
+      "description": "Grants permission to delete a serverless collection group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CollectionGroup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteIndex",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteIndex.html",
+      "description": "Grants permission to delete an opensearch index",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteLifecyclePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_DeleteLifecyclePolicy.html",
       "description": "Grants permission to delete a lifecycle policy",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
-        "aoss:collection",
         "aoss:index"
       ],
       "dependentActions": []
@@ -218,6 +284,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetIndex",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetIndex.html",
+      "description": "Grants permission to get an opensearch index",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetPoliciesStats",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_GetPoliciesStats.html",
       "description": "Grants permission to get statistis about the security policies in your account",
@@ -250,6 +325,15 @@
       "name": "ListAccessPolicies",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListAccessPolicies.html",
       "description": "Grants permission to list data access policies",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCollectionGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollectionGroups.html",
+      "description": "Grants permission to list collection groups",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -366,13 +450,32 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateCollectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateCollectionGroup.html",
+      "description": "Grants permission to update a collection group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "CollectionGroup*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateIndex",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateIndex.html",
+      "description": "Grants permission to update an opensearch index",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateLifecyclePolicy",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_UpdateLifecyclePolicy.html",
       "description": "Grants permission to update a lifecycle policy",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [
-        "aoss:collection",
         "aoss:index"
       ],
       "dependentActions": []

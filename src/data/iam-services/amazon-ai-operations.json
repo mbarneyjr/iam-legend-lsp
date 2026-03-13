@@ -28,8 +28,13 @@
       ],
       "conditionKeys": [],
       "dependentActions": [
+        "cloudwatch:DescribeAlarmHistory",
+        "cloudwatch:DescribeAlarms",
+        "cloudwatch:GetInsightRuleReport",
+        "cloudwatch:GetMetricData",
         "kms:Decrypt",
         "kms:GenerateDataKey",
+        "logs:GetQueryResults",
         "sts:SetContext"
       ]
     },
@@ -41,7 +46,8 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
       ],
       "dependentActions": [
         "aiops:TagResource",
@@ -75,6 +81,21 @@
         "cloudwatch:GetMetricData",
         "kms:GenerateDataKey",
         "logs:GetQueryResults"
+      ]
+    },
+    {
+      "name": "CreateReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_CreateReport.html",
+      "description": "Grants permission to create a new report in the specified investigation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "sts:SetContext"
       ]
     },
     {
@@ -113,6 +134,56 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "GenerateReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GenerateReport.html",
+      "description": "Grants permission to generate a report in the specified investigation report",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "sts:SetContext"
+      ]
+    },
+    {
+      "name": "GetEphemeralInvestigationResults",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetEphemeralInvestigationResults.html",
+      "description": "Grants permission to run and retrieve ephemeral investigation results",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFact",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFact.html",
+      "description": "Grants permission to retrieve a fact in the specified investigation report",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "GetFactVersions",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetFactVersions.html",
+      "description": "Grants permission to retrieve all versions of a fact token in the specified investigation report",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "GetInvestigation",
@@ -174,6 +245,32 @@
       ]
     },
     {
+      "name": "GetReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_GetReport.html",
+      "description": "Grants permission to retrieve a report in the specified investigation",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "ListFacts",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListFacts.html",
+      "description": "Grants permission to list all facts in the specified investigation report",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
       "name": "ListInvestigationEvents",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListInvestigationEvents.html",
       "description": "Grants permission to list all investigation events in the specified investigation group",
@@ -205,6 +302,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListReports",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListReports.html",
+      "description": "Grants permission to list all reports in the specified investigation",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTagsForResource",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ListTagsForResource.html",
       "description": "Grants permission to list the tags for the specified resource",
@@ -214,6 +322,21 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "PutFact",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_PutFact.html",
+      "description": "Grants permission to create or update a new fact in the specified investigation report",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "sts:SetContext"
+      ]
     },
     {
       "name": "PutInvestigationGroupPolicy",
@@ -306,6 +429,32 @@
         "sso:PutApplicationGrant",
         "sso:TagResource"
       ]
+    },
+    {
+      "name": "UpdateReport",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_UpdateReport.html",
+      "description": "Grants permission to update a report in the specified investigation",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:GenerateDataKey",
+        "sts:SetContext"
+      ]
+    },
+    {
+      "name": "ValidateInvestigationGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/API_ValidateInvestigationGroup.html",
+      "description": "Grants permission to validate the specified investigation group",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "investigation-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
     }
   ]
 }

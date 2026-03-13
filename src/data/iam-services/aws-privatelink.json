@@ -5,10 +5,13 @@
   "actions": [
     {
       "name": "AllowMultiRegion",
-      "documentationUrl": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc/latest/privatelink/security_iam_service-with-iam.html",
+      "documentationUrl": "https://docs.aws.amazon.com/vpc/latest/privatelink/security_iam_service-with-iam.html",
       "description": "Grants permission to manage multi-region VPC endpoints and VPC endpoint service configurations",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "vpc-endpoint",
+        "vpc-endpoint-service"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     }

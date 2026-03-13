@@ -4,6 +4,17 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsidentitystore.html",
   "actions": [
     {
+      "name": "AddRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to add a region to an IdentityStore",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
       "name": "CreateGroup",
       "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_CreateGroup.html",
       "description": "Grants permission to create a group in the specified IdentityStore",
@@ -11,8 +22,13 @@
       "resourceTypes": [
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:GroupExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "CreateGroupMembership",
@@ -24,8 +40,26 @@
         "Identitystore*",
         "User*"
       ],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "CreateIdentityStore",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to create a new IdentityStore in an AWS account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ]
     },
     {
       "name": "CreateUser",
@@ -35,8 +69,14 @@
       "resourceTypes": [
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:UserExternalIdIssuers",
+        "identitystore:ReservedUserId"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "DeleteGroup",
@@ -47,8 +87,13 @@
         "Group*",
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:GroupExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "DeleteGroupMembership",
@@ -61,6 +106,19 @@
         "Identitystore*",
         "User*"
       ],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "DeleteIdentityStore",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to delete an IdentityStore",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -73,8 +131,13 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:UserExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "DescribeGroup",
@@ -85,8 +148,13 @@
         "Group*",
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:GroupExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "DescribeGroupMembership",
@@ -99,8 +167,25 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "DescribeRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to retrieve configuration details for a specific IdentityStore region",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "DescribeUser",
@@ -111,8 +196,13 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:UserExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "GetGroupId",
@@ -123,8 +213,12 @@
         "Group*",
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "GetGroupMembershipId",
@@ -137,8 +231,12 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "GetUserId",
@@ -149,8 +247,12 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "IsMemberInGroups",
@@ -163,8 +265,12 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "ListGroupMemberships",
@@ -176,8 +282,12 @@
         "Group*",
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "ListGroupMembershipsForMember",
@@ -189,8 +299,12 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "ListGroups",
@@ -201,8 +315,26 @@
         "AllGroups*",
         "Identitystore*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:GroupExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "ListRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to list all regions configured for an IdentityStore",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "ListUsers",
@@ -213,8 +345,39 @@
         "AllUsers*",
         "Identitystore*"
       ],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:UserExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "RemoveRegion",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to remove a region from an IdentityStore",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "ReserveUser",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to reserve a user by getting a userId",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Identitystore*"
+      ],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     },
     {
       "name": "UpdateGroup",
@@ -225,8 +388,27 @@
         "Group*",
         "Identitystore*"
       ],
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:GroupExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
+    },
+    {
+      "name": "UpdateIdentityStore",
+      "documentationUrl": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Grants permission to update the configuration of an IdentityStore",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
-      "dependentActions": []
+      "dependentActions": [
+        "kms:Decrypt",
+        "kms:DescribeKey",
+        "kms:Encrypt",
+        "kms:GenerateDataKeyWithoutPlaintext"
+      ]
     },
     {
       "name": "UpdateUser",
@@ -237,8 +419,13 @@
         "Identitystore*",
         "User*"
       ],
-      "conditionKeys": [],
-      "dependentActions": []
+      "conditionKeys": [
+        "identitystore:PrimaryRegion",
+        "identitystore:UserExternalIdIssuers"
+      ],
+      "dependentActions": [
+        "kms:Decrypt"
+      ]
     }
   ]
 }

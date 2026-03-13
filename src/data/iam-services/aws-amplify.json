@@ -19,9 +19,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "description": "Grants permission to create a new Amplify App",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "apps*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -72,10 +70,7 @@
       "resourceTypes": [
         "domains*"
       ],
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {

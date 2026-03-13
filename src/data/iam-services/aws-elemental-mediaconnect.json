@@ -5,7 +5,7 @@
   "actions": [
     {
       "name": "AddBridgeOutputs",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeOutputs.html",
       "description": "Grants permission to add outputs to an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -16,7 +16,7 @@
     },
     {
       "name": "AddBridgeSources",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddBridgeSources.html",
       "description": "Grants permission to add sources to an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -27,35 +27,68 @@
     },
     {
       "name": "AddFlowMediaStreams",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowMediaStreams.html",
       "description": "Grants permission to add media streams to any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "Flow*",
+        "MediaStream*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
       "name": "AddFlowOutputs",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowOutputs.html",
       "description": "Grants permission to add outputs to any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "Flow*",
+        "Output*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
       "name": "AddFlowSources",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowSources.html",
       "description": "Grants permission to add sources to any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "Flow*",
+        "Source*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
       "name": "AddFlowVpcInterfaces",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AddFlowVpcInterfaces.html",
       "description": "Grants permission to add VPC interfaces to any flow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Flow*",
+        "VpcInterface*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "AssociateRouterNetworkInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_AssociateRouterNetworkInterface.html",
+      "description": "Grants permission to associate a router network interface",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -63,7 +96,7 @@
     },
     {
       "name": "CreateBridge",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateBridge.html",
       "description": "Grants permission to create bridges",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -74,16 +107,21 @@
     },
     {
       "name": "CreateFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateFlow.html",
       "description": "Grants permission to create flows",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
       "name": "CreateGateway",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateGateway.html",
       "description": "Grants permission to create gateways",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -93,8 +131,69 @@
       "dependentActions": []
     },
     {
+      "name": "CreateRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterInput.html",
+      "description": "Grants permission to create a new router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "iam:PassRole",
+        "mediaconnect:AssociateRouterNetworkInterface",
+        "mediaconnect:CreateRouterInput",
+        "mediaconnect:TagResource",
+        "mediaconnect:UpdateFlowOutput"
+      ]
+    },
+    {
+      "name": "CreateRouterNetworkInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterNetworkInterface.html",
+      "description": "Grants permission to create a new router network interface in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterNetworkInterface*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "mediaconnect:CreateRouterNetworkInterface",
+        "mediaconnect:TagResource"
+      ]
+    },
+    {
+      "name": "CreateRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_CreateRouterOutput.html",
+      "description": "Grants permission to create a new router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "iam:PassRole",
+        "mediaconnect:AssociateRouterNetworkInterface",
+        "mediaconnect:CreateRouterOutput",
+        "mediaconnect:TagResource",
+        "mediaconnect:UpdateFlowSource",
+        "medialive:UpdateInput"
+      ]
+    },
+    {
       "name": "DeleteBridge",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteBridge.html",
       "description": "Grants permission to delete bridges",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -105,16 +204,18 @@
     },
     {
       "name": "DeleteFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteFlow.html",
       "description": "Grants permission to delete flows",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "DeleteGateway",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteGateway.html",
       "description": "Grants permission to delete gateways",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -124,8 +225,41 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterInput.html",
+      "description": "Grants permission to delete a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteRouterNetworkInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterNetworkInterface.html",
+      "description": "Grants permission to delete a router network interface from AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterNetworkInterface*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeleteRouterOutput.html",
+      "description": "Grants permission to delete a router output from AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeregisterGatewayInstance",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DeregisterGatewayInstance.html",
       "description": "Grants permission to deregister gateway instance",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -136,7 +270,7 @@
     },
     {
       "name": "DescribeBridge",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeBridge.html",
       "description": "Grants permission to display the details of a bridge",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -147,34 +281,40 @@
     },
     {
       "name": "DescribeFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlow.html",
       "description": "Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "DescribeFlowSourceMetadata",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-metadata.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceMetadata.html",
       "description": "Grants permission to view information about the flow's source transport stream and programs",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "DescribeFlowSourceThumbnail",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-thumbnail.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeFlowSourceThumbnail.html",
       "description": "Grants permission to view flow's source thumbnail",
       "accessLevel": "Read",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "DescribeGateway",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways-gatewayarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGateway.html",
       "description": "Grants permission to display the details of a gateway including the gateway ARN, name, and CIDR blocks, as well as details about the networks",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -185,7 +325,7 @@
     },
     {
       "name": "DescribeGatewayInstance",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeGatewayInstance.html",
       "description": "Grants permission to display the details of a gateway instance",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -196,54 +336,119 @@
     },
     {
       "name": "DescribeOffering",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeOffering.html",
       "description": "Grants permission to display the details of an offering",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "DescribeReservation",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations-reservationarn.html",
-      "description": "Grants permission to display the details of a reservation",
-      "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "DiscoverGatewayPollEndpoint",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
-      "description": "Grants permission to discover gateway poll endpoint",
-      "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "GrantFlowEntitlements",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements.html",
-      "description": "Grants permission to grant entitlements on any flow",
-      "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "ListBridges",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges.html",
-      "description": "Grants permission to display a list of bridges that are associated with this account and an optionally specified Arn",
-      "accessLevel": "List",
       "resourceTypes": [
-        "Bridge*"
+        "Offering*"
       ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
+      "name": "DescribeReservation",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DescribeReservation.html",
+      "description": "Grants permission to display the details of a reservation",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Reservation*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DiscoverGatewayPollEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_DiscoverGatewayPollEndpoint.html",
+      "description": "Grants permission to discover gateway poll endpoint",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Gateway*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInput.html",
+      "description": "Grants permission to retrieve information about a specific router input in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouterInputSourceMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInputSourceMetadata.html",
+      "description": "Grants permission to retrieve metadata about a router input source in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouterInputThumbnail",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterInputThumbnail.html",
+      "description": "Grants permission to retrieve the thumbnail for a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouterNetworkInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterNetworkInterface.html",
+      "description": "Grants permission to retrieve information about a specific router network interface in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RouterNetworkInterface*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GetRouterOutput.html",
+      "description": "Grants permission to retrieve information about a specific router output in AWS Elemental MediaConnect",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GrantFlowEntitlements",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_GrantFlowEntitlements.html",
+      "description": "Grants permission to grant entitlements on any flow",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Entitlement*",
+        "Flow*"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "ListBridges",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListBridges.html",
+      "description": "Grants permission to display a list of bridges that are associated with this account and an optionally specified Arn",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListEntitlements",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-entitlements.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListEntitlements.html",
       "description": "Grants permission to display a list of all entitlements that have been granted to the account",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -252,7 +457,7 @@
     },
     {
       "name": "ListFlows",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListFlows.html",
       "description": "Grants permission to display a list of flows that are associated with this account",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -261,18 +466,16 @@
     },
     {
       "name": "ListGatewayInstances",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGatewayInstances.html",
       "description": "Grants permission to display a list of instances that are associated with this gateway",
       "accessLevel": "List",
-      "resourceTypes": [
-        "GatewayInstance*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "ListGateways",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateways.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListGateways.html",
       "description": "Grants permission to display a list of gateways that are associated with this account",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -281,7 +484,7 @@
     },
     {
       "name": "ListOfferings",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListOfferings.html",
       "description": "Grants permission to display a list of all offerings that are available to the account in the current AWS Region",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -290,7 +493,7 @@
     },
     {
       "name": "ListReservations",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-reservations.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListReservations.html",
       "description": "Grants permission to display a list of all reservations that have been purchased by the account in the current AWS Region",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -298,8 +501,35 @@
       "dependentActions": []
     },
     {
+      "name": "ListRouterInputs",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterInputs.html",
+      "description": "Grants permission to retrieve a list of router inputs in AWS Elemental MediaConnect",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRouterNetworkInterfaces",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterNetworkInterfaces.html",
+      "description": "Grants permission to retrieve a list of router network interfaces in AWS Elemental MediaConnect",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListRouterOutputs",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListRouterOutputs.html",
+      "description": "Grants permission to retrieve a list of router outputs in AWS Elemental MediaConnect",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListTagsForResource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_ListTagsForResource.html",
       "description": "Grants permission to display a list of all tags associated with a resource",
       "accessLevel": "Read",
       "resourceTypes": [],
@@ -308,7 +538,7 @@
     },
     {
       "name": "PollGateway",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PollGateway.html",
       "description": "Grants permission to poll gateway",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -317,16 +547,18 @@
     },
     {
       "name": "PurchaseOffering",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-offerings-offeringarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_PurchaseOffering.html",
       "description": "Grants permission to purchase an offering",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Reservation*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "RemoveBridgeOutput",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeOutput.html",
       "description": "Grants permission to remove an output of an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -337,7 +569,7 @@
     },
     {
       "name": "RemoveBridgeSource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveBridgeSource.html",
       "description": "Grants permission to remove a source of an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -348,70 +580,155 @@
     },
     {
       "name": "RemoveFlowMediaStream",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowMediaStream.html",
       "description": "Grants permission to remove media streams from any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "MediaStream*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "RemoveFlowOutput",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowOutput.html",
       "description": "Grants permission to remove outputs from any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "Output*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "RemoveFlowSource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowSource.html",
       "description": "Grants permission to remove sources from any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "Source*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "RemoveFlowVpcInterface",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-vpcinterfaces-vpcinterfacename.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RemoveFlowVpcInterface.html",
       "description": "Grants permission to remove VPC interfaces from any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "VpcInterface*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RestartRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RestartRouterInput.html",
+      "description": "Grants permission to restart a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RestartRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RestartRouterOutput.html",
+      "description": "Grants permission to restart a router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "RevokeFlowEntitlement",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_RevokeFlowEntitlement.html",
       "description": "Grants permission to revoke entitlements on any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Entitlement*",
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "StartFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-start-flowarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartFlow.html",
       "description": "Grants permission to start flows",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartRouterInput.html",
+      "description": "Grants permission to start a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StartRouterOutput.html",
+      "description": "Grants permission to start a router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "StopFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-stop-flowarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopFlow.html",
       "description": "Grants permission to stop flows",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopRouterInput.html",
+      "description": "Grants permission to stop a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_StopRouterOutput.html",
+      "description": "Grants permission to stops a router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "SubmitGatewayStateChange",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_SubmitGatewayStateChange.html",
       "description": "Grants permission to submit gateway state change",
       "accessLevel": "Write",
       "resourceTypes": [],
@@ -420,25 +737,61 @@
     },
     {
       "name": "TagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_TagResource.html",
       "description": "Grants permission to associate tags with resources",
       "accessLevel": "Tagging",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Entitlement",
+        "Flow",
+        "MediaStream",
+        "Output",
+        "RouterInput",
+        "RouterNetworkInterface",
+        "RouterOutput",
+        "Source",
+        "VpcInterface"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "TakeRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_TakeRouterInput.html",
+      "description": "Grants permission to associate a router input with a router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UntagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/tags-resourcearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UntagResource.html",
       "description": "Grants permission to remove tags from resources",
       "accessLevel": "Tagging",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "Entitlement",
+        "Flow",
+        "MediaStream",
+        "Output",
+        "RouterInput",
+        "RouterNetworkInterface",
+        "RouterOutput",
+        "Source",
+        "VpcInterface"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
       "name": "UpdateBridge",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridge.html",
       "description": "Grants permission to update bridges",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -449,7 +802,7 @@
     },
     {
       "name": "UpdateBridgeOutput",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-outputs-outputname.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeOutput.html",
       "description": "Grants permission to update an output of an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -460,7 +813,7 @@
     },
     {
       "name": "UpdateBridgeSource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-sources-sourcename.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeSource.html",
       "description": "Grants permission to update a source of an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -471,7 +824,7 @@
     },
     {
       "name": "UpdateBridgeState",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-bridges-bridgearn-state.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateBridgeState.html",
       "description": "Grants permission to update the state of an existing bridge",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -482,52 +835,65 @@
     },
     {
       "name": "UpdateFlow",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlow.html",
       "description": "Grants permission to update flows",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UpdateFlowEntitlement",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowEntitlement.html",
       "description": "Grants permission to update entitlements on any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UpdateFlowMediaStream",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-mediastreams-mediastreamname.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowMediaStream.html",
       "description": "Grants permission to update media streams on any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "MediaStream*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UpdateFlowOutput",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowOutput.html",
       "description": "Grants permission to update outputs on any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "Output*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UpdateFlowSource",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateFlowSource.html",
       "description": "Grants permission to update the source of any flow",
       "accessLevel": "Write",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "Flow*",
+        "Source*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
     {
       "name": "UpdateGatewayInstance",
-      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-gateway-instances-gatewayinstancearn.html",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateGatewayInstance.html",
       "description": "Grants permission to update the configuration of an existing Gateway Instance",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -535,6 +901,55 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "UpdateRouterInput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterInput.html",
+      "description": "Grants permission to update the configuration of a router input in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterInput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "iam:PassRole",
+        "mediaconnect:AssociateRouterNetworkInterface",
+        "mediaconnect:UpdateFlowOutput",
+        "mediaconnect:UpdateRouterInput"
+      ]
+    },
+    {
+      "name": "UpdateRouterNetworkInterface",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterNetworkInterface.html",
+      "description": "Grants permission to updated the configuration of a router network interface in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterNetworkInterface*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "mediaconnect:UpdateRouterNetworkInterface"
+      ]
+    },
+    {
+      "name": "UpdateRouterOutput",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconnect/latest/api/API_UpdateRouterOutput.html",
+      "description": "Grants permission to update the configuration of a router output in AWS Elemental MediaConnect",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "RouterOutput*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "iam:PassRole",
+        "mediaconnect:AssociateRouterNetworkInterface",
+        "mediaconnect:UpdateFlowSource",
+        "mediaconnect:UpdateRouterOutput",
+        "medialive:UpdateInput"
+      ]
     }
   ]
 }

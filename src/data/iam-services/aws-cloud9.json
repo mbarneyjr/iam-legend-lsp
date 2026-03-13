@@ -96,7 +96,10 @@
       "resourceTypes": [
         "environment*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "cloud9:UserArn",
+        "cloud9:EnvironmentId"
+      ],
       "dependentActions": []
     },
     {
@@ -341,15 +344,6 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix",
       "description": "Grants permission to update IDE-specific settings of an AWS Cloud9 user",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
-      "dependentActions": []
-    },
-    {
-      "name": "ValidateEnvironmentName",
-      "documentationUrl": "https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html#auth-and-access-control-ref-matrix",
-      "description": "Grants permission to validate the environment name during the process of creating an AWS Cloud9 development environment",
-      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

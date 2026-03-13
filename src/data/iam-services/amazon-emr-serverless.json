@@ -30,6 +30,17 @@
       ]
     },
     {
+      "name": "AccessSystemProfileLogs",
+      "documentationUrl": "https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging-monitoring.html",
+      "description": "Grants permission to access system profile logs",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "jobRun*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CancelJobRun",
       "documentationUrl": "https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_CancelJobRun.html",
       "description": "Grants permission to cancel a job run",

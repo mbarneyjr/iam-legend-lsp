@@ -32,7 +32,8 @@
         "ram:AllowsExternalPrincipals",
         "ram:Principal",
         "ram:RequestedResourceType",
-        "ram:ResourceArn"
+        "ram:ResourceArn",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     },
@@ -93,7 +94,8 @@
         "ram:ResourceArn",
         "ram:RequestedAllowsExternalPrincipals",
         "ram:Principal",
-        "ram:AllowsExternalPrincipals"
+        "ram:AllowsExternalPrincipals",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     },
@@ -138,7 +140,8 @@
         "aws:ResourceTag/${TagKey}",
         "ram:ResourceTag/${TagKey}",
         "ram:ResourceShareName",
-        "ram:AllowsExternalPrincipals"
+        "ram:AllowsExternalPrincipals",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     },
@@ -157,7 +160,8 @@
         "ram:AllowsExternalPrincipals",
         "ram:Principal",
         "ram:RequestedResourceType",
-        "ram:ResourceArn"
+        "ram:ResourceArn",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     },
@@ -315,7 +319,8 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ram:ResourceShareName",
-        "ram:AllowsExternalPrincipals"
+        "ram:AllowsExternalPrincipals",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     },
@@ -332,6 +337,15 @@
       "name": "ListResources",
       "documentationUrl": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html",
       "description": "Grants permission to list the resources that you added to resource shares or the resources that are shared with you",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSourceAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ListSourceAssociations.html",
+      "description": "Grants permission to list source associations for resource shares",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -447,7 +461,8 @@
         "ram:ResourceTag/${TagKey}",
         "ram:ResourceShareName",
         "ram:AllowsExternalPrincipals",
-        "ram:RequestedAllowsExternalPrincipals"
+        "ram:RequestedAllowsExternalPrincipals",
+        "ram:RetainSharingOnAccountLeaveOrganization"
       ],
       "dependentActions": []
     }

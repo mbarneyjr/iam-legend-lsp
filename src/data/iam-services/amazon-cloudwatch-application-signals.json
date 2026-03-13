@@ -38,6 +38,15 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteGroupingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteGroupingConfiguration.html",
+      "description": "Grants permission to delete a grouping configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteServiceLevelObjective",
       "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_DeleteServiceLevelObjective.html",
       "description": "Grants permission to delete a service level objective",
@@ -73,6 +82,33 @@
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account-Setup.html#CloudWatch-Unified-Cross-Account-Setup-permissions",
       "description": "Grants permission to share Application Signals resources with a monitoring account",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAuditFindings",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListAuditFindings.html",
+      "description": "Grants permission to list service auditing results",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListEntityEvents",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListEntityEvents.html",
+      "description": "Grants permission to list events for an entity",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListGroupingAttributeDefinitions",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListGroupingAttributeDefinitions.html",
+      "description": "Grants permission to list grouping attribute configurations",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -134,6 +170,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListServiceStates",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServiceStates.html",
+      "description": "Grants permission to list service states",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListServices",
       "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_ListServices.html",
       "description": "Grants permission to list services",
@@ -150,6 +195,15 @@
       "resourceTypes": [
         "slo*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutGroupingConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/applicationsignals/latest/APIReference/API_PutGroupingConfiguration.html",
+      "description": "Grants permission to create or update a grouping configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },

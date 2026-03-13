@@ -84,6 +84,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateResourceShare",
+      "documentationUrl": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/resourceshares.html",
+      "description": "Grants permission to share an AWS Elemental MediaConvert job",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Job"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteJobTemplate",
       "documentationUrl": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html",
       "description": "Grants permission to delete an AWS Elemental MediaConvert custom job template",

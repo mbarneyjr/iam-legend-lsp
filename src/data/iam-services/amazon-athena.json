@@ -430,12 +430,37 @@
       "dependentActions": []
     },
     {
+      "name": "GetResourceDashboard",
+      "documentationUrl": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetResourceDashboard.html",
+      "description": "Grants permission to get a Live UI/Persistence UI for a session",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "workgroup*",
+        "session"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetSession",
       "documentationUrl": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSession.html",
       "description": "Grants permission to get a session",
       "accessLevel": "Read",
       "resourceTypes": [
-        "workgroup*"
+        "workgroup*",
+        "session"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetSessionEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/athena/latest/APIReference/API_GetSessionEndpoint.html",
+      "description": "Grants permission to get a connection endpoint and authentication token for a given session Id",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "workgroup*",
+        "session"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -446,7 +471,8 @@
       "description": "Grants permission to get a session status",
       "accessLevel": "Read",
       "resourceTypes": [
-        "workgroup*"
+        "workgroup*",
+        "session"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -654,6 +680,7 @@
       "resourceTypes": [
         "capacity-reservation*",
         "datacatalog*",
+        "session*",
         "workgroup*"
       ],
       "conditionKeys": [],
@@ -717,9 +744,13 @@
       "description": "Grants permission to start a session",
       "accessLevel": "Write",
       "resourceTypes": [
-        "workgroup*"
+        "workgroup*",
+        "session"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -752,6 +783,7 @@
       "resourceTypes": [
         "capacity-reservation*",
         "datacatalog*",
+        "session*",
         "workgroup*"
       ],
       "conditionKeys": [
@@ -766,7 +798,8 @@
       "description": "Grants permission to terminate a session",
       "accessLevel": "Write",
       "resourceTypes": [
-        "workgroup*"
+        "workgroup*",
+        "session"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -779,6 +812,7 @@
       "resourceTypes": [
         "capacity-reservation*",
         "datacatalog*",
+        "session*",
         "workgroup*"
       ],
       "conditionKeys": [

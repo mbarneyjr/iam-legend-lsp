@@ -36,6 +36,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteAlarmMuteRule",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarmMuteRule.html",
+      "description": "Grants permission to delete an alarm mute rule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alarm-mute-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteAlarms",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html",
       "description": "Grants permission to delete a collection of alarms",
@@ -211,6 +222,26 @@
       "dependentActions": []
     },
     {
+      "name": "GenerateQueryResultsSummary",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Insights-Query-Results-Summary.html",
+      "description": "Grants permission to generate a summary of CloudWatch LogInsights query results in natural language using generative AI",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAlarmMuteRule",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetAlarmMuteRule.html",
+      "description": "Grants permission to get an alarm mute rule",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "alarm-mute-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetDashboard",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html",
       "description": "Grants permission to display the details of the CloudWatch dashboard you specify",
@@ -331,6 +362,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListAlarmMuteRules",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListAlarmMuteRules.html",
+      "description": "Grants permission to retrieve a list of alarm mute rules owned by the user's account",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "alarm-mute-rule*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListDashboards",
       "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html",
       "description": "Grants permission to return a list of all CloudWatch dashboards in your account",
@@ -404,10 +446,13 @@
       "accessLevel": "List",
       "resourceTypes": [
         "alarm",
+        "alarm-mute-rule",
         "insight-rule",
         "slo",
         "SCENARIO:",
         "CloudWatch-Alarm",
+        "SCENARIO:",
+        "CloudWatch-AlarmMuteRule",
         "SCENARIO:",
         "CloudWatch-InsightRule",
         "SCENARIO:",
@@ -416,9 +461,25 @@
       "conditionKeys": [],
       "dependentActions": [
         "alarm*",
+        "alarm-mute-rule*",
         "insight-rule*",
         "slo*"
       ]
+    },
+    {
+      "name": "PutAlarmMuteRule",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAlarmMuteRule.html",
+      "description": "Grants permission to create or update an alarm mute rule",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alarm-mute-rule*",
+        "alarm"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
     },
     {
       "name": "PutAnomalyDetector",
@@ -563,10 +624,13 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "alarm",
+        "alarm-mute-rule",
         "insight-rule",
         "slo",
         "SCENARIO:",
         "CloudWatch-Alarm",
+        "SCENARIO:",
+        "CloudWatch-AlarmMuteRule",
         "SCENARIO:",
         "CloudWatch-InsightRule",
         "SCENARIO:",
@@ -578,6 +642,7 @@
       ],
       "dependentActions": [
         "alarm*",
+        "alarm-mute-rule*",
         "insight-rule*",
         "slo*"
       ]
@@ -589,10 +654,13 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "alarm",
+        "alarm-mute-rule",
         "insight-rule",
         "slo",
         "SCENARIO:",
         "CloudWatch-Alarm",
+        "SCENARIO:",
+        "CloudWatch-AlarmMuteRule",
         "SCENARIO:",
         "CloudWatch-InsightRule",
         "SCENARIO:",
@@ -603,6 +671,7 @@
       ],
       "dependentActions": [
         "alarm*",
+        "alarm-mute-rule*",
         "insight-rule*",
         "slo*"
       ]

@@ -117,6 +117,20 @@
       ]
     },
     {
+      "name": "CreateTopic",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html",
+      "description": "Grants permission to create a Kafka topic in an MSK cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "topic*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:CreateTopic"
+      ]
+    },
+    {
       "name": "CreateVpcConnection",
       "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/vpc-connection.html#CreateVpcConnection",
       "description": "Grants permission to create a MSK VPC connection",
@@ -189,6 +203,21 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "DeleteTopic",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html",
+      "description": "Grants permission to delete a Kafka topic from an MSK cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "topic*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DeleteTopic",
+        "kafka-cluster:DescribeTopic"
+      ]
     },
     {
       "name": "DeleteVpcConnection",
@@ -276,6 +305,36 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "DescribeTopic",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html",
+      "description": "Grants permission to return metadata details about a specific Kafka topic",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "topic*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeTopic",
+        "kafka-cluster:DescribeTopicDynamicConfiguration"
+      ]
+    },
+    {
+      "name": "DescribeTopicPartitions",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname-partitions.html",
+      "description": "Grants permission to list all partitions of a specific topic",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "topic*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeTopic",
+        "kafka-cluster:DescribeTopicDynamicConfiguration"
+      ]
     },
     {
       "name": "DescribeVpcConnection",
@@ -438,6 +497,20 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "ListTopics",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics.html",
+      "description": "Grants permission to list all Kafka topics for a specified MSK cluster",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeTopic"
+      ]
     },
     {
       "name": "ListVpcConnections",
@@ -606,6 +679,17 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateRebalancing",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-rebalancing.html",
+      "description": "Grants permission to update the intelligent rebalancing status of the MSK cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "cluster*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateReplicationInfo",
       "documentationUrl": "https://docs.aws.amazon.com/msk/latest/developerguide/v1-replicators.html#UpdateReplicationInfo",
       "description": "Grants permission to update the replication info of the MSK replicator",
@@ -639,6 +723,22 @@
       ],
       "conditionKeys": [],
       "dependentActions": []
+    },
+    {
+      "name": "UpdateTopic",
+      "documentationUrl": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-topics-topicname.html",
+      "description": "Grants permission to update the configuration of a Kafka topic in an MSK cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "topic*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "kafka-cluster:AlterTopic",
+        "kafka-cluster:AlterTopicDynamicConfiguration",
+        "kafka-cluster:Connect",
+        "kafka-cluster:DescribeTopic"
+      ]
     }
   ]
 }

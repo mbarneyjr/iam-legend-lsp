@@ -1,0 +1,141 @@
+{
+  "serviceName": "AWS Elemental Inference",
+  "servicePrefix": "elemental-inference",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awselementalinference.html",
+  "actions": [
+    {
+      "name": "AssociateFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_AssociateFeed.html",
+      "description": "Grants permission to associate a feed with an AWS resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_CreateFeed.html",
+      "description": "Grants permission to create a new feed",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DeleteFeed.html",
+      "description": "Grants permission to delete a feed",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_DisassociateFeed.html",
+      "description": "Grants permission to disassociate a feed from an AWS resource",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetFeed.html",
+      "description": "Grants permission to get feed details",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_GetMetadata.html",
+      "description": "Grants permission to retrieve metadata for a specific feed output",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFeeds",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListFeeds.html",
+      "description": "Grants permission to list feeds in the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTagsForResource",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_ListTagsForResource.html",
+      "description": "Grants permission to list tags on a resource",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutMedia",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_PutMedia.html",
+      "description": "Grants permission to upload media data for a specified feed",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "TagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_TagResource.html",
+      "description": "Grants permission to add tags to a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "feed"
+      ],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UntagResource",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UntagResource.html",
+      "description": "Grants permission to remove tags from a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": [
+        "feed"
+      ],
+      "conditionKeys": [
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateFeed",
+      "documentationUrl": "https://docs.aws.amazon.com/elemental-inference/latest/APIReference/API_UpdateFeed.html",
+      "description": "Grants permission to update feed configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "feed*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

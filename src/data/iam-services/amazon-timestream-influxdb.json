@@ -156,6 +156,31 @@
       "dependentActions": []
     },
     {
+      "name": "RebootDbCluster",
+      "documentationUrl": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbCluster.html",
+      "description": "Grants permission to reboot a Timestream InfluxDB Cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "db-cluster*",
+        "db-instance"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "timestream-influxdb:RebootDbInstance"
+      ]
+    },
+    {
+      "name": "RebootDbInstance",
+      "documentationUrl": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_RebootDbInstance.html",
+      "description": "Grants permission to reboot a Timestream InfluxDB instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "db-instance*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/ts-influxdb/latest/ts-influxdb-api/API_TagResource.html",
       "description": "Grants permission to tag a Timestream InfluxDB resource",

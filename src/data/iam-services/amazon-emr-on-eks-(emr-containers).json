@@ -17,7 +17,7 @@
     {
       "name": "CreateCertificate",
       "documentationUrl": "https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_CreateCertificate.html",
-      "description": "Grants permission to create a certificate",
+      "description": "Grants permission to call the CreateCertificate method to accept the CertificateSigningRequest, and return the signed certificate",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -92,6 +92,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "managedEndpoint*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSecurityConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/emr-on-eks/latest/APIReference/API_DeleteSecurityConfiguration.html",
+      "description": "Grants permission to delete a security configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "securityConfiguration*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -222,6 +233,7 @@
         "jobRun",
         "jobTemplate",
         "managedEndpoint",
+        "securityConfiguration",
         "virtualCluster"
       ],
       "conditionKeys": [],
@@ -261,6 +273,7 @@
         "jobRun",
         "jobTemplate",
         "managedEndpoint",
+        "securityConfiguration",
         "virtualCluster"
       ],
       "conditionKeys": [
@@ -278,6 +291,7 @@
         "jobRun",
         "jobTemplate",
         "managedEndpoint",
+        "securityConfiguration",
         "virtualCluster"
       ],
       "conditionKeys": [

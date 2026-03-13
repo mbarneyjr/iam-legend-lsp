@@ -4,6 +4,24 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsfreetier.html",
   "actions": [
     {
+      "name": "GetAccountActivity",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountActivity.html",
+      "description": "Grants permission to get a specific activity record",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAccountPlanState",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_GetAccountPlanState.html",
+      "description": "Grants permission to get all of the information related to the state of the account plan related to Free Tier",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetFreeTierAlertPreference",
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html",
       "description": "Grants permission to get free tier alert preference (email address)",
@@ -22,9 +40,27 @@
       "dependentActions": []
     },
     {
+      "name": "ListAccountActivities",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_ListAccountActivities.html",
+      "description": "Grants permission to list available activities",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PutFreeTierAlertPreference",
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html",
       "description": "Grants permission to set free tier alert preference (email address)",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpgradeAccountPlan",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_freetier_UpgradeAccountPlan.html",
+      "description": "Grants permission to trigger an upgrade of account plan",
       "accessLevel": "Write",
       "resourceTypes": [],
       "conditionKeys": [],

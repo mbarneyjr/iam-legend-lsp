@@ -5,11 +5,12 @@
   "actions": [
     {
       "name": "CreateExport",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateExport.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_CreateExport.html",
       "description": "Grants permission to create an export",
       "accessLevel": "Write",
       "resourceTypes": [
-        "table*"
+        "table*",
+        "billingview"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -19,7 +20,7 @@
     },
     {
       "name": "DeleteExport",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteExport.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_DeleteExport.html",
       "description": "Grants permission to delete an export",
       "accessLevel": "Write",
       "resourceTypes": [
@@ -32,7 +33,7 @@
     },
     {
       "name": "GetExecution",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetExecution.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExecution.html",
       "description": "Grants permission to get the execution of an export",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -45,7 +46,7 @@
     },
     {
       "name": "GetExport",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetExport.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetExport.html",
       "description": "Grants permission to get an export",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -58,7 +59,7 @@
     },
     {
       "name": "GetTable",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTable.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_GetTable.html",
       "description": "Grants permission to get the details of a table",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -69,7 +70,7 @@
     },
     {
       "name": "ListExecutions",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListExecutions.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExecutions.html",
       "description": "Grants permission to list all executions of an export",
       "accessLevel": "List",
       "resourceTypes": [
@@ -82,7 +83,7 @@
     },
     {
       "name": "ListExports",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListExports.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListExports.html",
       "description": "Grants permission to list all exports",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -91,7 +92,7 @@
     },
     {
       "name": "ListTables",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTables.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTables.html",
       "description": "Grants permission to list all available tables",
       "accessLevel": "List",
       "resourceTypes": [],
@@ -100,7 +101,7 @@
     },
     {
       "name": "ListTagsForResource",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListTagsForResource.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_ListTagsForResource.html",
       "description": "Grants permission to list tags for a resource",
       "accessLevel": "Read",
       "resourceTypes": [
@@ -113,7 +114,7 @@
     },
     {
       "name": "TagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_TagResource.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_TagResource.html",
       "description": "Grants permission to tag a resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
@@ -128,7 +129,7 @@
     },
     {
       "name": "UntagResource",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UntagResource.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UntagResource.html",
       "description": "Grants permission to untag a resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
@@ -142,12 +143,13 @@
     },
     {
       "name": "UpdateExport",
-      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateExport.html",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DataExports_UpdateExport.html",
       "description": "Grants permission to update an export",
       "accessLevel": "Write",
       "resourceTypes": [
         "export*",
-        "table*"
+        "table*",
+        "billingview"
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"

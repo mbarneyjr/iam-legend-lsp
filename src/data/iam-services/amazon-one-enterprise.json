@@ -236,6 +236,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListUsers",
+      "documentationUrl": "https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html",
+      "description": "Grants permission to view list of Users",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListUsersV1",
       "documentationUrl": "https://docs.aws.amazon.com/one-enterprise/latest/userguide/enrollment-entry.html",
       "description": "Grants permission to view list of Users",

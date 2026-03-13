@@ -738,6 +738,17 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateHostedZoneFeatures",
+      "documentationUrl": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneFeatures.html",
+      "description": "Grants permission to update features for a specified hosted zone",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "hostedzone*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateTrafficPolicyComment",
       "documentationUrl": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateTrafficPolicyComment.html",
       "description": "Grants permission to update the comment for a specified traffic policy version",

@@ -51,6 +51,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetDICOMBulkdata",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMBulkdata.html",
+      "description": "Grants permission to get dicom bulkdata in binary format",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetDICOMImportJob",
       "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_GetDICOMImportJob.html",
       "description": "Grants permission to get an import job's properties",
@@ -87,6 +98,17 @@
       "name": "GetDICOMInstanceMetadata",
       "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMInstanceMetadata.html",
       "description": "Grants permission to get dicom instance metadata in DICOM JSON format",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDICOMSeriesMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_GetDICOMSeriesMetadata.html",
+      "description": "Grants permission to retrieve metadata for all DICOM instances belonging to a given DICOM series in DICOM JSON format",
       "accessLevel": "Read",
       "resourceTypes": [
         "datastore*"
@@ -186,6 +208,39 @@
       "dependentActions": []
     },
     {
+      "name": "SearchDICOMInstances",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMInstances.html",
+      "description": "Grants permission to search dicom instances that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SearchDICOMSeries",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMSeries.html",
+      "description": "Grants permission to search dicom series that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SearchDICOMStudies",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_SearchDICOMStudies.html",
+      "description": "Grants permission to search dicom studies that returns data in DICOM JSON format",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "SearchImageSets",
       "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dataplane_SearchImageSets.html",
       "description": "Grants permission to search image sets",
@@ -200,6 +255,28 @@
       "name": "StartDICOMImportJob",
       "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_StartDICOMImportJob.html",
       "description": "Grants permission to start a DICOM import job",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StoreDICOM",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOM.html",
+      "description": "Grants permission to store dicom instances that returns result in DICOM JSON format",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "datastore*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StoreDICOMStudy",
+      "documentationUrl": "https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_dicom_StoreDICOMStudy.html",
+      "description": "Grants permission to store a dicom study that returns result in DICOM JSON format",
       "accessLevel": "Write",
       "resourceTypes": [
         "datastore*"

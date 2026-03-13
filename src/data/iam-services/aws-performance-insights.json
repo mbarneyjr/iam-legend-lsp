@@ -128,6 +128,7 @@
       "description": "Grants permission to call ListTagsForResource API to list tags for a resource",
       "accessLevel": "List",
       "resourceTypes": [
+        "metric-resource*",
         "perf-reports-resource*"
       ],
       "conditionKeys": [],

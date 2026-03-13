@@ -26,6 +26,28 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateDistributionTenantWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionTenantWebACL.html",
+      "description": "Grants permission to associate a distribution tenant with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "AssociateDistributionWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_AssociateDistributionWebACL.html",
+      "description": "Grants permission to associate a distribution with an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "CopyDistribution",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html",
       "description": "Grants permission to copy an existing distribution and create a new web distribution",
@@ -45,9 +67,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateAnycastIpList.html",
       "description": "Grants permission to create an Anycast static IP list",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "anycast-ip-list*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -59,9 +79,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html",
       "description": "Grants permission to add a new cache policy to CloudFront",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "cache-policy*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -70,10 +88,32 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.html",
       "description": "Grants permission to create a new CloudFront origin access identity",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "origin-access-identity*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionFunction.html",
+      "description": "Grants permission to create a connection function",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateConnectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateConnectionGroup.html",
+      "description": "Grants permission to create a connection group",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -81,9 +121,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateContinuousDeploymentPolicy.html",
       "description": "Grants permission to add a new continuous-deployment policy to CloudFront",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "continuous-deployment-policy*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -92,10 +130,25 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html",
       "description": "Grants permission to create a new web distribution",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "distribution*"
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
-      "conditionKeys": [],
+      "dependentActions": [
+        "cloudfront:CreateConnectionGroup"
+      ]
+    },
+    {
+      "name": "CreateDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionTenant.html",
+      "description": "Grants permission to create a distribution tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -121,9 +174,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFunction.html",
       "description": "Grants permission to create a CloudFront function",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "function*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -134,6 +185,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateInvalidationForDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidationForDistributionTenant.html",
+      "description": "Grants permission to create an invalidation for a distribution tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution-tenant*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -152,9 +214,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateKeyValueStore.html",
       "description": "Grants permission to create a CloudFront KeyValueStore",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "key-value-store*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -181,9 +241,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.html",
       "description": "Grants permission to add a new origin request policy to CloudFront",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "origin-request-policy*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -201,9 +259,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateRealtimeLogConfig.html",
       "description": "Grants permission to create a real-time log configuration",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "realtime-log-config*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -212,9 +268,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateResponseHeadersPolicy.html",
       "description": "Grants permission to add a new response headers policy to CloudFront",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "response-headers-policy*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -232,9 +286,7 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.html",
       "description": "Grants permission to create a new RTMP distribution",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "streaming-distribution*"
-      ],
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -243,9 +295,19 @@
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.html",
       "description": "Grants permission to create a new RTMP distribution with tags",
       "accessLevel": "Write",
-      "resourceTypes": [
-        "streaming-distribution*"
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTrustStore",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateTrustStore.html",
+      "description": "Grants permission to create a trust store",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -298,6 +360,28 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionFunction.html",
+      "description": "Grants permission to delete a connection function",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteConnectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteConnectionGroup.html",
+      "description": "Grants permission to delete a connection group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteContinuousDeploymentPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteContinuousDeploymentPolicy.html",
       "description": "Grants permission to delete a continuous-deployment policy",
@@ -315,6 +399,17 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistributionTenant.html",
+      "description": "Grants permission to delete a distribution tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution-tenant*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -424,6 +519,17 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteResourcePolicy.html",
+      "description": "Grants permission to delete a resource's policy document",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpcorigin"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteResponseHeadersPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteResponseHeadersPolicy.html",
       "description": "Grants permission to delete a response headers policy",
@@ -446,12 +552,34 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteTrustStore",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteTrustStore.html",
+      "description": "Grants permission to delete a trust store",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "trust-store*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteVpcOrigin",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteVpcOrigin.html",
       "description": "Grants permission to delete a VPC origin",
       "accessLevel": "Write",
       "resourceTypes": [
         "vpcorigin*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DescribeConnectionFunction.html",
+      "description": "Grants permission to get a connection function summary",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connection-function*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -474,6 +602,28 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "key-value-store*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateDistributionTenantWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionTenantWebACL.html",
+      "description": "Grants permission to disassociate a distribution tenant from an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DisassociateDistributionWebACL",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DisassociateDistributionWebACL.html",
+      "description": "Grants permission to disassociate a distribution from an AWS WAF web ACL",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -534,6 +684,39 @@
       "dependentActions": []
     },
     {
+      "name": "GetConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionFunction.html",
+      "description": "Grants permission to get a connection function's code",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetConnectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroup.html",
+      "description": "Grants permission to get information about a connection group",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connection-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetConnectionGroupByRoutingEndpoint",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetConnectionGroupByRoutingEndpoint.html",
+      "description": "Grants permission to get information about a connection group by the specified routing endpoint",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "connection-group*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetContinuousDeploymentPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetContinuousDeploymentPolicy.html",
       "description": "Grants permission to get the continuous-deployment policy",
@@ -573,6 +756,28 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenant.html",
+      "description": "Grants permission to get information about a distribution tenant",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDistributionTenantByDomain",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionTenantByDomain.html",
+      "description": "Grants permission to get information about a distribution tenant by the associated domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "distribution-tenant*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -644,6 +849,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetInvalidationForDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidationForDistributionTenant.html",
+      "description": "Grants permission to get information about an invalidation for a distribution tenant",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetKeyGroup",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetKeyGroup.html",
       "description": "Grants permission to get a key group",
@@ -658,6 +874,17 @@
       "description": "Grants permission to get a key group configuration",
       "accessLevel": "Read",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetManagedCertificateDetails",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetManagedCertificateDetails.html",
+      "description": "Grants permission to get details about a CloudFront managed certificate",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -744,6 +971,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResourcePolicy.html",
+      "description": "Grants permission to get the information about a resource's policy document",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "vpcorigin"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetResponseHeadersPolicy",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetResponseHeadersPolicy.html",
       "description": "Grants permission to get the response headers policy",
@@ -792,6 +1030,17 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "streaming-distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetTrustStore",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetTrustStore.html",
+      "description": "Grants permission to get information about a trust store",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "trust-store*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -846,9 +1095,45 @@
       "dependentActions": []
     },
     {
+      "name": "ListConnectionFunctions",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionFunctions.html",
+      "description": "Grants permission to list the connection functions in your AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListConnectionGroups",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListConnectionGroups.html",
+      "description": "Grants permission to list the connection groups in your AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListContinuousDeploymentPolicies",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListContinuousDeploymentPolicies.html",
       "description": "Grants permission to list all continuous-deployment policies in the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDistributionTenants",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenants.html",
+      "description": "Grants permission to list the distribution tenants in your AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDistributionTenantsByCustomization",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionTenantsByCustomization.html",
+      "description": "Grants permission to list the distribution tenants by the customization that you specify",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -876,6 +1161,26 @@
       "name": "ListDistributionsByCachePolicyId",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.html",
       "description": "Grants permission to list distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDistributionsByConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionFunction.html",
+      "description": "Grants permission to list summaries for distributions associated with the specified connection function",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDistributionsByConnectionMode",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByConnectionMode.html",
+      "description": "Grants permission to list the distributions by the specified connection mode",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -927,6 +1232,17 @@
       "dependentActions": []
     },
     {
+      "name": "ListDistributionsByTrustStore",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByTrustStore.html",
+      "description": "Grants permission to list summaries for distributions associated with the specified trust store",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "trust-store*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "ListDistributionsByVpcOriginId",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByVpcOriginId.html",
       "description": "Grants permission to list IDs for distributions associated with the specified VPC origin",
@@ -941,6 +1257,18 @@
       "description": "Grants permission to list the distributions associated with your AWS account with given AWS WAF web ACL",
       "accessLevel": "List",
       "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDomainConflicts",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDomainConflicts.html",
+      "description": "Grants permission to list domain conflicts for a specified domain",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "distribution",
+        "distribution-tenant"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -978,6 +1306,17 @@
       "accessLevel": "List",
       "resourceTypes": [
         "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListInvalidationsForDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidationsForDistributionTenant.html",
+      "description": "Grants permission to list the invalidations for a distribution tenant",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "distribution-tenant*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1079,9 +1418,22 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "anycast-ip-list",
+        "connection-function",
+        "connection-group",
         "distribution",
+        "distribution-tenant",
+        "trust-store",
         "vpcorigin"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTrustStores",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTrustStores.html",
+      "description": "Grants permission to list the trust stores in your AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -1104,6 +1456,17 @@
       "dependentActions": []
     },
     {
+      "name": "PublishConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishConnectionFunction.html",
+      "description": "Grants permission to publish a connection function",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "PublishFunction",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PublishFunction.html",
       "description": "Grants permission to publish a CloudFront function",
@@ -1115,20 +1478,46 @@
       "dependentActions": []
     },
     {
+      "name": "PutResourcePolicy",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_PutResourcePolicy.html",
+      "description": "Grants permission to update or create a resource's policy document",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "vpcorigin"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to add tags to a CloudFront resource",
       "accessLevel": "Tagging",
       "resourceTypes": [
         "anycast-ip-list",
+        "connection-function",
+        "connection-group",
         "distribution",
+        "distribution-tenant",
         "streaming-distribution",
+        "trust-store",
         "vpcorigin"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "TestConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TestConnectionFunction.html",
+      "description": "Grants permission to test a connection function",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -1149,13 +1538,28 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "anycast-ip-list",
+        "connection-function",
+        "connection-group",
         "distribution",
+        "distribution-tenant",
         "streaming-distribution",
+        "trust-store",
         "vpcorigin"
       ],
       "conditionKeys": [
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAnycastIpList",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateAnycastIpList.html",
+      "description": "Grants permission to update an Anycast static IP list",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "anycast-ip-list*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -1176,6 +1580,28 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "origin-access-identity*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateConnectionFunction",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionFunction.html",
+      "description": "Grants permission to update a connection function",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-function*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateConnectionGroup",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateConnectionGroup.html",
+      "description": "Grants permission to update a connection group",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connection-group*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1203,12 +1629,35 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateDistributionTenant",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionTenant.html",
+      "description": "Grants permission to update a distribution tenant",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution-tenant*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateDistributionWithStagingConfig",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistributionWithStagingConfig.html",
       "description": "Grants permission to copy the configuration from a staging web distribution to its corresponding primary web distribution",
       "accessLevel": "Write",
       "resourceTypes": [
         "distribution*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateDomainAssociation",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html",
+      "description": "Grants permission to update a domain association",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "distribution",
+        "distribution-tenant"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1338,12 +1787,34 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateTrustStore",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateTrustStore.html",
+      "description": "Grants permission to update a trust store",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "trust-store*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateVpcOrigin",
       "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateVpcOrigin.html",
       "description": "Grants permission to update a VPC origin",
       "accessLevel": "Write",
       "resourceTypes": [
         "vpcorigin*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "VerifyDnsConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_VerifyDnsConfiguration.html",
+      "description": "Grants permission to verify the DNS configuration for a specified domain",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "distribution-tenant"
       ],
       "conditionKeys": [],
       "dependentActions": []

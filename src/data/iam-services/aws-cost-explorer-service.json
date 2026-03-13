@@ -225,6 +225,19 @@
       "dependentActions": []
     },
     {
+      "name": "GetCostAndUsageComparisons",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageComparisons.html",
+      "description": "Grants permission to retrieve the cost and usage comparisons for your account",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "billingview"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetCostAndUsageWithResources",
       "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html",
       "description": "Grants permission to retrieve the cost and usage metrics with resources for your account",
@@ -241,6 +254,19 @@
       "name": "GetCostCategories",
       "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostCategories.html",
       "description": "Grants permission to query Cost Catagory names and values for a specified time period",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "billingview"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCostComparisonDrivers",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostComparisonDrivers.html",
+      "description": "Grants permission to retrieve the cost drivers for your account",
       "accessLevel": "Read",
       "resourceTypes": [
         "billingview"
@@ -423,6 +449,15 @@
       "name": "ListCostCategoryDefinitions",
       "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html",
       "description": "Grants permission to retrieve names, ARN, and effective dates for all Cost Categories",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListCostCategoryResourceAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryResourceAssociations.html",
+      "description": "Grants permission to retrieve resource associations of all Cost Categories defined in the account",
       "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],

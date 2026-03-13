@@ -16,6 +16,15 @@
       ]
     },
     {
+      "name": "CreateSupportCase",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_CreateSupportCase.html",
+      "description": "Grants permission to submit a request to create a support case for an existing quota increase request",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteServiceQuotaIncreaseRequestFromTemplate",
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html",
       "description": "Grants permission to remove the specified service quota from the service quota template",
@@ -58,6 +67,24 @@
       ]
     },
     {
+      "name": "GetAutoManagementConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAutoManagementConfiguration.html",
+      "description": "Grants permission to retrieve the automatic management of Service Quotas configuration, including notification settings, opt-in type, and excluded quotas",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetQuotaUtilizationReport",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetQuotaUtilizationReport.html",
+      "description": "Grants permission to view the generated report",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetRequestedServiceQuotaChange",
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetRequestedServiceQuotaChange.html",
       "description": "Grants permission to retrieve the details for a particular service quota increase request",
@@ -71,8 +98,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html",
       "description": "Grants permission to return the details for the specified service quota, including the applied value",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "quota"
+      ],
+      "conditionKeys": [
+        "servicequotas:service"
+      ],
       "dependentActions": [
         "autoscaling:DescribeAccountLimits",
         "cloudformation:DescribeAccountLimits",
@@ -89,8 +120,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html",
       "description": "Grants permission to retrieve the details for a service quota increase request from the service quota template",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "quota"
+      ],
+      "conditionKeys": [
+        "servicequotas:service"
+      ],
       "dependentActions": [
         "organizations:DescribeOrganization"
       ]
@@ -118,8 +153,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html",
       "description": "Grants permission to request a list of the changes to specific service quotas",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "quota"
+      ],
+      "conditionKeys": [
+        "servicequotas:service"
+      ],
       "dependentActions": []
     },
     {
@@ -198,6 +237,33 @@
       "dependentActions": []
     },
     {
+      "name": "StartAutoManagement",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartAutoManagement.html",
+      "description": "Grants permission to enable automatic management of Service Quotas for an AWS account, including notification preferences and excluded quotas configurations",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartQuotaUtilizationReport",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StartQuotaUtilizationReport.html",
+      "description": "Grants permission to query quota utilization and create a report for your account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopAutoManagement",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_StopAutoManagement.html",
+      "description": "Grants permission to stop automatic management of Service Quotas for an AWS account and remove all associated configurations",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "TagResource",
       "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_TagResource.html",
       "description": "Grants permission to associate a set of tags with an existing SQ resource",
@@ -218,6 +284,15 @@
       "conditionKeys": [
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAutoManagement",
+      "documentationUrl": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_UpdateAutoManagement.html",
+      "description": "Grants permission to update the automatic management of Service Quotas configuration, including notification preferences and excluded quotas",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     }
   ]

@@ -4,6 +4,20 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awspaymentcryptography.html",
   "actions": [
     {
+      "name": "AddKeyReplicationRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html",
+      "description": "Grants permission to add replication regions to an existing AWS Payment Cryptography key",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateAlias",
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html",
       "description": "Grants permission to create a user-friendly name for a Key",
@@ -23,7 +37,10 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "payment-cryptography:KeyClass",
+        "payment-cryptography:KeyUsage",
+        "payment-cryptography:KeyAlgorithm"
       ],
       "dependentActions": [
         "payment-cryptography:TagResource"
@@ -34,8 +51,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html",
       "description": "Grants permission to decrypt ciphertext data to plaintext using symmetric, asymmetric or DUKPT data encryption key",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -60,6 +82,26 @@
       "resourceTypes": [
         "key*"
       ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DisableDefaultKeyReplicationRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html",
+      "description": "Grants permission to disable default key replication regions for account-level replication",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "EnableDefaultKeyReplicationRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html",
+      "description": "Grants permission to enable default key replication regions for account-level replication",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -68,8 +110,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html",
       "description": "Grants permission to encrypt plaintext data to ciphertext using symmetric, asymmetric or DUKPT data encryption key",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -80,7 +127,25 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias",
+        "payment-cryptography:CertificateAuthorityPublicKeyIdentifier",
+        "payment-cryptography:WrappingKeyIdentifier"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GenerateAs2805KekValidation",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateAs2805KekValidation.html",
+      "description": "Grants permission to generate a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -88,8 +153,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateCardValidationData.html",
       "description": "Grants permission to generate card-related data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) or Card Security Codes (CSC) that check the validity of a magnetic stripe card",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -97,8 +167,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GenerateMac.html",
       "description": "Grants permission to generate a MAC (Message Authentication Code) cryptogram",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -110,7 +185,9 @@
         "alias*",
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -118,8 +195,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_GeneratePinData.html",
       "description": "Grants permission to generate pin-related data such as PIN, PIN Verification Value (PVV), PIN Block and PIN Offset during new card issuance or card re-issuance",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -138,6 +220,29 @@
       "dependentActions": []
     },
     {
+      "name": "GetCertificateSigningRequest",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetCertificateSigningRequest.html",
+      "description": "Grants permission to return the Certificate Signing Request for a public key from a key of class PUBLIC_KEY",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDefaultKeyReplicationRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html",
+      "description": "Grants permission to retrieve the default key replication regions configured at the account level",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetKey",
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html",
       "description": "Grants permission to return the detailed information about the specified key",
@@ -145,7 +250,9 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -174,7 +281,9 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -185,7 +294,10 @@
       "resourceTypes": [],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "payment-cryptography:ImportKeyMaterial",
+        "payment-cryptography:CertificateAuthorityPublicKeyIdentifier",
+        "payment-cryptography:WrappingKeyIdentifier"
       ],
       "dependentActions": [
         "payment-cryptography:TagResource"
@@ -225,8 +337,27 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_ReEncryptData.html",
       "description": "Grants permission to re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption Keys",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "RemoveKeyReplicationRegions",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html",
+      "description": "Grants permission to remove replication regions from an existing AWS Payment Cryptography key",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -237,7 +368,9 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -248,7 +381,9 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -259,7 +394,9 @@
       "resourceTypes": [
         "key*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -277,12 +414,31 @@
       "dependentActions": []
     },
     {
+      "name": "TranslateKeyMaterial",
+      "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslateKeyMaterial.html",
+      "description": "Grants permission to translate wrapping key type for a wrapped key",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "TranslatePinData",
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_TranslatePinData.html",
       "description": "Grants permission to translate encrypted PIN block from and to ISO 9564 formats 0,1,3,4",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -318,8 +474,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyAuthRequestCryptogram.html",
       "description": "Grants permission to verify Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -327,8 +488,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyCardValidationData.html",
       "description": "Grants permission to verify card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) and Card Security Codes (CSC)",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -336,8 +502,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyMac.html",
       "description": "Grants permission to verify MAC (Message Authentication Code) of input data against a provided MAC",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     },
     {
@@ -345,8 +516,13 @@
       "documentationUrl": "https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_VerifyPinData.html",
       "description": "Grants permission to verify pin-related data such as PIN and PIN Offset using algorithms including VISA PVV and IBM3624",
       "accessLevel": "Write",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "alias*",
+        "key*"
+      ],
+      "conditionKeys": [
+        "payment-cryptography:RequestAlias"
+      ],
       "dependentActions": []
     }
   ]

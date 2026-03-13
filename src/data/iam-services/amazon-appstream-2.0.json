@@ -57,6 +57,19 @@
       "dependentActions": []
     },
     {
+      "name": "AssociateSoftwareToImageBuilder",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateSoftwareToImageBuilder.html",
+      "description": "Grants permission to associate license included application(s) with an existing image builder instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "image-builder*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "BatchAssociateUserStack",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchAssociateUserStack.html",
       "description": "Grants permission to associate the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain",
@@ -171,6 +184,17 @@
       "dependentActions": []
     },
     {
+      "name": "CreateExportImageTask",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateExportImageTask.html",
+      "description": "Grants permission to create an export task for an AppStream 2.0 image",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "CreateFleet",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html",
       "description": "Grants permission to create a fleet. A fleet is a group of streaming instances from which applications are launched and streamed to users",
@@ -210,6 +234,18 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateImportedImage",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImportedImage.html",
+      "description": "Grants permission to create an AppStream 2.0 image from an imported AMI",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ],
       "dependentActions": []
     },
@@ -442,11 +478,8 @@
       "name": "DescribeAppBlockBuilderAppBlockAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilderAppBlockAssociations.html",
       "description": "Grants permission to retrieve the associations that are associated with the specified app block builder or app block",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "app-block",
-        "app-block-builder"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -454,10 +487,8 @@
       "name": "DescribeAppBlockBuilders",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlockBuilders.html",
       "description": "Grants permission to retrieve a list that describes one or more specified app block builders, if the app block builder names are provided. Otherwise, all app block builders in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "app-block-builder"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -465,10 +496,17 @@
       "name": "DescribeAppBlocks",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppBlocks.html",
       "description": "Grants permission to retrieve a list that describes one or more specified app blocks, if the app block arns are provided. Otherwise, all app blocks in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "app-block"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeAppLicenseUsage",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeAppLicenseUsage.html",
+      "description": "Grants permission to retrieve license included application usage information",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -476,11 +514,8 @@
       "name": "DescribeApplicationFleetAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplicationFleetAssociations.html",
       "description": "Grants permission to retrieve the associations that are associated with the specified application or fleet",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "application",
-        "fleet"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -488,10 +523,8 @@
       "name": "DescribeApplications",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeApplications.html",
       "description": "Grants permission to retrieve a list that describes one or more specified applications, if the application arns are provided. Otherwise, all applications in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "application"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -499,7 +532,7 @@
       "name": "DescribeDirectoryConfigs",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeDirectoryConfigs.html",
       "description": "Grants permission to retrieve a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -508,7 +541,7 @@
       "name": "DescribeEntitlements",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeEntitlements.html",
       "description": "Grants permission to retrieve one or all entitlements for the specified stack",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [
         "stack*"
       ],
@@ -519,10 +552,8 @@
       "name": "DescribeFleets",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html",
       "description": "Grants permission to retrieve a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "fleet"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -530,10 +561,8 @@
       "name": "DescribeImageBuilders",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImageBuilders.html",
       "description": "Grants permission to retrieve a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "image-builder"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -552,10 +581,8 @@
       "name": "DescribeImages",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeImages.html",
       "description": "Grants permission to retrieve a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "image"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -563,7 +590,7 @@
       "name": "DescribeSessions",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSessions.html",
       "description": "Grants permission to retrieve a list that describes the streaming sessions for the specified stack and fleet. If a user ID is provided for the stack and fleet, only the streaming sessions for that user are described",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [
         "fleet*",
         "stack*"
@@ -572,13 +599,23 @@
       "dependentActions": []
     },
     {
+      "name": "DescribeSoftwareAssociations",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeSoftwareAssociations.html",
+      "description": "Grants permission to retrieve license included application associations for a specified resource",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "image",
+        "image-builder"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DescribeStacks",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeStacks.html",
       "description": "Grants permission to retrieve a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "stack"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -597,7 +634,7 @@
       "name": "DescribeUsageReportSubscriptions",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsageReportSubscriptions.html",
       "description": "Grants permission to retrieve a list that describes one or more usage report subscriptions",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -606,10 +643,8 @@
       "name": "DescribeUserStackAssociations",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUserStackAssociations.html",
       "description": "Grants permission to retrieve a list that describes the UserStackAssociation objects",
-      "accessLevel": "Read",
-      "resourceTypes": [
-        "stack"
-      ],
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -617,7 +652,7 @@
       "name": "DescribeUsers",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeUsers.html",
       "description": "Grants permission to retrieve a list that describes users in the user pool",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -685,6 +720,19 @@
       "dependentActions": []
     },
     {
+      "name": "DisassociateSoftwareFromImageBuilder",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateSoftwareFromImageBuilder.html",
+      "description": "Grants permission to remove license included application(s) association(s) from an image builder instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "image-builder*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "EnableUser",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_EnableUser.html",
       "description": "Grants permission to enable a user in the user pool",
@@ -698,6 +746,15 @@
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ExpireSession.html",
       "description": "Grants permission to immediately stop the specified streaming session",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetExportImageTask",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_GetExportImageTask.html",
+      "description": "Grants permission to retrieve details of a specific export image task",
+      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
@@ -732,6 +789,15 @@
       "resourceTypes": [
         "stack*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListExportImageTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListExportImageTasks.html",
+      "description": "Grants permission to list export image tasks",
+      "accessLevel": "List",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -774,6 +840,19 @@
       "name": "StartImageBuilder",
       "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartImageBuilder.html",
       "description": "Grants permission to start the specified image builder",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "image-builder*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "StartSoftwareDeploymentToImageBuilder",
+      "documentationUrl": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartSoftwareDeploymentToImageBuilder.html",
+      "description": "Grants permission to initiate license included applications deployment to an image builder instance",
       "accessLevel": "Write",
       "resourceTypes": [
         "image-builder*"

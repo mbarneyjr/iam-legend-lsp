@@ -1,0 +1,25 @@
+{
+  "serviceName": "Amazon ECS MCP Service",
+  "servicePrefix": "ecs-mcp",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_amazonecsmcpservice.html",
+  "actions": [
+    {
+      "name": "InvokeReadOnlyTools",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-mcp-getting-started.html",
+      "description": "Grants permission to call read-only tools in MCP service",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UseMcp",
+      "documentationUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-mcp-getting-started.html",
+      "description": "Grants permission to use MCP service",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

@@ -2,6 +2,9 @@ import puppeteer from "puppeteer";
 import * as cheerio from "cheerio";
 import pLimit from "p-limit";
 import { writeFile } from "node:fs/promises";
+import { join } from "node:path";
+
+const DATA_DIR = join(import.meta.dirname, "..", "src", "data", "iam-services");
 
 type CheerioAPI = ReturnType<typeof cheerio.load>;
 
@@ -68,7 +71,7 @@ const save = async ({ serviceName, servicePrefix, actions, url }: {
   url: string;
 }) =>
   writeFile(
-    `./src/data/iam-services/${formatFileName(serviceName)}.json`,
+    join(DATA_DIR, `${formatFileName(serviceName)}.json`),
     JSON.stringify({ serviceName, servicePrefix, url, actions }, null, 2),
   );
 

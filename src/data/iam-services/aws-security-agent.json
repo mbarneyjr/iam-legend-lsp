@@ -1,0 +1,1000 @@
+{
+  "serviceName": "AWS Security Agent",
+  "servicePrefix": "securityagent",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awssecurityagent.html",
+  "actions": [
+    {
+      "name": "AddArtifact",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_AddArtifact.html",
+      "description": "Grants permission to add an Artifact for the given Agent Instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "AddControl",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_AddControl.html",
+      "description": "Grants permission to add a customer managed Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchDeletePentests",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchDeletePentests.html",
+      "description": "Grants permission to delete multiple penetration tests in a single request",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetAgentInstances",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetAgentInstances.html",
+      "description": "Grants permission to retrieve multiple agent instances in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentInstance*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetAgentSpaces",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetAgentSpaces.html",
+      "description": "Grants permission to retrieve multiple agent spaces in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetArtifactMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetArtifactMetadata.html",
+      "description": "Grants permission to retrieve one or more Artifact Metadata records for the given Agent Instance",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetFindings",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetFindings.html",
+      "description": "Grants permission to retrieve multiple security testing findings in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetPentestJobContentMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobContentMetadata.html",
+      "description": "Grants permission to retrieve multiple pentest job contents metadata in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetPentestJobTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobTasks.html",
+      "description": "Grants permission to retrieve multiple pentest job tasks in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetPentestJobs",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetPentestJobs.html",
+      "description": "Grants permission to retrieve multiple security testing jobs in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetPentests",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetPentests.html",
+      "description": "Grants permission to retrieve multiple penetration tests in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetSecurityTestContentMetadata",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetSecurityTestContentMetadata.html",
+      "description": "Grants permission to retrieve multiple security testing contents metadata in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetTargetDomains",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetTargetDomains.html",
+      "description": "Grants permission to retrieve multiple target domains in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "TargetDomain*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "BatchGetTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_BatchGetTasks.html",
+      "description": "Grants permission to retrieve multiple security testing tasks in a single request",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAgentInstance",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateAgentInstance.html",
+      "description": "Grants permission to create an agent instance record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateAgentSpace",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateAgentSpace.html",
+      "description": "Grants permission to create an agent space record",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateApplication",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateApplication.html",
+      "description": "Grants permission to create a new application",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": [
+        "iam:PassRole",
+        "sso:CreateApplication"
+      ]
+    },
+    {
+      "name": "CreateDesignReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateDesignReview.html",
+      "description": "Grants permission to create a design review",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateDocumentReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateDocumentReview.html",
+      "description": "Grants permission to create a document review",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateIntegration.html",
+      "description": "Grants permission to create a security testing integration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateMembership",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateMembership.html",
+      "description": "Grants permission to add a single member to a agent instance with specified role",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateOneTimeLoginSession",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateOneTimeLoginSession.html",
+      "description": "Grants permission to create a one time login session",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreatePentest",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreatePentest.html",
+      "description": "Grants permission to create a new penetration test configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateSecurityRequirement",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateSecurityRequirement.html",
+      "description": "Grants permission to add a customer managed Security Requirement",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateTargetDomain",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_CreateTargetDomain.html",
+      "description": "Grants permission to create a target domain record",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAgentInstance",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteAgentInstance.html",
+      "description": "Grants permission to delete an agent instance record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentInstance*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAgentSpace",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteAgentSpace.html",
+      "description": "Grants permission to delete an agent space record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteApplication",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteApplication.html",
+      "description": "Grants permission to delete application",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteArtifact",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteArtifact.html",
+      "description": "Grants permission to delete an Artifact",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteControl",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteControl.html",
+      "description": "Grants permission to delete a customer managed Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Control*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDesignReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteDesignReview.html",
+      "description": "Grants permission to delete a design review",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteDocumentReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteDocumentReview.html",
+      "description": "Grants permission to delete a document review",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteIntegration.html",
+      "description": "Grants permission to delete the integration of an application",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteMembership",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteMembership.html",
+      "description": "Grants permission to remove a single member associated to an agent instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteSecurityRequirement",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteSecurityRequirement.html",
+      "description": "Grants permission to delete a customer managed Security Requirement",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "SecurityRequirement*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteTargetDomain",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DeleteTargetDomain.html",
+      "description": "Grants permission to delete a target domain record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "TargetDomain*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DescribeFindings",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_DescribeFindings.html",
+      "description": "Grants permission to retrieve security findings for a penetration test or security testing tasks in a penetration test",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetApplication",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetApplication.html",
+      "description": "Grants permission to get application details by application ID",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetArtifact",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetArtifact.html",
+      "description": "Grants permission to retrieve an Artifact for the given Agent Instance",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetCodeReviewTask",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetCodeReviewTask.html",
+      "description": "Grants permission to retrieve a Code Review Task",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetControl",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetControl.html",
+      "description": "Grants permission to retrieve a Control",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Control*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDesignReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDesignReview.html",
+      "description": "Grants permission to get the status of the associated agent space design review",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDesignReviewArtifact",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDesignReviewArtifact.html",
+      "description": "Grants permission to get design review artifact for a specific document",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDesignReviewFeedback",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDesignReviewFeedback.html",
+      "description": "Grants permission to get feedback for a design review comment",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDocReviewTask",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDocReviewTask.html",
+      "description": "Grants permission to retrieve a document review task",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDocumentReview",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDocumentReview.html",
+      "description": "Grants permission to get the status of the associated agent instance document review",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetDocumentReviewArtifact",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetDocumentReviewArtifact.html",
+      "description": "Grants permission to get document review artifact for a specific document",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetIntegration.html",
+      "description": "Grants permission to get the integration metadata by ID",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "Integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetLoginSessionCredentials",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetLoginSessionCredentials.html",
+      "description": "Grants permission to retrieve credentials for a one time login session",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetSecurityRequirement",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_GetSecurityRequirement.html",
+      "description": "Grants permission to retrieve a Security Requirement",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "SecurityRequirement*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "HandleOneTimeLoginSession",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_HandleOneTimeLoginSession.html",
+      "description": "Grants permission to process and invalidate a one time login session",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "InitiateProviderRegistration",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_InitiateProviderRegistration.html",
+      "description": "Grants permission to initiate the registration of Security Agent App for the given provider (eg: GitHub)",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAgentInstanceTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListAgentInstanceTasks.html",
+      "description": "Grants permission to list tasks for a specific agent instance",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentInstance*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAgentInstances",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListAgentInstances.html",
+      "description": "Grants permission to list agent instances",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListAgentSpaces",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListAgentSpaces.html",
+      "description": "Grants permission to list agent spaces",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListApplications",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListApplications.html",
+      "description": "Grants permission to list all applications in the account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListArtifacts",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListArtifacts.html",
+      "description": "Grants permission to list all artifacts for the given project",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListControls",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListControls.html",
+      "description": "Grants permission to list all Controls",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDesignReviewComments",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListDesignReviewComments.html",
+      "description": "Grants permission to list design review comments",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDesignReviews",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListDesignReviews.html",
+      "description": "Grants permission to list all design reviews for the given project",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDiscoveredEndpoints",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListDiscoveredEndpoints.html",
+      "description": "Grants permission to list discovered endpoints associated with a pentest job with optional URI prefix filtering",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDocumentReviewComments",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListDocumentReviewComments.html",
+      "description": "Grants permission to list document review comments",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListDocumentReviews",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListDocumentReviews.html",
+      "description": "Grants permission to list all document reviews for the given project",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListFindings",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListFindings.html",
+      "description": "Grants permission to list findings with filtering and pagination support",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListIntegratedResources",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListIntegratedResources.html",
+      "description": "Grants permission to list integrated resources for an agent instance",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListIntegrations",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListIntegrations.html",
+      "description": "Grants permission to get the integrations owned by the caller's AWS account",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListMemberships",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListMemberships.html",
+      "description": "Grants permission to list all members associated to an agent instance with pagination support",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPentestJobTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListPentestJobTasks.html",
+      "description": "Grants permission to list pentest job tasks associated with a pentest job",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPentestJobsForPentest",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListPentestJobsForPentest.html",
+      "description": "Grants permission to list penetration test jobs associated with a penetration test",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListPentests",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListPentests.html",
+      "description": "Grants permission to list penetration tests with optional filtering by status",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListResourcesFromIntegration",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListResourcesFromIntegration.html",
+      "description": "Grants permission to list resources from Integration",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "Integration*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListSecurityRequirements",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListSecurityRequirements.html",
+      "description": "Grants permission to list all Security Requirements",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTargetDomains",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListTargetDomains.html",
+      "description": "Grants permission to list target domains",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListTasks",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ListTasks.html",
+      "description": "Grants permission to list security testing tasks associated with a pentest job",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutDesignReviewFeedback",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_PutDesignReviewFeedback.html",
+      "description": "Grants permission to submit feedback for a design review comment",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartCodeRemediation",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_StartCodeRemediation.html",
+      "description": "Grants permission to start code remediation for the findings",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartPentestExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_StartPentestExecution.html",
+      "description": "Grants permission to initiate the execution of a penetration test",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StartPentestJob",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_StartPentestJob.html",
+      "description": "Grants permission to initiate the execution of a penetration test",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopPentestExecution",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_StopPentestExecution.html",
+      "description": "Grants permission to stop the execution of a running penetration test",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "StopPentestJob",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_StopPentestJob.html",
+      "description": "Grants permission to stop the execution of a running penetration test",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ToggleManagedControl",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ToggleManagedControl.html",
+      "description": "Grants permission to toggle the status",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Control*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ToggleManagedSecurityRequirement",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_ToggleManagedSecurityRequirement.html",
+      "description": "Grants permission to toggle the status of a managed Security Requirement",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "SecurityRequirement*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAgentInstance",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateAgentInstance.html",
+      "description": "Grants permission to update an agent instance record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentInstance*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateAgentSpace",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateAgentSpace.html",
+      "description": "Grants permission to update an agent space record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateApplication",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateApplication.html",
+      "description": "Grants permission to update application configuration",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Application*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": [
+        "iam:PassRole"
+      ]
+    },
+    {
+      "name": "UpdateControl",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateControl.html",
+      "description": "Grants permission to update a customer managed Control",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "Control*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateFinding",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateFinding.html",
+      "description": "Grants permission to update an existing security finding with new details or status",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateIntegratedResources",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateIntegratedResources.html",
+      "description": "Grants permission to update integrated resources for an agent instance",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdatePentest",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdatePentest.html",
+      "description": "Grants permission to update an existing penetration test with new configuration or settings",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "AgentSpace*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateSecurityRequirement",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateSecurityRequirement.html",
+      "description": "Grants permission to update a customer managed Security Requirement",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "SecurityRequirement*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UpdateTargetDomain",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_UpdateTargetDomain.html",
+      "description": "Grants permission to update a target domain record",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "TargetDomain*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "VerifyTargetDomain",
+      "documentationUrl": "https://docs.aws.amazon.com/securityagent/API_VerifyTargetDomain.html",
+      "description": "Grants permission to verify ownership for a registered target domain",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "TargetDomain*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

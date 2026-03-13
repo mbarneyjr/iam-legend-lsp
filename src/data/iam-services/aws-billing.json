@@ -4,6 +4,22 @@
   "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsbilling.html",
   "actions": [
     {
+      "name": "AssociateSourceViews",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_AssociateSourceViews.html",
+      "description": "Grants permission to associate source views to a billing view",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "billingview*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": [
+        "billing:UseSourceView",
+        "iam:CreateServiceLinkedRole"
+      ]
+    },
+    {
       "name": "CreateBillingView",
       "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_CreateBillingView.html",
       "description": "Grants permission to create a billing view",
@@ -15,7 +31,10 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
-      "dependentActions": []
+      "dependentActions": [
+        "billing:UseSourceView",
+        "iam:CreateServiceLinkedRole"
+      ]
     },
     {
       "name": "DeleteBillingView",
@@ -44,12 +63,29 @@
       "dependentActions": []
     },
     {
+      "name": "DisassociateSourceViews",
+      "documentationUrl": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_DisassociateSourceViews.html",
+      "description": "Grants permission to disassociate source views from a billing view",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "billingview*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "GetBillingData",
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Grants permission to perform queries on billing information",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "billingview"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -57,8 +93,12 @@
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Grants permission to view detailed line item billing information",
       "accessLevel": "Read",
-      "resourceTypes": [],
-      "conditionKeys": [],
+      "resourceTypes": [
+        "billingview"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
       "dependentActions": []
     },
     {
@@ -90,6 +130,17 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "GetBillingViewData",
+      "documentationUrl": "https://docs.aws.amazon.com/",
+      "description": "Grants permission to get cost and usage data for a specified billng view",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "billingview*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -263,6 +314,15 @@
       "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Grants permission to update the Allow IAM Access billing preference",
       "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "UseSourceView",
+      "documentationUrl": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+      "description": "Grants permission to use a billing view as a data source for other billing views",
+      "accessLevel": "Read",
       "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []

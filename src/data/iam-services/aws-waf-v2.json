@@ -23,9 +23,11 @@
         "amplify:AssociateWebACL",
         "apigateway:SetWebACL",
         "apprunner:AssociateWebAcl",
+        "appsync:AssociateWebACL",
         "appsync:SetWebACL",
         "cognito-idp:AssociateWebACL",
         "ec2:AssociateVerifiedAccessInstanceWebAcl",
+        "elasticloadbalancing:CreateWebACLAssociation",
         "elasticloadbalancing:SetWebAcl",
         "wafv2:GetPermissionPolicy",
         "wafv2:PutPermissionPolicy"
@@ -264,9 +266,11 @@
         "amplify:DisassociateWebACL",
         "apigateway:SetWebACL",
         "apprunner:DisassociateWebAcl",
+        "appsync:DisassociateWebACL",
         "appsync:SetWebACL",
         "cognito-idp:DisassociateWebACL",
         "ec2:DisassociateVerifiedAccessInstanceWebAcl",
+        "elasticloadbalancing:DeleteWebACLAssociation",
         "elasticloadbalancing:SetWebAcl",
         "wafv2:PutPermissionPolicy"
       ]
@@ -398,6 +402,17 @@
       "dependentActions": []
     },
     {
+      "name": "GetTopPathStatisticsByTraffic",
+      "documentationUrl": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetTopPathStatisticsByTraffic.html",
+      "description": "Grants permission to retrieve aggregated path statistics with bot traffic analysis for a WebACL within a specified time window",
+      "accessLevel": "Read",
+      "resourceTypes": [
+        "webacl*"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetWebACL",
       "documentationUrl": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html",
       "description": "Grants permission to retrieve details about a WebACL",
@@ -429,8 +444,10 @@
       "dependentActions": [
         "amplify:GetWebACLForResource",
         "apprunner:DescribeWebAclForService",
+        "appsync:GetWebACLForResource",
         "cognito-idp:GetWebACLForResource",
         "ec2:GetVerifiedAccessInstanceWebAcl",
+        "elasticloadbalancing:GetLoadBalancerWebACL",
         "wafv2:GetWebACL"
       ]
     },
@@ -524,8 +541,10 @@
       "dependentActions": [
         "amplify:ListResourcesForWebACL",
         "apprunner:ListAssociatedServicesForWebAcl",
+        "appsync:ListResourcesForWebACL",
         "cognito-idp:ListResourcesForWebACL",
-        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations"
+        "ec2:DescribeVerifiedAccessInstanceWebAclAssociations",
+        "elasticloadbalancing:DescribeWebACLAssociation"
       ]
     },
     {

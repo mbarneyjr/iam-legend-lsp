@@ -7,10 +7,19 @@
       "name": "ApplicationAccessAll",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/",
       "description": "Grants permission to access OpenSearch Application",
-      "accessLevel": "Write",
+      "accessLevel": "Permissions management",
       "resourceTypes": [
         "application*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "CancelAutoOptimizeJob",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html",
+      "description": "Grants permission to cancel submitted Auto Optimize Job",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -22,6 +31,24 @@
       "resourceTypes": [
         "datasource*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteAutoOptimizeJob",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html",
+      "description": "Grants permission to delete Auto Optimize Job",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAutoOptimizeJob",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html",
+      "description": "Grants permission to get the Auto Optimize Job details",
+      "accessLevel": "Read",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -48,6 +75,15 @@
       "dependentActions": []
     },
     {
+      "name": "ListAutoOptimizeJobs",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html",
+      "description": "Grants permission to retrieve a list of Auto Optimize Jobs",
+      "accessLevel": "List",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "StartDirectQuery",
       "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_StartDirectQuery.html",
       "description": "Grants permission to start a direct query on the provided OpenSearch DataSource arns",
@@ -55,6 +91,15 @@
       "resourceTypes": [
         "datasource*"
       ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "SubmitAutoOptimizeJob",
+      "documentationUrl": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-auto-optimize.html",
+      "description": "Grants permission to create new Auto Optimize Job",
+      "accessLevel": "Write",
+      "resourceTypes": [],
       "conditionKeys": [],
       "dependentActions": []
     }

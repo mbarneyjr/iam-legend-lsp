@@ -1,0 +1,34 @@
+{
+  "serviceName": "AWS Service for managing AWS Management Console user experience capabilities.",
+  "servicePrefix": "uxc",
+  "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/./list_awsserviceformanagingawsconsoleuserexperiencecapabilities..html",
+  "actions": [
+    {
+      "name": "DeleteAccountColor",
+      "documentationUrl": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/DeleteAccountColor.html",
+      "description": "Grants permission to delete the color associated with the account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "GetAccountColor",
+      "documentationUrl": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/GetAccountColor.html",
+      "description": "Grants permission to get the color associated with the account",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "PutAccountColor",
+      "documentationUrl": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/PutAccountColor.html",
+      "description": "Grants permission to sets the color associated with an account",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    }
+  ]
+}

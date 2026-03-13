@@ -528,6 +528,19 @@
       "dependentActions": []
     },
     {
+      "name": "PauseMultiRegionClusterReplication",
+      "documentationUrl": "https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html#memorydb-actions-reference",
+      "description": "Grants permission to pause replication for a Multi-Region cluster",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "multiregioncluster*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
       "name": "PurchaseReservedNodesOffering",
       "documentationUrl": "https://docs.aws.amazon.com/memorydb/latest/APIReference/API_PurchaseReservedNodesOffering.html",
       "description": "Grants permissions to purchase a new reserved node",

@@ -25,7 +25,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -37,7 +39,9 @@
         "connection*",
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -51,7 +55,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -65,7 +71,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -79,7 +87,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -146,7 +156,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -217,7 +229,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -296,7 +310,12 @@
         "catalog*",
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -327,11 +346,13 @@
       "description": "Grants permission to create a connection",
       "accessLevel": "Write",
       "resourceTypes": [
-        "rootcatalog*"
+        "rootcatalog*",
+        "connectionType"
       ],
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "glue:LakeFormationPermissions"
       ],
       "dependentActions": []
     },
@@ -381,7 +402,12 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -394,6 +420,15 @@
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "CreateGlueIdentityCenterConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting",
+      "description": "Grants permission to connect Glue with Identity Center",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -433,9 +468,13 @@
       "resourceTypes": [
         "catalog*",
         "connection*",
-        "database*"
+        "database*",
+        "integrationResourceProperty*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -491,7 +530,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -505,7 +546,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -583,7 +626,10 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -639,7 +685,9 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -676,7 +724,10 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -699,7 +750,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -713,7 +766,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -737,6 +792,19 @@
       "resourceTypes": [
         "connection*",
         "rootcatalog*"
+      ],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteConnectionType",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations",
+      "description": "Grants permission to delete connection type",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connectionType*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -784,7 +852,10 @@
         "userdefinedfunction*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -799,6 +870,15 @@
       "dependentActions": []
     },
     {
+      "name": "DeleteGlueIdentityCenterConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting",
+      "description": "Grants permission to disconnect Glue with Identity Center",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "DeleteIntegration",
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegration",
       "description": "Grants permission to delete an integration",
@@ -809,6 +889,20 @@
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ],
+      "dependentActions": []
+    },
+    {
+      "name": "DeleteIntegrationResourceProperty",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-DeleteIntegrationResourceProperty",
+      "description": "Grants permission to delete the integration resource property",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "catalog*",
+        "connection*",
+        "database*",
+        "integrationResourceProperty*"
+      ],
+      "conditionKeys": [],
       "dependentActions": []
     },
     {
@@ -857,7 +951,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -871,7 +967,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -951,7 +1049,10 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -980,7 +1081,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1016,7 +1119,9 @@
         "userdefinedfunction*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1042,9 +1147,11 @@
     {
       "name": "DescribeConnectionType",
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations",
-      "description": "Grants permission to describe connection type in glue studio",
+      "description": "Grants permission to describe connection type in glue",
       "accessLevel": "Permissions management",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "connectionType"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -1055,7 +1162,8 @@
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "connection*",
-        "rootcatalog*"
+        "rootcatalog*",
+        "connectionType"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1079,6 +1187,21 @@
       ],
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
+      ],
+      "dependentActions": []
+    },
+    {
+      "name": "FederateAuthorization",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog.html",
+      "description": "Grants permission to read and write redshift federated resources",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "rootcatalog*",
+        "catalog"
+      ],
+      "conditionKeys": [
+        "glue:EnabledForRedshiftAutoDiscovery",
+        "glue:FederatedAuthorizationSource"
       ],
       "dependentActions": []
     },
@@ -1125,7 +1248,9 @@
         "catalog"
       ],
       "conditionKeys": [
-        "glue:EnabledForRedshiftAutoDiscovery"
+        "glue:EnabledForRedshiftAutoDiscovery",
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
       ],
       "dependentActions": []
     },
@@ -1137,7 +1262,9 @@
       "resourceTypes": [
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1150,7 +1277,9 @@
         "catalog"
       ],
       "conditionKeys": [
-        "glue:EnabledForRedshiftAutoDiscovery"
+        "glue:EnabledForRedshiftAutoDiscovery",
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
       ],
       "dependentActions": []
     },
@@ -1183,7 +1312,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1197,7 +1328,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1247,7 +1380,9 @@
         "connection*",
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1259,7 +1394,9 @@
         "connection*",
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1409,7 +1546,10 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -1422,7 +1562,10 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -1461,7 +1604,8 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "catalog*",
-        "connection"
+        "connection",
+        "connectionType"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1503,6 +1647,15 @@
       "dependentActions": []
     },
     {
+      "name": "GetGlueIdentityCenterConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting",
+      "description": "Grants permission to retrieve the managed Idc application",
+      "accessLevel": "Read",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "GetIntegrationResourceProperty",
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-GetIntegrationResourceProperty",
       "description": "Grants permission to retrieve the integration resource property",
@@ -1510,7 +1663,8 @@
       "resourceTypes": [
         "catalog*",
         "connection*",
-        "database*"
+        "database*",
+        "integrationResourceProperty*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -1672,7 +1826,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1686,7 +1842,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1700,7 +1858,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1943,7 +2103,10 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -1972,7 +2135,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -1986,7 +2151,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -2000,7 +2167,10 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -2010,8 +2180,12 @@
       "accessLevel": "Read",
       "resourceTypes": [
         "blueprint",
+        "catalog",
+        "connection",
+        "connectionType",
         "crawler",
         "customEntityType",
+        "database",
         "devendpoint",
         "job",
         "trigger",
@@ -2063,7 +2237,9 @@
         "userdefinedfunction*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -2077,7 +2253,10 @@
         "userdefinedfunction*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -2150,7 +2329,9 @@
       "resourceTypes": [
         "rootcatalog*"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -2174,7 +2355,7 @@
     {
       "name": "ListConnectionTypes",
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations",
-      "description": "Grants permission to list connection types in glue studio",
+      "description": "Grants permission to list connection types in glue",
       "accessLevel": "Permissions management",
       "resourceTypes": [],
       "conditionKeys": [],
@@ -2269,7 +2450,22 @@
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "connection*",
-        "rootcatalog*"
+        "rootcatalog*",
+        "connectionType"
+      ],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "ListIntegrationResourceProperties",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-ListIntegrationResourceProperties",
+      "description": "Grants permission to list zero-ETL integration resource properties",
+      "accessLevel": "List",
+      "resourceTypes": [
+        "catalog*",
+        "connection*",
+        "database*",
+        "integrationResourceProperty*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -2533,9 +2729,25 @@
       "accessLevel": "Permissions management",
       "resourceTypes": [
         "connection*",
-        "rootcatalog*"
+        "rootcatalog*",
+        "connectionType"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RegisterConnectionType",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/glue-connections.html#connection-type-permissions-operations",
+      "description": "Grants permission to register connection type",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "connectionType*"
+      ],
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ],
       "dependentActions": []
     },
     {
@@ -2560,6 +2772,23 @@
         "schema"
       ],
       "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
+      "name": "RenameTable",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-RenameTable",
+      "description": "Grants permission to rename a table",
+      "accessLevel": "Write",
+      "resourceTypes": [
+        "database*",
+        "rootcatalog*",
+        "table*",
+        "catalog"
+      ],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -2622,7 +2851,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -2928,12 +3159,16 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "blueprint",
+        "catalog",
         "connection",
+        "connectionType",
         "crawler",
         "customEntityType",
         "dataQualityRuleset",
+        "database",
         "devendpoint",
         "integration",
+        "integrationResourceProperty",
         "job",
         "mlTransform",
         "registry",
@@ -2945,7 +3180,8 @@
       ],
       "conditionKeys": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
+        "aws:RequestTag/${TagKey}",
+        "glue:LakeFormationPermissions"
       ],
       "dependentActions": []
     },
@@ -2963,7 +3199,10 @@
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/console-test-connections.html",
       "description": "Grants permission to test connection in Glue Studio",
       "accessLevel": "Permissions management",
-      "resourceTypes": [],
+      "resourceTypes": [
+        "connection",
+        "connectionType"
+      ],
       "conditionKeys": [],
       "dependentActions": []
     },
@@ -2974,12 +3213,16 @@
       "accessLevel": "Tagging",
       "resourceTypes": [
         "blueprint",
+        "catalog",
         "connection",
+        "connectionType",
         "crawler",
         "customEntityType",
         "dataQualityRuleset",
+        "database",
         "devendpoint",
         "integration",
+        "integrationResourceProperty",
         "job",
         "mlTransform",
         "registry",
@@ -2990,7 +3233,8 @@
         "workflow"
       ],
       "conditionKeys": [
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "glue:LakeFormationPermissions"
       ],
       "dependentActions": []
     },
@@ -3014,7 +3258,10 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -3037,7 +3284,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -3051,7 +3300,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -3074,9 +3325,12 @@
       "accessLevel": "Write",
       "resourceTypes": [
         "connection*",
-        "rootcatalog*"
+        "rootcatalog*",
+        "connectionType"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -3120,7 +3374,10 @@
         "rootcatalog*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -3135,6 +3392,15 @@
       "dependentActions": []
     },
     {
+      "name": "UpdateGlueIdentityCenterConfiguration",
+      "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/security-trusted-identity-propagation-getting-started.html#security-trusted-identity-propagation-connecting",
+      "description": "Grants permission to update the managed Idc application",
+      "accessLevel": "Write",
+      "resourceTypes": [],
+      "conditionKeys": [],
+      "dependentActions": []
+    },
+    {
       "name": "UpdateIntegrationResourceProperty",
       "documentationUrl": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-integrations.html#aws-glue-api-integrations-UpdateIntegrationResourceProperty",
       "description": "Grants permission to update the integration resource property",
@@ -3142,7 +3408,8 @@
       "resourceTypes": [
         "catalog*",
         "connection*",
-        "database*"
+        "database*",
+        "integrationResourceProperty*"
       ],
       "conditionKeys": [],
       "dependentActions": []
@@ -3208,7 +3475,9 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
@@ -3256,7 +3525,10 @@
         "table*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions",
+        "glue:FederatedAuthorizationSource"
+      ],
       "dependentActions": []
     },
     {
@@ -3307,7 +3579,9 @@
         "userdefinedfunction*",
         "catalog"
       ],
-      "conditionKeys": [],
+      "conditionKeys": [
+        "glue:LakeFormationPermissions"
+      ],
       "dependentActions": []
     },
     {
