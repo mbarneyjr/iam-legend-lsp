@@ -1289,5 +1289,19 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "userpool",
+      "arn": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "webacl",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "conditionKeys": []
+    }
   ]
 }

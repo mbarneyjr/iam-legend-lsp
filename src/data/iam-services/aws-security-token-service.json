@@ -268,5 +268,40 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "role",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "iam:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "root-user",
+      "arn": "arn:${Partition}:iam::${Account}:root",
+      "conditionKeys": []
+    },
+    {
+      "name": "self-session",
+      "arn": "arn:${Partition}:sts::${Account}:self",
+      "conditionKeys": []
+    },
+    {
+      "name": "context-provider",
+      "arn": "arn:${Partition}:iam::aws:contextProvider/${ContextProviderName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "federated-user",
+      "arn": "arn:${Partition}:sts::${Account}:federated-user/${FederatedUserName}",
+      "conditionKeys": []
+    }
   ]
 }

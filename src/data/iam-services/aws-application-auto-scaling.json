@@ -174,5 +174,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "ScalableTarget",
+      "arn": "arn:${Partition}:application-autoscaling:${Region}:${Account}:scalable-target/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

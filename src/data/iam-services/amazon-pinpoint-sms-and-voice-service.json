@@ -79,5 +79,6 @@
         "iam:PassRole"
       ]
     }
-  ]
+  ],
+  "resourceTypes": []
 }

@@ -290,5 +290,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "case",
+      "arn": "arn:${Partition}:security-ir:${Region}:${Account}:case/${CaseId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "membership",
+      "arn": "arn:${Partition}:security-ir:${Region}:${Account}:membership/${MembershipId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -86,5 +86,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "codeTransformation",
+      "arn": "arn:${Partition}:qdeveloper:${Region}:${Account}:codeTransformation/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

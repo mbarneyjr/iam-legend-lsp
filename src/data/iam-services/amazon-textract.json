@@ -276,5 +276,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "adapter",
+      "arn": "arn:${Partition}:textract:${Region}:${Account}:/adapters/${AdapterId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "adapterversion",
+      "arn": "arn:${Partition}:textract:${Region}:${Account}:/adapters/${AdapterId}/versions/${AdapterVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

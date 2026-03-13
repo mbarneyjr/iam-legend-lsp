@@ -70,5 +70,16 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "DeploymentParameter",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:DeploymentParameter:catalogs/${CatalogName}/products/${ProductId}/${ResourceId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    }
   ]
 }

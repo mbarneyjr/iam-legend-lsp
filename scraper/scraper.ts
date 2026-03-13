@@ -18,6 +18,12 @@ interface ScrapedAction {
   dependentActions: string[];
 }
 
+interface ScrapedResourceType {
+  name: string;
+  arn: string;
+  conditionKeys: string[];
+}
+
 const scrapeServices = async (url: string, browser: puppeteer.Browser) => {
   const page = await browser.newPage();
   await page.goto(url, {
@@ -53,8 +59,9 @@ const scrapeService = async (url: string, browser: puppeteer.Browser) => {
     const servicePrefix = getServicePrefix($);
     const serviceName = getServiceName($);
     const actions = getActions($);
+    const resourceTypes = getResourceTypes($);
 
-    await save({ servicePrefix, serviceName, actions, url });
+    await save({ servicePrefix, serviceName, actions, resourceTypes, url });
     console.log(`Successfully scraped: ${url}`);
   } catch (e) {
     const message = e instanceof Error ? e.message : String(e);
@@ -64,15 +71,16 @@ const scrapeService = async (url: string, browser: puppeteer.Browser) => {
   }
 };
 
-const save = async ({ serviceName, servicePrefix, actions, url }: {
+const save = async ({ serviceName, servicePrefix, actions, resourceTypes, url }: {
   serviceName: string;
   servicePrefix: string;
   actions: ScrapedAction[];
+  resourceTypes: ScrapedResourceType[];
   url: string;
 }) =>
   writeFile(
     join(DATA_DIR, `${formatFileName(serviceName)}.json`),
-    JSON.stringify({ serviceName, servicePrefix, url, actions }, null, 2),
+    JSON.stringify({ serviceName, servicePrefix, url, actions, resourceTypes }, null, 2),
   );
 
 export const formatFileName = (serviceName: string) =>
@@ -140,6 +148,30 @@ const getActions = ($: CheerioAPI) => {
   });
 
   return actions;
+};
+
+const getResourceTypes = ($: CheerioAPI): ScrapedResourceType[] => {
+  const tables = $("#main-col-body table");
+  if (tables.length < 2) return [];
+
+  const resourceTable = tables.eq(1);
+  const rows = resourceTable.find("tr");
+  const resourceTypes: ScrapedResourceType[] = [];
+
+  rows.each((_, el) => {
+    const tds = $(el).find("td").toArray();
+    if (tds.length < 3) return;
+
+    const name = $(tds[0]).text().trim().replace(/\s+/g, "");
+    const arn = $(tds[1]).find("code").text().trim();
+    const conditionKeys = formatToList($(tds[2]).text().trim());
+
+    if (name && arn) {
+      resourceTypes.push({ name, arn, conditionKeys });
+    }
+  });
+
+  return resourceTypes;
 };
 
 const formatToList = (str: string) =>

@@ -23,7 +23,7 @@ connection.onInitialize(async () => {
     capabilities: {
       textDocumentSync: TextDocumentSyncKind.Incremental,
       completionProvider: {
-        triggerCharacters: [':']
+        triggerCharacters: [':', '*']
       },
       hoverProvider: true
     }

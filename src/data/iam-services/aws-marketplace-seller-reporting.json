@@ -14,5 +14,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "SellerDashboard",
+      "arn": "arn:${Partition}:aws-marketplace::${Account}:${Catalog}/ReportingData/${FactTable}/Dashboard/${DashboardName}",
+      "conditionKeys": []
+    }
   ]
 }

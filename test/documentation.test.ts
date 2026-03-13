@@ -1,7 +1,8 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { createServiceDocs, createActionDocs, createServicesActionDocs } from '../src/documentation.ts';
+import { createServiceDocs, createActionDocs, createServicesActionDocs, createResourceTypeDocs } from '../src/documentation.ts';
 import type { IamAction } from '../src/domain/IamAction.ts';
+import type { IamResourceType } from '../src/domain/IamResourceType.ts';
 import type { IamService } from '../src/domain/IamService.ts';
 
 const makeAction = (overrides: Partial<IamAction> = {}): IamAction => ({
@@ -14,11 +15,19 @@ const makeAction = (overrides: Partial<IamAction> = {}): IamAction => ({
   ...overrides
 });
 
+const makeResourceType = (overrides: Partial<IamResourceType> = {}): IamResourceType => ({
+  name: 'table',
+  arn: 'arn:aws:dynamodb:${Region}:${Account}:table/${TableName}',
+  conditionKeys: [],
+  ...overrides
+});
+
 const makeService = (overrides: Partial<IamService> = {}): IamService => ({
   serviceName: 'Amazon DynamoDB',
   servicePrefix: 'dynamodb',
   url: 'https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html',
   actions: [makeAction()],
+  resourceTypes: [makeResourceType()],
   ...overrides
 });
 
@@ -67,6 +76,25 @@ describe('[documentation]', () => {
       const result = createActionDocs(makeAction({ dependentActions: ['kms:Decrypt'] }));
       assert.ok(result.includes('Dependent Actions:'));
       assert.ok(result.includes('- kms:Decrypt'));
+    });
+  });
+
+  describe('[createResourceTypeDocs]', () => {
+    it('should include resource type name and ARN', () => {
+      const result = createResourceTypeDocs(makeResourceType());
+      assert.ok(result.includes('**table**'));
+      assert.ok(result.includes('arn:aws:dynamodb'));
+    });
+
+    it('should include condition keys when present', () => {
+      const result = createResourceTypeDocs(makeResourceType({ conditionKeys: ['dynamodb:LeadingKeys'] }));
+      assert.ok(result.includes('Condition Keys:'));
+      assert.ok(result.includes('- dynamodb:LeadingKeys'));
+    });
+
+    it('should omit condition keys section when empty', () => {
+      const result = createResourceTypeDocs(makeResourceType({ conditionKeys: [] }));
+      assert.ok(!result.includes('Condition Keys:'));
     });
   });
 

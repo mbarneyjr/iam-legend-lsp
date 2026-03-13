@@ -358,5 +358,33 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "action",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:action/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "experiment",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:experiment/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "experiment-template",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:experiment-template/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "safety-lever",
+      "arn": "arn:${Partition}:fis:${Region}:${Account}:safety-lever/${Id}",
+      "conditionKeys": []
+    }
   ]
 }

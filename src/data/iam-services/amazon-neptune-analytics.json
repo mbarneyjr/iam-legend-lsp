@@ -548,5 +548,31 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "graph",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:graph/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "graph-snapshot",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:graph-snapshot/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "import-task",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:import-task/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "export-task",
+      "arn": "arn:${Partition}:neptune-graph:${Region}:${Account}:export-task/${ResourceId}",
+      "conditionKeys": []
+    }
   ]
 }

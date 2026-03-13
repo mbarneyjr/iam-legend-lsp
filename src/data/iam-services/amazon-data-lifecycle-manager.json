@@ -95,5 +95,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "policy",
+      "arn": "arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

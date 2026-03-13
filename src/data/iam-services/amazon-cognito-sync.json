@@ -208,5 +208,22 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "dataset",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "identity",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "identitypool",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}",
+      "conditionKeys": []
+    }
   ]
 }

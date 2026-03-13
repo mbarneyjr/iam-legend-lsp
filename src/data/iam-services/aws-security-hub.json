@@ -1270,5 +1270,66 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "hub",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hub/default",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hubv2",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hubv2/${HubV2Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "product",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "finding-aggregator",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:finding-aggregator/${FindingAggregatorId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "aggregatorv2",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:aggregatorv2/${AggregatorV2Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "automation-rule",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:automation-rule/${AutomationRuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "automation-rulev2",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:automation-rulev2/${AutomationRuleV2Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "configuration-policy",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:configuration-policy/${ConfigurationPolicyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "connectorv2",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:connectorv2/${ConnectorV2Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

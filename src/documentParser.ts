@@ -45,29 +45,27 @@ export const getFullWordAtPosition = (document: TextDocument, position: Position
 export const getHoverWordAtPosition = (document: TextDocument, position: Position) =>
   getWordRangeAtPosition(document, position, /[a-z0-9:*-]+/i);
 
+export const getArnWordAtPosition = (document: TextDocument, position: Position) =>
+  getWordRangeAtPosition(document, position, /[a-z0-9:*\-\/.${}]+/i);
+
 export const getWordAtPosition = (document: TextDocument, position: Position) =>
   getWordRangeAtPosition(document, position, /[a-z0-9_]+/i);
 
-/**
- * Check whether or not the given position appears to be within an array of actions
- */
-export const isInsideActionsArray = (document: TextDocument, position: Position): boolean => {
-  const actionsPatternSameLine = /^"?(not)?actions?"?\s*[:=]\s+/i;
+const isInsideArrayOf = (document: TextDocument, position: Position, sameLinePattern: RegExp, otherLinePattern: RegExp): boolean => {
   let lineText = getLineText(document, position.line).trimStart().toLowerCase();
-  if (actionsPatternSameLine.test(lineText)) {
+  if (sameLinePattern.test(lineText)) {
     return true;
   }
 
-  const actionsPatternOtherLine = /^"?(not)?actions?"?\s*[:=]/i;
   let line = position.line - 1;
   while (line >= 0) {
     lineText = getLineText(document, line).trimStart().toLowerCase();
 
-    if (actionsPatternOtherLine.test(lineText)) {
+    if (otherLinePattern.test(lineText)) {
       return true;
     }
 
-    if (/^["\[-]/.test(lineText)) {
+    if (/^["\[#-]/.test(lineText)) {
       line--;
       continue;
     }
@@ -77,3 +75,23 @@ export const isInsideActionsArray = (document: TextDocument, position: Position)
 
   return false;
 };
+
+/**
+ * Check whether or not the given position appears to be within an array of actions
+ */
+export const isInsideActionsArray = (document: TextDocument, position: Position): boolean =>
+  isInsideArrayOf(
+    document, position,
+    /^"?(not)?actions?"?\s*[:=]\s+/i,
+    /^"?(not)?actions?"?\s*[:=]/i
+  );
+
+/**
+ * Check whether or not the given position appears to be within an array of resources
+ */
+export const isInsideResourceArray = (document: TextDocument, position: Position): boolean =>
+  isInsideArrayOf(
+    document, position,
+    /^"?(not)?resources?"?\s*[:=]\s+/i,
+    /^"?(not)?resources?"?\s*[:=]/i
+  );

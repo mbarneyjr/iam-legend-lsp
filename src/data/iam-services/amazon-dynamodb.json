@@ -940,5 +940,46 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "index",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "stream",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}",
+      "conditionKeys": []
+    },
+    {
+      "name": "table",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "backup",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "export",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/export/${ExportName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "global-table",
+      "arn": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "import",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/import/${ImportName}",
+      "conditionKeys": []
+    }
   ]
 }

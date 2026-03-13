@@ -42,5 +42,12 @@
         "kms:Decrypt"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Application",
+      "arn": "arn:${Partition}:sso::${AccountId}:application/${InstanceId}/${ApplicationId}",
+      "conditionKeys": []
+    }
   ]
 }

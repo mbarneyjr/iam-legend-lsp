@@ -4,9 +4,11 @@ import { TextDocument } from 'vscode-languageserver-textdocument';
 import {
   getActionOffset,
   getActionRange,
+  getArnWordAtPosition,
   getFullWordAtPosition,
   getWordAtPosition,
   isInsideActionsArray,
+  isInsideResourceArray,
 } from '../src/documentParser.ts';
 
 const createDoc = (content: string) =>
@@ -99,9 +101,81 @@ describe('[documentParser]', () => {
       assert.strictEqual(isInsideActionsArray(doc, { line: 1, character: 4 }), true);
     });
 
+    it('should return true when preceded by a comment line', () => {
+      const doc = createDoc('actions:\n  - s3:GetObject\n  # todo\n  - s3:PutObject');
+      assert.strictEqual(isInsideActionsArray(doc, { line: 3, character: 6 }), true);
+    });
+
     it('should return false at line 0 with non-action content', () => {
       const doc = createDoc('something: else');
       assert.strictEqual(isInsideActionsArray(doc, { line: 0, character: 5 }), false);
+    });
+  });
+
+  describe('[isInsideResourceArray]', () => {
+    it('should return true when on the Resource line', () => {
+      const doc = createDoc('Resource: ["arn:aws:s3:::bucket"]');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 0, character: 14 }), true);
+    });
+
+    it('should return true for NotResource', () => {
+      const doc = createDoc('NotResource: ["arn:aws:s3:::bucket"]');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 0, character: 18 }), true);
+    });
+
+    it('should return true when on a subsequent array line', () => {
+      const doc = createDoc('Resource:\n  - arn:aws:s3:::bucket\n  - arn:aws:s3:::other');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 2, character: 6 }), true);
+    });
+
+    it('should return false when inside actions array', () => {
+      const doc = createDoc('actions:\n  - s3:GetObject');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 1, character: 6 }), false);
+    });
+
+    it('should return true for JSON-style "Resource" field', () => {
+      const doc = createDoc('"Resource": [\n  "arn:aws:s3:::bucket"\n]');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 1, character: 4 }), true);
+    });
+
+    it('should return true with = delimiter (Terraform)', () => {
+      const doc = createDoc('resources = ["arn:aws:s3:::bucket"]');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 0, character: 16 }), true);
+    });
+
+    it('should return true when preceded by a comment line', () => {
+      const doc = createDoc('Resource:\n  - arn:aws:s3:::bucket\n  # todo\n  - arn:aws:s3:::other');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 3, character: 6 }), true);
+    });
+
+    it('should return true when preceded by multiple comment lines', () => {
+      const doc = createDoc('Resource:\n  - arn:aws:s3:::bucket\n  # line1\n  # line2\n  - arn:aws:s3:::other');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 4, character: 6 }), true);
+    });
+
+    it('should return false for non-resource field', () => {
+      const doc = createDoc('Effect: Allow');
+      assert.strictEqual(isInsideResourceArray(doc, { line: 0, character: 10 }), false);
+    });
+  });
+
+  describe('[getArnWordAtPosition]', () => {
+    it('should return full ARN including colons and slashes', () => {
+      const doc = createDoc('  - arn:aws:s3:::my-bucket/key');
+      const { word } = getArnWordAtPosition(doc, { line: 0, character: 15 });
+      assert.strictEqual(word, 'arn:aws:s3:::my-bucket/key');
+    });
+
+    it('should return ARN with wildcard', () => {
+      const doc = createDoc('  - arn:aws:s3:::*');
+      const { word } = getArnWordAtPosition(doc, { line: 0, character: 10 });
+      assert.strictEqual(word, 'arn:aws:s3:::*');
+    });
+
+    it('should return undefined for empty position', () => {
+      const doc = createDoc('   ');
+      const { word } = getArnWordAtPosition(doc, { line: 0, character: 1 });
+      assert.strictEqual(word, undefined);
     });
   });
 });

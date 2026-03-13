@@ -192,5 +192,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "HealthEvent",
+      "arn": "arn:${Partition}:internetmonitor:${Region}:${Account}:monitor/${MonitorName}/health-event/${EventId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Monitor",
+      "arn": "arn:${Partition}:internetmonitor:${Region}:${Account}:monitor/${MonitorName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "InternetEvent",
+      "arn": "arn:${Partition}:internetmonitor::${Account}:internet-event/${InternetEventId}",
+      "conditionKeys": []
+    }
   ]
 }

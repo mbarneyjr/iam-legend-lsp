@@ -1052,5 +1052,56 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "fleet",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:fleet/${FleetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "image",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image/${ImageName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "image-builder",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image-builder/${ImageBuilderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "stack",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:stack/${StackName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "app-block",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:app-block/${AppBlockName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:application/${ApplicationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "app-block-builder",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:app-block-builder/${AppBlockBuilderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

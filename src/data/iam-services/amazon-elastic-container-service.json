@@ -990,5 +990,81 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "container-instance",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ClusterName}/${ContainerInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:service/${ClusterName}/${ServiceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-deployment",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:service-deployment/${ClusterName}/${ServiceName}/${ServiceDeploymentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:cluster",
+        "ecs:service"
+      ]
+    },
+    {
+      "name": "service-revision",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:service-revision/${ClusterName}/${ServiceName}/${ServiceRevisionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:cluster",
+        "ecs:service"
+      ]
+    },
+    {
+      "name": "task",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task/${ClusterName}/${TaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "task-definition",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "capacity-provider",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "task-set",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

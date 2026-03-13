@@ -499,5 +499,52 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "playbackConfiguration",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "prefetchSchedule",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:prefetchSchedule/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "channel",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:channel/${ChannelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "program",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:program/${ChannelName}/${ProgramName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "sourceLocation",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:sourceLocation/${SourceLocationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vodSource",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:vodSource/${SourceLocationName}/${VodSourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "liveSource",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:liveSource/${SourceLocationName}/${LiveSourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

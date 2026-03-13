@@ -216,5 +216,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "terminology",
+      "arn": "arn:${Partition}:translate:${Region}:${Account}:terminology/${ResourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "parallel-data",
+      "arn": "arn:${Partition}:translate:${Region}:${Account}:parallel-data/${ResourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -1131,5 +1131,66 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cache-report",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}/cache-report/${CacheReportId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}",
+      "conditionKeys": []
+    },
+    {
+      "name": "fs-association",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:fs-association/${FsaId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "gateway",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "share",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "tape",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "tapepool",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tapepool/${PoolId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "target",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}",
+      "conditionKeys": []
+    },
+    {
+      "name": "volume",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

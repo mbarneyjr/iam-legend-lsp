@@ -1289,5 +1289,35 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Application",
+      "arn": "arn:${Partition}:servicecatalog:${Region}:${Account}:/applications/${ApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "AttributeGroup",
+      "arn": "arn:${Partition}:servicecatalog:${Region}:${Account}:/attribute-groups/${AttributeGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Portfolio",
+      "arn": "arn:${Partition}:catalog:${Region}:${Account}:portfolio/${PortfolioId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Product",
+      "arn": "arn:${Partition}:catalog:${Region}:${Account}:product/${ProductId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

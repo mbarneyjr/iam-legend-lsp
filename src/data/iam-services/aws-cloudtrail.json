@@ -804,5 +804,35 @@
         "organizations:ListAWSServiceAccessForOrganization"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "trail",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "eventdatastore",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:eventdatastore/${EventDataStoreId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "channel",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:channel/${ChannelId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dashboard",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:dashboard/${DashboardName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

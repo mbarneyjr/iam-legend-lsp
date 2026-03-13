@@ -5273,5 +5273,544 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}/device/${DeviceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "device-fleet",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:device-fleet/${DeviceFleetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "edge-packaging-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:edge-packaging-job/${EdgePackagingJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "edge-deployment-plan",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:edge-deployment/${EdgeDeploymentPlanName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "human-loop",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:human-loop/${HumanLoopName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "flow-definition",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "human-task-ui",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hub",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:hub/${HubName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hub-content",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:hub-content/${HubName}/${HubContentType}/${HubContentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "inference-recommendations-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-recommendations-job/${InferenceRecommendationsJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "inference-experiment",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-experiment/${InferenceExperimentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "labeling-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "workteam",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "workforce",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "user-profile",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "space",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:space/${DomainId}/${SpaceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "app",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "app-image-config",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:app-image-config/${AppImageConfigName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "studio-lifecycle-config",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:studio-lifecycle-config/${StudioLifecycleConfigName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "notebook-instance",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "notebook-instance-lifecycle-config",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "code-repository",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "image",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:image/${ImageName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "image-version",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:image-version/${ImageName}/${Version}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "algorithm",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:cluster/${ClusterId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "training-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "processing-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hyper-parameter-tuning-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "training-plan",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:training-plan/${TrainingPlanName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "reserved-capacity",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:reserved-capacity/${RandomString}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:project/${ProjectName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-package",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:CurrentCustomerMetadataProperties/${MetadataKey}",
+        "sagemaker:CurrentModelLifeCycleStage",
+        "sagemaker:CurrentModelLifeCycleStageStatus",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-package-group",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-package-group/${ModelPackageGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "endpoint-config",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "endpoint",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "inference-component",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:inference-component/${InferenceComponentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "transform-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "compilation-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:compilation-job/${CompilationJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "optimization-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:optimization-job/${OptimizationJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "automl-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "monitoring-schedule",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "monitoring-schedule-alert",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}/alert/${MonitoringScheduleAlertName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "data-quality-job-definition",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:data-quality-job-definition/${DataQualityJobDefinitionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-quality-job-definition",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-quality-job-definition/${ModelQualityJobDefinitionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-bias-job-definition",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-bias-job-definition/${ModelBiasJobDefinitionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-explainability-job-definition",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-explainability-job-definition/${ModelExplainabilityJobDefinitionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "experiment",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "experiment-trial",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "experiment-trial-component",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "feature-group",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:feature-group/${FeatureGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pipeline-execution",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:pipeline/${PipelineName}/execution/${RandomString}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "artifact",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:artifact/${HashOfArtifactSource}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "context",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:context/${ContextName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "action",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:action/${ActionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "lineage-group",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:lineage-group/${LineageGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-card",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-card/${ModelCardName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-card-export-job",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-card/${ModelCardName}/export-job/${ExportJobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "shared-model",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:shared-model/${SharedModelId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "shared-model-event",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:shared-model-event/${EventId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "sagemaker-catalog",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:sagemaker-catalog/${ResourceCatalogName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "mlflow-tracking-server",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-tracking-server/${MlflowTrackingServerName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "mlflow-app",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-app/${MLflowAppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "compute-quota",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:compute-quota/${ComputeQuotaId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "cluster-scheduler-config",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:cluster-scheduler-config/${ClusterSchedulerConfigId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "partner-app",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:partner-app/${AppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sagemaker:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -646,5 +646,15 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "repository",
+      "arn": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecr:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

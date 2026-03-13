@@ -264,5 +264,20 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "repository",
+      "arn": "arn:${Partition}:ecr-public::${Account}:repository/${RepositoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecr-public:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "registry",
+      "arn": "arn:${Partition}:ecr-public::${Account}:registry/${RegistryId}",
+      "conditionKeys": []
+    }
   ]
 }

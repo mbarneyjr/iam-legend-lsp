@@ -1301,5 +1301,63 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "log-group",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "log-stream",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "destination",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:destination:${DestinationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "delivery-source",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery-source:${DeliverySourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "delivery",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery:${DeliveryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "delivery-destination",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:delivery-destination:${DeliveryDestinationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "anomaly-detector",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:anomaly-detector:${DetectorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "scheduled-query",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:scheduled-query:${ScheduledQueryId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

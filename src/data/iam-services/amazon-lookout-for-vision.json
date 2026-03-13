@@ -262,5 +262,19 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "model",
+      "arn": "arn:${Partition}:lookoutvision:${Region}:${Account}:model/${ProjectName}/${ModelVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:lookoutvision:${Region}:${Account}:project/${ProjectName}",
+      "conditionKeys": []
+    }
   ]
 }

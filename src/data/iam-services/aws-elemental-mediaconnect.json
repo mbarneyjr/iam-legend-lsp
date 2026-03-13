@@ -951,5 +951,95 @@
         "medialive:UpdateInput"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Bridge",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:bridge:${BridgeId}:${BridgeName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Entitlement",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:entitlement:${FlowId}:${EntitlementName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Flow",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Gateway",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:gateway:${GatewayId}:${GatewayName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "GatewayInstance",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:gateway:${GatewayId}:${GatewayName}:instance:${InstanceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "MediaStream",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}/mediaStream/${MediaStreamName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Offering",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:offering:${OfferingId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Output",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:output:${OutputId}:${OutputName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Reservation",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:reservation:${ReservationId}:${ReservationName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "RouterInput",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:routerInput:${RouterInputId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RouterNetworkInterface",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:routerNetworkInterface:${RouterNetworkInterfaceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RouterOutput",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:routerOutput:${RouterOutputId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Source",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:source:${SourceId}:${SourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "VpcInterface",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}/vpcInterface/${VpcInterfaceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

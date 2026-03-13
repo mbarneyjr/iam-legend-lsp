@@ -156,5 +156,25 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "customer-agreement",
+      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "agreement",
+      "arn": "arn:${Partition}:artifact:::agreement/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "report",
+      "arn": "arn:${Partition}:artifact:${Region}::report/${ReportId}:${Version}",
+      "conditionKeys": [
+        "artifact:ReportCategory",
+        "artifact:ReportSeries"
+      ]
+    }
   ]
 }

@@ -522,5 +522,45 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "bot",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "botversion",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "botalias",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "channel",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "intentversion",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}",
+      "conditionKeys": []
+    },
+    {
+      "name": "slottypeversion",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}",
+      "conditionKeys": []
+    }
   ]
 }

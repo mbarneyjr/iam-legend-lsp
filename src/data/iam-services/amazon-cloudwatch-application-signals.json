@@ -254,5 +254,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "slo",
+      "arn": "arn:${Partition}:application-signals:${Region}:${Account}:slo/${SloName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

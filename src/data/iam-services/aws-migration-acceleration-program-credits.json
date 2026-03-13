@@ -36,5 +36,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "agreement",
+      "arn": "arn:${Partition}:mapcredits:::${Agreement}/${AgreementId}",
+      "conditionKeys": []
+    }
   ]
 }

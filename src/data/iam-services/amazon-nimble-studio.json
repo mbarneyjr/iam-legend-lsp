@@ -690,5 +690,80 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "studio",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:studio/${StudioId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:studioId"
+      ]
+    },
+    {
+      "name": "streaming-image",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-image/${StreamingImageId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:studioId"
+      ]
+    },
+    {
+      "name": "studio-component",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:studio-component/${StudioComponentId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:studioId"
+      ]
+    },
+    {
+      "name": "launch-profile",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:launch-profile/${LaunchProfileId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:studioId"
+      ]
+    },
+    {
+      "name": "streaming-session",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-session/${StreamingSessionId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:createdBy",
+        "nimble:ownedBy"
+      ]
+    },
+    {
+      "name": "streaming-session-backup",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:streaming-session-backup/${StreamingSessionBackupId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "nimble:ownedBy"
+      ]
+    },
+    {
+      "name": "eula",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:eula/${EulaId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "eula-acceptance",
+      "arn": "arn:${Partition}:nimble:${Region}:${Account}:eula-acceptance/${EulaAcceptanceId}",
+      "conditionKeys": [
+        "nimble:studioId"
+      ]
+    }
   ]
 }

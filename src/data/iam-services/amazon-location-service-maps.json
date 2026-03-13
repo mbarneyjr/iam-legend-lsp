@@ -25,5 +25,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "provider",
+      "arn": "arn:${Partition}:geo-maps:${Region}::provider/default",
+      "conditionKeys": []
+    }
   ]
 }

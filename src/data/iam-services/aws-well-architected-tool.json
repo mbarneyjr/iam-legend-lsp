@@ -911,5 +911,35 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "workload",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "lens",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:lens/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:profile/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "review-template",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:review-template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

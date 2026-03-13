@@ -48,5 +48,22 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "instance",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:instance/${InstanceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:application/${ApplicationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "connector",
+      "arn": "arn:${Partition}:appstudio:${Region}:${Account}:connector/${ConnectionId}",
+      "conditionKeys": []
+    }
   ]
 }

@@ -858,5 +858,84 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Channel",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:channel/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Stream-Key",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:stream-key/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Playback-Key-Pair",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:playback-key/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Playback-Restriction-Policy",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:playback-restriction-policy/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Recording-Configuration",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:recording-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Stage",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:stage/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Composition",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:composition/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Encoder-Configuration",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:encoder-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Storage-Configuration",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:storage-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Public-Key",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:public-key/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Ingest-Configuration",
+      "arn": "arn:${Partition}:ivs:${Region}:${Account}:ingest-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

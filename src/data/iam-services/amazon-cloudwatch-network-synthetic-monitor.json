@@ -136,5 +136,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "monitor",
+      "arn": "arn:${Partition}:networkmonitor:${Region}:${Account}:monitor/${MonitorName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "probe",
+      "arn": "arn:${Partition}:networkmonitor:${Region}:${Account}:probe/${ProbeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

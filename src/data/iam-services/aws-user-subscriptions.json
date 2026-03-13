@@ -68,5 +68,6 @@
       "conditionKeys": [],
       "dependentActions": []
     }
-  ]
+  ],
+  "resourceTypes": []
 }

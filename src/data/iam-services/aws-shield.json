@@ -439,5 +439,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "attack",
+      "arn": "arn:${Partition}:shield::${Account}:attack/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "protection",
+      "arn": "arn:${Partition}:shield::${Account}:protection/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "protection-group",
+      "arn": "arn:${Partition}:shield::${Account}:protection-group/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

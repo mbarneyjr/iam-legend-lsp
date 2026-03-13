@@ -897,5 +897,114 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "run",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "job",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "suite",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "test",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "upload",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "artifact",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "sample",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "networkprofile",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "deviceinstance",
+      "arn": "arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "session",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "devicepool",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:devicefarm:${Region}::device:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "instanceprofile",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vpceconfiguration",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "testgrid-project",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "testgrid-session",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -188,5 +188,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:route53profiles:${Region}:${Account}:profile/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "profile-association",
+      "arn": "arn:${Partition}:route53profiles:${Region}:${Account}:profile-association/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

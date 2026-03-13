@@ -244,5 +244,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "AutomationRule",
+      "arn": "arn:${Partition}:compute-optimizer::${Account}:automation-rule/${RuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

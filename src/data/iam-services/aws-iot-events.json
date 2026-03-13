@@ -434,5 +434,28 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "detectorModel",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "alarmModel",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:alarmModel/${AlarmModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "input",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

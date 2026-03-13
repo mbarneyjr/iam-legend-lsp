@@ -338,5 +338,45 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "refactor-spaces:ApplicationCreatedByAccount",
+        "refactor-spaces:CreatedByAccountIds"
+      ]
+    },
+    {
+      "name": "service",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}/service/${ServiceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "refactor-spaces:ApplicationCreatedByAccount",
+        "refactor-spaces:CreatedByAccountIds",
+        "refactor-spaces:ServiceCreatedByAccount"
+      ]
+    },
+    {
+      "name": "route",
+      "arn": "arn:${Partition}:refactor-spaces:${Region}:${Account}:environment/${EnvironmentId}/application/${ApplicationId}/route/${RouteId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "refactor-spaces:ApplicationCreatedByAccount",
+        "refactor-spaces:CreatedByAccountIds",
+        "refactor-spaces:RouteCreatedByAccount",
+        "refactor-spaces:ServiceCreatedByAccount",
+        "refactor-spaces:SourcePath"
+      ]
+    }
   ]
 }

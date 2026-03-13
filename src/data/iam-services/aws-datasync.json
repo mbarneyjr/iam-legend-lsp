@@ -769,5 +769,49 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "agent",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "location",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "task",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "taskexecution",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "storagesystem",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:system/${StorageSystemId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "discoveryjob",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:system/${StorageSystemId}/job/${DiscoveryJobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

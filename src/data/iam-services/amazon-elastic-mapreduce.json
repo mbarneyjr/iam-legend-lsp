@@ -907,5 +907,39 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "editor",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "notebook-execution",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:notebook-execution/${NotebookExecutionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "studio",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:studio/${StudioId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

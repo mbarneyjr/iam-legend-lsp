@@ -453,5 +453,36 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "contact",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:contact/${ContactAlias}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "contactchannel",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:contactchannel/${ContactAlias}/${ContactChannelId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "engagement",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:engagement/${ContactAlias}/${EngagementId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "page",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:page/${ContactAlias}/${PageId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "rotation",
+      "arn": "arn:${Partition}:ssm-contacts:${Region}:${Account}:rotation/${RotationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -372,5 +372,35 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "billinggroup",
+      "arn": "arn:${Partition}:billingconductor::${Account}:billinggroup/${BillingGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pricingplan",
+      "arn": "arn:${Partition}:billingconductor::${Account}:pricingplan/${PricingPlanId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pricingrule",
+      "arn": "arn:${Partition}:billingconductor::${Account}:pricingrule/${PricingRuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "customlineitem",
+      "arn": "arn:${Partition}:billingconductor::${Account}:customlineitem/${CustomLineItemId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

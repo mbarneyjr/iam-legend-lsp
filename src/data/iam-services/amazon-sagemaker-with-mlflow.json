@@ -792,5 +792,12 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "mlflow-tracking-server",
+      "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:mlflow-tracking-server/${MlflowTrackingServerName}",
+      "conditionKeys": []
+    }
   ]
 }

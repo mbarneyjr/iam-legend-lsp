@@ -1085,5 +1085,46 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "build",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "build-batch",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "report-group",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "report",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "fleet",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:fleet/${FleetName}:${FleetId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "sandbox",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:sandbox/${SandboxId}",
+      "conditionKeys": []
+    }
   ]
 }

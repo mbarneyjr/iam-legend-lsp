@@ -671,5 +671,48 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "applicationversion",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    {
+      "name": "configurationtemplate",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    {
+      "name": "solutionstack",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "platform",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}",
+      "conditionKeys": []
+    }
   ]
 }

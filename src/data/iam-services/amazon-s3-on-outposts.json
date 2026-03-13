@@ -841,5 +841,27 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "accesspoint",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/accesspoint/${AccessPointName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "bucket",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "endpoint",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/endpoint/${EndpointId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "object",
+      "arn": "arn:${Partition}:s3-outposts:${Region}:${Account}:outpost/${OutpostId}/bucket/${BucketName}/object/${ObjectName}",
+      "conditionKeys": []
+    }
   ]
 }

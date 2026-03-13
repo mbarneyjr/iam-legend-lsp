@@ -103,5 +103,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:opensearch:${Region}:${Account}:application/${AppId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasource",
+      "arn": "arn:${Partition}:opensearch:${Region}:${Account}:datasource/${DataSourceName}",
+      "conditionKeys": []
+    }
   ]
 }

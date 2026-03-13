@@ -1486,5 +1486,121 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Engagement",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "engagement-by-accepting-invitation-task",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-by-accepting-invitation-task/${TaskId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "engagement-from-opportunity-task",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-from-opportunity-task/${TaskId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "engagement-invitation",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/engagement-invitation/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Opportunity",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/opportunity/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resource-snapshot-job",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/resource-snapshot-job/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ResourceSnapshot",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/engagement/${EngagementIdentifier}/resource/${ResourceType}/${ResourceIdentifier}/template/${TemplateIdentifier}/resource-snapshot/${SnapshotRevision}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Solution",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/solution/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Partner",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/partner/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Connection",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/connection/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "ConnectionInvitation",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/connection-invitation/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "ConnectionPreferences",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/connection-preferences",
+      "conditionKeys": []
+    },
+    {
+      "name": "OpportunityFromEngagementTask",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/opportunity-from-engagement-task/${TaskId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Benefit",
+      "arn": "arn:${Partition}:partnercentral:${Region}::catalog/${Catalog}/benefit/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "BenefitAllocation",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/benefit-allocation/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "BenefitApplication",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/benefit-application/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ProgramManagementAccount",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/program-management-account/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Relationship",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/program-management-account/${ProgramManagementAccountId}/relationship/${RelationshipId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ChannelHandshake",
+      "arn": "arn:${Partition}:partnercentral:${Region}:${Account}:catalog/${Catalog}/channel-handshake/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "arn": "arn:${Partition}:partnercentral::${Account}:catalog/${Catalog}/ReportingData/${TableId}/Dashboard/${DashboardId}",
+      "conditionKeys": []
+    }
   ]
 }

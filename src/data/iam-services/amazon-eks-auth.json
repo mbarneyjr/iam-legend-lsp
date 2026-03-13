@@ -14,5 +14,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

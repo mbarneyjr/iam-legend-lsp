@@ -384,5 +384,52 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "created-backend",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "backend",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/environments/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "api",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/api/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "auth",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/auth/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "job",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/job/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "config",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/config/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "token",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/challenge/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "storage",
+      "arn": "arn:${Partition}:amplifybackend:${Region}:${Account}:/backend/${AppId}/storage/*",
+      "conditionKeys": []
+    }
   ]
 }

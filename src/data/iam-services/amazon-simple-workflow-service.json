@@ -644,5 +644,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:swf::${Account}:/domain/${DomainName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

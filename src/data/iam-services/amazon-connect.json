@@ -5400,5 +5400,272 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "instance",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "contact",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact/${ContactId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "routing-profile",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "security-profile",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/security-profile/${SecurityProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "authentication-profile",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/authentication-profile/${AuthenticationProfileId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "hierarchy-group",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-group/${HierarchyGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "data-table",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/data-table/${DataTableId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "queue",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "wildcard-queue",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "quick-connect",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/transfer-destination/${QuickConnectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "wildcard-quick-connect",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/transfer-destination/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "contact-flow",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "task-template",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/task-template/${TaskTemplateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "contact-flow-module",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/flow-module/${ContactFlowModuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "wildcard-contact-flow",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "hours-of-operation",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/operating-hours/${HoursOfOperationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "agent-status",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-state/${AgentStatusId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "wildcard-agent-status",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-state/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "legacy-phone-number",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-number/${PhoneNumberId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "wildcard-legacy-phone-number",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-number/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "phone-number",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:phone-number/${PhoneNumberId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "wildcard-phone-number",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:phone-number/*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "integration-association",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/integration-association/${IntegrationAssociationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "use-case",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/use-case/${UseCaseId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vocabulary",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/vocabulary/${VocabularyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "traffic-distribution-group",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:traffic-distribution-group/${TrafficDistributionGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "rule",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/rule/${RuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "evaluation-form",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/evaluation-form/${FormId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "contact-evaluation",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-evaluation/${EvaluationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "prompt",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/prompt/${PromptId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "customer-managed-view",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/view/${ViewId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "aws-managed-view",
+      "arn": "arn:${Partition}:connect:${Region}:aws:view/${ViewId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "qualified-customer-managed-view",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/view/${ViewId}:${ViewQualifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "qualified-aws-managed-view",
+      "arn": "arn:${Partition}:connect:${Region}:aws:view/${ViewId}:${ViewQualifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "customer-managed-view-version",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/view/${ViewId}:${ViewVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "attached-file",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/file/${FileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "email-address",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/email-address/${EmailAddressId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ai-agent",
+      "arn": "arn:${Partition}:wisdom:${Region}:${Account}:ai-agent/${AssistantId}/${AIAgentId}:${Version}",
+      "conditionKeys": []
+    },
+    {
+      "name": "workspace",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/workspace/${WorkspaceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "notification",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/notification/${NotificationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -812,5 +812,42 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "AllowList",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:allow-list/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ClassificationJob",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "CustomDataIdentifier",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "FindingsFilter",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Member",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

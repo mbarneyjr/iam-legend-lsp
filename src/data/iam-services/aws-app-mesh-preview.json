@@ -440,5 +440,42 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "mesh",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "virtualService",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "virtualNode",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "virtualRouter",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "route",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "virtualGateway",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "gatewayRoute",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}",
+      "conditionKeys": []
+    }
   ]
 }

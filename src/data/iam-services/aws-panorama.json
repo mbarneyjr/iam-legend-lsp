@@ -385,5 +385,28 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:device/${DeviceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "package",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:package/${PackageId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "applicationInstance",
+      "arn": "arn:${Partition}:panorama:${Region}:${Account}:applicationInstance/${ApplicationInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

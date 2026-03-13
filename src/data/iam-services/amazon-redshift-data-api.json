@@ -136,5 +136,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "workgroup",
+      "arn": "arn:${Partition}:redshift-serverless:${Region}:${Account}:workgroup/${WorkgroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "managed-workgroup",
+      "arn": "arn:${Partition}:redshift-serverless:${Region}:${Account}:managed-workgroup/${ManagedWorkgroupId}",
+      "conditionKeys": []
+    }
   ]
 }

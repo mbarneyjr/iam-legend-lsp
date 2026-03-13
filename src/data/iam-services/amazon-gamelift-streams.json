@@ -283,5 +283,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:gameliftstreams:${Region}:${Account}:application/${ApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "streamgroup",
+      "arn": "arn:${Partition}:gameliftstreams:${Region}:${Account}:streamgroup/${StreamGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

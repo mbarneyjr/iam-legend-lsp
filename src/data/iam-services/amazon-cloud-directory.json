@@ -738,5 +738,27 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "appliedSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}/schema/${SchemaName}/${Version}",
+      "conditionKeys": []
+    },
+    {
+      "name": "developmentSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/development/${SchemaName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "directory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "publishedSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/published/${SchemaName}/${Version}",
+      "conditionKeys": []
+    }
   ]
 }

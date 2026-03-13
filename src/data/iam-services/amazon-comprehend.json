@@ -1046,5 +1046,112 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "targeted-sentiment-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:targeted-sentiment-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "document-classifier",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classifier/${DocumentClassifierName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "document-classifier-endpoint",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entity-recognizer",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer/${EntityRecognizerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entity-recognizer-endpoint",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer-endpoint/${EntityRecognizerEndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dominant-language-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:dominant-language-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entities-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:entities-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pii-entities-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:pii-entities-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "events-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:events-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "key-phrases-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:key-phrases-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "sentiment-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:sentiment-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "topics-detection-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:topics-detection-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "document-classification-job",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classification-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "flywheel",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:flywheel/${FlywheelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "flywheel-dataset",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:flywheel/${FlywheelName}/dataset/${DatasetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

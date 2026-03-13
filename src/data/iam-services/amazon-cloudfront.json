@@ -1819,5 +1819,118 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "distribution",
+      "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "streaming-distribution",
+      "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "origin-access-identity",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "field-level-encryption-config",
+      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption-config/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "field-level-encryption-profile",
+      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "cache-policy",
+      "arn": "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "origin-request-policy",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "realtime-log-config",
+      "arn": "arn:${Partition}:cloudfront::${Account}:realtime-log-config/${Name}",
+      "conditionKeys": []
+    },
+    {
+      "name": "function",
+      "arn": "arn:${Partition}:cloudfront::${Account}:function/${Name}",
+      "conditionKeys": []
+    },
+    {
+      "name": "key-value-store",
+      "arn": "arn:${Partition}:cloudfront::${Account}:key-value-store/${Name}",
+      "conditionKeys": []
+    },
+    {
+      "name": "response-headers-policy",
+      "arn": "arn:${Partition}:cloudfront::${Account}:response-headers-policy/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "origin-access-control",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-control/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "continuous-deployment-policy",
+      "arn": "arn:${Partition}:cloudfront::${Account}:continuous-deployment-policy/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "anycast-ip-list",
+      "arn": "arn:${Partition}:cloudfront::${Account}:anycast-ip-list/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vpcorigin",
+      "arn": "arn:${Partition}:cloudfront::${Account}:vpcorigin/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "distribution-tenant",
+      "arn": "arn:${Partition}:cloudfront::${Account}:distribution-tenant/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "connection-group",
+      "arn": "arn:${Partition}:cloudfront::${Account}:connection-group/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "trust-store",
+      "arn": "arn:${Partition}:cloudfront::${Account}:trust-store/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "connection-function",
+      "arn": "arn:${Partition}:cloudfront::${Account}:connection-function/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

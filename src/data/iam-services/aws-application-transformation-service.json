@@ -129,5 +129,6 @@
       "conditionKeys": [],
       "dependentActions": []
     }
-  ]
+  ],
+  "resourceTypes": []
 }

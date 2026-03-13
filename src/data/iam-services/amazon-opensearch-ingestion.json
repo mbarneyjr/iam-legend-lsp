@@ -274,5 +274,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:pipeline/${PipelineName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pipeline-endpoint",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:endpoint/${EndpointId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "pipeline-blueprint",
+      "arn": "arn:${Partition}:osis:${Region}:${Account}:blueprint/${BlueprintName}",
+      "conditionKeys": []
+    }
   ]
 }

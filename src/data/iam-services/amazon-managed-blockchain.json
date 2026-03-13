@@ -400,5 +400,49 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "network",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "member",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "node",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "proposal",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "invitation",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "accessor",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:accessors/${AccessorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

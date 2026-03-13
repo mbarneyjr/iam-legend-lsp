@@ -2124,5 +2124,97 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "access-report",
+      "arn": "arn:${Partition}:iam::${Account}:access-report/${EntityPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "assumed-role",
+      "arn": "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "federated-user",
+      "arn": "arn:${Partition}:iam::${Account}:federated-user/${UserName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "group",
+      "arn": "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "instance-profile",
+      "arn": "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mfa",
+      "arn": "arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "oidc-provider",
+      "arn": "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "policy",
+      "arn": "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "role",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "iam:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "saml-provider",
+      "arn": "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "server-certificate",
+      "arn": "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "sms-mfa",
+      "arn": "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "iam:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "delegation-request",
+      "arn": "arn:${Partition}:iam::${Account}:delegation-request/${DelegationRequestId}",
+      "conditionKeys": [
+        "iam:DelegationRequestOwner"
+      ]
+    }
   ]
 }

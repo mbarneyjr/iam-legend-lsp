@@ -667,5 +667,33 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "assessment",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "assessmentFramework",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessmentFramework/${AssessmentFrameworkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "assessmentControlSet",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:assessment/${AssessmentId}/controlSet/${ControlSetId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "control",
+      "arn": "arn:${Partition}:auditmanager:${Region}:${Account}:control/${ControlId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

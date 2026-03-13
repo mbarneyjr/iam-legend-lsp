@@ -452,5 +452,35 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "policy",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:policy/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "applications-list",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:applications-list/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "protocols-list",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:protocols-list/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resource-set",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:resource-set/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

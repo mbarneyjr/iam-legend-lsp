@@ -516,5 +516,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "network",
+      "arn": "arn:${Partition}:wickr:${Region}:${Account}:network/${NetworkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

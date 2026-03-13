@@ -400,5 +400,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "bill-estimate",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:bill-estimate/${BillEstimateId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "bill-scenario",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:bill-scenario/${BillScenarioId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "workload-estimate",
+      "arn": "arn:${Partition}:bcm-pricing-calculator::${Account}:workload-estimate/${WorkloadEstimateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

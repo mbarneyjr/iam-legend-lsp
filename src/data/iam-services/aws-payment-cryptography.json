@@ -525,5 +525,22 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "key",
+      "arn": "arn:${Partition}:payment-cryptography:${Region}:${Account}:key/${KeyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "payment-cryptography:ResourceAliases"
+      ]
+    },
+    {
+      "name": "alias",
+      "arn": "arn:${Partition}:payment-cryptography:${Region}:${Account}:alias/${Alias}",
+      "conditionKeys": [
+        "payment-cryptography:ResourceAliases"
+      ]
+    }
   ]
 }

@@ -105,5 +105,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "EmailContactResource",
+      "arn": "arn:${Partition}:notifications-contacts::${Account}:emailcontact/${EmailContactId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

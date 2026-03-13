@@ -856,5 +856,42 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "account-association",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:account-association/${AccountAssociationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "credential-locker",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:credential-locker/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "managed-thing",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:managed-thing/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ota-task",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:ota-task/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "provisioning-profile",
+      "arn": "arn:${Partition}:iotmanagedintegrations:${Region}:${Account}:provisioning-profile/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

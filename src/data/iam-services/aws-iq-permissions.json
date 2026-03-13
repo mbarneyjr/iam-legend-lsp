@@ -102,5 +102,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "permission",
+      "arn": "arn:${Partition}:iq-permission:${Region}::permission/${PermissionRequestId}",
+      "conditionKeys": []
+    }
   ]
 }

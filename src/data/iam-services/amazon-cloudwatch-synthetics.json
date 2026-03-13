@@ -291,5 +291,21 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "canary",
+      "arn": "arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "group",
+      "arn": "arn:${Partition}:synthetics:${Region}:${Account}:group:${GroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

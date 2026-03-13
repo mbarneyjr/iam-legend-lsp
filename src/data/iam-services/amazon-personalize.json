@@ -870,5 +870,97 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "schema",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:schema/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "featureTransformation",
+      "arn": "arn:${Partition}:personalize:::feature-transformation/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "dataset",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasetGroup",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-group/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasetImportJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "dataInsightsJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:data-insights-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasetExportJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-export-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "dataDeletionJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:data-deletion-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "solution",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:solution/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "campaign",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:campaign/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "eventTracker",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:event-tracker/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "recipe",
+      "arn": "arn:${Partition}:personalize:::recipe/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "algorithm",
+      "arn": "arn:${Partition}:personalize:::algorithm/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "batchInferenceJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:batch-inference-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "filter",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:filter/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "recommender",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:recommender/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "batchSegmentJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:batch-segment-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "metricAttribution",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:metric-attribution/${ResourceId}",
+      "conditionKeys": []
+    }
   ]
 }

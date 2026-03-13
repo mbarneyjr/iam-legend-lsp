@@ -355,5 +355,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:cloudsearch:${Region}:${Account}:domain/${DomainName}",
+      "conditionKeys": []
+    }
   ]
 }

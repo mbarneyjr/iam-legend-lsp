@@ -15,5 +15,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "vpc-endpoint",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpcEndpointId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "vpc-endpoint-service",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpcEndpointServiceId}",
+      "conditionKeys": []
+    }
   ]
 }

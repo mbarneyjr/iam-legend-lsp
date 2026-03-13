@@ -1,4 +1,4 @@
-import type { IamService, IamAction } from "./domain/index.ts";
+import type { IamService, IamAction, IamResourceType } from "./domain/index.ts";
 
 const mdEOL = '\n\n';
 
@@ -50,6 +50,19 @@ const createShortActionDocs = ({ name, documentationUrl, description }: IamActio
   );
 
   lines.push(`${description}`);
+
+  return lines.join(mdEOL);
+};
+
+export const createResourceTypeDocs = (resourceType: IamResourceType) => {
+  const lines = [];
+  lines.push(`**${resourceType.name}**`);
+  lines.push(`ARN: \`${resourceType.arn}\``);
+
+  if (resourceType.conditionKeys.length > 0) {
+    lines.push('Condition Keys:');
+    lines.push(resourceType.conditionKeys.map(x => '- ' + x).join('\n'));
+  }
 
   return lines.join(mdEOL);
 };

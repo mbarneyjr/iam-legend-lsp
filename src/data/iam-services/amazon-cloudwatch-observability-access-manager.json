@@ -198,5 +198,21 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Link",
+      "arn": "arn:${Partition}:oam:${Region}:${Account}:link/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Sink",
+      "arn": "arn:${Partition}:oam:${Region}:${Account}:sink/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

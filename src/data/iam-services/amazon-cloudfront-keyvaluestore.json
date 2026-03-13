@@ -69,5 +69,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "key-value-store",
+      "arn": "arn:${Partition}:cloudfront::${Account}:key-value-store/${ResourceId}",
+      "conditionKeys": []
+    }
   ]
 }

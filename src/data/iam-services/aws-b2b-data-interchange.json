@@ -350,5 +350,35 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:profile/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "capability",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:capability/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "partnership",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:partnership/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "transformer",
+      "arn": "arn:${Partition}:b2bi:${Region}:${Account}:transformer/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

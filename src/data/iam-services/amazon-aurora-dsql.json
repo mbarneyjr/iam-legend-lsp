@@ -301,5 +301,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Cluster",
+      "arn": "arn:${Partition}:dsql:${Region}:${Account}:cluster/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

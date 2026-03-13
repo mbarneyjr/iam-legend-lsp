@@ -1284,5 +1284,160 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "parametergroup",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:parametergroup:${CacheParameterGroupName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:CacheParameterGroupName"
+      ]
+    },
+    {
+      "name": "securitygroup",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:securitygroup:${CacheSecurityGroupName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:subnetgroup:${CacheSubnetGroupName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    {
+      "name": "replicationgroup",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:replicationgroup:${ReplicationGroupId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:AtRestEncryptionEnabled",
+        "elasticache:AuthTokenEnabled",
+        "elasticache:AutomaticFailoverEnabled",
+        "elasticache:CacheNodeType",
+        "elasticache:CacheParameterGroupName",
+        "elasticache:ClusterModeEnabled",
+        "elasticache:EngineType",
+        "elasticache:EngineVersion",
+        "elasticache:KmsKeyId",
+        "elasticache:MultiAZEnabled",
+        "elasticache:NumNodeGroups",
+        "elasticache:ReplicasPerNodeGroup",
+        "elasticache:SnapshotRetentionLimit",
+        "elasticache:TransitEncryptionEnabled"
+      ]
+    },
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:cluster:${CacheClusterId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:AuthTokenEnabled",
+        "elasticache:CacheNodeType",
+        "elasticache:CacheParameterGroupName",
+        "elasticache:EngineType",
+        "elasticache:EngineVersion",
+        "elasticache:MultiAZEnabled",
+        "elasticache:SnapshotRetentionLimit"
+      ]
+    },
+    {
+      "name": "reserved-instance",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:reserved-instance:${ReservedCacheNodeId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:snapshot:${SnapshotName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:KmsKeyId"
+      ]
+    },
+    {
+      "name": "globalreplicationgroup",
+      "arn": "arn:${Partition}:elasticache::${Account}:globalreplicationgroup:${GlobalReplicationGroupId}",
+      "conditionKeys": [
+        "elasticache:AtRestEncryptionEnabled",
+        "elasticache:AuthTokenEnabled",
+        "elasticache:AutomaticFailoverEnabled",
+        "elasticache:CacheNodeType",
+        "elasticache:CacheParameterGroupName",
+        "elasticache:ClusterModeEnabled",
+        "elasticache:EngineType",
+        "elasticache:EngineVersion",
+        "elasticache:KmsKeyId",
+        "elasticache:MultiAZEnabled",
+        "elasticache:NumNodeGroups",
+        "elasticache:ReplicasPerNodeGroup",
+        "elasticache:SnapshotRetentionLimit",
+        "elasticache:TransitEncryptionEnabled"
+      ]
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:user:${UserId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:UserAuthenticationMode"
+      ]
+    },
+    {
+      "name": "usergroup",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:usergroup:${UserGroupId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    {
+      "name": "serverlesscache",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscache:${ServerlessCacheName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:DataStorageUnit",
+        "elasticache:EngineType",
+        "elasticache:EngineVersion",
+        "elasticache:KmsKeyId",
+        "elasticache:MaximumDataStorage",
+        "elasticache:MaximumECPUPerSecond",
+        "elasticache:MinimumDataStorage",
+        "elasticache:MinimumECPUPerSecond",
+        "elasticache:SnapshotRetentionLimit"
+      ]
+    },
+    {
+      "name": "serverlesscachesnapshot",
+      "arn": "arn:${Partition}:elasticache:${Region}:${Account}:serverlesscachesnapshot:${ServerlessCacheSnapshotName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticache:KmsKeyId"
+      ]
+    }
   ]
 }

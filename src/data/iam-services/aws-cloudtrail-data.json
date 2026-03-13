@@ -14,5 +14,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "channel",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:channel/${ChannelId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

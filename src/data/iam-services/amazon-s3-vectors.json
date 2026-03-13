@@ -282,5 +282,23 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Index",
+      "arn": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}/index/${IndexName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "s3vectors:VectorBucketTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "VectorBucket",
+      "arn": "arn:${Partition}:s3vectors:${Region}:${Account}:bucket/${BucketName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "s3vectors:VectorBucketTag/${TagKey}"
+      ]
+    }
   ]
 }

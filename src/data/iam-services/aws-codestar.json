@@ -239,5 +239,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${AwsUserName}",
+      "conditionKeys": [
+        "iam:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

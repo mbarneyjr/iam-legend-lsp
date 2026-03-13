@@ -665,5 +665,56 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "campaign",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:campaign/${CampaignName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "decodermanifest",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:decoder-manifest/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "fleet",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:fleet/${FleetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "modelmanifest",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:model-manifest/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "signalcatalog",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:signal-catalog/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vehicle",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:vehicle/${VehicleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "statetemplate",
+      "arn": "arn:${Partition}:iotfleetwise:${Region}:${Account}:state-template/${StateTemplateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

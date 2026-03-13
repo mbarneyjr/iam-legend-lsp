@@ -224,5 +224,19 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "signing-profile",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${ProfileName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "signing-job",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${JobId}",
+      "conditionKeys": []
+    }
   ]
 }

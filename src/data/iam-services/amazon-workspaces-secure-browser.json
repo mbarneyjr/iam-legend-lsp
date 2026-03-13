@@ -901,5 +901,77 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "browserSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:browserSettings/${BrowserSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "identityProvider",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:identityProvider/${PortalId}/${IdentityProviderId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "networkSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:networkSettings/${NetworkSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "portal",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:portal/${PortalId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "trustStore",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:trustStore/${TrustStoreId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "userSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:userSettings/${UserSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "userAccessLoggingSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:userAccessLoggingSettings/${UserAccessLoggingSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ipAccessSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:ipAccessSettings/${IpAccessSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dataProtectionSettings",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:dataProtectionSettings/${DataProtectionSettingsId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "sessionLogger",
+      "arn": "arn:${Partition}:workspaces-web:${Region}:${Account}:sessionLogger/${SessionLoggerId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

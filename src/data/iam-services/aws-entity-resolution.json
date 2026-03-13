@@ -436,5 +436,42 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "MatchingWorkflow",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:matchingworkflow/${WorkflowName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "SchemaMapping",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:schemamapping/${SchemaName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "IdMappingWorkflow",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:idmappingworkflow/${WorkflowName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ProviderService",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:providerservice/${ProviderName}/${ProviderServiceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "IdNamespace",
+      "arn": "arn:${Partition}:entityresolution:${Region}:${Account}:idnamespace/${IdNamespaceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

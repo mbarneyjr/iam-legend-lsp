@@ -14,5 +14,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "credential",
+      "arn": "arn:${Partition}:finspace-api:${Region}:${Account}:/credentials/programmatic",
+      "conditionKeys": []
+    }
   ]
 }

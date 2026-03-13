@@ -447,5 +447,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Application",
+      "arn": "arn:${Partition}:m2:${Region}:${Account}:app/${ApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Environment",
+      "arn": "arn:${Partition}:m2:${Region}:${Account}:env/${EnvironmentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

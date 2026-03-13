@@ -61,5 +61,27 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "common-control",
+      "arn": "arn:${Partition}:controlcatalog:::common-control/${CommonControlId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "control",
+      "arn": "arn:${Partition}:controlcatalog:::control/${ControlId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:controlcatalog:::domain/${DomainId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "objective",
+      "arn": "arn:${Partition}:controlcatalog:::objective/${ObjectiveId}",
+      "conditionKeys": []
+    }
   ]
 }

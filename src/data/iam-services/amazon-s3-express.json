@@ -454,5 +454,23 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "bucket",
+      "arn": "arn:${Partition}:s3express:${Region}:${Account}:bucket/${BucketName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "s3express:BucketTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "accesspoint",
+      "arn": "arn:${Partition}:s3express:${Region}:${Account}:accesspoint/${AccessPointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "s3express:AccessPointTag/${TagKey}"
+      ]
+    }
   ]
 }

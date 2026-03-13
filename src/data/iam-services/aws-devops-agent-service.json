@@ -494,5 +494,29 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "AgentSpaceResource",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}",
+      "conditionKeys": [
+        "aidevops:AgentSpaceResourceAgentSpaceId"
+      ]
+    },
+    {
+      "name": "AssociationResource",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:agentspace/${AgentSpaceId}/associations/${AssociationId}",
+      "conditionKeys": [
+        "aidevops:AssociationResourceAgentSpaceId",
+        "aidevops:AssociationResourceAssociationId"
+      ]
+    },
+    {
+      "name": "ServiceResource",
+      "arn": "arn:${Partition}:aidevops:${Region}:${Account}:service/${ServiceId}",
+      "conditionKeys": [
+        "aidevops:ServiceResourceServiceId"
+      ]
+    }
   ]
 }

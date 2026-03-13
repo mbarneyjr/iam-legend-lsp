@@ -459,5 +459,28 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Connection",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:connection/${ConnectionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Host",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:host/${HostId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RepositoryLink",
+      "arn": "arn:${Partition}:codeconnections:${Region}:${Account}:repository-link/${RepositoryLinkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

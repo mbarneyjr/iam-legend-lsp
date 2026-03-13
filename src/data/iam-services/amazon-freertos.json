@@ -199,5 +199,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "configuration",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "subscription",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:subscription/${SubscriptionID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

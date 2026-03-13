@@ -394,5 +394,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "deployment",
+      "arn": "arn:${Partition}:launchwizard:${Region}:${Account}:deployment/${DeploymentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -32,5 +32,6 @@
         "tag:GetResources"
       ]
     }
-  ]
+  ],
+  "resourceTypes": []
 }

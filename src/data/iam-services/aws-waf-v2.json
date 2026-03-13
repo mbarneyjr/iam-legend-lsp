@@ -734,5 +734,75 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "webacl",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ipset",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "managedruleset",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/managedruleset/${Name}/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "rulegroup",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "regexpatternset",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "loadbalancer/app/",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "apigateway",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${ApiId}/stages/${StageName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "appsync",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "userpool",
+      "arn": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "apprunner",
+      "arn": "arn:${Partition}:apprunner:${Region}:${Account}:service/${ServiceName}/${ServiceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "verified-access-instance",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:verified-access-instance/${VerifiedAccessInstanceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "amplify-app",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}",
+      "conditionKeys": []
+    }
   ]
 }

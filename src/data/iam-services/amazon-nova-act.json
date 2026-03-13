@@ -183,5 +183,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "workflow-definition",
+      "arn": "arn:${Partition}:nova-act:${Region}:${Account}:workflow-definition/${WorkflowDefinitionName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "workflow-run",
+      "arn": "arn:${Partition}:nova-act:${Region}:${Account}:workflow-definition/${WorkflowDefinitionName}/workflow-run/${WorkflowRunId}",
+      "conditionKeys": []
+    }
   ]
 }

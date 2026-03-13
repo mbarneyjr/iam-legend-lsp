@@ -281,5 +281,384 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Account",
+      "arn": "arn:${Partition}:apigateway:${Region}::/account",
+      "conditionKeys": []
+    },
+    {
+      "name": "ApiKey",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apikeys/${ApiKeyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ApiKeys",
+      "arn": "arn:${Partition}:apigateway:${Region}::/apikeys",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Authorizer",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers/${AuthorizerId}",
+      "conditionKeys": [
+        "apigateway:Request/AuthorizerType",
+        "apigateway:Resource/AuthorizerType",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Authorizers",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/authorizers",
+      "conditionKeys": [
+        "apigateway:Request/AuthorizerType",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "BasePathMapping",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings/${BasePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "BasePathMappings",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}/basepathmappings",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ClientCertificate",
+      "arn": "arn:${Partition}:apigateway:${Region}::/clientcertificates/${ClientCertificateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ClientCertificates",
+      "arn": "arn:${Partition}:apigateway:${Region}::/clientcertificates",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Deployment",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments/${DeploymentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Deployments",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/deployments",
+      "conditionKeys": [
+        "apigateway:Request/StageName",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DocumentationPart",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts/${DocumentationPartId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DocumentationParts",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/parts",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DocumentationVersion",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions/${DocumentationVersionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DocumentationVersions",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/documentation/versions",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DomainName",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}",
+      "conditionKeys": [
+        "apigateway:Request/EndpointType",
+        "apigateway:Request/MtlsTrustStoreUri",
+        "apigateway:Request/MtlsTrustStoreVersion",
+        "apigateway:Request/SecurityPolicy",
+        "apigateway:Resource/EndpointType",
+        "apigateway:Resource/MtlsTrustStoreUri",
+        "apigateway:Resource/MtlsTrustStoreVersion",
+        "apigateway:Resource/RoutingMode",
+        "apigateway:Resource/SecurityPolicy",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DomainNames",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames",
+      "conditionKeys": [
+        "apigateway:Request/EndpointType",
+        "apigateway:Request/MtlsTrustStoreUri",
+        "apigateway:Request/MtlsTrustStoreVersion",
+        "apigateway:Request/SecurityPolicy",
+        "apigateway:Resource/RoutingMode",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DomainNameAccessAssociation",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/domainnameaccessassociations/domainname/${DomainName}/${SourceType}/${SourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "DomainNameAccessAssociations",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/domainnameaccessassociations",
+      "conditionKeys": [
+        "apigateway:Request/AccessAssociationSource",
+        "apigateway:Request/DomainNameArn",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "GatewayResponse",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses/${ResponseType}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "GatewayResponses",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/gatewayresponses",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Integration",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "IntegrationResponse",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/integration/responses/${StatusCode}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Method",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}",
+      "conditionKeys": [
+        "apigateway:Request/ApiKeyRequired",
+        "apigateway:Request/RouteAuthorizationType",
+        "apigateway:Resource/ApiKeyRequired",
+        "apigateway:Resource/RouteAuthorizationType",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "MethodResponse",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}/methods/${HttpMethodType}/responses/${StatusCode}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Model",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models/${ModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Models",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/models",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "PrivateBasePathMapping",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}+${DomainIdentifier}/basepathmappings/${BasePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "PrivateBasePathMappings",
+      "arn": "arn:${Partition}:apigateway:${Region}::/domainnames/${DomainName}+${DomainIdentifier}/basepathmappings",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "PrivateDomainName",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/domainnames/${DomainName}+${DomainIdentifier}",
+      "conditionKeys": [
+        "apigateway:Request/EndpointType",
+        "apigateway:Resource/EndpointType",
+        "apigateway:Resource/RoutingMode",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RequestValidator",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators/${RequestValidatorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RequestValidators",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/requestvalidators",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Resource",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Resources",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/resources",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RestApi",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}",
+      "conditionKeys": [
+        "apigateway:Request/ApiKeyRequired",
+        "apigateway:Request/ApiName",
+        "apigateway:Request/AuthorizerType",
+        "apigateway:Request/DisableExecuteApiEndpoint",
+        "apigateway:Request/EndpointType",
+        "apigateway:Request/RouteAuthorizationType",
+        "apigateway:Request/SecurityPolicy",
+        "apigateway:Resource/ApiKeyRequired",
+        "apigateway:Resource/ApiName",
+        "apigateway:Resource/AuthorizerType",
+        "apigateway:Resource/DisableExecuteApiEndpoint",
+        "apigateway:Resource/EndpointType",
+        "apigateway:Resource/RouteAuthorizationType",
+        "apigateway:Resource/SecurityPolicy",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RestApis",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis",
+      "conditionKeys": [
+        "apigateway:Request/ApiKeyRequired",
+        "apigateway:Request/ApiName",
+        "apigateway:Request/AuthorizerType",
+        "apigateway:Request/DisableExecuteApiEndpoint",
+        "apigateway:Request/EndpointType",
+        "apigateway:Request/RouteAuthorizationType",
+        "apigateway:Request/SecurityPolicy",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Sdk",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}/sdks/${SdkType}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Stage",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages/${StageName}",
+      "conditionKeys": [
+        "apigateway:Request/AccessLoggingDestination",
+        "apigateway:Request/AccessLoggingFormat",
+        "apigateway:Resource/AccessLoggingDestination",
+        "apigateway:Resource/AccessLoggingFormat",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Stages",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${RestApiId}/stages",
+      "conditionKeys": [
+        "apigateway:Request/AccessLoggingDestination",
+        "apigateway:Request/AccessLoggingFormat",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Template",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/models/${ModelName}/template",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "UsagePlan",
+      "arn": "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "UsagePlans",
+      "arn": "arn:${Partition}:apigateway:${Region}::/usageplans",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "UsagePlanKey",
+      "arn": "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "UsagePlanKeys",
+      "arn": "arn:${Partition}:apigateway:${Region}::/usageplans/${UsagePlanId}/keys",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "VpcLink",
+      "arn": "arn:${Partition}:apigateway:${Region}::/vpclinks/${VpcLinkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "VpcLinks",
+      "arn": "arn:${Partition}:apigateway:${Region}::/vpclinks",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Tags",
+      "arn": "arn:${Partition}:apigateway:${Region}::/tags/${UrlEncodedResourceARN}",
+      "conditionKeys": []
+    }
   ]
 }

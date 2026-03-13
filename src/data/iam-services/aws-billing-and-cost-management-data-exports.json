@@ -156,5 +156,26 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "export",
+      "arn": "arn:${Partition}:bcm-data-exports:${Region}:${Account}:export/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "table",
+      "arn": "arn:${Partition}:bcm-data-exports:${Region}:${Account}:table/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "billingview",
+      "arn": "arn:${Partition}:billing::${Account}:billingview/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

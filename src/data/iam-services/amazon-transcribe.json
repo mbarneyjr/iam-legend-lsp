@@ -583,5 +583,70 @@
         "s3:GetObject"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "transcriptionjob",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:transcription-job/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vocabulary",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:vocabulary/${VocabularyName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vocabularyfilter",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:vocabulary-filter/${VocabularyFilterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "languagemodel",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:language-model/${ModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "medicaltranscriptionjob",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:medical-transcription-job/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "medicalvocabulary",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:medical-vocabulary/${VocabularyName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "callanalyticsjob",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:analytics/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "callanalyticscategory",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:analytics-category/${CategoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "medicalscribejob",
+      "arn": "arn:${Partition}:transcribe:${Region}:${Account}:medical-scribe-job/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

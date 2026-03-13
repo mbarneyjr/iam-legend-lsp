@@ -509,5 +509,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Collection",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection/${CollectionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "CollectionGroup",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:collection-group/${CollectionGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Dashboards",
+      "arn": "arn:${Partition}:aoss:${Region}:${Account}:dashboards/default",
+      "conditionKeys": []
+    }
   ]
 }

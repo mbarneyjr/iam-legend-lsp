@@ -1443,5 +1443,122 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "channel",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channel:${ChannelId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "input",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:input:${InputId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "input-device",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${DeviceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "input-security-group",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${InputSecurityGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "multiplex",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:multiplex:${MultiplexId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "reservation",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:reservation:${ReservationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "offering",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:offering:${OfferingId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "signal-map",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:signal-map:${SignalMapId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "cloudwatch-alarm-template-group",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cloudwatch-alarm-template-group:${CloudWatchAlarmTemplateGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "cloudwatch-alarm-template",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cloudwatch-alarm-template:${CloudWatchAlarmTemplateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "eventbridge-rule-template-group",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:eventbridge-rule-template-group:${EventBridgeRuleTemplateGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "eventbridge-rule-template",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:eventbridge-rule-template:${EventBridgeRuleTemplateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:cluster:${ClusterId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "node",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:node:${ClusterId}/${NodeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "network",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:network:${NetworkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "channel-placement-group",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channelPlacementGroup:${ClusterId}/${ChannelPlacementGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "sdi-source",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:sdiSource:${SdiSourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

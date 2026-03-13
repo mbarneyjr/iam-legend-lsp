@@ -193,5 +193,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "certificate",
+      "arn": "arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

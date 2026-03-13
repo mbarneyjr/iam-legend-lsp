@@ -1710,5 +1710,130 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Domain",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Instance",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "InstanceSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "KeyPair",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "StaticIp",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Disk",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DiskSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "LoadBalancer",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "LoadBalancerTlsCertificate",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "ExportSnapshotRecord",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "CloudFormationStackRecord",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "RelationalDatabase",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RelationalDatabaseSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Alarm",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Alarm/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Certificate",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Certificate/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ContactMethod",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ContactMethod/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "ContainerService",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ContainerService/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Distribution",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Distribution/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Bucket",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Bucket/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

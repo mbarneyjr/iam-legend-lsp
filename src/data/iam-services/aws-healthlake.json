@@ -526,5 +526,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "datastore",
+      "arn": "arn:${Partition}:healthlake:${Region}:${Account}:datastore/fhir/${DatastoreId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

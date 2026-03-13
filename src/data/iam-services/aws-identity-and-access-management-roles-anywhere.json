@@ -343,5 +343,35 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "trust-anchor",
+      "arn": "arn:${Partition}:rolesanywhere:${Region}:${Account}:trust-anchor/${TrustAnchorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:rolesanywhere:${Region}:${Account}:profile/${ProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "subject",
+      "arn": "arn:${Partition}:rolesanywhere:${Region}:${Account}:subject/${SubjectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "crl",
+      "arn": "arn:${Partition}:rolesanywhere:${Region}:${Account}:crl/${CrlId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

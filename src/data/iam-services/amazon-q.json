@@ -418,5 +418,19 @@
         "kms:ReEncryptTo"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:codewhisperer:${Region}:${Account}:profile/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "plugin",
+      "arn": "arn:${Partition}:qdeveloper:${Region}:${Account}:plugin/${Identifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

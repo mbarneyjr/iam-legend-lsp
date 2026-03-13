@@ -996,5 +996,67 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Application",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:application/${ApplicationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Control",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:control/${ControlId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "SecurityRequirement",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:security-requirement/${SecurityRequirementId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Integration",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:integration/${IntegrationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "AgentInstance",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-instance/${AgentId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "AgentSpace",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "TargetDomain",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:target-domain/${TargetDomainId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Artifact",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}/artifact/${ArtifactId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Pentest",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}/pentest/${PentestId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "PentestJob",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}/pentest-job/${JobId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "PentestTask",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}/pentest-task/${TaskId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Finding",
+      "arn": "arn:${Partition}:securityagent:${Region}:${Account}:agent-space/${AgentId}/finding/${FindingId}",
+      "conditionKeys": []
+    }
   ]
 }

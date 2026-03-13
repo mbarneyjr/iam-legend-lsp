@@ -1295,5 +1295,94 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "WirelessDevice",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:WirelessDevice/${WirelessDeviceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "WirelessGateway",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:WirelessGateway/${WirelessGatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DeviceProfile",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:DeviceProfile/${DeviceProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ServiceProfile",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:ServiceProfile/${ServiceProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Destination",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:Destination/${DestinationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "SidewalkAccount",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:SidewalkAccount/${SidewalkAccountId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "WirelessGatewayTaskDefinition",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:WirelessGatewayTaskDefinition/${WirelessGatewayTaskDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "FuotaTask",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:FuotaTask/${FuotaTaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "MulticastGroup",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:MulticastGroup/${MulticastGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "NetworkAnalyzerConfiguration",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:NetworkAnalyzerConfiguration/${NetworkAnalyzerConfigurationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "thing",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "cert",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}",
+      "conditionKeys": []
+    },
+    {
+      "name": "ImportTask",
+      "arn": "arn:${Partition}:iotwireless:${Region}:${Account}:ImportTask/${ImportTaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

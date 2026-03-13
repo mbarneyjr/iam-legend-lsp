@@ -324,5 +324,51 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "InboundExternalLink",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rtbfabric:InboundExternalLinkLinkId",
+        "rtbfabric:ResponderGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "Link",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rtbfabric:LinkLinkId",
+        "rtbfabric:RequesterGatewayGatewayId",
+        "rtbfabric:ResponderGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "OutboundExternalLink",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}/link/${LinkId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rtbfabric:OutboundExternalLinkLinkId",
+        "rtbfabric:RequesterGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "RequesterGateway",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rtbfabric:RequesterGatewayGatewayId"
+      ]
+    },
+    {
+      "name": "ResponderGateway",
+      "arn": "arn:${Partition}:rtbfabric:${Region}:${Account}:gateway/${GatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rtbfabric:ResponderGatewayGatewayId"
+      ]
+    }
   ]
 }

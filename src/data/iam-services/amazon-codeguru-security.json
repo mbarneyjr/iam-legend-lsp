@@ -166,5 +166,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "ScanName",
+      "arn": "arn:${Partition}:codeguru-security:${Region}:${Account}:scans/${ScanName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -317,5 +317,27 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "batchprediction",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasource",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "evaluation",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "mlmodel",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}",
+      "conditionKeys": []
+    }
   ]
 }

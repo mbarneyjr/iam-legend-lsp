@@ -296,5 +296,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "topic",
+      "arn": "arn:${Partition}:sns:${Region}:${Account}:${TopicName}",
+      "conditionKeys": []
+    }
   ]
 }

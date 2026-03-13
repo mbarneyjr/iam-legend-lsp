@@ -1816,5 +1816,84 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "JobResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:job/${JobID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationConfigurationTemplateResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:replication-configuration-template/${ReplicationConfigurationTemplateID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "LaunchConfigurationTemplateResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:launch-configuration-template/${LaunchConfigurationTemplateID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "VcenterClientResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:vcenter-client/${VcenterClientID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "SourceServerResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:source-server/${SourceServerID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ApplicationResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:application/${ApplicationID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "WaveResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:wave/${WaveID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ImportResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:import/${ImportID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ExportResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:export/${ExportID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ConnectorResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:connector/${ConnectorID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "NetworkMigrationDefinitionResource",
+      "arn": "arn:${Partition}:mgn:${Region}:${Account}:network-migration-definition/${NetworkMigrationDefinitionID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

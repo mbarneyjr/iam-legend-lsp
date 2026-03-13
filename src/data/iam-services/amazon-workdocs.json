@@ -554,5 +554,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "organization",
+      "arn": "arn:${Partition}:workdocs:${Region}:${Account}:organization/${ResourceId}",
+      "conditionKeys": []
+    }
   ]
 }

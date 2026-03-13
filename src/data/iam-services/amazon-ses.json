@@ -823,5 +823,27 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "configuration-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "custom-verification-email-template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "identity",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}",
+      "conditionKeys": []
+    }
   ]
 }

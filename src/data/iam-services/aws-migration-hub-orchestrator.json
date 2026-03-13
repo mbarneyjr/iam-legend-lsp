@@ -374,5 +374,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "workflow",
+      "arn": "arn:${Partition}:migrationhub-orchestrator:${Region}:${Account}:workflow/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "template",
+      "arn": "arn:${Partition}:migrationhub-orchestrator:${Region}:${Account}:template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

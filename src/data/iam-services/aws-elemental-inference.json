@@ -137,5 +137,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "feed",
+      "arn": "arn:${Partition}:elemental-inference:${Region}:${Account}:feed/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

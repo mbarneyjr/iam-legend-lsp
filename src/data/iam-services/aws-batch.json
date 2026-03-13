@@ -492,5 +492,68 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "compute-environment",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "job-queue",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "job-definition",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "job-definition-revision",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "job",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "scheduling-policy",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:scheduling-policy/${SchedulingPolicyName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-environment",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:service-environment/${ServiceEnvironmentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-job",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:service-job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "consumable-resource",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:consumable-resource/${ConsumableResourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

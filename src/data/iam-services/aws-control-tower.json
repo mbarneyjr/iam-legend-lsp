@@ -648,5 +648,33 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "EnabledControl",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:enabledcontrol/${EnabledControlId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Baseline",
+      "arn": "arn:${Partition}:controltower:${Region}::baseline/${BaselineId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "EnabledBaseline",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:enabledbaseline/${EnabledBaselineId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "LandingZone",
+      "arn": "arn:${Partition}:controltower:${Region}:${Account}:landingzone/${LandingZoneId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

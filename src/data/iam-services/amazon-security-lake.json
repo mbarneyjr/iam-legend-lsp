@@ -535,5 +535,23 @@
         "sqs:SetQueueAttributes"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "data-lake",
+      "arn": "arn:${Partition}:securitylake:${Region}:${Account}:data-lake/default",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "subscriber",
+      "arn": "arn:${Partition}:securitylake:${Region}:${Account}:subscriber/${SubscriberId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

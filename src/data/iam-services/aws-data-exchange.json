@@ -484,5 +484,62 @@
         "dataexchange:PublishToDataGrant"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "jobs",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}",
+      "conditionKeys": [
+        "dataexchange:JobType"
+      ]
+    },
+    {
+      "name": "data-sets",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entitled-data-sets",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "revisions",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entitled-revisions",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}/revisions/${RevisionId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "assets",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "entitled-assets",
+      "arn": "arn:${Partition}:dataexchange:${Region}::data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "event-actions",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:event-actions/${EventActionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "data-grants",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-grants/${DataGrantId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

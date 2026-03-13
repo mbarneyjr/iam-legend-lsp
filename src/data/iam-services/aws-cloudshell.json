@@ -124,5 +124,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Environment",
+      "arn": "arn:${Partition}:cloudshell:${Region}:${Account}:environment/${EnvironmentId}",
+      "conditionKeys": []
+    }
   ]
 }

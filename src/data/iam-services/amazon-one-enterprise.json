@@ -349,5 +349,38 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "device-instance",
+      "arn": "arn:${Partition}:one:${Region}:${Account}:device-instance/${DeviceInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "configuration",
+      "arn": "arn:${Partition}:one:${Region}:${Account}:device-instance/${DeviceInstanceId}/configuration/${Version}",
+      "conditionKeys": []
+    },
+    {
+      "name": "device-configuration-template",
+      "arn": "arn:${Partition}:one:${Region}:${Account}:device-configuration-template/${TemplateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "site",
+      "arn": "arn:${Partition}:one:${Region}:${Account}:site/${SiteId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:one:${Region}:${Account}:user/${UserId}",
+      "conditionKeys": []
+    }
   ]
 }

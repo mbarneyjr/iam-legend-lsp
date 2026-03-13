@@ -378,5 +378,31 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "connections",
+      "arn": "arn:${Partition}:codecatalyst:${Region}:${Account}:/connections/${ConnectionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "identity-center-applications",
+      "arn": "arn:${Partition}:codecatalyst:${Region}:${Account}:/identity-center-applications/${IdentityCenterApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "space",
+      "arn": "arn:${Partition}:codecatalyst:::space/${SpaceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "project",
+      "arn": "arn:${Partition}:codecatalyst:::space/${SpaceId}/project/${ProjectId}",
+      "conditionKeys": []
+    }
   ]
 }

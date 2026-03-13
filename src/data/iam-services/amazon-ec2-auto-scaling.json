@@ -878,5 +878,20 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "autoScalingGroup",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}",
+      "conditionKeys": [
+        "autoscaling:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "launchConfiguration",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}",
+      "conditionKeys": []
+    }
   ]
 }

@@ -1290,5 +1290,112 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "environment-template",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment-template/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "environment-template-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersion}.${MinorVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "environment-template-major-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "environment-template-minor-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-template",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service-template/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-template-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersion}.${MinorVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-template-major-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-template-minor-version",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service-template/${TemplateName}:${MajorVersionId}.${MinorVersionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "service-instance",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:service/${ServiceName}/service-instance/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "environment-account-connection",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:environment-account-connection/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "repository",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:repository/${Provider}:${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "component",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:component/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "deployment",
+      "arn": "arn:${Partition}:proton:${Region}:${Account}:deployment/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

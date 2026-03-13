@@ -343,5 +343,21 @@
         "cloudformation:DescribeStacks"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "group",
+      "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "tagSyncTask",
+      "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}/tag-sync-task/${TaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

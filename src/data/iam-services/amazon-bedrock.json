@@ -2743,5 +2743,243 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "foundation-model",
+      "arn": "arn:${Partition}:bedrock:${Region}::foundation-model/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "system-tool",
+      "arn": "arn:${Partition}:bedrock::${Account}:system-tool/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "async-invoke",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:async-invoke/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "inference-profile",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:inference-profile/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "default-prompt-router",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:default-prompt-router/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "prompt-router",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt-router/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "application-inference-profile",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:application-inference-profile/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "custom-model",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:custom-model/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "provisioned-model",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:provisioned-model/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-customization-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-customization-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "agent",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:agent/${AgentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "agent-alias",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:agent-alias/${AgentId}/${AgentAliasId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "knowledge-base",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:knowledge-base/${KnowledgeBaseId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-evaluation-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-evaluation-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "evaluation-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:evaluation-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-invocation-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-invocation-job/${JobIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "guardrail",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:guardrail/${GuardrailId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "guardrail-profile",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:guardrail-profile/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "automated-reasoning-policy",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:automated-reasoning-policy/${AutomatedReasoningPolicyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "automated-reasoning-policy-version",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:automated-reasoning-policy/${AutomatedReasoningPolicyId}:${AutomatedReasoningPolicyVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "flow",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "flow-alias",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}/alias/${FlowAliasId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "flow-execution",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:flow/${FlowId}/alias/${FlowAliasId}/execution/${FlowExecutionId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "model-copy-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-copy-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "prompt",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt/${PromptId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "prompt-version",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:prompt/${PromptId}:${PromptVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-import-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:model-import-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "imported-model",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:imported-model/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "bedrock-marketplace-model-endpoint",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:marketplace/model-endpoint/all-access",
+      "conditionKeys": []
+    },
+    {
+      "name": "data-automation-project",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-project/${ProjectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "blueprint",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:blueprint/${BlueprintId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "blueprint-optimization-invocation",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:blueprint-optimization-invocation/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "data-automation-invocation-job",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-invocation/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "data-automation-profile",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:data-automation-profile/${ProfileId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "session",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:session/${SessionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "custom-model-deployment",
+      "arn": "arn:${Partition}:bedrock:${Region}:${Account}:custom-model-deployment/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

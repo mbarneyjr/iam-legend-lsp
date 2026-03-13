@@ -365,5 +365,40 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Job",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Queue",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Preset",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "JobTemplate",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "CertificateAssociation",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}",
+      "conditionKeys": []
+    }
   ]
 }

@@ -27,6 +27,10 @@ const makeServicesByPrefix = (): IamServicesByPrefix => ({
         dependentActions: [],
         documentationUrl: 'https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html'
       }
+    ],
+    resourceTypes: [
+      { name: 'bucket', arn: 'arn:aws:s3:::${BucketName}', conditionKeys: [] },
+      { name: 'object', arn: 'arn:aws:s3:::${BucketName}/${ObjectKey}', conditionKeys: ['s3:ResourceAccount'] }
     ]
   }]
 });
@@ -122,5 +126,79 @@ describe('[hoverHandler]', () => {
     );
 
     assert.strictEqual(result, null);
+  });
+
+  it('should return resource type docs when hovering ARN inside Resource array', () => {
+    const doc = TextDocument.create('file:///test.yaml', 'yaml', 1, 'Resource:\n  - arn:aws:s3:::my-bucket');
+    const documents = createDocuments(doc);
+
+    const result = handleHover(
+      { textDocument: { uri: doc.uri }, position: { line: 1, character: 10 } },
+      documents,
+      makeServicesByPrefix()
+    );
+
+    assert.ok(result !== null);
+    const contents = result!.contents as { kind: string; value: string };
+    assert.ok(contents.value.includes('bucket'));
+    assert.ok(contents.value.includes('Amazon S3'));
+  });
+
+  it('should return null for unknown service in Resource array', () => {
+    const doc = TextDocument.create('file:///test.yaml', 'yaml', 1, 'Resource:\n  - arn:aws:unknown:::foo');
+    const documents = createDocuments(doc);
+
+    const result = handleHover(
+      { textDocument: { uri: doc.uri }, position: { line: 1, character: 10 } },
+      documents,
+      makeServicesByPrefix()
+    );
+
+    assert.strictEqual(result, null);
+  });
+
+  it('should return resource hover after a comment line', () => {
+    const doc = TextDocument.create('file:///test.yaml', 'yaml', 1,
+      'Resource:\n  - arn:aws:s3:::bucket1\n  # todo\n  - arn:aws:s3:::bucket2');
+    const documents = createDocuments(doc);
+
+    const result = handleHover(
+      { textDocument: { uri: doc.uri }, position: { line: 3, character: 10 } },
+      documents,
+      makeServicesByPrefix()
+    );
+
+    assert.ok(result !== null);
+    const contents = result!.contents as { kind: string; value: string };
+    assert.ok(contents.value.includes('bucket'));
+  });
+
+  it('should return null when hovering non-ARN text in Resource array', () => {
+    const doc = TextDocument.create('file:///test.yaml', 'yaml', 1, 'Resource:\n  - "*"');
+    const documents = createDocuments(doc);
+
+    const result = handleHover(
+      { textDocument: { uri: doc.uri }, position: { line: 1, character: 5 } },
+      documents,
+      makeServicesByPrefix()
+    );
+
+    assert.strictEqual(result, null);
+  });
+
+  it('should include condition keys in resource hover docs', () => {
+    const doc = TextDocument.create('file:///test.yaml', 'yaml', 1,
+      'Resource:\n  - arn:aws:s3:::my-bucket/my-key');
+    const documents = createDocuments(doc);
+
+    const result = handleHover(
+      { textDocument: { uri: doc.uri }, position: { line: 1, character: 15 } },
+      documents,
+      makeServicesByPrefix()
+    );
+
+    assert.ok(result !== null);
+    const contents = result!.contents as { kind: string; value: string };
+    assert.ok(contents.value.includes('s3:ResourceAccount'));
   });
 });

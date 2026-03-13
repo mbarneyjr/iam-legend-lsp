@@ -292,5 +292,14 @@
         "ds:AccessDSData"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "directory",
+      "arn": "arn:${Partition}:ds:${Region}:${Account}:directory/${DirectoryId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

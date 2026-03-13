@@ -531,5 +531,26 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:qbusiness:${Region}:${Account}:application/${ApplicationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "qapp",
+      "arn": "arn:${Partition}:qapps:${Region}:${Account}:application/${ApplicationId}/qapp/${AppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "qapp-session",
+      "arn": "arn:${Partition}:qapps:${Region}:${Account}:application/${ApplicationId}/qapp/${AppId}/session/${SessionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

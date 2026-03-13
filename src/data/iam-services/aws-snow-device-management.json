@@ -148,5 +148,21 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "managed-device",
+      "arn": "arn:${Partition}:snow-device-management:${Region}:${Account}:managed-device/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "task",
+      "arn": "arn:${Partition}:snow-device-management:${Region}:${Account}:task/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

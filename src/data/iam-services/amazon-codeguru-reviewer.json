@@ -222,5 +222,19 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "association",
+      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "codereview",
+      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}:codereview:${CodeReviewId}",
+      "conditionKeys": []
+    }
   ]
 }

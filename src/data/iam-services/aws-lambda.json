@@ -1039,5 +1039,64 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "capacityProvider",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:capacity-provider:${CapacityProviderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "codesigningconfig",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:code-signing-config:${CodeSigningConfigId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "durableexecution",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}/durable-execution/${ExecutionName}/${ExecutionId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "eventSourceMapping",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "function",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "functionalias",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "functionversion",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "layer",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "layerVersion",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
+      "conditionKeys": []
+    }
   ]
 }

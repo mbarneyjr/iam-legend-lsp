@@ -756,5 +756,64 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "addon-instance",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:addon-instance/${AddonInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "addon-subscription",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:addon-subscription/${AddonSubscriptionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mailmanager-archive",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-archive/${ArchiveId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mailmanager-ingress-point",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-ingress-point/${IngressPointId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ses:MailManagerIngressPointType"
+      ]
+    },
+    {
+      "name": "mailmanager-smtp-relay",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-smtp-relay/${RelayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mailmanager-rule-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-rule-set/${RuleSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mailmanager-traffic-policy",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-traffic-policy/${TrafficPolicyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "mailmanager-address-list",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-address-list/${AddressListId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

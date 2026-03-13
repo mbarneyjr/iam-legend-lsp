@@ -181,5 +181,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Simulation",
+      "arn": "arn:${Partition}:simspaceweaver:${Region}:${Account}:simulation/${SimulationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

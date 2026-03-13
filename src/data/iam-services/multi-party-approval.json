@@ -293,5 +293,28 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "approval-team",
+      "arn": "arn:${Partition}:mpa:${Region}:${Account}:approval-team/${ApprovalTeamId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "identity-source",
+      "arn": "arn:${Partition}:mpa:${Region}:${Account}:identity-source/${IdentitySourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "session",
+      "arn": "arn:${Partition}:mpa:${Region}:${Account}:session/${SessionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

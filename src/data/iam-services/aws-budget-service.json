@@ -164,5 +164,25 @@
         "billing:GetBillingViewData"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "budget",
+      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    {
+      "name": "budgetAction",
+      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}/action/${ActionId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    }
   ]
 }

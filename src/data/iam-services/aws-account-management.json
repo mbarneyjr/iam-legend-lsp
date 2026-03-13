@@ -207,5 +207,17 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "account",
+      "arn": "arn:${Partition}:account::${Account}:account",
+      "conditionKeys": []
+    },
+    {
+      "name": "accountInOrganization",
+      "arn": "arn:${Partition}:account::${ManagementAccountId}:account/o-${OrganizationId}/${MemberAccountId}",
+      "conditionKeys": []
+    }
   ]
 }

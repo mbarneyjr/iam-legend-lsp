@@ -158,5 +158,12 @@
         "organizations:ListAccounts"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "event",
+      "arn": "arn:${Partition}:health:*::event/${Service}/${EventTypeCode}/*",
+      "conditionKeys": []
+    }
   ]
 }

@@ -299,5 +299,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "identitypool",
+      "arn": "arn:${Partition}:cognito-identity:${Region}:${Account}:identitypool/${IdentityPoolId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

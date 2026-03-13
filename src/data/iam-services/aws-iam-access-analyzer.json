@@ -388,5 +388,19 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Analyzer",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ArchiveRule",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}",
+      "conditionKeys": []
+    }
   ]
 }

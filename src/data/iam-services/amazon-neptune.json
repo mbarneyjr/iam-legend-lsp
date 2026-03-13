@@ -376,5 +376,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "database",
+      "arn": "arn:${Partition}:neptune-db:${Region}:${Account}:${ClusterResourceId}/*",
+      "conditionKeys": []
+    }
   ]
 }

@@ -295,5 +295,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "monitor",
+      "arn": "arn:${Partition}:networkflowmonitor:${Region}:${Account}:monitor/${MonitorName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "scope",
+      "arn": "arn:${Partition}:networkflowmonitor:${Region}:${Account}:scope/${ScopeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

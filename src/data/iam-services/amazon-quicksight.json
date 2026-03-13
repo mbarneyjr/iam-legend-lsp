@@ -3080,5 +3080,176 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "account",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:account/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "group",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "analysis",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:analysis/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dashboard",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "template",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "vpcconnection",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:vpcConnection/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "assetBundleExportJob",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:asset-bundle-export-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "assetBundleImportJob",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:asset-bundle-import-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "datasource",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:datasource/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dataset",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ingestion",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/ingestion/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "refreshschedule",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dataset/${DatasetId}/refresh-schedule/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "theme",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "assignment",
+      "arn": "arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "customization",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:customization/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "namespace",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:namespace/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "folder",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:folder/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "emailCustomizationTemplate",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:email-customization-template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "topic",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:topic/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dashboardSnapshotJob",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${DashboardId}/snapshot-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "brand",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:brand/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "custompermissions",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:custompermissions/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "actionconnector",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:action-connector/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "agent",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:agent/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "extensionaccess",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:extension-access/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "flow",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:flow/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

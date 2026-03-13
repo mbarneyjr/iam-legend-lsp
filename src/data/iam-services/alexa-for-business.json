@@ -1035,5 +1035,73 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:profile/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "room",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:room/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:device/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "skillgroup",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:skill-group/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:user/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "addressbook",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:address-book/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "conferenceprovider",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "contact",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:contact/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "schedule",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:schedule/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "networkprofile",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:network-profile/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "gateway",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:gateway/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "gatewaygroup",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:gateway-group/${ResourceId}",
+      "conditionKeys": []
+    }
   ]
 }

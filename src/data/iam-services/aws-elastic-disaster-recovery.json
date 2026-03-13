@@ -1146,5 +1146,50 @@
         "kms:DescribeKey"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "JobResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:job/${JobID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "RecoveryInstanceResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:recovery-instance/${RecoveryInstanceID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "drs:EC2InstanceARN"
+      ]
+    },
+    {
+      "name": "ReplicationConfigurationTemplateResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:replication-configuration-template/${ReplicationConfigurationTemplateID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "LaunchConfigurationTemplateResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:launch-configuration-template/${LaunchConfigurationTemplateID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "SourceServerResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:source-server/${SourceServerID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "SourceNetworkResource",
+      "arn": "arn:${Partition}:drs:${Region}:${Account}:source-network/${SourceNetworkID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

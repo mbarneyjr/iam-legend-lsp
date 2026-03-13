@@ -245,5 +245,28 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:environment/${EnvironmentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "device",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:device/${DeviceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "softwareset",
+      "arn": "arn:${Partition}:thinclient:${Region}:${Account}:softwareset/${SoftwareSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

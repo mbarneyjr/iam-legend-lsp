@@ -770,5 +770,52 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cidrcollection",
+      "arn": "arn:${Partition}:route53:::cidrcollection/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "change",
+      "arn": "arn:${Partition}:route53:::change/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "delegationset",
+      "arn": "arn:${Partition}:route53:::delegationset/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "healthcheck",
+      "arn": "arn:${Partition}:route53:::healthcheck/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "hostedzone",
+      "arn": "arn:${Partition}:route53:::hostedzone/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "trafficpolicy",
+      "arn": "arn:${Partition}:route53:::trafficpolicy/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "trafficpolicyinstance",
+      "arn": "arn:${Partition}:route53:::trafficpolicyinstance/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "queryloggingconfig",
+      "arn": "arn:${Partition}:route53:::queryloggingconfig/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "vpc",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}",
+      "conditionKeys": []
+    }
   ]
 }

@@ -80,5 +80,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "provider",
+      "arn": "arn:${Partition}:geo-places:${Region}::provider/default",
+      "conditionKeys": []
+    }
   ]
 }

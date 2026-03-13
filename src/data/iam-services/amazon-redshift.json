@@ -1872,5 +1872,142 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "datashare",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:datashare:${ProducerClusterNamespace}/${DataShareName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dbgroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}",
+      "conditionKeys": []
+    },
+    {
+      "name": "dbname",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "dbuser",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}",
+      "conditionKeys": []
+    },
+    {
+      "name": "eventsubscription",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hsmclientcertificate",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "hsmconfiguration",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "integration",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:integration:${IntegrationIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "namespace",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:namespace:${ClusterNamespace}",
+      "conditionKeys": []
+    },
+    {
+      "name": "parametergroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "securitygroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "securitygroupingress-cidr",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "securitygroupingress-ec2securitygroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "snapshotcopygrant",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "snapshotschedule",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ScheduleIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "usagelimit",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:usagelimit:${UsageLimitId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "redshiftidcapplication",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:redshiftidcapplication:${RedshiftIdcApplicationId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "qev2idcapplication",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:qev2idcapplication:${Qev2IdcApplicationId}",
+      "conditionKeys": []
+    }
   ]
 }

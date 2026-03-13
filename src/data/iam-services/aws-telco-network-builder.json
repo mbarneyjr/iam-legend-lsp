@@ -425,5 +425,42 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "function-package",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:function-package/${FunctionPackageId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "network-package",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-package/${NetworkPackageId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "network-instance",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-instance/${NetworkInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "function-instance",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:function-instance/${FunctionInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "network-operation",
+      "arn": "arn:${Partition}:tnb:${Region}:${Account}:network-operation/${NetworkOperationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

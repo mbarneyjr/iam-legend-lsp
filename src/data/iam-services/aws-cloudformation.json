@@ -1047,5 +1047,53 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "changeset",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "stack",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "stackset",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "stackset-target",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stackset-target/${StackSetTarget}",
+      "conditionKeys": []
+    },
+    {
+      "name": "type",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:type/resource/${Type}",
+      "conditionKeys": []
+    },
+    {
+      "name": "typeHook",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:type/hook/${Type}",
+      "conditionKeys": []
+    },
+    {
+      "name": "generatedtemplate",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:generatedTemplate/${Id}",
+      "conditionKeys": []
+    },
+    {
+      "name": "resourcescan",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}",
+      "conditionKeys": []
+    }
   ]
 }

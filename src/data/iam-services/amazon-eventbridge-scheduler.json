@@ -161,5 +161,19 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "schedule-group",
+      "arn": "arn:${Partition}:scheduler:${Region}:${Account}:schedule-group/${GroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "schedule",
+      "arn": "arn:${Partition}:scheduler:${Region}:${Account}:schedule/${GroupName}/${ScheduleName}",
+      "conditionKeys": []
+    }
   ]
 }

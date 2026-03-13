@@ -330,5 +330,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}",
+      "conditionKeys": []
+    }
   ]
 }

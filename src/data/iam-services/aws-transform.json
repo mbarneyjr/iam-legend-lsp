@@ -208,5 +208,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:transform:${Region}:${Account}:profile/${Identifier}",
+      "conditionKeys": []
+    },
+    {
+      "name": "connector",
+      "arn": "arn:${Partition}:transform:${Region}:${Account}:connector/${WorkspaceId}/${ConnectorId}",
+      "conditionKeys": []
+    }
   ]
 }

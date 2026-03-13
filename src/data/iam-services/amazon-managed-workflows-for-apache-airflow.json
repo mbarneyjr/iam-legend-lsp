@@ -152,5 +152,17 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "environment",
+      "arn": "arn:${Partition}:airflow:${Region}:${Account}:environment/${EnvironmentName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "rbac-role",
+      "arn": "arn:${Partition}:airflow:${Region}:${Account}:role/${EnvironmentName}/${RoleName}",
+      "conditionKeys": []
+    }
   ]
 }

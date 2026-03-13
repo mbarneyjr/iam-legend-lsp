@@ -37,5 +37,19 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "execute-api-general",
+      "arn": "arn:${Partition}:execute-api:${Region}:${Account}:${ApiId}/${Stage}/${Method}/${ApiSpecificResourcePath}",
+      "conditionKeys": [
+        "execute-api:viaDomainArn"
+      ]
+    },
+    {
+      "name": "execute-api-domain",
+      "arn": "arn:${Partition}:execute-api:${Region}:${Account}:/domainnames/${DomainName}+${DomainIdentifier}",
+      "conditionKeys": []
+    }
   ]
 }

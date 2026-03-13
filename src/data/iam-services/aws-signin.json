@@ -56,5 +56,17 @@
         "sso:ListApplications"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "oauth2-public-client-localhost",
+      "arn": "arn:${Partition}:signin:${Region}:${Account}:oauth2/public-client/localhost",
+      "conditionKeys": []
+    },
+    {
+      "name": "oauth2-public-client-remote",
+      "arn": "arn:${Partition}:signin:${Region}:${Account}:oauth2/public-client/remote",
+      "conditionKeys": []
+    }
   ]
 }

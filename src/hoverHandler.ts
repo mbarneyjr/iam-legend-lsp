@@ -2,34 +2,24 @@ import type { Hover, HoverParams } from "vscode-languageserver";
 import { MarkupKind } from "vscode-languageserver";
 import type { TextDocuments } from "vscode-languageserver/node.js";
 import { TextDocument } from "vscode-languageserver-textdocument";
-import { createServicesActionDocs, createServiceDocs } from "./documentation.ts";
-import { isInsideActionsArray } from "./documentParser.ts";
-import { getHoverWordAtPosition, getWordAtPosition } from "./documentParser.ts";
+import { createServicesActionDocs, createServiceDocs, createResourceTypeDocs } from "./documentation.ts";
+import { isInsideActionsArray, isInsideResourceArray } from "./documentParser.ts";
+import { getArnWordAtPosition, getHoverWordAtPosition, getWordAtPosition } from "./documentParser.ts";
 import type { IamServicesByPrefix } from "./domain/index.ts";
 import { match, normalize } from "./domain/utility/index.ts";
 
-export const handleHover = (
-  params: HoverParams,
-  documents: TextDocuments<TextDocument>,
+const handleActionHover = (
+  document: TextDocument,
+  position: { line: number; character: number },
   iamServicesByPrefix: IamServicesByPrefix
 ): Hover | null => {
-  const document = documents.get(params.textDocument.uri);
-  if (!document) { return null; }
-
-  const position = params.position;
-
   const { range: wordRange, word: rawWord } = getHoverWordAtPosition(document, position);
   if (!wordRange || !rawWord) { return null; }
-
-  if (!isInsideActionsArray(document, position)) {
-    return null;
-  }
 
   const word = normalize(rawWord);
 
   let [serviceName, action] = word.split(':');
   if (!iamServicesByPrefix[serviceName]) {
-    // if the hovered word doesn't include a known service, try with previous word
     action = serviceName;
     const { word: prevWord } = getWordAtPosition(document, {
       line: position.line,
@@ -43,7 +33,6 @@ export const handleHover = (
     return null;
   }
 
-  // if word matches 'service' but no action, return hover with documentation for that service
   if (services && !action) {
     return {
       contents: {
@@ -74,4 +63,64 @@ export const handleHover = (
       value: createServicesActionDocs(serviceActions)
     }
   };
+};
+
+const arnToPattern = (arn: string) =>
+  arn.replace(/[-\/{}()[\]\\^$+?.]/g, '\\$&').replace(/\\\$\\\{[^}]+\\\}/g, '[^:]*').replace(/\*/g, '.*');
+
+const handleResourceHover = (
+  document: TextDocument,
+  position: { line: number; character: number },
+  iamServicesByPrefix: IamServicesByPrefix
+): Hover | null => {
+  const { word: rawWord } = getArnWordAtPosition(document, position);
+  if (!rawWord) { return null; }
+
+  const arnParts = rawWord.split(':');
+  if (arnParts.length < 3) { return null; }
+
+  const servicePrefix = arnParts[2];
+  const services = iamServicesByPrefix[servicePrefix];
+  if (!services) { return null; }
+
+  const matchingDocs: string[] = [];
+  for (const service of services) {
+    if (!service.resourceTypes) continue;
+    for (const rt of service.resourceTypes) {
+      const pattern = new RegExp(`^${arnToPattern(rt.arn)}$`, 'i');
+      if (pattern.test(rawWord) || rawWord.startsWith(rt.arn.split('$')[0])) {
+        matchingDocs.push(`**${service.serviceName}**\n\n${createResourceTypeDocs(rt)}`);
+      }
+    }
+  }
+
+  if (matchingDocs.length === 0) { return null; }
+
+  return {
+    contents: {
+      kind: MarkupKind.Markdown,
+      value: matchingDocs.join('\n\n---\n\n')
+    }
+  };
+};
+
+export const handleHover = (
+  params: HoverParams,
+  documents: TextDocuments<TextDocument>,
+  iamServicesByPrefix: IamServicesByPrefix
+): Hover | null => {
+  const document = documents.get(params.textDocument.uri);
+  if (!document) { return null; }
+
+  const position = params.position;
+
+  if (isInsideActionsArray(document, position)) {
+    return handleActionHover(document, position, iamServicesByPrefix);
+  }
+
+  if (isInsideResourceArray(document, position)) {
+    return handleResourceHover(document, position, iamServicesByPrefix);
+  }
+
+  return null;
 };

@@ -41,5 +41,17 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Service",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}/${RequestPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "TCPService",
+      "arn": "arn:${Partition}:vpc-lattice:${Region}:${Account}:service/${ServiceId}",
+      "conditionKeys": []
+    }
   ]
 }

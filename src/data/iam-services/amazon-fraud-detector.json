@@ -933,5 +933,105 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "batch-prediction",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:batch-prediction/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "detector",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:detector/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "detector-version",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:detector-version/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "entity-type",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:entity-type/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "external-model",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:external-model/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "event-type",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:event-type/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "label",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:label/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:model/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "model-version",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:model-version/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "outcome",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:outcome/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "rule",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:rule/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "variable",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:variable/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "batch-import",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:batch-import/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "list",
+      "arn": "arn:${Partition}:frauddetector:${Region}:${Account}:list/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

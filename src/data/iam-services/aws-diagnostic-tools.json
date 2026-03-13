@@ -109,5 +109,19 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "execution",
+      "arn": "arn:${Partition}:ts::${Account}:execution/${UserId}/${ToolId}/${ExecutionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "tool",
+      "arn": "arn:${Partition}:ts::aws:tool/${ToolId}",
+      "conditionKeys": []
+    }
   ]
 }

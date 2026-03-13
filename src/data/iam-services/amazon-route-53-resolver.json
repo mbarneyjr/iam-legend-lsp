@@ -832,5 +832,82 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "resolver-dnssec-config",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-dnssec-config/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resolver-query-log-config",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-query-log-config/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resolver-rule",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "autodefined-rule",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:autodefined-rule/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resolver-endpoint",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "firewall-rule-group",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "firewall-rule-group-association",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-rule-group-association/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "firewall-domain-list",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-domain-list/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "firewall-config",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:firewall-config/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "resolver-config",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-config/${ResourceId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "outpost-resolver",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:outpost-resolver/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -144,5 +144,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "export",
+      "arn": "arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}/export/${ExportUUID}",
+      "conditionKeys": []
+    }
   ]
 }

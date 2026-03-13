@@ -235,5 +235,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "payment-instrument",
+      "arn": "arn:${Partition}:payments::${Account}:payment-instrument:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

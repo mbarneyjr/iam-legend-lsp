@@ -854,5 +854,70 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${UserName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "server",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "workflow",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:workflow/${WorkflowId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "certificate",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:certificate/${CertificateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "connector",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:connector/${ConnectorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "profile",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:profile/${ProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "agreement",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:agreement/${ServerId}/${AgreementId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "host-key",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:host-key/${ServerId}/${HostKeyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "webapp",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:webapp/${WebAppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

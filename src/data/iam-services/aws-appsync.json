@@ -933,5 +933,65 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "datasource",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "domain",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:domainnames/${DomainName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "graphqlapi",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "field",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "type",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "function",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "sourceApiAssociation",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${MergedGraphQLAPIId}/sourceApiAssociations/${Associationid}",
+      "conditionKeys": []
+    },
+    {
+      "name": "mergedApiAssociation",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${SourceGraphQLAPIId}/mergedApiAssociations/${Associationid}",
+      "conditionKeys": []
+    },
+    {
+      "name": "api",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${ApiId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "channelNamespace",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${ApiId}/channelNamespace/${ChannelNamespaceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

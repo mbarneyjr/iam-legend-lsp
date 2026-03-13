@@ -1514,5 +1514,90 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "reputation-policy",
+      "arn": "arn:${Partition}:ses:${Region}:aws:reputation-policy/${ReputationPolicyName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "configuration-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "contact-list",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:contact-list/${ContactListName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "custom-verification-email-template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${TemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "dedicated-ip-pool",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${DedicatedIPPool}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "deliverability-test-report",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${ReportId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "export-job",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:export-job/${ExportJobId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "identity",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "import-job",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:import-job/${ImportJobId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "multi-region-endpoint",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:multi-region-endpoint/${EndpointName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "mailmanager-archive",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:mailmanager-archive/${ArchiveId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "tenant",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:tenant/${TenantName}/${TenantId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

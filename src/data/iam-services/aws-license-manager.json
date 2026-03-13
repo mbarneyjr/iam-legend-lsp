@@ -674,5 +674,51 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "license-configuration",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration:${LicenseConfigurationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "license-manager:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "license",
+      "arn": "arn:${Partition}:license-manager::${Account}:license:${LicenseId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "grant",
+      "arn": "arn:${Partition}:license-manager::${Account}:grant:${GrantId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "report-generator",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:report-generator:${ReportGeneratorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "license-manager:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "license-asset-ruleset",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-asset-ruleset:${LicenseAssetRulesetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "license-asset-group",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-asset-group:${LicenseAssetGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

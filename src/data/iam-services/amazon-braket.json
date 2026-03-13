@@ -228,5 +228,28 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "quantum-task",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:quantum-task/${RandomId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "job",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:job/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "spending-limit",
+      "arn": "arn:${Partition}:braket:${Region}:${Account}:spending-limit/${RandomId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

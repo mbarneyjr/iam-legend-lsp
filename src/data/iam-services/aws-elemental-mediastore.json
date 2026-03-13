@@ -295,5 +295,24 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "container",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "object",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}/${ObjectPath}",
+      "conditionKeys": []
+    },
+    {
+      "name": "folder",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}/${FolderPath}",
+      "conditionKeys": []
+    }
   ]
 }

@@ -11,7 +11,11 @@ export const getIamServicesByPrefix = async () => {
   const files = await readdir(directory);
   const readFiles = files.map(
     file => readFile(resolve(directory, file), 'utf8')
-      .then((data) => JSON.parse(data) as IamService)
+      .then((data) => {
+        const parsed = JSON.parse(data);
+        parsed.resourceTypes ??= [];
+        return parsed as IamService;
+      })
   );
 
   const services = await Promise.all(readFiles);

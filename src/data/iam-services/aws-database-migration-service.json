@@ -1421,5 +1421,111 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Certificate",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:cert:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:cert-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DataProvider",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:data-provider:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:data-provider-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "DataMigration",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:data-migration:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:data-migration-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Endpoint",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:endpoint:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:endpoint-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "EventSubscription",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:es:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:es-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "InstanceProfile",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:instance-profile:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:instance-profile-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "MigrationProject",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:migration-project:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:migration-project-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationConfig",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:replication-config:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:replication-config-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationInstance",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:rep:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:rep-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationSubnetGroup",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:subgrp:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:subgrp-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationTask",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:task:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:task-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationTaskAssessmentRun",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:assessment-run:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:assessment-run-tag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ReplicationTaskIndividualAssessment",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:individual-assessment:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:individual-assessment-tag/${TagKey}"
+      ]
+    }
   ]
 }

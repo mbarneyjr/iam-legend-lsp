@@ -707,5 +707,69 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "multiregionparametergroup",
+      "arn": "arn:${Partition}:memorydb::${Account}:multiregionparametergroup/${MultiRegionParameterGroupName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "parametergroup",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:parametergroup/${ParameterGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "subnetgroup",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:subnetgroup/${SubnetGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "multiregioncluster",
+      "arn": "arn:${Partition}:memorydb::${Account}:multiregioncluster/${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "memorydb:TLSEnabled"
+      ]
+    },
+    {
+      "name": "cluster",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:cluster/${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:snapshot/${SnapshotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "user",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:user/${UserName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "acl",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:acl/${AclName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "reservednode",
+      "arn": "arn:${Partition}:memorydb:${Region}:${Account}:reservednode/${ReservationID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

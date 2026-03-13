@@ -1663,5 +1663,46 @@
         "kms:Decrypt"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "PermissionSet",
+      "arn": "arn:${Partition}:sso:::permissionSet/${InstanceId}/${PermissionSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Account",
+      "arn": "arn:${Partition}:sso:::account/${AccountId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Instance",
+      "arn": "arn:${Partition}:sso:::instance/${InstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Application",
+      "arn": "arn:${Partition}:sso::${AccountId}:application/${InstanceId}/${ApplicationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "sso:ApplicationAccount"
+      ]
+    },
+    {
+      "name": "TrustedTokenIssuer",
+      "arn": "arn:${Partition}:sso::${AccountId}:trustedTokenIssuer/${InstanceId}/${TrustedTokenIssuerId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "ApplicationProvider",
+      "arn": "arn:${Partition}:sso::aws:applicationProvider/${ApplicationProviderId}",
+      "conditionKeys": []
+    }
   ]
 }

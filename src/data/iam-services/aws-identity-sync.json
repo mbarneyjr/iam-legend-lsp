@@ -151,5 +151,17 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "SyncProfileResource",
+      "arn": "arn:${Partition}:identity-sync:${Region}:${Account}:profile/${SyncProfileName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "SyncTargetResource",
+      "arn": "arn:${Partition}:identity-sync:${Region}:${Account}:target/${SyncProfileName}/${SyncTargetName}",
+      "conditionKeys": []
+    }
   ]
 }

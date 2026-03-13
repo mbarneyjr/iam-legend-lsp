@@ -75,5 +75,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "subscription",
+      "arn": "arn:${Partition}:pricingplanmanager::${Account}:subscription/${SubscriptionId}",
+      "conditionKeys": []
+    }
   ]
 }

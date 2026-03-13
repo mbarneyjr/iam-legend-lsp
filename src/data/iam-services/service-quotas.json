@@ -295,5 +295,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "quota",
+      "arn": "arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}",
+      "conditionKeys": []
+    }
   ]
 }

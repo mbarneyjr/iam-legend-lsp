@@ -209,5 +209,21 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Room",
+      "arn": "arn:${Partition}:ivschat:${Region}:${Account}:room/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "Logging-Configuration",
+      "arn": "arn:${Partition}:ivschat:${Region}:${Account}:logging-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

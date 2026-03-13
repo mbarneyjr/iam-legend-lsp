@@ -138,5 +138,14 @@
         "iam:PassRole"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "pipe",
+      "arn": "arn:${Partition}:pipes:${Region}:${Account}:pipe/${Name}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -144,5 +144,14 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "rule",
+      "arn": "arn:${Partition}:rbin:${Region}:${Account}:rule/${ResourceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

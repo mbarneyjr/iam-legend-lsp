@@ -427,5 +427,42 @@
         "kms:Decrypt"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Identitystore",
+      "arn": "arn:${Partition}:identitystore::${Account}:identitystore/${IdentityStoreId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "User",
+      "arn": "arn:${Partition}:identitystore:::user/${UserId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "Group",
+      "arn": "arn:${Partition}:identitystore:::group/${GroupId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "GroupMembership",
+      "arn": "arn:${Partition}:identitystore:::membership/${MembershipId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "AllUsers",
+      "arn": "arn:${Partition}:identitystore:::user/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "AllGroups",
+      "arn": "arn:${Partition}:identitystore:::group/*",
+      "conditionKeys": []
+    },
+    {
+      "name": "AllGroupMemberships",
+      "arn": "arn:${Partition}:identitystore:::membership/*",
+      "conditionKeys": []
+    }
   ]
 }

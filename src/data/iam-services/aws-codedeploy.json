@@ -517,5 +517,31 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "application",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:application:${ApplicationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "deploymentconfig",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentconfig:${DeploymentConfigurationName}",
+      "conditionKeys": []
+    },
+    {
+      "name": "deploymentgroup",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentgroup:${ApplicationName}/${DeploymentGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "instance",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:instance:${InstanceName}",
+      "conditionKeys": []
+    }
   ]
 }

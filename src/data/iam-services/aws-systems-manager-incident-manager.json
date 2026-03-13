@@ -373,5 +373,28 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "response-plan",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:response-plan/${ResponsePlan}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "incident-record",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:incident-record/${ResponsePlan}/${IncidentRecord}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "replication-set",
+      "arn": "arn:${Partition}:ssm-incidents::${Account}:replication-set/${ReplicationSet}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

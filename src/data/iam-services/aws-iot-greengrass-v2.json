@@ -378,5 +378,40 @@
         "iot:UpdateThingShadow"
       ]
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "connectivityInfo",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo",
+      "conditionKeys": []
+    },
+    {
+      "name": "component",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:components:${ComponentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "componentVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:components:${ComponentName}:versions:${ComponentVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "coreDevice",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:coreDevices:${CoreDeviceThingName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "deployment",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:deployments:${DeploymentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -417,5 +417,14 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "campaign",
+      "arn": "arn:${Partition}:connect-campaigns:${Region}:${Account}:campaign/${CampaignId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

@@ -179,5 +179,22 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "job",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}",
+      "conditionKeys": []
+    },
+    {
+      "name": "preset",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}",
+      "conditionKeys": []
+    }
   ]
 }

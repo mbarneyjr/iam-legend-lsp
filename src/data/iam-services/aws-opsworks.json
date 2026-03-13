@@ -801,5 +801,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "stack",
+      "arn": "arn:${Partition}:opsworks:${Region}:${Account}:stack/${StackId}/",
+      "conditionKeys": []
+    }
   ]
 }

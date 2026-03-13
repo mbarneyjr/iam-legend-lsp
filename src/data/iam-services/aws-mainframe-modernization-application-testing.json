@@ -299,5 +299,35 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "TestCase",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testcase/${TestCaseId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "TestConfiguration",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testconfiguration/${TestConfigurationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "TestRun",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testrun/${TestRunId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    {
+      "name": "TestSuite",
+      "arn": "arn:${Partition}:apptest:${Region}:${Account}:testsuite/${TestSuiteId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
   ]
 }

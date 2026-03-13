@@ -58,5 +58,12 @@
       "conditionKeys": [],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "provider",
+      "arn": "arn:${Partition}:geo-routes:${Region}::provider/default",
+      "conditionKeys": []
+    }
   ]
 }

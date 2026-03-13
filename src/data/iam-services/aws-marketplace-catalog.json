@@ -162,5 +162,23 @@
       ],
       "dependentActions": []
     }
+  ],
+  "resourceTypes": [
+    {
+      "name": "Entity",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "catalog:ChangeType"
+      ]
+    },
+    {
+      "name": "ChangeSet",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "catalog:ChangeType"
+      ]
+    }
   ]
 }
